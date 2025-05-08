@@ -34,7 +34,17 @@ namespace Gwenchana
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn thoát không?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); 
+            }
         }
 
         private void login_signupBtn_Click(object sender, EventArgs e)
