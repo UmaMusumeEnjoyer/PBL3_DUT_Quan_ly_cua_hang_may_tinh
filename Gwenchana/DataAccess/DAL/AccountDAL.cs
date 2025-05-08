@@ -1,0 +1,99 @@
+﻿using Gwenchana.DataAccess.DTO;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Gwenchana.DataAccess.DAL
+{
+    public class AccountDAL
+    {
+        private readonly DbConnect.DbConnect _db = new DbConnect.DbConnect();
+
+        public List<Account> GetAllAccounts()
+        {
+            var list = new List<Account>(); 
+            string sql = "SELECT * FROM Account";
+
+            DataTable dt = _db.GetData(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(new Account
+                {
+                    Id = Convert.ToInt32(row["Id"]),
+                    Username = row["Username"].ToString(),
+                    Password = row["Password"].ToString(),
+                   
+                    Role = row["Role"].ToString()
+                });
+            }
+            return list;
+        }
+
+        public Account GetAccountById(int id)
+        {
+            string sql = "SELECT * FROM Account WHERE Id = @Id";
+            SqlParameter[] parameters = {
+                new SqlParameter("@Id", id)
+            };
+
+            DataTable dt = _db.GetData(sql, parameters);
+            if (dt.Rows.Count == 0) return null;
+
+            DataRow row = dt.Rows[0];
+            return new Account
+            {
+                Id = Convert.ToInt32(row["Id"]),
+                Username = row["Username"].ToString(),
+                Password = row["Password"].ToString(),
+               
+                Role = row["Role"].ToString()
+            };
+        }
+
+        public bool AddAccount(Account account)
+        {
+            string sql = @"INSERT INTO Account (Username, Password, Role) 
+                           VALUES (@Username, @Password, @Role)";
+            SqlParameter[] parameters = {
+                new SqlParameter("@Username", account.Username),
+                new SqlParameter("@Password", account.Password),
+              
+                new SqlParameter("@Role", account.Role)
+            };
+
+            return _db.ExecuteNonQuery(sql, parameters) > 0;
+        }
+
+        public bool UpdateAccount(Account account)
+        {
+            string sql = @"UPDATE Account SET 
+                            Username = @Username,
+                            Password = @Password,
+                            Role = @Role
+                           WHERE Id = @Id";
+            SqlParameter[] parameters = {
+                new SqlParameter("@Username", account.Username),
+                new SqlParameter("@Password", account.Password),
+           
+                new SqlParameter("@Role", account.Role),
+                new SqlParameter("@Id", account.Id)
+            };
+
+            return _db.ExecuteNonQuery(sql, parameters) > 0;
+        }
+
+        public bool DeleteAccount(int id)
+        {
+            string sql = "DELETE FROM Account WHERE Id = @Id";
+            SqlParameter[] parameters = {
+                new SqlParameter("@Id", id)
+            };
+
+            return _db.ExecuteNonQuery(sql, parameters) > 0;
+        }
+    }
+}

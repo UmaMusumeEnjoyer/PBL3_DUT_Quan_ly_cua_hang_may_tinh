@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Gwenchana.DataAccess.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana
 {
@@ -16,7 +18,8 @@ namespace Gwenchana
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
+
         }
     }
 }

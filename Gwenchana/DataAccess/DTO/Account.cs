@@ -11,7 +11,6 @@ namespace Gwenchana.DataAccess.DTO
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int? Employee_Id { get; set; }
         public string Role { get; set; }
     }
 }
