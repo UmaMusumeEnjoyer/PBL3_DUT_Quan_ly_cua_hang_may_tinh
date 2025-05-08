@@ -80,6 +80,8 @@ namespace Gwenchana
                     if(accountBLL.GetRole(username) == "Admin")
                     {
                         Dashboard dashboard = new Dashboard();
+                        login_username.Text = "";
+                        login_password.Text = "";
                         this.Hide();
                         dashboard.ShowDialog();
                         this.Show();
@@ -87,8 +89,12 @@ namespace Gwenchana
                     }
                     else if (accountBLL.GetRole(username) == "Employee")
                     {
-                        MessageBox.Show("Đăng nhập thành công!!!"
-                        , "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        EmployeeDashboard employeeDashboard = new EmployeeDashboard();
+                        login_username.Text = "";
+                        login_password.Text = "";
+                        this.Hide();
+                        employeeDashboard.ShowDialog();
+                        this.Show();
                     }
                 }
                 else
