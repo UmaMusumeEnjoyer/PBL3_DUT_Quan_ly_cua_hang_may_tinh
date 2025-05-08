@@ -12,6 +12,8 @@ namespace Gwenchana.DataAccess.DbConnect
     {
         private static readonly string connectionString = "Server=ADMIN-PC;Database=PBL3;Integrated Security=True";
 
+
+        // Chạy truy vấn SQL và trả về DataTable
         public DataTable GetData(string sql, SqlParameter[] parameters = null)
         {
             DataTable dt = new DataTable();
@@ -42,6 +44,8 @@ namespace Gwenchana.DataAccess.DbConnect
             return dt;
         }
 
+
+        //Số dòng bị ảnh hưởng bởi câu lệnh SQL
         public int ExecuteNonQuery(string sql, SqlParameter[] parameters = null)
         {
             try
@@ -67,6 +71,8 @@ namespace Gwenchana.DataAccess.DbConnect
             }
         }
 
+
+        //Trả về giá trị đầu tiên trong kết quả của câu lệnh SQL
         public object ExecuteScalar(string sql, SqlParameter[] parameters = null)
         {
             try
@@ -92,6 +98,22 @@ namespace Gwenchana.DataAccess.DbConnect
             }
         }
 
+        //Thực thi stored procedure và trả về 1 giá trị đơn. Vd: Max, Min,...
+        protected object ExecuteSpScalar(string sp, SqlParameter[] parameters = null)
+        {
+            using (var conn = new SqlConnection(connectionString))
+            {
+                using (var cmd = new SqlCommand(sp, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    if (parameters != null) cmd.Parameters.AddRange(parameters);
+                    conn.Open();
+                    return cmd.ExecuteScalar();
+                }
+            }
+        }
+
+        //Thực thi một hành động trong một giao dịch
         public void ExecuteTransaction(Action<SqlConnection, SqlTransaction> action)
         {
             using (var conn = new SqlConnection(connectionString))
@@ -113,6 +135,8 @@ namespace Gwenchana.DataAccess.DbConnect
             }
         }
 
+
+        //Thực thi stored procedure và trả về DataTable
         protected DataTable ExecuteSp(string sp, SqlParameter[] parameters = null)
         {
             var dt = new DataTable();
@@ -133,6 +157,7 @@ namespace Gwenchana.DataAccess.DbConnect
             return dt;
         }
 
+        //Thực thi stored procedure và trả về số dòng bị ảnh hưởng
         protected int ExecuteSpNonQuery(string sp, SqlParameter[] parameters = null)
         {
             using (var conn = new SqlConnection(connectionString))
@@ -146,20 +171,6 @@ namespace Gwenchana.DataAccess.DbConnect
                     }
                     conn.Open();
                     return cmd.ExecuteNonQuery();
-                }
-            }
-        }
-
-        protected object ExecuteSpScalar(string sp, SqlParameter[] parameters = null)
-        {
-            using (var conn = new SqlConnection(connectionString))
-            {
-                using (var cmd = new SqlCommand(sp, conn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    if (parameters != null) cmd.Parameters.AddRange(parameters);
-                    conn.Open();
-                    return cmd.ExecuteScalar();
                 }
             }
         }
