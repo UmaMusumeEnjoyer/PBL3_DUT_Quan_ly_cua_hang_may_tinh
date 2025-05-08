@@ -14,7 +14,7 @@ namespace Gwenchana.BussinessLogic
         {
             AccountDAL accountDAL = new AccountDAL();
             List<Account> accounts = accountDAL.GetAllAccounts();
-            foreach (Account account in accounts) 
+            foreach (Account account in accounts)
             {
                 if (account.Username == username && account.Password == password)
                 {
@@ -44,7 +44,6 @@ namespace Gwenchana.BussinessLogic
             return accountDAL.AddAccount(newAccount);
         }
 
-
         public string GetRole(string username)
         {
             AccountDAL accountDAL = new AccountDAL();
@@ -59,6 +58,33 @@ namespace Gwenchana.BussinessLogic
             return null;
         }
 
-
+        public bool ChangePassword(string username, string newPassword)
+        {
+            AccountDAL accountDAL = new AccountDAL();
+            List<Account> accounts = accountDAL.GetAllAccounts();
+            foreach (Account account in accounts)
+            {
+                if (account.Username == username)
+                {
+                    account.Password = newPassword;
+                    return accountDAL.UpdateAccount(account);
+                }
+            }
+            return false;
+        }
+        public bool ChangeUsername(string oldUsername, string newUsername)
+        {
+            AccountDAL accountDAL = new AccountDAL();
+            List<Account> accounts = accountDAL.GetAllAccounts();
+            foreach (Account account in accounts)
+            {
+                if (account.Username == oldUsername)
+                {
+                    account.Username = newUsername;
+                    return accountDAL.UpdateAccount(account);
+                }
+            }
+            return false;
+        }
     }
 }

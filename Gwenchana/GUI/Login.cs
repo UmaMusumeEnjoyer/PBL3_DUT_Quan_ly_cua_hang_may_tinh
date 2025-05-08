@@ -61,14 +61,25 @@ namespace Gwenchana
             {
                 string username = login_username.Text.Trim();
                 string password = login_password.Text.Trim();
+
                 AccountBLL accountBLL = new AccountBLL();
+
                 if (accountBLL.Login(username, password))
                 {
-                    MessageBox.Show("Đăng nhập thành công!!!"
+
+                    if(accountBLL.GetRole(username) == "Admin")
+                    {
+                        Dashboard dashboard = new Dashboard();
+                        this.Hide();
+                        dashboard.ShowDialog();
+                        this.Show();
+
+                    }
+                    else if (accountBLL.GetRole(username) == "Employee")
+                    {
+                        MessageBox.Show("Đăng nhập thành công!!!"
                         , "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //MainForm mainForm = new MainForm();
-                    //mainForm.Show();
-                    //this.Hide();
+                    }
                 }
                 else
                 {

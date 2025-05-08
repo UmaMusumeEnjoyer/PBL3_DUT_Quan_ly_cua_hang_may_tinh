@@ -11,7 +11,7 @@ namespace Gwenchana.DataAccess.DAL
 {
     public class AccountDAL
     {
-        private readonly DbConnect.DbConnect _db = new DbConnect.DbConnect();
+        private readonly DBConnect.DbConnect _db = new DBConnect.DbConnect();
 
         public List<Account> GetAllAccounts()
         {

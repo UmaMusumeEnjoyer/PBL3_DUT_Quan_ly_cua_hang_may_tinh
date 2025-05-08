@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gwenchana.DataAccess.DbConnect
+namespace Gwenchana.DataAccess.DBConnect
 {
     public class DbConnect
     {
