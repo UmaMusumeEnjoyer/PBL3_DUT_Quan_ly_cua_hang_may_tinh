@@ -23,6 +23,7 @@ namespace Gwenchana
             panelMediaSubMenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
+            panel1.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -194,6 +195,27 @@ namespace Gwenchana
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HoaDon_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panel1);
+        }
+
+
+        private void HoaDonNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
         {
 
         }

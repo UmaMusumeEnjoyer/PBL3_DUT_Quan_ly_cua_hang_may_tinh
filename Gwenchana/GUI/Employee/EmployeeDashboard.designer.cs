@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDashboard));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.btn_HoaDon = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnHelp = new System.Windows.Forms.Button();
             this.panelToolsSubMenu = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.btnTools = new System.Windows.Forms.Button();
-            this.btnEqualizer = new System.Windows.Forms.Button();
             this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -52,23 +51,29 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_HoaDonNhap = new System.Windows.Forms.Button();
+            this.btn_HoaDonXuat = new System.Windows.Forms.Button();
+            this.btn_ThongTinCaNhan = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
             this.panelMediaSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.btn_ThongTinCaNhan);
+            this.panelSideMenu.Controls.Add(this.panel1);
+            this.panelSideMenu.Controls.Add(this.btn_HoaDon);
             this.panelSideMenu.Controls.Add(this.btnExit);
-            this.panelSideMenu.Controls.Add(this.btnHelp);
             this.panelSideMenu.Controls.Add(this.panelToolsSubMenu);
             this.panelSideMenu.Controls.Add(this.btnTools);
-            this.panelSideMenu.Controls.Add(this.btnEqualizer);
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubMenu);
             this.panelSideMenu.Controls.Add(this.btnPlaylist);
             this.panelSideMenu.Controls.Add(this.panelMediaSubMenu);
@@ -77,8 +82,29 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
+            this.panelSideMenu.Size = new System.Drawing.Size(200, 561);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // btn_HoaDon
+            // 
+            this.btn_HoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HoaDon.FlatAppearance.BorderSize = 0;
+            this.btn_HoaDon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_HoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HoaDon.ForeColor = System.Drawing.Color.Silver;
+            this.btn_HoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Image")));
+            this.btn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_HoaDon.Location = new System.Drawing.Point(0, 637);
+            this.btn_HoaDon.Name = "btn_HoaDon";
+            this.btn_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_HoaDon.Size = new System.Drawing.Size(183, 45);
+            this.btn_HoaDon.TabIndex = 11;
+            this.btn_HoaDon.Text = "Hoá đơn";
+            this.btn_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_HoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_HoaDon.UseVisualStyleBackColor = true;
+            this.btn_HoaDon.Click += new System.EventHandler(this.HoaDon_Click);
             // 
             // btnExit
             // 
@@ -90,37 +116,16 @@
             this.btnExit.ForeColor = System.Drawing.Color.Silver;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 733);
+            this.btnExit.Location = new System.Drawing.Point(0, 806);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(233, 45);
+            this.btnExit.Size = new System.Drawing.Size(183, 45);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Thoát";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHelp.FlatAppearance.BorderSize = 0;
-            this.btnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.ForeColor = System.Drawing.Color.Silver;
-            this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
-            this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 688);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(233, 45);
-            this.btnHelp.TabIndex = 8;
-            this.btnHelp.Text = "Nhà cung cấp";
-            this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // panelToolsSubMenu
             // 
@@ -129,9 +134,9 @@
             this.panelToolsSubMenu.Controls.Add(this.button12);
             this.panelToolsSubMenu.Controls.Add(this.button13);
             this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 558);
+            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 513);
             this.panelToolsSubMenu.Name = "panelToolsSubMenu";
-            this.panelToolsSubMenu.Size = new System.Drawing.Size(233, 130);
+            this.panelToolsSubMenu.Size = new System.Drawing.Size(183, 124);
             this.panelToolsSubMenu.TabIndex = 7;
             // 
             // button10
@@ -145,7 +150,7 @@
             this.button10.Location = new System.Drawing.Point(0, 80);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(233, 40);
+            this.button10.Size = new System.Drawing.Size(183, 40);
             this.button10.TabIndex = 2;
             this.button10.Text = "Preferences";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,7 +168,7 @@
             this.button12.Location = new System.Drawing.Point(0, 40);
             this.button12.Name = "button12";
             this.button12.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(233, 40);
+            this.button12.Size = new System.Drawing.Size(183, 40);
             this.button12.TabIndex = 1;
             this.button12.Text = "Effects and filters";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,9 +186,9 @@
             this.button13.Location = new System.Drawing.Point(0, 0);
             this.button13.Name = "button13";
             this.button13.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(233, 40);
+            this.button13.Size = new System.Drawing.Size(183, 40);
             this.button13.TabIndex = 0;
-            this.button13.Text = "Media converter";
+            this.button13.Text = "Tất cả nhà cung cấp";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
@@ -198,37 +203,16 @@
             this.btnTools.ForeColor = System.Drawing.Color.Silver;
             this.btnTools.Image = ((System.Drawing.Image)(resources.GetObject("btnTools.Image")));
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 513);
+            this.btnTools.Location = new System.Drawing.Point(0, 468);
             this.btnTools.Name = "btnTools";
             this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnTools.Size = new System.Drawing.Size(233, 45);
+            this.btnTools.Size = new System.Drawing.Size(183, 45);
             this.btnTools.TabIndex = 6;
-            this.btnTools.Text = "  Tools";
+            this.btnTools.Text = "Nhà cung cấp";
             this.btnTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTools.UseVisualStyleBackColor = true;
             this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
-            // 
-            // btnEqualizer
-            // 
-            this.btnEqualizer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEqualizer.FlatAppearance.BorderSize = 0;
-            this.btnEqualizer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnEqualizer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnEqualizer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEqualizer.ForeColor = System.Drawing.Color.Silver;
-            this.btnEqualizer.Image = ((System.Drawing.Image)(resources.GetObject("btnEqualizer.Image")));
-            this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 468);
-            this.btnEqualizer.Name = "btnEqualizer";
-            this.btnEqualizer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnEqualizer.Size = new System.Drawing.Size(233, 45);
-            this.btnEqualizer.TabIndex = 5;
-            this.btnEqualizer.Text = "  Equalizer";
-            this.btnEqualizer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEqualizer.UseVisualStyleBackColor = true;
-            this.btnEqualizer.Click += new System.EventHandler(this.btnEqualizer_Click);
             // 
             // panelPlaylistSubMenu
             // 
@@ -240,7 +224,7 @@
             this.panelPlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 303);
             this.panelPlaylistSubMenu.Name = "panelPlaylistSubMenu";
-            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(233, 165);
+            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(183, 165);
             this.panelPlaylistSubMenu.TabIndex = 4;
             // 
             // button1
@@ -254,7 +238,7 @@
             this.button1.Location = new System.Drawing.Point(0, 120);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(233, 40);
+            this.button1.Size = new System.Drawing.Size(183, 40);
             this.button1.TabIndex = 3;
             this.button1.Text = "Export playlist";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -272,7 +256,7 @@
             this.button6.Location = new System.Drawing.Point(0, 80);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(233, 40);
+            this.button6.Size = new System.Drawing.Size(183, 40);
             this.button6.TabIndex = 2;
             this.button6.Text = "Import playlist";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -290,7 +274,7 @@
             this.button7.Location = new System.Drawing.Point(0, 40);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(233, 40);
+            this.button7.Size = new System.Drawing.Size(183, 40);
             this.button7.TabIndex = 1;
             this.button7.Text = "Managing playlist";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -308,7 +292,7 @@
             this.button8.Location = new System.Drawing.Point(0, 0);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(233, 40);
+            this.button8.Size = new System.Drawing.Size(183, 40);
             this.button8.TabIndex = 0;
             this.button8.Text = "New playlist";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,7 +312,7 @@
             this.btnPlaylist.Location = new System.Drawing.Point(0, 258);
             this.btnPlaylist.Name = "btnPlaylist";
             this.btnPlaylist.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnPlaylist.Size = new System.Drawing.Size(233, 45);
+            this.btnPlaylist.Size = new System.Drawing.Size(183, 45);
             this.btnPlaylist.TabIndex = 3;
             this.btnPlaylist.Text = "Quản lý kho";
             this.btnPlaylist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +329,7 @@
             this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 137);
             this.panelMediaSubMenu.Name = "panelMediaSubMenu";
-            this.panelMediaSubMenu.Size = new System.Drawing.Size(233, 121);
+            this.panelMediaSubMenu.Size = new System.Drawing.Size(183, 121);
             this.panelMediaSubMenu.TabIndex = 2;
             // 
             // button4
@@ -359,7 +343,7 @@
             this.button4.Location = new System.Drawing.Point(0, 80);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(233, 40);
+            this.button4.Size = new System.Drawing.Size(183, 40);
             this.button4.TabIndex = 2;
             this.button4.Text = "Linh/Phụ kiện";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,7 +361,7 @@
             this.button3.Location = new System.Drawing.Point(0, 40);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(233, 40);
+            this.button3.Size = new System.Drawing.Size(183, 40);
             this.button3.TabIndex = 1;
             this.button3.Text = "PC";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -395,7 +379,7 @@
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(233, 40);
+            this.button2.Size = new System.Drawing.Size(183, 40);
             this.button2.TabIndex = 0;
             this.button2.Text = "Laptop";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -415,7 +399,7 @@
             this.btnMedia.Location = new System.Drawing.Point(0, 92);
             this.btnMedia.Name = "btnMedia";
             this.btnMedia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMedia.Size = new System.Drawing.Size(233, 45);
+            this.btnMedia.Size = new System.Drawing.Size(183, 45);
             this.btnMedia.TabIndex = 1;
             this.btnMedia.Text = "Sản phẩm";
             this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -429,13 +413,13 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(233, 92);
+            this.panelLogo.Size = new System.Drawing.Size(183, 92);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -447,10 +431,69 @@
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(200, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(684, 561);
+            this.panelChildForm.Size = new System.Drawing.Size(734, 561);
             this.panelChildForm.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panel1.Controls.Add(this.btn_HoaDonXuat);
+            this.panel1.Controls.Add(this.btn_HoaDonNhap);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 682);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(183, 79);
+            this.panel1.TabIndex = 0;
+            // 
+            // btn_HoaDonNhap
+            // 
+            this.btn_HoaDonNhap.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HoaDonNhap.FlatAppearance.BorderSize = 0;
+            this.btn_HoaDonNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HoaDonNhap.ForeColor = System.Drawing.Color.Silver;
+            this.btn_HoaDonNhap.Location = new System.Drawing.Point(0, 0);
+            this.btn_HoaDonNhap.Name = "btn_HoaDonNhap";
+            this.btn_HoaDonNhap.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btn_HoaDonNhap.Size = new System.Drawing.Size(183, 40);
+            this.btn_HoaDonNhap.TabIndex = 0;
+            this.btn_HoaDonNhap.Text = "Hoá đơn nhập";
+            this.btn_HoaDonNhap.UseVisualStyleBackColor = true;
+            // 
+            // btn_HoaDonXuat
+            // 
+            this.btn_HoaDonXuat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HoaDonXuat.FlatAppearance.BorderSize = 0;
+            this.btn_HoaDonXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HoaDonXuat.ForeColor = System.Drawing.Color.Silver;
+            this.btn_HoaDonXuat.Location = new System.Drawing.Point(0, 40);
+            this.btn_HoaDonXuat.Name = "btn_HoaDonXuat";
+            this.btn_HoaDonXuat.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.btn_HoaDonXuat.Size = new System.Drawing.Size(183, 40);
+            this.btn_HoaDonXuat.TabIndex = 1;
+            this.btn_HoaDonXuat.Text = "Hoá đơn xuất";
+            this.btn_HoaDonXuat.UseVisualStyleBackColor = true;
+            // 
+            // btn_ThongTinCaNhan
+            // 
+            this.btn_ThongTinCaNhan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_ThongTinCaNhan.FlatAppearance.BorderSize = 0;
+            this.btn_ThongTinCaNhan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_ThongTinCaNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_ThongTinCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ThongTinCaNhan.ForeColor = System.Drawing.Color.Silver;
+            this.btn_ThongTinCaNhan.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThongTinCaNhan.Image")));
+            this.btn_ThongTinCaNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(0, 761);
+            this.btn_ThongTinCaNhan.Name = "btn_ThongTinCaNhan";
+            this.btn_ThongTinCaNhan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_ThongTinCaNhan.Size = new System.Drawing.Size(183, 45);
+            this.btn_ThongTinCaNhan.TabIndex = 12;
+            this.btn_ThongTinCaNhan.Text = "Thông tin cá nhân";
+            this.btn_ThongTinCaNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ThongTinCaNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_ThongTinCaNhan.UseVisualStyleBackColor = true;
             // 
             // EmployeeDashboard
             // 
@@ -472,6 +515,7 @@
             this.panelMediaSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -484,13 +528,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnMedia;
-        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Panel panelToolsSubMenu;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button btnTools;
-        private System.Windows.Forms.Button btnEqualizer;
         private System.Windows.Forms.Panel panelPlaylistSubMenu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
@@ -501,6 +543,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Button btn_HoaDon;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_HoaDonXuat;
+        private System.Windows.Forms.Button btn_HoaDonNhap;
+        private System.Windows.Forms.Button btn_ThongTinCaNhan;
     }
 }
 

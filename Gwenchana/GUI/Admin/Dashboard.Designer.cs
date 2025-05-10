@@ -87,9 +87,10 @@ namespace Gwenchana
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 29);
+            this.label1.Size = new System.Drawing.Size(123, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Bảng điều khiển";
+            this.label1.Text = "Thống kê";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dtpStartDate
             // 
