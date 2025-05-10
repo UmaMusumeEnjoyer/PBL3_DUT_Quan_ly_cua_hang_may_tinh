@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gwenchana.DataAccess.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Gwenchana
 {
-    public partial class EmployeeDashboard : Form
+    public partial class EmployeeMenu : Form
     {
-        public EmployeeDashboard()
+        public EmployeeMenu()
         {
             InitializeComponent();
             hideSubMenu();
@@ -22,7 +23,7 @@ namespace Gwenchana
         {
             panelMediaSubMenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
-            panelToolsSubMenu.Visible = false;
+            //panelToolsSubMenu.Visible = false;
             panel1.Visible = false;
         }
 
@@ -45,7 +46,7 @@ namespace Gwenchana
         #region MediaSubMenu
         private void button2_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form2());
+            //openChildForm(new Form2());
             //..
             //your codes
             //..
@@ -118,7 +119,8 @@ namespace Gwenchana
 
         private void btnTools_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelToolsSubMenu);
+            //showSubMenu(panelToolsSubMenu);
+            openChildForm(new PetView());
         }
         #region ToolsSubMenu
         private void button13_Click(object sender, EventArgs e)
@@ -156,7 +158,7 @@ namespace Gwenchana
 
         private void btnEqualizer_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form3());
+            //openChildForm(new Form3());
             //..
             //your codes
             //..

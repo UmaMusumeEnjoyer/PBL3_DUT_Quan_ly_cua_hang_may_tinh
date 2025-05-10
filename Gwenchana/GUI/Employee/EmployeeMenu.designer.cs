@@ -1,6 +1,6 @@
 ﻿namespace Gwenchana
 {
-    partial class EmployeeDashboard
+    partial class EmployeeMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMenu));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.btn_HoaDon = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panelToolsSubMenu = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.btnTools = new System.Windows.Forms.Button();
             this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -56,7 +52,6 @@
             this.btn_HoaDonXuat = new System.Windows.Forms.Button();
             this.btn_ThongTinCaNhan = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
-            this.panelToolsSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
             this.panelMediaSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -72,7 +67,6 @@
             this.panelSideMenu.Controls.Add(this.panel1);
             this.panelSideMenu.Controls.Add(this.btn_HoaDon);
             this.panelSideMenu.Controls.Add(this.btnExit);
-            this.panelSideMenu.Controls.Add(this.panelToolsSubMenu);
             this.panelSideMenu.Controls.Add(this.btnTools);
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubMenu);
             this.panelSideMenu.Controls.Add(this.btnPlaylist);
@@ -95,7 +89,7 @@
             this.btn_HoaDon.ForeColor = System.Drawing.Color.Silver;
             this.btn_HoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Image")));
             this.btn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDon.Location = new System.Drawing.Point(0, 637);
+            this.btn_HoaDon.Location = new System.Drawing.Point(0, 513);
             this.btn_HoaDon.Name = "btn_HoaDon";
             this.btn_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_HoaDon.Size = new System.Drawing.Size(183, 45);
@@ -116,7 +110,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.Silver;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 806);
+            this.btnExit.Location = new System.Drawing.Point(0, 682);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(183, 45);
@@ -126,72 +120,6 @@
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // panelToolsSubMenu
-            // 
-            this.panelToolsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelToolsSubMenu.Controls.Add(this.button10);
-            this.panelToolsSubMenu.Controls.Add(this.button12);
-            this.panelToolsSubMenu.Controls.Add(this.button13);
-            this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 513);
-            this.panelToolsSubMenu.Name = "panelToolsSubMenu";
-            this.panelToolsSubMenu.Size = new System.Drawing.Size(183, 124);
-            this.panelToolsSubMenu.TabIndex = 7;
-            // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.Color.Silver;
-            this.button10.Location = new System.Drawing.Point(0, 80);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(183, 40);
-            this.button10.TabIndex = 2;
-            this.button10.Text = "Preferences";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button12
-            // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.ForeColor = System.Drawing.Color.Silver;
-            this.button12.Location = new System.Drawing.Point(0, 40);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(183, 40);
-            this.button12.TabIndex = 1;
-            this.button12.Text = "Effects and filters";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.Silver;
-            this.button13.Location = new System.Drawing.Point(0, 0);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(183, 40);
-            this.button13.TabIndex = 0;
-            this.button13.Text = "Tất cả nhà cung cấp";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // btnTools
             // 
@@ -442,7 +370,7 @@
             this.panel1.Controls.Add(this.btn_HoaDonXuat);
             this.panel1.Controls.Add(this.btn_HoaDonNhap);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 682);
+            this.panel1.Location = new System.Drawing.Point(0, 558);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 79);
             this.panel1.TabIndex = 0;
@@ -485,7 +413,7 @@
             this.btn_ThongTinCaNhan.ForeColor = System.Drawing.Color.Silver;
             this.btn_ThongTinCaNhan.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThongTinCaNhan.Image")));
             this.btn_ThongTinCaNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(0, 761);
+            this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(0, 637);
             this.btn_ThongTinCaNhan.Name = "btn_ThongTinCaNhan";
             this.btn_ThongTinCaNhan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_ThongTinCaNhan.Size = new System.Drawing.Size(183, 45);
@@ -510,7 +438,6 @@
             this.Name = "EmployeeDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelSideMenu.ResumeLayout(false);
-            this.panelToolsSubMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
             this.panelMediaSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
@@ -528,10 +455,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnMedia;
-        private System.Windows.Forms.Panel panelToolsSubMenu;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button btnTools;
         private System.Windows.Forms.Panel panelPlaylistSubMenu;
         private System.Windows.Forms.Button button1;
