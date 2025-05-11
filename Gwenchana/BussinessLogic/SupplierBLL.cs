@@ -26,6 +26,15 @@ namespace Gwenchana.BussinessLogic
             return _supplierDAL.GetAllSuppliersDataTable();
         }
 
+        public bool AddSupplier(DataAccess.DTO.Supplier supplier)
+        {
+            return _supplierDAL.AddSupplier(supplier);
+        }
+
+        public bool DeleteSupplier(int id)
+        {
+            return _supplierDAL.DeleteSupplier(id);
+        }
 
     }
 }

@@ -18,6 +18,8 @@ namespace Gwenchana
         private string message;
         private bool isSuccessful;
         private bool isEdit;
+        private string button;
+
 
         //Constructor
         public PetView()
@@ -37,7 +39,15 @@ namespace Gwenchana
             //List<Supplier> suppliers = supplierBLL.GetAllSuppliers();
             DataTable dt = supplierBLL.GetAllSuppliersDataTable();
             dataGridView.ReadOnly = true;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            
             dataGridView.DataSource = dt;
+            dataGridView.Columns["Supplier_Id"].Visible = false;
+            dataGridView.Columns["supplierName"].HeaderText = "Tên";
+            dataGridView.Columns["phoneNumber"].HeaderText = "Số điện thoại";
+            dataGridView.Columns["address"].HeaderText = "Địa chỉ";
+            dataGridView.Columns["email"].HeaderText = "Email";
 
         }
 
@@ -69,7 +79,7 @@ namespace Gwenchana
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            button = "Edit";
         }
 
         private void txtPetId_TextChanged(object sender, EventArgs e)
@@ -84,16 +94,110 @@ namespace Gwenchana
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
+            button = "Add";
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
+            label3.ForeColor = Color.Gray;
+            txtPetId.ForeColor = Color.Gray;
+            txtPetId.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            txt_SupplierAddress.Clear();
+            txt_SupplierEmail.Clear();
+            txt_SupplierName.Clear();
+            txt_SupplierPhone.Clear();
+            txtPetId.Clear();
+
+
             tabControl1.TabPages.Add(tabPagePetList);
             tabControl1.TabPages.Remove(tabPagePetDetail);
             tabControl1.SelectedTab = tabPagePetList;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            button = "Delete";
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+
+            label3.ForeColor = Color.Gray;
+            txtPetId.ForeColor = Color.Gray;
+            txtPetId.Enabled = false;
+            txt_SupplierName.Enabled = false;
+            txt_SupplierPhone.Enabled = false;
+            txt_SupplierAddress.Enabled = false;
+            txt_SupplierEmail.Enabled = false;
+            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
+            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
+            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
+            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
+            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(button == "Add")
+            {
+                // Add new supplier logic
+                // Call SaveEvent or any other logic
+                Supplier supplier = new Supplier
+                {
+                    supplierName = txt_SupplierName.Text,
+                    phoneNumber = txt_SupplierPhone.Text,
+                    address = txt_SupplierAddress.Text,
+                    email = txt_SupplierEmail.Text
+                };
+
+                SupplierBLL supplierBLL = new SupplierBLL();
+                isSuccessful = supplierBLL.AddSupplier(supplier);
+                if (isSuccessful)
+                {
+                    message = "Thêm nhà phân phối thành công.";
+                    MessageBox.Show(message);
+                    LoadData();
+                }
+                else
+                {
+                    message = "Thêm nhà phân phối thất bại.";
+                    MessageBox.Show(message);
+                }
+                tabControl1.TabPages.Add(tabPagePetList);
+                tabControl1.TabPages.Remove(tabPagePetDetail);
+                tabControl1.SelectedTab = tabPagePetList;
+
+            }
+            else if (button == "Edit")
+            {
+                // Edit supplier logic
+                // Call SaveEvent or any other logic
+            }
+            else if (button == "Delete")
+            {
+                // Delete supplier logic
+                // Call SaveEvent or any other logic
+                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
+                SupplierBLL supplierBLL = new SupplierBLL();
+                isSuccessful = supplierBLL.DeleteSupplier(supplierId);
+                if (isSuccessful)
+                {
+                    message = "Xoá nhà phân phối thành công.";
+                    MessageBox.Show(message);
+                    LoadData();
+                }
+                else
+                {
+                    message = "Xoá nhà phân phối thất bại.";
+                    MessageBox.Show(message);
+                }
+                tabControl1.TabPages.Add(tabPagePetList);
+                tabControl1.TabPages.Remove(tabPagePetDetail);
+                tabControl1.SelectedTab = tabPagePetList;
+            }
         }
     }
 }

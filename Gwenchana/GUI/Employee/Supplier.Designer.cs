@@ -45,15 +45,15 @@ namespace Gwenchana
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPetColour = new System.Windows.Forms.TextBox();
+            this.txt_SupplierAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPetType = new System.Windows.Forms.TextBox();
+            this.txt_SupplierPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPetName = new System.Windows.Forms.TextBox();
+            this.txt_SupplierName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPetId = new System.Windows.Forms.TextBox();
             this.lb_Email = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_SupplierEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -156,6 +156,7 @@ namespace Gwenchana
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -201,15 +202,15 @@ namespace Gwenchana
             // tabPagePetDetail
             // 
             this.tabPagePetDetail.Controls.Add(this.lb_Email);
-            this.tabPagePetDetail.Controls.Add(this.textBox1);
+            this.tabPagePetDetail.Controls.Add(this.txt_SupplierEmail);
             this.tabPagePetDetail.Controls.Add(this.btnCancel);
             this.tabPagePetDetail.Controls.Add(this.btnSave);
             this.tabPagePetDetail.Controls.Add(this.label6);
-            this.tabPagePetDetail.Controls.Add(this.txtPetColour);
+            this.tabPagePetDetail.Controls.Add(this.txt_SupplierAddress);
             this.tabPagePetDetail.Controls.Add(this.label5);
-            this.tabPagePetDetail.Controls.Add(this.txtPetType);
+            this.tabPagePetDetail.Controls.Add(this.txt_SupplierPhone);
             this.tabPagePetDetail.Controls.Add(this.label4);
-            this.tabPagePetDetail.Controls.Add(this.txtPetName);
+            this.tabPagePetDetail.Controls.Add(this.txt_SupplierName);
             this.tabPagePetDetail.Controls.Add(this.label3);
             this.tabPagePetDetail.Controls.Add(this.txtPetId);
             this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +240,7 @@ namespace Gwenchana
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label6
             // 
@@ -250,12 +252,12 @@ namespace Gwenchana
             this.label6.TabIndex = 13;
             this.label6.Text = "Địa chỉ :";
             // 
-            // txtPetColour
+            // txt_SupplierAddress
             // 
-            this.txtPetColour.Location = new System.Drawing.Point(63, 198);
-            this.txtPetColour.Name = "txtPetColour";
-            this.txtPetColour.Size = new System.Drawing.Size(380, 29);
-            this.txtPetColour.TabIndex = 12;
+            this.txt_SupplierAddress.Location = new System.Drawing.Point(63, 198);
+            this.txt_SupplierAddress.Name = "txt_SupplierAddress";
+            this.txt_SupplierAddress.Size = new System.Drawing.Size(380, 29);
+            this.txt_SupplierAddress.TabIndex = 12;
             // 
             // label5
             // 
@@ -267,12 +269,12 @@ namespace Gwenchana
             this.label5.TabIndex = 11;
             this.label5.Text = "Số điện thoại :";
             // 
-            // txtPetType
+            // txt_SupplierPhone
             // 
-            this.txtPetType.Location = new System.Drawing.Point(260, 125);
-            this.txtPetType.Name = "txtPetType";
-            this.txtPetType.Size = new System.Drawing.Size(183, 29);
-            this.txtPetType.TabIndex = 10;
+            this.txt_SupplierPhone.Location = new System.Drawing.Point(260, 125);
+            this.txt_SupplierPhone.Name = "txt_SupplierPhone";
+            this.txt_SupplierPhone.Size = new System.Drawing.Size(183, 29);
+            this.txt_SupplierPhone.TabIndex = 10;
             // 
             // label4
             // 
@@ -284,12 +286,12 @@ namespace Gwenchana
             this.label4.TabIndex = 9;
             this.label4.Text = "Tên :";
             // 
-            // txtPetName
+            // txt_SupplierName
             // 
-            this.txtPetName.Location = new System.Drawing.Point(63, 125);
-            this.txtPetName.Name = "txtPetName";
-            this.txtPetName.Size = new System.Drawing.Size(154, 29);
-            this.txtPetName.TabIndex = 8;
+            this.txt_SupplierName.Location = new System.Drawing.Point(63, 125);
+            this.txt_SupplierName.Name = "txt_SupplierName";
+            this.txt_SupplierName.Size = new System.Drawing.Size(154, 29);
+            this.txt_SupplierName.TabIndex = 8;
             // 
             // label3
             // 
@@ -320,12 +322,12 @@ namespace Gwenchana
             this.lb_Email.TabIndex = 17;
             this.lb_Email.Text = "Email :";
             // 
-            // textBox1
+            // txt_SupplierEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(63, 263);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(380, 29);
-            this.textBox1.TabIndex = 16;
+            this.txt_SupplierEmail.Location = new System.Drawing.Point(63, 263);
+            this.txt_SupplierEmail.Name = "txt_SupplierEmail";
+            this.txt_SupplierEmail.Size = new System.Drawing.Size(380, 29);
+            this.txt_SupplierEmail.TabIndex = 16;
             // 
             // PetView
             // 
@@ -367,15 +369,15 @@ namespace Gwenchana
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPetColour;
+        private System.Windows.Forms.TextBox txt_SupplierAddress;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPetType;
+        private System.Windows.Forms.TextBox txt_SupplierPhone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPetName;
+        private System.Windows.Forms.TextBox txt_SupplierName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPetId;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lb_Email;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_SupplierEmail;
     }
 }
