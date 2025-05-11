@@ -78,6 +78,24 @@
     <Compile Include="GUI\Employee\EmployeeMenu.designer.cs">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Employee\Products\Accessories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Products\Accessories.Designer.cs">
+      <DependentUpon>Accessories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Employee\Products\PC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Products\PC.Designer.cs">
+      <DependentUpon>PC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Employee\Products\Laptop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Products\Laptop.Designer.cs">
+      <DependentUpon>Laptop.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Employee\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\EmployeeMenu.resx">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Products\Accessories.resx">
+      <DependentUpon>Accessories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Products\PC.resx">
+      <DependentUpon>PC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Products\Laptop.resx">
+      <DependentUpon>Laptop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>

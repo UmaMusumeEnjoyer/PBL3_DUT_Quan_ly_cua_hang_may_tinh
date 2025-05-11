@@ -222,5 +222,15 @@ namespace Gwenchana
         {
 
         }
+
+        private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
