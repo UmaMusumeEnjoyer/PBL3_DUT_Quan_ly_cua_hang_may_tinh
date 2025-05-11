@@ -80,23 +80,23 @@
     <Compile Include="GUI\Employee\EmployeeMenu.designer.cs">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Products\Accessories.cs">
+    <Compile Include="GUI\Employee\Products\AccessoriesUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Products\Accessories.Designer.cs">
-      <DependentUpon>Accessories.cs</DependentUpon>
+    <Compile Include="GUI\Employee\Products\AccessoriesUI.Designer.cs">
+      <DependentUpon>AccessoriesUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Products\PC.cs">
+    <Compile Include="GUI\Employee\Products\PCUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Products\PC.Designer.cs">
-      <DependentUpon>PC.cs</DependentUpon>
+    <Compile Include="GUI\Employee\Products\PCUI.Designer.cs">
+      <DependentUpon>PCUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Products\Laptop.cs">
+    <Compile Include="GUI\Employee\Products\LaptopUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Products\Laptop.Designer.cs">
-      <DependentUpon>Laptop.cs</DependentUpon>
+    <Compile Include="GUI\Employee\Products\LaptopUI.Designer.cs">
+      <DependentUpon>LaptopUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Employee\Supplier.cs">
       <SubType>Form</SubType>
@@ -124,14 +124,14 @@
     <EmbeddedResource Include="GUI\Employee\EmployeeMenu.resx">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Products\Accessories.resx">
-      <DependentUpon>Accessories.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Employee\Products\AccessoriesUI.resx">
+      <DependentUpon>AccessoriesUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Products\PC.resx">
-      <DependentUpon>PC.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Employee\Products\PCUI.resx">
+      <DependentUpon>PCUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Products\Laptop.resx">
-      <DependentUpon>Laptop.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Employee\Products\LaptopUI.resx">
+      <DependentUpon>LaptopUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>

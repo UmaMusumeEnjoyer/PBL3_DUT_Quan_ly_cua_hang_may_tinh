@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.DAL;
+
 
 
 namespace Gwenchana
 {
-    public partial class Laptop : Form
+    public partial class LaptopUI : Form
     {
         //Fields
         private string message;
@@ -23,7 +25,7 @@ namespace Gwenchana
 
 
         //Constructor
-        public Laptop()
+        public LaptopUI()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
@@ -39,6 +41,9 @@ namespace Gwenchana
             LaptopBLL laptopBLL = new LaptopBLL();
             DataTable dt = laptopBLL.GetAllLaptopsDataTable();
             dataGridView.DataSource = dt;
+            dataGridView.ReadOnly = true;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
             dataGridView.Columns["Product_Id"].Visible = false;
             dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
             dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
@@ -84,15 +89,20 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
+
             label3.ForeColor = Color.Gray;
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
-            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
-            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
-            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
-            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
 
+            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
+            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
+            txt_Manufacturer.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
+            txt_Spetification.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
+            txt_LaptopWeight.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
+            txt_ScreenSize.Text = dataGridView.CurrentRow.Cells["screenSize"].Value.ToString();
+            txt_LaptopColour.Text = dataGridView.CurrentRow.Cells["colour"].Value.ToString();
+            txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
+            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
         }
 
@@ -106,16 +116,6 @@ namespace Gwenchana
 
         }
 
-        private void btnAddNew_Click(object sender, EventArgs e)
-        {
-            button = "Add";
-            tabControl1.TabPages.Add(tabPagePetDetail);
-            tabControl1.TabPages.Remove(tabPagePetList);
-            tabControl1.SelectedTab = tabPagePetDetail;
-            label3.ForeColor = Color.Gray;
-            txt_LaptopID.ForeColor = Color.Gray;
-            txt_LaptopID.Enabled = false;
-        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -125,18 +125,28 @@ namespace Gwenchana
         private void ResetFormState()
         {
             // Clear các ô nhập liệu
-            txt_SupplierAddress.Clear();
-            txt_SupplierEmail.Clear();
+            txt_Spetification.Clear();
+            txt_LaptopPrice.Clear();
             txt_LaptopName.Clear();
-            txt_SupplierPhone.Clear();
+            txt_Manufacturer.Clear();
             txt_LaptopID.Clear();
+            txt_LaptopWeight.Clear();
+            txt_ScreenSize.Clear();
+            txt_LaptopColour.Clear();
+            txt_stockQuantity.Clear();
+            
 
             // Kích hoạt lại tất cả textbox nếu từng bị disable (Delete mode)
             txt_LaptopName.Enabled = true;
-            txt_SupplierPhone.Enabled = true;
-            txt_SupplierAddress.Enabled = true;
-            txt_SupplierEmail.Enabled = true;
+            txt_Manufacturer.Enabled = true;
+            txt_Spetification.Enabled = true;
+            txt_LaptopPrice.Enabled = true;
             txt_LaptopID.Enabled = true;
+            txt_LaptopWeight.Enabled = true;
+            txt_ScreenSize.Enabled = true;
+            txt_LaptopColour.Enabled = true;
+            txt_stockQuantity.Enabled = true;
+            
             txt_LaptopID.ForeColor = SystemColors.WindowText;
             label3.ForeColor = SystemColors.ControlText;
 
@@ -164,75 +174,61 @@ namespace Gwenchana
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
             txt_LaptopName.Enabled = false;
-            txt_SupplierPhone.Enabled = false;
-            txt_SupplierAddress.Enabled = false;
-            txt_SupplierEmail.Enabled = false;
-            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
-            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
-            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
-            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+            txt_Manufacturer.Enabled = false;
+            txt_Spetification.Enabled = false;
+            txt_LaptopPrice.Enabled = false;
+            txt_LaptopWeight.Enabled = false;
+            txt_ScreenSize.Enabled = false;
+            txt_LaptopColour.Enabled = false;
+            txt_stockQuantity.Enabled = false;
+
+
+            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
+            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
+            txt_Manufacturer.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
+            txt_Spetification.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
+            txt_LaptopWeight.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
+            txt_ScreenSize.Text = dataGridView.CurrentRow.Cells["screenSize"].Value.ToString();
+            txt_LaptopColour.Text = dataGridView.CurrentRow.Cells["colour"].Value.ToString();
+            txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
+            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(button == "Add")
+            if (button == "Edit")
             {
-                // Add new supplier logic
-                // Call SaveEvent or any other logic
-                Supplier supplier = new Supplier
+                int productID = Convert.ToInt32(dataGridView.CurrentRow.Cells["Product_Id"].Value);
+
+                Laptop laptop = new Laptop
                 {
-                    supplierName = txt_LaptopName.Text,
-                    phoneNumber = txt_SupplierPhone.Text,
-                    address = txt_SupplierAddress.Text,
-                    email = txt_SupplierEmail.Text
+                    Product_Id = productID,                           // Thuộc tính kế thừa từ Product
+                    productName = txt_LaptopName.Text,                // Thuộc tính kế thừa từ Product
+                    Manufacturer = txt_Manufacturer.Text,             // Thuộc tính kế thừa từ Product
+                    price = Convert.ToDecimal(txt_LaptopPrice.Text),  // Thuộc tính kế thừa từ Product
+                    stockQuantity = Convert.ToInt32(txt_stockQuantity.Text), // Thuộc tính kế thừa từ Product
+
+                    Spectification = txt_Spetification.Text,          // Thuộc tính riêng của Laptop
+                    Weight = Convert.ToDecimal(txt_LaptopWeight.Text),  // Thuộc tính riêng của Laptop
+                    screenSize = txt_ScreenSize.Text, // Thuộc tính riêng của Laptop
+                    Colour = txt_LaptopColour.Text                    // Thuộc tính riêng của Laptop
                 };
 
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.AddSupplier(supplier);
+                LaptopBLL laptopBLL = new LaptopBLL();
+                isSuccessful = laptopBLL.UpdateLaptop(laptop);
                 if (isSuccessful)
                 {
-                    message = "Thêm nhà phân phối thành công.";
+                    message = "Cập nhật sản phẩm thành công.";
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Thêm nhà phân phối thất bại.";
+                    message = "Cập nhật sản phẩm thất bại.";
                     MessageBox.Show(message);
                 }
-                tabControl1.TabPages.Add(tabPagePetList);
-                tabControl1.TabPages.Remove(tabPagePetDetail);
-                tabControl1.SelectedTab = tabPagePetList;
 
-            }
-            else if (button == "Edit")
-            {
-                // Edit supplier logic
-                // Call SaveEvent or any other logic
-                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
-                Supplier supplier = new Supplier
-                {
-                    Supplier_Id = supplierId,
-                    supplierName = txt_LaptopName.Text,
-                    phoneNumber = txt_SupplierPhone.Text,
-                    address = txt_SupplierAddress.Text,
-                    email = txt_SupplierEmail.Text
-                };
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.UpdateSupplier(supplier);
-                if (isSuccessful)
-                {
-                    message = "Cập nhật nhà phân phối thành công.";
-                    MessageBox.Show(message);
-                    LoadData();
-                }
-                else
-                {
-                    message = "Cập nhật nhà phân phối thất bại.";
-                    MessageBox.Show(message);
-                }
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
@@ -241,20 +237,21 @@ namespace Gwenchana
             {
                 // Delete supplier logic
                 // Call SaveEvent or any other logic
-                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.DeleteSupplier(supplierId);
+                int productID = Convert.ToInt32(dataGridView.CurrentRow.Cells["Product_Id"].Value);
+                LaptopBLL laptopBLL = new LaptopBLL();
+                isSuccessful = laptopBLL.DeleteLaptop(productID);
                 if (isSuccessful)
                 {
-                    message = "Xoá nhà phân phối thành công.";
+                    message = "Xóa sản phẩm thành công.";
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Xoá nhà phân phối thất bại.";
+                    message = "Xóa sản phẩm thất bại.";
                     MessageBox.Show(message);
                 }
+
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
@@ -272,6 +269,16 @@ namespace Gwenchana
                     break;
                 }
             }
+        }
+
+        private void txt_Manufacturer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_LaptopWeight_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

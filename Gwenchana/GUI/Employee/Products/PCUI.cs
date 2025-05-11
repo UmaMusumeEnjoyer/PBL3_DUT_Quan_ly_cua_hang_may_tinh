@@ -12,7 +12,7 @@ using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana
 {
-    public partial class PC : Form
+    public partial class PCUI : Form
     {
         //Fields
         private string message;
@@ -22,7 +22,7 @@ namespace Gwenchana
 
 
         //Constructor
-        public PC()
+        public PCUI()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
