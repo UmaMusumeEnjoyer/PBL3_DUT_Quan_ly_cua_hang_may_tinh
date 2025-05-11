@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gwenchana.BussinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana
 {
@@ -22,9 +24,24 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
+
+            //tabControl1.TabPages.Remove(tabPagePetDetail);
             btnClose.Click += delegate { this.Close(); };
         }
+
+        private void LoadData()
+        {
+            SupplierBLL supplierBLL = new SupplierBLL();
+            //List<Supplier> suppliers = supplierBLL.GetAllSuppliers();
+            DataTable dt = supplierBLL.GetAllSuppliersDataTable();
+            dataGridView.ReadOnly = true;
+            dataGridView.DataSource = dt;
+
+        }
+
+
 
         private void AssociateAndRaiseViewEvents()
         {
@@ -37,54 +54,8 @@ namespace Gwenchana
             //Others
         }
 
-        //Properties
-        public string PetId
-        {
-            get { return txtPetId.Text; }
-            set { txtPetId.Text = value; }
-        }
+ 
 
-        public string PetName
-        {
-            get { return txtPetName.Text; }
-            set { txtPetName.Text = value; }
-        }
-
-        public string PetType
-        {
-            get { return txtPetType.Text; }
-            set { txtPetType.Text = value; }
-        }
-
-        public string PetColour
-        {
-            get { return txtPetColour.Text; }
-            set { txtPetColour.Text = value; }
-        }
-
-        public string SearchValue
-        {
-            get { return txtSearch.Text; }
-            set { txtSearch.Text = value; }
-        }
-
-        public bool IsEdit
-        {
-            get { return isEdit; }
-            set { isEdit = value; }
-        }
-
-        public bool IsSuccessful
-        {
-            get { return isSuccessful; }
-            set { isSuccessful = value; }
-        }
-
-        public string Message
-        {
-            get { return message; }
-            set { message = value; }
-        }
 
         //Events
         public event EventHandler SearchEvent;
@@ -94,11 +65,7 @@ namespace Gwenchana
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        //Methods
-        public void SetPetListBindingSource(BindingSource petList)
-        {
-            dataGridView.DataSource = petList;
-        }
+       
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -108,6 +75,25 @@ namespace Gwenchana
         private void txtPetId_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(tabPagePetList);
+            tabControl1.TabPages.Remove(tabPagePetDetail);
+            tabControl1.SelectedTab = tabPagePetList;
         }
     }
 }

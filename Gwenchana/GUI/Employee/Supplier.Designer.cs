@@ -52,6 +52,8 @@ namespace Gwenchana
             this.txtPetName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPetId = new System.Windows.Forms.TextBox();
+            this.lb_Email = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -117,7 +119,7 @@ namespace Gwenchana
             this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePetList.Size = new System.Drawing.Size(884, 378);
             this.tabPagePetList.TabIndex = 0;
-            this.tabPagePetList.Text = "Pet list";
+            this.tabPagePetList.Text = "Danh sách nhà cung cấp";
             this.tabPagePetList.UseVisualStyleBackColor = true;
             // 
             // dataGridView
@@ -141,9 +143,9 @@ namespace Gwenchana
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(167, 20);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Search pet:";
+            this.label2.Text = "Tìm kiến nhà cung cấp";
             // 
             // btnDelete
             // 
@@ -152,7 +154,7 @@ namespace Gwenchana
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 30);
             this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Xoá";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnEdit
@@ -162,7 +164,7 @@ namespace Gwenchana
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 30);
             this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
+            this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -173,8 +175,9 @@ namespace Gwenchana
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(99, 30);
             this.btnAddNew.TabIndex = 2;
-            this.btnAddNew.Text = "Add new";
+            this.btnAddNew.Text = "Thêm";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnSearch
             // 
@@ -183,7 +186,7 @@ namespace Gwenchana
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(99, 30);
             this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtSearch
@@ -197,6 +200,8 @@ namespace Gwenchana
             // 
             // tabPagePetDetail
             // 
+            this.tabPagePetDetail.Controls.Add(this.lb_Email);
+            this.tabPagePetDetail.Controls.Add(this.textBox1);
             this.tabPagePetDetail.Controls.Add(this.btnCancel);
             this.tabPagePetDetail.Controls.Add(this.btnSave);
             this.tabPagePetDetail.Controls.Add(this.label6);
@@ -213,25 +218,26 @@ namespace Gwenchana
             this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePetDetail.Size = new System.Drawing.Size(884, 378);
             this.tabPagePetDetail.TabIndex = 1;
-            this.tabPagePetDetail.Text = "Pet detail";
+            this.tabPagePetDetail.Text = "Chi tiết nhà cung cấp";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(260, 247);
+            this.btnCancel.Location = new System.Drawing.Point(260, 304);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(183, 44);
             this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Huỷ";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(63, 247);
+            this.btnSave.Location = new System.Drawing.Point(63, 304);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(183, 44);
             this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -240,9 +246,9 @@ namespace Gwenchana
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(59, 175);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 20);
+            this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Pet colour:";
+            this.label6.Text = "Địa chỉ :";
             // 
             // txtPetColour
             // 
@@ -257,9 +263,9 @@ namespace Gwenchana
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(256, 102);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 20);
+            this.label5.Size = new System.Drawing.Size(110, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Pet type:";
+            this.label5.Text = "Số điện thoại :";
             // 
             // txtPetType
             // 
@@ -274,9 +280,9 @@ namespace Gwenchana
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(59, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 20);
+            this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Pet name:";
+            this.label4.Text = "Tên :";
             // 
             // txtPetName
             // 
@@ -291,9 +297,10 @@ namespace Gwenchana
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(59, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.Size = new System.Drawing.Size(39, 20);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Pet ID:";
+            this.label3.Text = "Mã :";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtPetId
             // 
@@ -302,6 +309,23 @@ namespace Gwenchana
             this.txtPetId.Size = new System.Drawing.Size(154, 29);
             this.txtPetId.TabIndex = 6;
             this.txtPetId.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
+            // 
+            // lb_Email
+            // 
+            this.lb_Email.AutoSize = true;
+            this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Email.Location = new System.Drawing.Point(59, 240);
+            this.lb_Email.Name = "lb_Email";
+            this.lb_Email.Size = new System.Drawing.Size(56, 20);
+            this.lb_Email.TabIndex = 17;
+            this.lb_Email.Text = "Email :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(63, 263);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(380, 29);
+            this.textBox1.TabIndex = 16;
             // 
             // PetView
             // 
@@ -351,5 +375,7 @@ namespace Gwenchana
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPetId;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lb_Email;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
