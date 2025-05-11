@@ -21,12 +21,12 @@ namespace Gwenchana.DataAccess.DAL
                 list.Add(new DTO.Laptop
                 {
                     Product_Id = Convert.ToInt32(row["Product_Id"]),
-                    productName = row["product_Name"].ToString(),
+                    productName = row["productName"].ToString(),
                     price = Convert.ToDecimal(row["price"]),
                     stockQuantity = Convert.ToInt32(row["stockQuantity"]),
                     Weight = Convert.ToDecimal(row["weight"]),
                     screenSize = row["screenSize"].ToString(),
-                    Spectification = row["spectification"].ToString(),
+                    Spectification = row["specification"].ToString(),
                     Colour = row["colour"].ToString(),
                     Manufacturer = row["Manufacturer"].ToString(),
                 });

@@ -31,6 +31,7 @@ namespace Gwenchana
             AssociateAndRaiseViewEvents();
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
+            
 
             //tabControl1.TabPages.Remove(tabPagePetDetail);
             btnClose.Click += delegate { this.Close(); };
@@ -260,15 +261,30 @@ namespace Gwenchana
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < dataGridView.Rows.Count; i++)
+            string searchText = txtSearch.Text.Trim();
+            //string a = cbb_LaptopSearch.SelectedItem.ToString();
+
+            LaptopBLL laptopBLL = new LaptopBLL();
+            if (cbb_LaptopSearch.SelectedItem.ToString() == "Màu sắc")
             {
-                if (dataGridView.Rows[i].Cells[1].Value.ToString().Contains(txtSearch.Text))
-                {
-                    dataGridView.Rows[i].Selected = true;
-                    dataGridView.CurrentCell = dataGridView.Rows[i].Cells[1];
-                    break;
-                }
+                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
             }
+            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
+            {
+                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.productName.Contains(searchText)).ToList();
+            }
+            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
+            {
+                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Manufacturer.Contains(searchText)).ToList();
+            }
+            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Cân nặng")
+            {
+                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Weight ==Convert.ToDecimal(searchText)).ToList();
+            }
+
+
+
+            
         }
 
         private void txt_Manufacturer_TextChanged(object sender, EventArgs e)
@@ -279,6 +295,23 @@ namespace Gwenchana
         private void txt_LaptopWeight_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void btn_ClearFilter_Click(object sender, EventArgs e)
+        {
+            cbb_LaptopSearch.SelectedIndex = -1;
+            txtSearch.Clear();
+            LoadData();
+        }
+
+        private void cbb_LaptopSearch_TextUpdate(object sender, EventArgs e)
+        {
+            string a = cbb_LaptopSearch.SelectedItem.ToString();
         }
     }
 }

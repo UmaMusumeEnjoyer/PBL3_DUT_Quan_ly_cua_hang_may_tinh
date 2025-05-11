@@ -34,6 +34,9 @@ namespace Gwenchana
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.btn_ClearFilter = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -87,13 +90,13 @@ namespace Gwenchana
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(892, 56);
+            this.panel1.Size = new System.Drawing.Size(866, 56);
             this.panel1.TabIndex = 1;
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(851, 12);
+            this.btnClose.Location = new System.Drawing.Point(825, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(37, 30);
             this.btnClose.TabIndex = 8;
@@ -108,11 +111,14 @@ namespace Gwenchana
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(892, 411);
+            this.tabControl1.Size = new System.Drawing.Size(866, 411);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPagePetList
             // 
+            this.tabPagePetList.Controls.Add(this.btn_ClearFilter);
+            this.tabPagePetList.Controls.Add(this.label7);
+            this.tabPagePetList.Controls.Add(this.cbb_LaptopSearch);
             this.tabPagePetList.Controls.Add(this.dataGridView);
             this.tabPagePetList.Controls.Add(this.label2);
             this.tabPagePetList.Controls.Add(this.btnDelete);
@@ -123,10 +129,47 @@ namespace Gwenchana
             this.tabPagePetList.Location = new System.Drawing.Point(4, 29);
             this.tabPagePetList.Name = "tabPagePetList";
             this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetList.Size = new System.Drawing.Size(884, 378);
+            this.tabPagePetList.Size = new System.Drawing.Size(858, 378);
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Laptop";
             this.tabPagePetList.UseVisualStyleBackColor = true;
+            // 
+            // btn_ClearFilter
+            // 
+            this.btn_ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ClearFilter.Location = new System.Drawing.Point(747, 6);
+            this.btn_ClearFilter.Name = "btn_ClearFilter";
+            this.btn_ClearFilter.Size = new System.Drawing.Size(74, 28);
+            this.btn_ClearFilter.TabIndex = 10;
+            this.btn_ClearFilter.Text = "Xoá";
+            this.btn_ClearFilter.UseVisualStyleBackColor = true;
+            this.btn_ClearFilter.Click += new System.EventHandler(this.btn_ClearFilter_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(512, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Tiêu chí :";
+            // 
+            // cbb_LaptopSearch
+            // 
+            this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_LaptopSearch.FormattingEnabled = true;
+            this.cbb_LaptopSearch.Items.AddRange(new object[] {
+            "Tên",
+            "Hãng sản xuất",
+            "Cân nặng",
+            "Màu sắc"});
+            this.cbb_LaptopSearch.Location = new System.Drawing.Point(601, 6);
+            this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
+            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 28);
+            this.cbb_LaptopSearch.TabIndex = 8;
+            this.cbb_LaptopSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbb_LaptopSearch.TextUpdate += new System.EventHandler(this.cbb_LaptopSearch_TextUpdate);
             // 
             // dataGridView
             // 
@@ -137,17 +180,17 @@ namespace Gwenchana
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(24, 63);
+            this.dataGridView.Location = new System.Drawing.Point(24, 73);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(737, 307);
+            this.dataGridView.Size = new System.Drawing.Size(711, 297);
             this.dataGridView.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 8);
+            this.label2.Location = new System.Drawing.Point(20, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 5;
@@ -156,7 +199,7 @@ namespace Gwenchana
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(767, 134);
+            this.btnDelete.Location = new System.Drawing.Point(741, 134);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(99, 30);
             this.btnDelete.TabIndex = 4;
@@ -167,7 +210,7 @@ namespace Gwenchana
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(767, 98);
+            this.btnEdit.Location = new System.Drawing.Point(741, 98);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(99, 30);
             this.btnEdit.TabIndex = 3;
@@ -178,7 +221,7 @@ namespace Gwenchana
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(668, 27);
+            this.btnSearch.Location = new System.Drawing.Point(642, 37);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(99, 30);
             this.btnSearch.TabIndex = 1;
@@ -190,9 +233,9 @@ namespace Gwenchana
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(24, 31);
+            this.txtSearch.Location = new System.Drawing.Point(24, 41);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(638, 26);
+            this.txtSearch.Size = new System.Drawing.Size(612, 26);
             this.txtSearch.TabIndex = 0;
             // 
             // tabPagePetDetail
@@ -407,7 +450,7 @@ namespace Gwenchana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 467);
+            this.ClientSize = new System.Drawing.Size(866, 467);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -460,5 +503,8 @@ namespace Gwenchana
         private System.Windows.Forms.TextBox txt_LaptopWeight;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_LaptopColour;
+        private System.Windows.Forms.ComboBox cbb_LaptopSearch;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_ClearFilter;
     }
 }
