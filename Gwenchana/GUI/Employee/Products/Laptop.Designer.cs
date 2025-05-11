@@ -42,18 +42,26 @@ namespace Gwenchana
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_SupplierAddress = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_SupplierPhone = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_SupplierName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPetId = new System.Windows.Forms.TextBox();
             this.lb_Email = new System.Windows.Forms.Label();
             this.txt_SupplierEmail = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lb6 = new System.Windows.Forms.Label();
+            this.txt_SupplierAddress = new System.Windows.Forms.TextBox();
+            this.txt_Manufacturer = new System.Windows.Forms.Label();
+            this.txt_SupplierPhone = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_LaptopName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_LaptopID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_ScreenSize = new System.Windows.Forms.TextBox();
+            this.txt_LaptopWeight = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelxxx = new System.Windows.Forms.Label();
+            this.txt_stockQuantity = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_LaptopColour = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -68,9 +76,9 @@ namespace Gwenchana
             this.label1.Location = new System.Drawing.Point(53, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.Size = new System.Drawing.Size(72, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nhà cung cấp";
+            this.label1.Text = "Laptop";
             // 
             // panel1
             // 
@@ -119,14 +127,14 @@ namespace Gwenchana
             this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePetList.Size = new System.Drawing.Size(884, 378);
             this.tabPagePetList.TabIndex = 0;
-            this.tabPagePetList.Text = "Danh sách nhà cung cấp";
+            this.tabPagePetList.Text = "Laptop";
             this.tabPagePetList.UseVisualStyleBackColor = true;
             // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
@@ -143,9 +151,9 @@ namespace Gwenchana
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 20);
+            this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Tìm kiến nhà cung cấp";
+            this.label2.Text = "Tìm kiếm : ";
             // 
             // btnDelete
             // 
@@ -193,7 +201,7 @@ namespace Gwenchana
             // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(24, 31);
             this.txtSearch.Name = "txtSearch";
@@ -202,26 +210,51 @@ namespace Gwenchana
             // 
             // tabPagePetDetail
             // 
+            this.tabPagePetDetail.Controls.Add(this.label5);
+            this.tabPagePetDetail.Controls.Add(this.txt_LaptopColour);
+            this.tabPagePetDetail.Controls.Add(this.labelxxx);
+            this.tabPagePetDetail.Controls.Add(this.txt_stockQuantity);
+            this.tabPagePetDetail.Controls.Add(this.label6);
+            this.tabPagePetDetail.Controls.Add(this.txt_ScreenSize);
+            this.tabPagePetDetail.Controls.Add(this.txt_LaptopWeight);
+            this.tabPagePetDetail.Controls.Add(this.textBox2);
             this.tabPagePetDetail.Controls.Add(this.lb_Email);
             this.tabPagePetDetail.Controls.Add(this.txt_SupplierEmail);
             this.tabPagePetDetail.Controls.Add(this.btnCancel);
             this.tabPagePetDetail.Controls.Add(this.btnSave);
-            this.tabPagePetDetail.Controls.Add(this.label6);
+            this.tabPagePetDetail.Controls.Add(this.lb6);
             this.tabPagePetDetail.Controls.Add(this.txt_SupplierAddress);
-            this.tabPagePetDetail.Controls.Add(this.label5);
+            this.tabPagePetDetail.Controls.Add(this.txt_Manufacturer);
             this.tabPagePetDetail.Controls.Add(this.txt_SupplierPhone);
             this.tabPagePetDetail.Controls.Add(this.label4);
-            this.tabPagePetDetail.Controls.Add(this.txt_SupplierName);
+            this.tabPagePetDetail.Controls.Add(this.txt_LaptopName);
             this.tabPagePetDetail.Controls.Add(this.label3);
-            this.tabPagePetDetail.Controls.Add(this.txtPetId);
+            this.tabPagePetDetail.Controls.Add(this.txt_LaptopID);
             this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPagePetDetail.Location = new System.Drawing.Point(4, 29);
             this.tabPagePetDetail.Name = "tabPagePetDetail";
             this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePetDetail.Size = new System.Drawing.Size(884, 378);
             this.tabPagePetDetail.TabIndex = 1;
-            this.tabPagePetDetail.Text = "Chi tiết nhà cung cấp";
+            this.tabPagePetDetail.Text = "Thông tin chi tiết";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
+            // 
+            // lb_Email
+            // 
+            this.lb_Email.AutoSize = true;
+            this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Email.Location = new System.Drawing.Point(59, 240);
+            this.lb_Email.Name = "lb_Email";
+            this.lb_Email.Size = new System.Drawing.Size(77, 20);
+            this.lb_Email.TabIndex = 17;
+            this.lb_Email.Text = "Giá bán : ";
+            // 
+            // txt_SupplierEmail
+            // 
+            this.txt_SupplierEmail.Location = new System.Drawing.Point(63, 263);
+            this.txt_SupplierEmail.Name = "txt_SupplierEmail";
+            this.txt_SupplierEmail.Size = new System.Drawing.Size(380, 29);
+            this.txt_SupplierEmail.TabIndex = 16;
             // 
             // btnCancel
             // 
@@ -243,36 +276,36 @@ namespace Gwenchana
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label6
+            // lb6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(59, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Địa chỉ :";
+            this.lb6.AutoSize = true;
+            this.lb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb6.Location = new System.Drawing.Point(59, 175);
+            this.lb6.Name = "lb6";
+            this.lb6.Size = new System.Drawing.Size(84, 20);
+            this.lb6.TabIndex = 13;
+            this.lb6.Text = "Cấu hình : ";
             // 
             // txt_SupplierAddress
             // 
             this.txt_SupplierAddress.Location = new System.Drawing.Point(63, 198);
             this.txt_SupplierAddress.Name = "txt_SupplierAddress";
-            this.txt_SupplierAddress.Size = new System.Drawing.Size(380, 29);
+            this.txt_SupplierAddress.Size = new System.Drawing.Size(550, 29);
             this.txt_SupplierAddress.TabIndex = 12;
             // 
-            // label5
+            // txt_Manufacturer
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 20);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Số điện thoại :";
+            this.txt_Manufacturer.AutoSize = true;
+            this.txt_Manufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Manufacturer.Location = new System.Drawing.Point(59, 97);
+            this.txt_Manufacturer.Name = "txt_Manufacturer";
+            this.txt_Manufacturer.Size = new System.Drawing.Size(102, 20);
+            this.txt_Manufacturer.TabIndex = 11;
+            this.txt_Manufacturer.Text = "Nhà sản xuất";
             // 
             // txt_SupplierPhone
             // 
-            this.txt_SupplierPhone.Location = new System.Drawing.Point(260, 125);
+            this.txt_SupplierPhone.Location = new System.Drawing.Point(63, 120);
             this.txt_SupplierPhone.Name = "txt_SupplierPhone";
             this.txt_SupplierPhone.Size = new System.Drawing.Size(183, 29);
             this.txt_SupplierPhone.TabIndex = 10;
@@ -281,18 +314,18 @@ namespace Gwenchana
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 102);
+            this.label4.Location = new System.Drawing.Point(460, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tên :";
             // 
-            // txt_SupplierName
+            // txt_LaptopName
             // 
-            this.txt_SupplierName.Location = new System.Drawing.Point(63, 125);
-            this.txt_SupplierName.Name = "txt_SupplierName";
-            this.txt_SupplierName.Size = new System.Drawing.Size(154, 29);
-            this.txt_SupplierName.TabIndex = 8;
+            this.txt_LaptopName.Location = new System.Drawing.Point(464, 54);
+            this.txt_LaptopName.Name = "txt_LaptopName";
+            this.txt_LaptopName.Size = new System.Drawing.Size(154, 29);
+            this.txt_LaptopName.TabIndex = 8;
             // 
             // label3
             // 
@@ -305,32 +338,83 @@ namespace Gwenchana
             this.label3.Text = "Mã :";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // txtPetId
+            // txt_LaptopID
             // 
-            this.txtPetId.Location = new System.Drawing.Point(63, 54);
-            this.txtPetId.Name = "txtPetId";
-            this.txtPetId.Size = new System.Drawing.Size(154, 29);
-            this.txtPetId.TabIndex = 6;
-            this.txtPetId.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
+            this.txt_LaptopID.Location = new System.Drawing.Point(63, 54);
+            this.txt_LaptopID.Name = "txt_LaptopID";
+            this.txt_LaptopID.Size = new System.Drawing.Size(154, 29);
+            this.txt_LaptopID.TabIndex = 6;
+            this.txt_LaptopID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // lb_Email
+            // label6
             // 
-            this.lb_Email.AutoSize = true;
-            this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Email.Location = new System.Drawing.Point(59, 240);
-            this.lb_Email.Name = "lb_Email";
-            this.lb_Email.Size = new System.Drawing.Size(56, 20);
-            this.lb_Email.TabIndex = 17;
-            this.lb_Email.Text = "Email :";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(460, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Kích thước màn hình :";
             // 
-            // txt_SupplierEmail
+            // txt_ScreenSize
             // 
-            this.txt_SupplierEmail.Location = new System.Drawing.Point(63, 263);
-            this.txt_SupplierEmail.Name = "txt_SupplierEmail";
-            this.txt_SupplierEmail.Size = new System.Drawing.Size(380, 29);
-            this.txt_SupplierEmail.TabIndex = 16;
+            this.txt_ScreenSize.Location = new System.Drawing.Point(464, 120);
+            this.txt_ScreenSize.Name = "txt_ScreenSize";
+            this.txt_ScreenSize.Size = new System.Drawing.Size(183, 29);
+            this.txt_ScreenSize.TabIndex = 20;
             // 
-            // PetView
+            // txt_LaptopWeight
+            // 
+            this.txt_LaptopWeight.AutoSize = true;
+            this.txt_LaptopWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_LaptopWeight.Location = new System.Drawing.Point(263, 97);
+            this.txt_LaptopWeight.Name = "txt_LaptopWeight";
+            this.txt_LaptopWeight.Size = new System.Drawing.Size(86, 20);
+            this.txt_LaptopWeight.TabIndex = 19;
+            this.txt_LaptopWeight.Text = "Cân nặng :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(267, 120);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(154, 29);
+            this.textBox2.TabIndex = 18;
+            // 
+            // labelxxx
+            // 
+            this.labelxxx.AutoSize = true;
+            this.labelxxx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelxxx.Location = new System.Drawing.Point(256, 31);
+            this.labelxxx.Name = "labelxxx";
+            this.labelxxx.Size = new System.Drawing.Size(137, 20);
+            this.labelxxx.TabIndex = 23;
+            this.labelxxx.Text = "Số lượng tồn kho :";
+            // 
+            // txt_stockQuantity
+            // 
+            this.txt_stockQuantity.Location = new System.Drawing.Point(260, 54);
+            this.txt_stockQuantity.Name = "txt_stockQuantity";
+            this.txt_stockQuantity.Size = new System.Drawing.Size(154, 29);
+            this.txt_stockQuantity.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(668, 97);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Màu sắc :";
+            // 
+            // txt_LaptopColour
+            // 
+            this.txt_LaptopColour.Location = new System.Drawing.Point(672, 120);
+            this.txt_LaptopColour.Name = "txt_LaptopColour";
+            this.txt_LaptopColour.Size = new System.Drawing.Size(154, 29);
+            this.txt_LaptopColour.TabIndex = 24;
+            // 
+            // Laptop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -339,7 +423,7 @@ namespace Gwenchana
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "PetView";
+            this.Name = "Laptop";
             this.Text = "PetView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -369,16 +453,24 @@ namespace Gwenchana
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lb6;
         private System.Windows.Forms.TextBox txt_SupplierAddress;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txt_Manufacturer;
         private System.Windows.Forms.TextBox txt_SupplierPhone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_SupplierName;
+        private System.Windows.Forms.TextBox txt_LaptopName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPetId;
+        private System.Windows.Forms.TextBox txt_LaptopID;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lb_Email;
         private System.Windows.Forms.TextBox txt_SupplierEmail;
+        private System.Windows.Forms.Label labelxxx;
+        private System.Windows.Forms.TextBox txt_stockQuantity;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_ScreenSize;
+        private System.Windows.Forms.Label txt_LaptopWeight;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_LaptopColour;
     }
 }

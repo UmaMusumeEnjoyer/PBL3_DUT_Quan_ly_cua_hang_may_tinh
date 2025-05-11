@@ -12,6 +12,7 @@ namespace Gwenchana.DataAccess.DTO
         public decimal screenSize { get; set; }
         public string Spectification { get; set; }
         public string Colour { get; set; }
+        //public string manufacturer { get; set; }
 
     }
 }

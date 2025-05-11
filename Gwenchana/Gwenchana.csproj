@@ -50,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLogic\AccountBLL.cs" />
+    <Compile Include="BussinessLogic\LaptopBLL.cs" />
     <Compile Include="BussinessLogic\SupplierBLL.cs" />
     <Compile Include="DataAccess\DAL\AccountDAL.cs" />
+    <Compile Include="DataAccess\DAL\LaptopDAL.cs" />
     <Compile Include="DataAccess\DAL\SupplierDAL.cs" />
     <Compile Include="DataAccess\DBConnect\DbConnect.cs" />
     <Compile Include="DataAccess\DTO\Accessories.cs" />

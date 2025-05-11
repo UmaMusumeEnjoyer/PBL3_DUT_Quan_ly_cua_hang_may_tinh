@@ -36,19 +36,18 @@ namespace Gwenchana
 
         private void LoadData()
         {
-            SupplierBLL supplierBLL = new SupplierBLL();
-            //List<Supplier> suppliers = supplierBLL.GetAllSuppliers();
-            DataTable dt = supplierBLL.GetAllSuppliersDataTable();
-            dataGridView.ReadOnly = true;
-            dataGridView.AllowUserToAddRows = false;
-            dataGridView.AllowUserToDeleteRows = false;
-            
+            LaptopBLL laptopBLL = new LaptopBLL();
+            DataTable dt = laptopBLL.GetAllLaptopsDataTable();
             dataGridView.DataSource = dt;
-            dataGridView.Columns["Supplier_Id"].Visible = false;
-            dataGridView.Columns["supplierName"].HeaderText = "Tên";
-            dataGridView.Columns["phoneNumber"].HeaderText = "Số điện thoại";
-            dataGridView.Columns["address"].HeaderText = "Địa chỉ";
-            dataGridView.Columns["email"].HeaderText = "Email";
+            dataGridView.Columns["Product_Id"].Visible = false;
+            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
+            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dataGridView.Columns["specification"].HeaderText = "Thông số kỹ thuật";
+            dataGridView.Columns["weight"].HeaderText = "Trọng lượng";
+            dataGridView.Columns["screenSize"].HeaderText = "Kích cỡ màn hình";
+            dataGridView.Columns["colour"].HeaderText = "Màu sắc";
+            dataGridView.Columns["price"].HeaderText = "Giá";
+            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
 
         }
 
@@ -86,10 +85,10 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
-            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
+            txt_LaptopID.ForeColor = Color.Gray;
+            txt_LaptopID.Enabled = false;
+            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
+            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
             txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
             txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
             txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
@@ -114,8 +113,8 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
+            txt_LaptopID.ForeColor = Color.Gray;
+            txt_LaptopID.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -128,17 +127,17 @@ namespace Gwenchana
             // Clear các ô nhập liệu
             txt_SupplierAddress.Clear();
             txt_SupplierEmail.Clear();
-            txt_SupplierName.Clear();
+            txt_LaptopName.Clear();
             txt_SupplierPhone.Clear();
-            txtPetId.Clear();
+            txt_LaptopID.Clear();
 
             // Kích hoạt lại tất cả textbox nếu từng bị disable (Delete mode)
-            txt_SupplierName.Enabled = true;
+            txt_LaptopName.Enabled = true;
             txt_SupplierPhone.Enabled = true;
             txt_SupplierAddress.Enabled = true;
             txt_SupplierEmail.Enabled = true;
-            txtPetId.Enabled = true;
-            txtPetId.ForeColor = SystemColors.WindowText;
+            txt_LaptopID.Enabled = true;
+            txt_LaptopID.ForeColor = SystemColors.WindowText;
             label3.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
@@ -162,14 +161,14 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
-            txt_SupplierName.Enabled = false;
+            txt_LaptopID.ForeColor = Color.Gray;
+            txt_LaptopID.Enabled = false;
+            txt_LaptopName.Enabled = false;
             txt_SupplierPhone.Enabled = false;
             txt_SupplierAddress.Enabled = false;
             txt_SupplierEmail.Enabled = false;
-            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
+            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
+            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
             txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
             txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
             txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
@@ -184,7 +183,7 @@ namespace Gwenchana
                 // Call SaveEvent or any other logic
                 Supplier supplier = new Supplier
                 {
-                    supplierName = txt_SupplierName.Text,
+                    supplierName = txt_LaptopName.Text,
                     phoneNumber = txt_SupplierPhone.Text,
                     address = txt_SupplierAddress.Text,
                     email = txt_SupplierEmail.Text
@@ -216,7 +215,7 @@ namespace Gwenchana
                 Supplier supplier = new Supplier
                 {
                     Supplier_Id = supplierId,
-                    supplierName = txt_SupplierName.Text,
+                    supplierName = txt_LaptopName.Text,
                     phoneNumber = txt_SupplierPhone.Text,
                     address = txt_SupplierAddress.Text,
                     email = txt_SupplierEmail.Text
