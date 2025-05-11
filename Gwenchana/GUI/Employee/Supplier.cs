@@ -80,6 +80,20 @@ namespace Gwenchana
         private void btnEdit_Click(object sender, EventArgs e)
         {
             button = "Edit";
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+
+            label3.ForeColor = Color.Gray;
+            txtPetId.ForeColor = Color.Gray;
+            txtPetId.Enabled = false;
+            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
+            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
+            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
+            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
+            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+
+
         }
 
         private void txtPetId_TextChanged(object sender, EventArgs e)
@@ -105,17 +119,39 @@ namespace Gwenchana
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            ResetFormState();
+        }
+
+        private void ResetFormState()
+        {
+            // Clear các ô nhập liệu
             txt_SupplierAddress.Clear();
             txt_SupplierEmail.Clear();
             txt_SupplierName.Clear();
             txt_SupplierPhone.Clear();
             txtPetId.Clear();
 
+            // Kích hoạt lại tất cả textbox nếu từng bị disable (Delete mode)
+            txt_SupplierName.Enabled = true;
+            txt_SupplierPhone.Enabled = true;
+            txt_SupplierAddress.Enabled = true;
+            txt_SupplierEmail.Enabled = true;
+            txtPetId.Enabled = true;
+            txtPetId.ForeColor = SystemColors.WindowText;
+            label3.ForeColor = SystemColors.ControlText;
 
-            tabControl1.TabPages.Add(tabPagePetList);
-            tabControl1.TabPages.Remove(tabPagePetDetail);
+            // Chuyển về trang danh sách
+            if (!tabControl1.TabPages.Contains(tabPagePetList))
+                tabControl1.TabPages.Add(tabPagePetList);
+            if (tabControl1.TabPages.Contains(tabPagePetDetail))
+                tabControl1.TabPages.Remove(tabPagePetDetail);
             tabControl1.SelectedTab = tabPagePetList;
+
+            // Reset trạng thái logic
+            button = null;
+            isEdit = false;
         }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -175,6 +211,31 @@ namespace Gwenchana
             {
                 // Edit supplier logic
                 // Call SaveEvent or any other logic
+                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
+                Supplier supplier = new Supplier
+                {
+                    Supplier_Id = supplierId,
+                    supplierName = txt_SupplierName.Text,
+                    phoneNumber = txt_SupplierPhone.Text,
+                    address = txt_SupplierAddress.Text,
+                    email = txt_SupplierEmail.Text
+                };
+                SupplierBLL supplierBLL = new SupplierBLL();
+                isSuccessful = supplierBLL.UpdateSupplier(supplier);
+                if (isSuccessful)
+                {
+                    message = "Cập nhật nhà phân phối thành công.";
+                    MessageBox.Show(message);
+                    LoadData();
+                }
+                else
+                {
+                    message = "Cập nhật nhà phân phối thất bại.";
+                    MessageBox.Show(message);
+                }
+                tabControl1.TabPages.Add(tabPagePetList);
+                tabControl1.TabPages.Remove(tabPagePetDetail);
+                tabControl1.SelectedTab = tabPagePetList;
             }
             else if (button == "Delete")
             {
@@ -197,6 +258,19 @@ namespace Gwenchana
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                if (dataGridView.Rows[i].Cells[1].Value.ToString().Contains(txtSearch.Text))
+                {
+                    dataGridView.Rows[i].Selected = true;
+                    dataGridView.CurrentCell = dataGridView.Rows[i].Cells[1];
+                    break;
+                }
             }
         }
     }
