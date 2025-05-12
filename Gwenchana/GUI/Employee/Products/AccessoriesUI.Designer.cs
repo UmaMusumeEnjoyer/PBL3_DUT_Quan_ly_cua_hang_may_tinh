@@ -1,7 +1,7 @@
 ﻿
 namespace Gwenchana
 {
-    partial class Accessories
+    partial class AccessoriesUI
     {
         /// <summary>
         /// Required designer variable.
@@ -41,18 +41,22 @@ namespace Gwenchana
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_AccessoriesstockQuantity = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_AccessoriesType = new System.Windows.Forms.TextBox();
             this.lb_Email = new System.Windows.Forms.Label();
-            this.txt_SupplierEmail = new System.Windows.Forms.TextBox();
+            this.txt_AccessoriesPrice = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_SupplierAddress = new System.Windows.Forms.TextBox();
+            this.txt_AccessoriesOverview = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_SupplierPhone = new System.Windows.Forms.TextBox();
+            this.txt_AccessoriesManufacturer = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_SupplierName = new System.Windows.Forms.TextBox();
+            this.txt_AccessoriesName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPetId = new System.Windows.Forms.TextBox();
+            this.txt_AccessoriesID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -134,6 +138,7 @@ namespace Gwenchana
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(737, 307);
             this.dataGridView.TabIndex = 7;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // label2
             // 
@@ -189,18 +194,22 @@ namespace Gwenchana
             // 
             // tabPagePetDetail
             // 
+            this.tabPagePetDetail.Controls.Add(this.label8);
+            this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesstockQuantity);
+            this.tabPagePetDetail.Controls.Add(this.label7);
+            this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesType);
             this.tabPagePetDetail.Controls.Add(this.lb_Email);
-            this.tabPagePetDetail.Controls.Add(this.txt_SupplierEmail);
+            this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesPrice);
             this.tabPagePetDetail.Controls.Add(this.btnCancel);
             this.tabPagePetDetail.Controls.Add(this.btnSave);
             this.tabPagePetDetail.Controls.Add(this.label6);
-            this.tabPagePetDetail.Controls.Add(this.txt_SupplierAddress);
+            this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesOverview);
             this.tabPagePetDetail.Controls.Add(this.label5);
-            this.tabPagePetDetail.Controls.Add(this.txt_SupplierPhone);
+            this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesManufacturer);
             this.tabPagePetDetail.Controls.Add(this.label4);
-            this.tabPagePetDetail.Controls.Add(this.txt_SupplierName);
+            this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesName);
             this.tabPagePetDetail.Controls.Add(this.label3);
-            this.tabPagePetDetail.Controls.Add(this.txtPetId);
+            this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesID);
             this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPagePetDetail.Location = new System.Drawing.Point(4, 29);
             this.tabPagePetDetail.Name = "tabPagePetDetail";
@@ -210,22 +219,56 @@ namespace Gwenchana
             this.tabPagePetDetail.Text = "Chi tiết";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(466, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(137, 20);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Số lượng tồn kho :";
+            // 
+            // txt_AccessoriesstockQuantity
+            // 
+            this.txt_AccessoriesstockQuantity.Location = new System.Drawing.Point(470, 54);
+            this.txt_AccessoriesstockQuantity.Name = "txt_AccessoriesstockQuantity";
+            this.txt_AccessoriesstockQuantity.Size = new System.Drawing.Size(183, 29);
+            this.txt_AccessoriesstockQuantity.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(256, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 20);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Loại sản phẩm :";
+            // 
+            // txt_AccessoriesType
+            // 
+            this.txt_AccessoriesType.Location = new System.Drawing.Point(260, 54);
+            this.txt_AccessoriesType.Name = "txt_AccessoriesType";
+            this.txt_AccessoriesType.Size = new System.Drawing.Size(183, 29);
+            this.txt_AccessoriesType.TabIndex = 18;
+            // 
             // lb_Email
             // 
             this.lb_Email.AutoSize = true;
             this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Email.Location = new System.Drawing.Point(59, 240);
             this.lb_Email.Name = "lb_Email";
-            this.lb_Email.Size = new System.Drawing.Size(56, 20);
+            this.lb_Email.Size = new System.Drawing.Size(73, 20);
             this.lb_Email.TabIndex = 17;
-            this.lb_Email.Text = "Email :";
+            this.lb_Email.Text = "Giá bán :";
             // 
-            // txt_SupplierEmail
+            // txt_AccessoriesPrice
             // 
-            this.txt_SupplierEmail.Location = new System.Drawing.Point(63, 263);
-            this.txt_SupplierEmail.Name = "txt_SupplierEmail";
-            this.txt_SupplierEmail.Size = new System.Drawing.Size(380, 29);
-            this.txt_SupplierEmail.TabIndex = 16;
+            this.txt_AccessoriesPrice.Location = new System.Drawing.Point(63, 263);
+            this.txt_AccessoriesPrice.Name = "txt_AccessoriesPrice";
+            this.txt_AccessoriesPrice.Size = new System.Drawing.Size(380, 29);
+            this.txt_AccessoriesPrice.TabIndex = 16;
             // 
             // btnCancel
             // 
@@ -253,33 +296,33 @@ namespace Gwenchana
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(59, 175);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 20);
+            this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Địa chỉ :";
+            this.label6.Text = "Tổng quan :";
             // 
-            // txt_SupplierAddress
+            // txt_AccessoriesOverview
             // 
-            this.txt_SupplierAddress.Location = new System.Drawing.Point(63, 198);
-            this.txt_SupplierAddress.Name = "txt_SupplierAddress";
-            this.txt_SupplierAddress.Size = new System.Drawing.Size(380, 29);
-            this.txt_SupplierAddress.TabIndex = 12;
+            this.txt_AccessoriesOverview.Location = new System.Drawing.Point(63, 198);
+            this.txt_AccessoriesOverview.Name = "txt_AccessoriesOverview";
+            this.txt_AccessoriesOverview.Size = new System.Drawing.Size(590, 29);
+            this.txt_AccessoriesOverview.TabIndex = 12;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 102);
+            this.label5.Location = new System.Drawing.Point(395, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Số điện thoại :";
+            this.label5.Text = "Nhà sản xuất :";
             // 
-            // txt_SupplierPhone
+            // txt_AccessoriesManufacturer
             // 
-            this.txt_SupplierPhone.Location = new System.Drawing.Point(260, 125);
-            this.txt_SupplierPhone.Name = "txt_SupplierPhone";
-            this.txt_SupplierPhone.Size = new System.Drawing.Size(183, 29);
-            this.txt_SupplierPhone.TabIndex = 10;
+            this.txt_AccessoriesManufacturer.Location = new System.Drawing.Point(399, 125);
+            this.txt_AccessoriesManufacturer.Name = "txt_AccessoriesManufacturer";
+            this.txt_AccessoriesManufacturer.Size = new System.Drawing.Size(252, 29);
+            this.txt_AccessoriesManufacturer.TabIndex = 10;
             // 
             // label4
             // 
@@ -291,12 +334,12 @@ namespace Gwenchana
             this.label4.TabIndex = 9;
             this.label4.Text = "Tên :";
             // 
-            // txt_SupplierName
+            // txt_AccessoriesName
             // 
-            this.txt_SupplierName.Location = new System.Drawing.Point(63, 125);
-            this.txt_SupplierName.Name = "txt_SupplierName";
-            this.txt_SupplierName.Size = new System.Drawing.Size(154, 29);
-            this.txt_SupplierName.TabIndex = 8;
+            this.txt_AccessoriesName.Location = new System.Drawing.Point(63, 125);
+            this.txt_AccessoriesName.Name = "txt_AccessoriesName";
+            this.txt_AccessoriesName.Size = new System.Drawing.Size(251, 29);
+            this.txt_AccessoriesName.TabIndex = 8;
             // 
             // label3
             // 
@@ -309,15 +352,15 @@ namespace Gwenchana
             this.label3.Text = "Mã :";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // txtPetId
+            // txt_AccessoriesID
             // 
-            this.txtPetId.Location = new System.Drawing.Point(63, 54);
-            this.txtPetId.Name = "txtPetId";
-            this.txtPetId.Size = new System.Drawing.Size(154, 29);
-            this.txtPetId.TabIndex = 6;
-            this.txtPetId.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
+            this.txt_AccessoriesID.Location = new System.Drawing.Point(63, 54);
+            this.txt_AccessoriesID.Name = "txt_AccessoriesID";
+            this.txt_AccessoriesID.Size = new System.Drawing.Size(154, 29);
+            this.txt_AccessoriesID.TabIndex = 6;
+            this.txt_AccessoriesID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // Accessories
+            // AccessoriesUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -326,7 +369,7 @@ namespace Gwenchana
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Accessories";
+            this.Name = "AccessoriesUI";
             this.Text = "PetView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -356,15 +399,19 @@ namespace Gwenchana
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_SupplierAddress;
+        private System.Windows.Forms.TextBox txt_AccessoriesOverview;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_SupplierPhone;
+        private System.Windows.Forms.TextBox txt_AccessoriesManufacturer;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_SupplierName;
+        private System.Windows.Forms.TextBox txt_AccessoriesName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPetId;
+        private System.Windows.Forms.TextBox txt_AccessoriesID;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lb_Email;
-        private System.Windows.Forms.TextBox txt_SupplierEmail;
+        private System.Windows.Forms.TextBox txt_AccessoriesPrice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_AccessoriesType;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_AccessoriesstockQuantity;
     }
 }

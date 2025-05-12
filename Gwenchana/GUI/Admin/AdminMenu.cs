@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Gwenchana
 {
     public partial class AdminMenu : Form
     {
         public AdminMenu()
         {
+            //string username = Login.username;
+            
             InitializeComponent();
             hideSubMenu();
         }
@@ -56,6 +57,7 @@ namespace Gwenchana
 
         private void button3_Click(object sender, EventArgs e)
         {
+            openChildForm(new PCUI());
             //..
             //your codes
             //..
@@ -64,6 +66,7 @@ namespace Gwenchana
 
         private void button4_Click(object sender, EventArgs e)
         {
+            openChildForm(new AccessoriesUI());
             //..
             //your codes
             //..
@@ -226,17 +229,22 @@ namespace Gwenchana
 
         private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new information());
         }
 
         private void button5_Click_2(object sender, EventArgs e)
         {
-            openChildForm(new Dashboard());
+
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button5_Click_3(object sender, EventArgs e)
+        {
+            openChildForm(new Dashboard()); 
         }
     }
 }

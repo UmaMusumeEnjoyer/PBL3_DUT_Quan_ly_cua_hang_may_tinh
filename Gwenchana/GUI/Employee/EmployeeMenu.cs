@@ -13,8 +13,10 @@ namespace Gwenchana
 {
     public partial class EmployeeMenu : Form
     {
-        public EmployeeMenu()
+        public EmployeeMenu(int id)
         {
+            //string username = Login.username;
+            int userId = id;
             InitializeComponent();
             hideSubMenu();
         }
@@ -64,6 +66,7 @@ namespace Gwenchana
 
         private void button4_Click(object sender, EventArgs e)
         {
+            openChildForm(new AccessoriesUI());
             //..
             //your codes
             //..
@@ -226,7 +229,7 @@ namespace Gwenchana
 
         private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new information());
         }
 
         private void button5_Click_2(object sender, EventArgs e)

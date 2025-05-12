@@ -12,7 +12,7 @@ using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana
 {
-    public partial class Accessories: Form
+    public partial class AccessoriesUI: Form
     {
         //Fields
         private string message;
@@ -22,7 +22,7 @@ namespace Gwenchana
 
 
         //Constructor
-        public Accessories()
+        public AccessoriesUI()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
@@ -35,19 +35,21 @@ namespace Gwenchana
 
         private void LoadData()
         {
-            SupplierBLL supplierBLL = new SupplierBLL();
-            //List<Supplier> suppliers = supplierBLL.GetAllSuppliers();
-            DataTable dt = supplierBLL.GetAllSuppliersDataTable();
+            AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
+            DataTable dt = accessoriesBLL.GetAllAccessoriesDataTable();
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             
             dataGridView.DataSource = dt;
-            dataGridView.Columns["Supplier_Id"].Visible = false;
-            dataGridView.Columns["supplierName"].HeaderText = "Tên";
-            dataGridView.Columns["phoneNumber"].HeaderText = "Số điện thoại";
-            dataGridView.Columns["address"].HeaderText = "Địa chỉ";
-            dataGridView.Columns["email"].HeaderText = "Email";
+            dataGridView.Columns["Product_Id"].Visible = false; // Ẩn cột Product_Id
+            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
+            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dataGridView.Columns["overview"].HeaderText = "Mô tả";
+            dataGridView.Columns["type"].HeaderText = "Loại sản phẩm";
+            dataGridView.Columns["price"].HeaderText = "Giá";
+            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+
 
         }
 
@@ -85,14 +87,17 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
-            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
-            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
-            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
-            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+            txt_AccessoriesID.ForeColor = Color.Gray;
+            txt_AccessoriesID.Enabled = false;
+            txt_AccessoriesstockQuantity.Enabled = false;
 
+            txt_AccessoriesID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+            txt_AccessoriesName.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+            txt_AccessoriesManufacturer.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+            txt_AccessoriesOverview.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
+            txt_AccessoriesType.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+            txt_AccessoriesPrice.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
+            txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
 
         }
 
@@ -113,8 +118,8 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
+            txt_AccessoriesID.ForeColor = Color.Gray;
+            txt_AccessoriesID.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -125,19 +130,19 @@ namespace Gwenchana
         private void ResetFormState()
         {
             // Clear các ô nhập liệu
-            txt_SupplierAddress.Clear();
-            txt_SupplierEmail.Clear();
-            txt_SupplierName.Clear();
-            txt_SupplierPhone.Clear();
-            txtPetId.Clear();
+            txt_AccessoriesOverview.Clear();
+            txt_AccessoriesPrice.Clear();
+            txt_AccessoriesName.Clear();
+            txt_AccessoriesManufacturer.Clear();
+            txt_AccessoriesID.Clear();
 
             // Kích hoạt lại tất cả textbox nếu từng bị disable (Delete mode)
-            txt_SupplierName.Enabled = true;
-            txt_SupplierPhone.Enabled = true;
-            txt_SupplierAddress.Enabled = true;
-            txt_SupplierEmail.Enabled = true;
-            txtPetId.Enabled = true;
-            txtPetId.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesName.Enabled = true;
+            txt_AccessoriesManufacturer.Enabled = true;
+            txt_AccessoriesOverview.Enabled = true;
+            txt_AccessoriesPrice.Enabled = true;
+            txt_AccessoriesID.Enabled = true;
+            txt_AccessoriesID.ForeColor = SystemColors.WindowText;
             label3.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
@@ -161,100 +166,82 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
-            txt_SupplierName.Enabled = false;
-            txt_SupplierPhone.Enabled = false;
-            txt_SupplierAddress.Enabled = false;
-            txt_SupplierEmail.Enabled = false;
-            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
-            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
-            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
-            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+            txt_AccessoriesID.ForeColor = Color.Gray;
+            txt_AccessoriesID.Enabled = false;
+            txt_AccessoriesName.Enabled = false;
+            txt_AccessoriesManufacturer.Enabled = false;
+            txt_AccessoriesOverview.Enabled = false;
+            txt_AccessoriesPrice.Enabled = false;
+            txt_AccessoriesType.Enabled = false;
+            txt_AccessoriesstockQuantity.Enabled = false;
+
+            txt_AccessoriesID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+            txt_AccessoriesName.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+            txt_AccessoriesManufacturer.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+            txt_AccessoriesOverview.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
+            txt_AccessoriesType.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+            txt_AccessoriesPrice.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
+            txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
+
+
+
+
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(button == "Add")
+            if (button == "Edit")
             {
-                // Add new supplier logic
-                // Call SaveEvent or any other logic
-                Supplier supplier = new Supplier
+                int id = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value.ToString());
+                Accessories accessoriesDTO = new Accessories
                 {
-                    supplierName = txt_SupplierName.Text,
-                    phoneNumber = txt_SupplierPhone.Text,
-                    address = txt_SupplierAddress.Text,
-                    email = txt_SupplierEmail.Text
+                    Product_Id = id,
+                    productName = txt_AccessoriesName.Text,
+                    Manufacturer = txt_AccessoriesManufacturer.Text,
+                    Overview = txt_AccessoriesOverview.Text,
+                    Type = txt_AccessoriesType.Text,
+                    price = Convert.ToDecimal(txt_AccessoriesPrice.Text),
+                    stockQuantity = Convert.ToInt32(txt_AccessoriesstockQuantity.Text)
                 };
-
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.AddSupplier(supplier);
+                AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
+                isSuccessful = accessoriesBLL.UpdateAccessories(accessoriesDTO);
                 if (isSuccessful)
                 {
-                    message = "Thêm nhà phân phối thành công.";
-                    MessageBox.Show(message);
-                    LoadData();
+                    message = "Cập nhật thành công!";
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    message = "Thêm nhà phân phối thất bại.";
-                    MessageBox.Show(message);
+                    message = "Cập nhật không thành công!";
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
 
-            }
-            else if (button == "Edit")
-            {
-                // Edit supplier logic
-                // Call SaveEvent or any other logic
-                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
-                Supplier supplier = new Supplier
-                {
-                    Supplier_Id = supplierId,
-                    supplierName = txt_SupplierName.Text,
-                    phoneNumber = txt_SupplierPhone.Text,
-                    address = txt_SupplierAddress.Text,
-                    email = txt_SupplierEmail.Text
-                };
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.UpdateSupplier(supplier);
-                if (isSuccessful)
-                {
-                    message = "Cập nhật nhà phân phối thành công.";
-                    MessageBox.Show(message);
-                    LoadData();
-                }
-                else
-                {
-                    message = "Cập nhật nhà phân phối thất bại.";
-                    MessageBox.Show(message);
-                }
-                tabControl1.TabPages.Add(tabPagePetList);
-                tabControl1.TabPages.Remove(tabPagePetDetail);
-                tabControl1.SelectedTab = tabPagePetList;
+                LoadData();
             }
             else if (button == "Delete")
             {
-                // Delete supplier logic
-                // Call SaveEvent or any other logic
-                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.DeleteSupplier(supplierId);
+                AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
+                int id = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value.ToString());
+                isSuccessful = accessoriesBLL.DeleteAccessories(id);
                 if (isSuccessful)
                 {
-                    message = "Xoá nhà phân phối thành công.";
-                    MessageBox.Show(message);
-                    LoadData();
+                    message = "Xóa thành công!";
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    message = "Xoá nhà phân phối thất bại.";
-                    MessageBox.Show(message);
+                    message = "Xóa không thành công!";
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                LoadData();
+
+
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
@@ -272,6 +259,11 @@ namespace Gwenchana
                     break;
                 }
             }
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -49,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinessLogic\AccessoriesBLL.cs" />
     <Compile Include="BussinessLogic\AccountBLL.cs" />
     <Compile Include="BussinessLogic\LaptopBLL.cs" />
     <Compile Include="BussinessLogic\PCBLL.cs" />
     <Compile Include="BussinessLogic\SupplierBLL.cs" />
+    <Compile Include="DataAccess\DAL\AccessoriesDAL.cs" />
     <Compile Include="DataAccess\DAL\AccountDAL.cs" />
     <Compile Include="DataAccess\DAL\LaptopDAL.cs" />
     <Compile Include="DataAccess\DAL\PCDAL.cs" />
@@ -87,6 +89,12 @@
     </Compile>
     <Compile Include="GUI\Employee\EmployeeMenu.designer.cs">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Employee\information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\information.Designer.cs">
+      <DependentUpon>information.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Employee\Products\AccessoriesUI.cs">
       <SubType>Form</SubType>
@@ -134,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\EmployeeMenu.resx">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\information.resx">
+      <DependentUpon>information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Products\AccessoriesUI.resx">
       <DependentUpon>AccessoriesUI.cs</DependentUpon>

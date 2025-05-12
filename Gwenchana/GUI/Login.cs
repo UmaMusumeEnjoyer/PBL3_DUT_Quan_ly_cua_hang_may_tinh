@@ -90,7 +90,7 @@ namespace Gwenchana
                     }
                     else if (accountBLL.GetRole(username) == "Employee")
                     {
-                        EmployeeMenu employeeDashboard = new EmployeeMenu();
+                        EmployeeMenu employeeDashboard = new EmployeeMenu(0);
                         login_username.Text = "";
                         login_password.Text = "";
                         this.Hide();
