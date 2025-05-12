@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Gwenchana
 {
     partial class Dashboard
@@ -29,23 +31,20 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.btnThisMonth = new System.Windows.Forms.Button();
             this.btnLast30Days = new System.Windows.Forms.Button();
             this.btnLast7Days = new System.Windows.Forms.Button();
-            this.btnToday = new System.Windows.Forms.Button();
-            this.btnCustomDate = new System.Windows.Forms.Button();
-            this.btnOkCustomDate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblNumOrders = new System.Windows.Forms.Label();
@@ -71,6 +70,9 @@ namespace Gwenchana
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvUnderstock = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnToday = new System.Windows.Forms.Button();
+            this.btnCustomDate = new System.Windows.Forms.Button();
+            this.btnOkCustomDate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -147,40 +149,6 @@ namespace Gwenchana
             this.btnLast7Days.UseVisualStyleBackColor = true;
             this.btnLast7Days.Click += new System.EventHandler(this.btnLast7Days_Click);
             // 
-            // btnToday
-            // 
-            this.btnToday.Location = new System.Drawing.Point(667, 10);
-            this.btnToday.Margin = new System.Windows.Forms.Padding(5);
-            this.btnToday.Name = "btnToday";
-            this.btnToday.Size = new System.Drawing.Size(130, 35);
-            this.btnToday.TabIndex = 6;
-            this.btnToday.Text = "Hôm nay";
-            this.btnToday.UseVisualStyleBackColor = true;
-            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
-            // 
-            // btnCustomDate
-            // 
-            this.btnCustomDate.Location = new System.Drawing.Point(536, 10);
-            this.btnCustomDate.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCustomDate.Name = "btnCustomDate";
-            this.btnCustomDate.Size = new System.Drawing.Size(130, 35);
-            this.btnCustomDate.TabIndex = 7;
-            this.btnCustomDate.Text = "Tuỳ chỉnh";
-            this.btnCustomDate.UseVisualStyleBackColor = true;
-            this.btnCustomDate.Click += new System.EventHandler(this.btnCustomDate_Click);
-            // 
-            // btnOkCustomDate
-            // 
-            this.btnOkCustomDate.Location = new System.Drawing.Point(498, 10);
-            this.btnOkCustomDate.Margin = new System.Windows.Forms.Padding(5);
-            this.btnOkCustomDate.Name = "btnOkCustomDate";
-            this.btnOkCustomDate.Size = new System.Drawing.Size(35, 35);
-            this.btnOkCustomDate.TabIndex = 8;
-            this.btnOkCustomDate.Text = "Ok";
-            this.btnOkCustomDate.UseVisualStyleBackColor = true;
-            this.btnOkCustomDate.Visible = false;
-            this.btnOkCustomDate.Click += new System.EventHandler(this.btnOkCustomDate_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -228,6 +196,7 @@ namespace Gwenchana
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.lblTotalRevenue);
@@ -272,6 +241,7 @@ namespace Gwenchana
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.lblTotalProfit);
@@ -317,61 +287,65 @@ namespace Gwenchana
             // 
             // chartGrossRevenue
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartGrossRevenue.ChartAreas.Add(chartArea3);
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.chartGrossRevenue.Legends.Add(legend3);
+            this.chartGrossRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chartGrossRevenue.ChartAreas.Add(chartArea1);
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chartGrossRevenue.Legends.Add(legend1);
             this.chartGrossRevenue.Location = new System.Drawing.Point(14, 138);
             this.chartGrossRevenue.Margin = new System.Windows.Forms.Padding(5);
             this.chartGrossRevenue.Name = "chartGrossRevenue";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartGrossRevenue.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartGrossRevenue.Series.Add(series1);
             this.chartGrossRevenue.Size = new System.Drawing.Size(846, 255);
             this.chartGrossRevenue.TabIndex = 12;
             this.chartGrossRevenue.Text = "chartGrossRevenue";
-            title3.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title3.Name = "Title1";
-            title3.Text = "Tổng doanh thu";
-            this.chartGrossRevenue.Titles.Add(title3);
+            title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title1.Name = "Title1";
+            title1.Text = "Tổng doanh thu";
+            this.chartGrossRevenue.Titles.Add(title1);
             this.chartGrossRevenue.Click += new System.EventHandler(this.chartGrossRevenue_Click);
             // 
             // chartTopProducts
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartTopProducts.ChartAreas.Add(chartArea4);
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            this.chartTopProducts.Legends.Add(legend4);
+            this.chartTopProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea2.Name = "ChartArea1";
+            this.chartTopProducts.ChartAreas.Add(chartArea2);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            this.chartTopProducts.Legends.Add(legend2);
             this.chartTopProducts.Location = new System.Drawing.Point(870, 138);
             this.chartTopProducts.Margin = new System.Windows.Forms.Padding(5);
             this.chartTopProducts.Name = "chartTopProducts";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            series4.IsValueShownAsLabel = true;
-            series4.LabelForeColor = System.Drawing.Color.White;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartTopProducts.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartTopProducts.Series.Add(series2);
             this.chartTopProducts.Size = new System.Drawing.Size(320, 495);
             this.chartTopProducts.TabIndex = 13;
             this.chartTopProducts.Text = "chartTopProducts";
-            title4.Alignment = System.Drawing.ContentAlignment.TopLeft;
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            title4.Name = "Title1";
-            title4.Text = "5 sản phẩm bán chạy nhất";
-            this.chartTopProducts.Titles.Add(title4);
+            title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            title2.Name = "Title1";
+            title2.Text = "5 sản phẩm bán chạy nhất";
+            this.chartTopProducts.Titles.Add(title2);
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.lblNumProducts);
             this.panel4.Controls.Add(this.label9);
@@ -461,6 +435,8 @@ namespace Gwenchana
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.dgvUnderstock);
             this.panel5.Controls.Add(this.label13);
@@ -488,6 +464,40 @@ namespace Gwenchana
             this.label13.Size = new System.Drawing.Size(185, 25);
             this.label13.TabIndex = 2;
             this.label13.Text = "Sản phẩm tồn kho ít";
+            // 
+            // btnToday
+            // 
+            this.btnToday.Location = new System.Drawing.Point(667, 10);
+            this.btnToday.Margin = new System.Windows.Forms.Padding(5);
+            this.btnToday.Name = "btnToday";
+            this.btnToday.Size = new System.Drawing.Size(130, 35);
+            this.btnToday.TabIndex = 6;
+            this.btnToday.Text = "Hôm nay";
+            this.btnToday.UseVisualStyleBackColor = true;
+            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
+            // 
+            // btnCustomDate
+            // 
+            this.btnCustomDate.Location = new System.Drawing.Point(536, 10);
+            this.btnCustomDate.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCustomDate.Name = "btnCustomDate";
+            this.btnCustomDate.Size = new System.Drawing.Size(130, 35);
+            this.btnCustomDate.TabIndex = 7;
+            this.btnCustomDate.Text = "Tuỳ chỉnh";
+            this.btnCustomDate.UseVisualStyleBackColor = true;
+            this.btnCustomDate.Click += new System.EventHandler(this.btnCustomDate_Click);
+            // 
+            // btnOkCustomDate
+            // 
+            this.btnOkCustomDate.Location = new System.Drawing.Point(498, 10);
+            this.btnOkCustomDate.Margin = new System.Windows.Forms.Padding(5);
+            this.btnOkCustomDate.Name = "btnOkCustomDate";
+            this.btnOkCustomDate.Size = new System.Drawing.Size(35, 35);
+            this.btnOkCustomDate.TabIndex = 8;
+            this.btnOkCustomDate.Text = "Ok";
+            this.btnOkCustomDate.UseVisualStyleBackColor = true;
+            this.btnOkCustomDate.Visible = false;
+            this.btnOkCustomDate.Click += new System.EventHandler(this.btnOkCustomDate_Click);
             // 
             // Dashboard
             // 
@@ -529,7 +539,6 @@ namespace Gwenchana
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -540,9 +549,6 @@ namespace Gwenchana
         private System.Windows.Forms.Button btnThisMonth;
         private System.Windows.Forms.Button btnLast30Days;
         private System.Windows.Forms.Button btnLast7Days;
-        private System.Windows.Forms.Button btnToday;
-        private System.Windows.Forms.Button btnCustomDate;
-        private System.Windows.Forms.Button btnOkCustomDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblNumOrders;
         private System.Windows.Forms.Label label2;
@@ -568,5 +574,8 @@ namespace Gwenchana
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnToday;
+        private System.Windows.Forms.Button btnCustomDate;
+        private System.Windows.Forms.Button btnOkCustomDate;
     }
 }

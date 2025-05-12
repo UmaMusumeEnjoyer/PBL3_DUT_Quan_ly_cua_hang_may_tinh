@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Gwenchana
 {
-    public partial class EmployeeMenu : Form
+    public partial class AdminMenu : Form
     {
-        public EmployeeMenu()
+        public AdminMenu()
         {
             InitializeComponent();
             hideSubMenu();
@@ -55,7 +56,6 @@ namespace Gwenchana
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openChildForm(new PCUI());
             //..
             //your codes
             //..
@@ -231,7 +231,7 @@ namespace Gwenchana
 
         private void button5_Click_2(object sender, EventArgs e)
         {
-
+            openChildForm(new Dashboard());
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)

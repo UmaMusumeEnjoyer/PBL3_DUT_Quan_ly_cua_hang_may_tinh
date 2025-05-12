@@ -94,6 +94,7 @@ namespace Gwenchana
             label3.ForeColor = Color.Gray;
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
+            txt_stockQuantity.Enabled = false;
 
             txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
             txt_LaptopName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();

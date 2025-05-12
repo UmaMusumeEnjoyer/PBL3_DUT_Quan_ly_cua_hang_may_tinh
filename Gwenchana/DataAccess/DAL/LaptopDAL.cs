@@ -76,7 +76,6 @@ namespace Gwenchana.DataAccess.DAL
             {
                 return false;
             }
-
         }
 
         public bool DeleteLaptop(int id)

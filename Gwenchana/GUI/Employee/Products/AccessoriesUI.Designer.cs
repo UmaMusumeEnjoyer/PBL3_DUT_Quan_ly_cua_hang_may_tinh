@@ -38,10 +38,11 @@ namespace Gwenchana
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAddNew = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
+            this.lb_Email = new System.Windows.Forms.Label();
+            this.txt_SupplierEmail = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,8 +53,6 @@ namespace Gwenchana
             this.txt_SupplierName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPetId = new System.Windows.Forms.TextBox();
-            this.lb_Email = new System.Windows.Forms.Label();
-            this.txt_SupplierEmail = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -68,9 +67,9 @@ namespace Gwenchana
             this.label1.Location = new System.Drawing.Point(53, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.Size = new System.Drawing.Size(141, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nhà cung cấp";
+            this.label1.Text = "Linh / Phụ kiện";
             // 
             // panel1
             // 
@@ -110,7 +109,6 @@ namespace Gwenchana
             this.tabPagePetList.Controls.Add(this.label2);
             this.tabPagePetList.Controls.Add(this.btnDelete);
             this.tabPagePetList.Controls.Add(this.btnEdit);
-            this.tabPagePetList.Controls.Add(this.btnAddNew);
             this.tabPagePetList.Controls.Add(this.btnSearch);
             this.tabPagePetList.Controls.Add(this.txtSearch);
             this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,14 +117,14 @@ namespace Gwenchana
             this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePetList.Size = new System.Drawing.Size(884, 378);
             this.tabPagePetList.TabIndex = 0;
-            this.tabPagePetList.Text = "Danh sách nhà cung cấp";
+            this.tabPagePetList.Text = "Danh sách";
             this.tabPagePetList.UseVisualStyleBackColor = true;
             // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
@@ -143,9 +141,9 @@ namespace Gwenchana
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 20);
+            this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Tìm kiến nhà cung cấp";
+            this.label2.Text = "Tìm kiếm :";
             // 
             // btnDelete
             // 
@@ -169,17 +167,6 @@ namespace Gwenchana
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnAddNew
-            // 
-            this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNew.Location = new System.Drawing.Point(767, 62);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(99, 30);
-            this.btnAddNew.TabIndex = 2;
-            this.btnAddNew.Text = "Thêm";
-            this.btnAddNew.UseVisualStyleBackColor = true;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
-            // 
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,7 +180,7 @@ namespace Gwenchana
             // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(24, 31);
             this.txtSearch.Name = "txtSearch";
@@ -220,8 +207,25 @@ namespace Gwenchana
             this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePetDetail.Size = new System.Drawing.Size(884, 378);
             this.tabPagePetDetail.TabIndex = 1;
-            this.tabPagePetDetail.Text = "Chi tiết nhà cung cấp";
+            this.tabPagePetDetail.Text = "Chi tiết";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
+            // 
+            // lb_Email
+            // 
+            this.lb_Email.AutoSize = true;
+            this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Email.Location = new System.Drawing.Point(59, 240);
+            this.lb_Email.Name = "lb_Email";
+            this.lb_Email.Size = new System.Drawing.Size(56, 20);
+            this.lb_Email.TabIndex = 17;
+            this.lb_Email.Text = "Email :";
+            // 
+            // txt_SupplierEmail
+            // 
+            this.txt_SupplierEmail.Location = new System.Drawing.Point(63, 263);
+            this.txt_SupplierEmail.Name = "txt_SupplierEmail";
+            this.txt_SupplierEmail.Size = new System.Drawing.Size(380, 29);
+            this.txt_SupplierEmail.TabIndex = 16;
             // 
             // btnCancel
             // 
@@ -313,24 +317,7 @@ namespace Gwenchana
             this.txtPetId.TabIndex = 6;
             this.txtPetId.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // lb_Email
-            // 
-            this.lb_Email.AutoSize = true;
-            this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Email.Location = new System.Drawing.Point(59, 240);
-            this.lb_Email.Name = "lb_Email";
-            this.lb_Email.Size = new System.Drawing.Size(56, 20);
-            this.lb_Email.TabIndex = 17;
-            this.lb_Email.Text = "Email :";
-            // 
-            // txt_SupplierEmail
-            // 
-            this.txt_SupplierEmail.Location = new System.Drawing.Point(63, 263);
-            this.txt_SupplierEmail.Name = "txt_SupplierEmail";
-            this.txt_SupplierEmail.Size = new System.Drawing.Size(380, 29);
-            this.txt_SupplierEmail.TabIndex = 16;
-            // 
-            // PetView
+            // Accessories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -339,7 +326,7 @@ namespace Gwenchana
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "PetView";
+            this.Name = "Accessories";
             this.Text = "PetView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -362,7 +349,6 @@ namespace Gwenchana
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabPagePetDetail;

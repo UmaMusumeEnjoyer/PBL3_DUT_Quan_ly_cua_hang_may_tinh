@@ -51,9 +51,11 @@
   <ItemGroup>
     <Compile Include="BussinessLogic\AccountBLL.cs" />
     <Compile Include="BussinessLogic\LaptopBLL.cs" />
+    <Compile Include="BussinessLogic\PCBLL.cs" />
     <Compile Include="BussinessLogic\SupplierBLL.cs" />
     <Compile Include="DataAccess\DAL\AccountDAL.cs" />
     <Compile Include="DataAccess\DAL\LaptopDAL.cs" />
+    <Compile Include="DataAccess\DAL\PCDAL.cs" />
     <Compile Include="DataAccess\DAL\SupplierDAL.cs" />
     <Compile Include="DataAccess\DBConnect\DbConnect.cs" />
     <Compile Include="DataAccess\DTO\Accessories.cs" />
@@ -73,6 +75,12 @@
     </Compile>
     <Compile Include="GUI\Admin\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin\AdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\AdminMenu.designer.cs">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Employee\EmployeeMenu.cs">
       <SubType>Form</SubType>
@@ -98,10 +106,10 @@
     <Compile Include="GUI\Employee\Products\LaptopUI.Designer.cs">
       <DependentUpon>LaptopUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Supplier.cs">
+    <Compile Include="GUI\Employee\Suppliers\Supplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Supplier.Designer.cs">
+    <Compile Include="GUI\Employee\Suppliers\Supplier.Designer.cs">
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Login.cs">
@@ -121,6 +129,9 @@
     <EmbeddedResource Include="GUI\Admin\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin\AdminMenu.resx">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\EmployeeMenu.resx">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,7 +144,7 @@
     <EmbeddedResource Include="GUI\Employee\Products\LaptopUI.resx">
       <DependentUpon>LaptopUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Supplier.resx">
+    <EmbeddedResource Include="GUI\Employee\Suppliers\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">

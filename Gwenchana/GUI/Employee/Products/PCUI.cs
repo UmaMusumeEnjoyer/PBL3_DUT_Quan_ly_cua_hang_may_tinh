@@ -35,19 +35,23 @@ namespace Gwenchana
 
         private void LoadData()
         {
-            SupplierBLL supplierBLL = new SupplierBLL();
+            PCBLL pcBLL = new PCBLL();
             //List<Supplier> suppliers = supplierBLL.GetAllSuppliers();
-            DataTable dt = supplierBLL.GetAllSuppliersDataTable();
+            DataTable dt = pcBLL.GetAllPCsDataTable();
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             
             dataGridView.DataSource = dt;
-            dataGridView.Columns["Supplier_Id"].Visible = false;
-            dataGridView.Columns["supplierName"].HeaderText = "Tên";
-            dataGridView.Columns["phoneNumber"].HeaderText = "Số điện thoại";
-            dataGridView.Columns["address"].HeaderText = "Địa chỉ";
-            dataGridView.Columns["email"].HeaderText = "Email";
+
+            dataGridView.Columns["Product_Id"].Visible = false;
+            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
+            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dataGridView.Columns["specification"].HeaderText = "Thông số kỹ thuật";
+            //dataGridView.Columns["weight"].HeaderText = "Trọng lượng";
+            dataGridView.Columns["price"].HeaderText = "Giá";
+
+            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
 
         }
 
@@ -85,13 +89,18 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
-            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
-            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
-            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
-            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+            txt_ProductID.ForeColor = Color.Gray;
+            txt_ProductID.Enabled = false;
+            txt_stockQuantity.Enabled = false;
+
+            txt_ProductID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
+            txt_pcName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
+            txt_pcSupplier.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
+            txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
+            //txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
+            txt_pcPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
+            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
+
 
 
         }
@@ -113,8 +122,8 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
+            txt_ProductID.ForeColor = Color.Gray;
+            txt_ProductID.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -125,19 +134,19 @@ namespace Gwenchana
         private void ResetFormState()
         {
             // Clear các ô nhập liệu
-            txt_SupplierAddress.Clear();
-            txt_SupplierEmail.Clear();
-            txt_SupplierName.Clear();
-            txt_SupplierPhone.Clear();
-            txtPetId.Clear();
+            txt_pcSpecs.Clear();
+            txt_pcPrice.Clear();
+            txt_pcName.Clear();
+            txt_pcSupplier.Clear();
+            txt_ProductID.Clear();
 
             // Kích hoạt lại tất cả textbox nếu từng bị disable (Delete mode)
-            txt_SupplierName.Enabled = true;
-            txt_SupplierPhone.Enabled = true;
-            txt_SupplierAddress.Enabled = true;
-            txt_SupplierEmail.Enabled = true;
-            txtPetId.Enabled = true;
-            txtPetId.ForeColor = SystemColors.WindowText;
+            txt_pcName.Enabled = true;
+            txt_pcSupplier.Enabled = true;
+            txt_pcSpecs.Enabled = true;
+            txt_pcPrice.Enabled = true;
+            txt_ProductID.Enabled = true;
+            txt_ProductID.ForeColor = SystemColors.WindowText;
             label3.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
@@ -161,98 +170,76 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
             label3.ForeColor = Color.Gray;
-            txtPetId.ForeColor = Color.Gray;
-            txtPetId.Enabled = false;
-            txt_SupplierName.Enabled = false;
-            txt_SupplierPhone.Enabled = false;
-            txt_SupplierAddress.Enabled = false;
-            txt_SupplierEmail.Enabled = false;
-            txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
-            txt_SupplierName.Text = dataGridView.CurrentRow.Cells["supplierName"].Value.ToString();
-            txt_SupplierPhone.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
-            txt_SupplierAddress.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
-            txt_SupplierEmail.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+            txt_ProductID.ForeColor = Color.Gray;
+            txt_ProductID.Enabled = false;
+
+            txt_pcName.Enabled = false;
+            txt_pcSupplier.Enabled = false;
+            txt_pcSpecs.Enabled = false;
+            txt_pcPrice.Enabled = false;
+            txt_pcSpecs.Enabled = false;
+            txt_stockQuantity.Enabled = false;
+
+            txt_ProductID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
+            txt_pcName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
+            txt_pcSupplier.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
+            txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
+            txt_pcPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
+            //txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
+            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
+
+
 
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(button == "Add")
-            {
-                // Add new supplier logic
-                // Call SaveEvent or any other logic
-                Supplier supplier = new Supplier
-                {
-                    supplierName = txt_SupplierName.Text,
-                    phoneNumber = txt_SupplierPhone.Text,
-                    address = txt_SupplierAddress.Text,
-                    email = txt_SupplierEmail.Text
-                };
-
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.AddSupplier(supplier);
-                if (isSuccessful)
-                {
-                    message = "Thêm nhà phân phối thành công.";
-                    MessageBox.Show(message);
-                    LoadData();
-                }
-                else
-                {
-                    message = "Thêm nhà phân phối thất bại.";
-                    MessageBox.Show(message);
-                }
-                tabControl1.TabPages.Add(tabPagePetList);
-                tabControl1.TabPages.Remove(tabPagePetDetail);
-                tabControl1.SelectedTab = tabPagePetList;
-
-            }
-            else if (button == "Edit")
+            if (button == "Edit")
             {
                 // Edit supplier logic
                 // Call SaveEvent or any other logic
-                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
-                Supplier supplier = new Supplier
+                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Product_Id"].Value);
+                PCBLL pcBLL = new PCBLL();
+                PC pc = new PC
                 {
-                    Supplier_Id = supplierId,
-                    supplierName = txt_SupplierName.Text,
-                    phoneNumber = txt_SupplierPhone.Text,
-                    address = txt_SupplierAddress.Text,
-                    email = txt_SupplierEmail.Text
+                    Product_Id = supplierId,
+                    productName = txt_pcName.Text,
+                    Manufacturer = txt_pcSupplier.Text,
+                    Spetification = txt_pcSpecs.Text,
+                    price = Convert.ToDecimal(txt_pcPrice.Text),
+                    stockQuantity = Convert.ToInt32(txt_stockQuantity.Text)
                 };
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.UpdateSupplier(supplier);
+                isSuccessful = pcBLL.UpdatePC(pc);
                 if (isSuccessful)
                 {
-                    message = "Cập nhật nhà phân phối thành công.";
+                    message = "Cập nhật PC thành công.";
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Cập nhật nhà phân phối thất bại.";
+                    message = "Cập nhật PC thất bại.";
                     MessageBox.Show(message);
                 }
+
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
             }
             else if (button == "Delete")
             {
-                // Delete supplier logic
-                // Call SaveEvent or any other logic
-                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Supplier_Id"].Value);
-                SupplierBLL supplierBLL = new SupplierBLL();
-                isSuccessful = supplierBLL.DeleteSupplier(supplierId);
+                int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Product_Id"].Value);
+                PCBLL pCBLL = new PCBLL();
+                isSuccessful = pCBLL.DeletePC(supplierId);
                 if (isSuccessful)
                 {
-                    message = "Xoá nhà phân phối thành công.";
+                    message = "Xóa PC thành công.";
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Xoá nhà phân phối thất bại.";
+                    message = "Xóa PC thất bại.";
                     MessageBox.Show(message);
                 }
                 tabControl1.TabPages.Add(tabPagePetList);
@@ -263,15 +250,44 @@ namespace Gwenchana
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < dataGridView.Rows.Count; i++)
+            string searchText = txtSearch.Text.Trim();
+            //string a = cbb_LaptopSearch.SelectedItem.ToString();
+
+            PCBLL laptopBLL = new PCBLL();
+            if (cbb_PcSearch.SelectedItem.ToString() == "Tên")
             {
-                if (dataGridView.Rows[i].Cells[1].Value.ToString().Contains(txtSearch.Text))
-                {
-                    dataGridView.Rows[i].Selected = true;
-                    dataGridView.CurrentCell = dataGridView.Rows[i].Cells[1];
-                    break;
-                }
+                dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.productName.Contains(searchText)).ToList();
             }
+            else if (cbb_PcSearch.SelectedItem.ToString() == "Nhà sản xuất")
+            {
+                dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.Manufacturer.Contains(searchText)).ToList();
+            }
+            else if (cbb_PcSearch.SelectedItem.ToString() == "Cấu hình")
+            {
+                dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.Spetification.Contains(searchText)).ToList();
+            }
+        }
+
+        private void txt_SupplierPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbb_LaptopSearch_TextUpdate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ClearFilter_Click(object sender, EventArgs e)
+        {
+            cbb_PcSearch.SelectedIndex = -1;
+            txtSearch.Clear();
+            LoadData();
         }
     }
 }
