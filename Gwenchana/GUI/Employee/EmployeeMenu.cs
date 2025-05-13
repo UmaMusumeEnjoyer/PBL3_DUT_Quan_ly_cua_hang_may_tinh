@@ -19,9 +19,9 @@ namespace Gwenchana
         public EmployeeMenu(int id)
         {
             //string username = Login.username;
-            CurrentEmployeeId = id;
-            int userId = id;
+            
             InitializeComponent();
+            CurrentEmployeeId = id;
             hideSubMenu();
         }
 
@@ -242,6 +242,11 @@ namespace Gwenchana
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

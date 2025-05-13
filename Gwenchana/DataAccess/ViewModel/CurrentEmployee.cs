@@ -13,9 +13,9 @@ namespace Gwenchana.DataAccess.ViewModel
     {
         public string username { get; set; }
         public string password { get; set; }
-        public string? employeeName { get; set; }
+        public string employeeName { get; set; }
         public int? Age { get; set; }
-        public string? phoneNumber { get; set; }
+        public string phoneNumber { get; set; }
 
         public int Employee_Id { get; set; }
         public int Account_Id { get; set; }
@@ -35,11 +35,12 @@ namespace Gwenchana.DataAccess.ViewModel
                 this.Account_Id = Convert.ToInt32(row["Id"]);
                 this.username = row["username"].ToString();
                 this.password = row["password"].ToString();
-                this.employeeName = row["employeeName"].ToString();
-                this.Age = Convert.ToInt32(row["age"]);
-                this.phoneNumber = row["phoneNumber"].ToString();
+           
                 this.Employee_Id = Convert.ToInt32(row["Employee_Id"]);
-                this.employeeName = row["employeeName"].ToString();
+                this.employeeName = row["employeeName"] == DBNull.Value ? "" : row["employeeName"].ToString();
+                this.phoneNumber = row["phoneNumber"] == DBNull.Value ? "" : row["phoneNumber"].ToString();
+                this.Age = row["age"] == DBNull.Value ? 0 : Convert.ToInt32(row["age"]);
+                //this.employeeName = row["employeeName"].ToString();
             }
         }
 

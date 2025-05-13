@@ -113,15 +113,7 @@ namespace Gwenchana.BussinessLogic
 
         public int GetId(string username)
         {
-            List<Account> accounts = _accountDAL.GetAllAccounts();
-            foreach (Account account in accounts)
-            {
-                if (account.Username == username)
-                {
-                    return account.Id;
-                }
-            }
-            return 0;
+            return _accountDAL.GetID(username);
         }
 
     }

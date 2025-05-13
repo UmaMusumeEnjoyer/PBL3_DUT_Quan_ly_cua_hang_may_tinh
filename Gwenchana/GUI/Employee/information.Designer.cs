@@ -139,23 +139,24 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Lưu thay đổi";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(744, 503);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(705, 503);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 35);
+            this.button2.Size = new System.Drawing.Size(158, 35);
             this.button2.TabIndex = 19;
-            this.button2.Text = "Đổi mật khẩu";
+            this.button2.Text = "Chỉnh sửa tài khoản";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.ChangePass_Click);
             // 
             // txt_Name
             // 
             this.txt_Name.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_Name.Location = new System.Drawing.Point(248, 123);
+            this.txt_Name.Location = new System.Drawing.Point(248, 125);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(372, 20);
             this.txt_Name.TabIndex = 20;

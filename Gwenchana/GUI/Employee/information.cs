@@ -12,6 +12,7 @@ using Gwenchana.DataAccess.ViewModel;
 using Gwenchana.DataAccess;
 using Gwenchana.DataAccess.DBConnect;
 using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.BussinessLogic;
 
 //using CuaHangMayTinh.UI.Authentication;
 
@@ -23,10 +24,11 @@ namespace Gwenchana
         //public CurrentEmployee employee { get; set; }
         public information(int employe)
         {
+            InitializeComponent();
             id = employe;
 
             LoadData();
-            InitializeComponent();
+            
 
         }
         
@@ -40,8 +42,10 @@ namespace Gwenchana
             txt_PhoneNumber.Text = employee.phoneNumber;
             txt_Username.Text = employee.username;
             txt_Password.Text = employee.password;
+            
 
-
+            txt_Username.Enabled = false;
+            txt_Password.Enabled = false;
 
         }
 
@@ -67,11 +71,37 @@ namespace Gwenchana
 
         private void ChangePass_Click(object sender, EventArgs e)
         {
+
         }
 
         private void txt_Name_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CurrentEmployee employee = new CurrentEmployee();
+            employee.GetCurrentEmployee(id);
+            EmployeeBLL employeeBLL = new EmployeeBLL();
+            Employee employee1 = new Employee()
+            {
+                Empolyee_Id = employee.Employee_Id,
+                employeeName = txt_Name.Text,
+                Age = int.Parse(txt_Age.Text),
+                phoneNumber = txt_PhoneNumber.Text,
+                Account_Id = employee.Account_Id
+            };
+
+            if (employeeBLL.UpdateEmployee(employee1))
+            {
+                MessageBox.Show("Cập nhật thành công");
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại");
+            }
         }
     }
 }

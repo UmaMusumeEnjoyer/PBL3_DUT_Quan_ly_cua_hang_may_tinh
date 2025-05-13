@@ -117,5 +117,21 @@ namespace Gwenchana.DataAccess.DAL
             };
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
+
+        public int GetID(string username)
+        {
+            string sql = "SELECT Id FROM Account WHERE Username = @Username";
+            SqlParameter[] parameters = {
+        new SqlParameter("@Username", username)
+        };
+
+            object result = _db.ExecuteScalar(sql, parameters);
+            if (result != null && result != DBNull.Value)
+            {
+                return Convert.ToInt32(result);
+            }
+            return -1; // Không tìm thấy
+        }
+
     }
 }
