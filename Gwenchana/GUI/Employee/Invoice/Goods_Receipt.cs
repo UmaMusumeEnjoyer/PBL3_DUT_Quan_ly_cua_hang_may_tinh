@@ -310,5 +310,11 @@ namespace Gwenchana
         {
             string a = cbb_LaptopSearch.SelectedItem.ToString();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Goods_ReceiptForm goodsReceiptForm = new Goods_ReceiptForm();
+            goodsReceiptForm.ShowDialog();
+        }
     }
 }

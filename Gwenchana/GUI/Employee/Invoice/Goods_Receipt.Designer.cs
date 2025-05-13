@@ -39,8 +39,6 @@ namespace Gwenchana
             this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
@@ -64,6 +62,7 @@ namespace Gwenchana
             this.txt_LaptopName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_LaptopID = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -116,13 +115,12 @@ namespace Gwenchana
             // 
             // tabPagePetList
             // 
+            this.tabPagePetList.Controls.Add(this.button1);
             this.tabPagePetList.Controls.Add(this.btn_ClearFilter);
             this.tabPagePetList.Controls.Add(this.label7);
             this.tabPagePetList.Controls.Add(this.cbb_LaptopSearch);
             this.tabPagePetList.Controls.Add(this.dataGridView);
             this.tabPagePetList.Controls.Add(this.label2);
-            this.tabPagePetList.Controls.Add(this.btnDelete);
-            this.tabPagePetList.Controls.Add(this.btnEdit);
             this.tabPagePetList.Controls.Add(this.btnSearch);
             this.tabPagePetList.Controls.Add(this.txtSearch);
             this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,28 +193,6 @@ namespace Gwenchana
             this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tìm kiếm : ";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(741, 134);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 30);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(741, 98);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(99, 30);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSearch
             // 
@@ -446,6 +422,17 @@ namespace Gwenchana
             this.txt_LaptopID.TabIndex = 6;
             this.txt_LaptopID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(747, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 87);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Nhập hàng";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Goods_Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -476,8 +463,6 @@ namespace Gwenchana
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePetList;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabPagePetDetail;
@@ -506,5 +491,6 @@ namespace Gwenchana
         private System.Windows.Forms.ComboBox cbb_LaptopSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_ClearFilter;
+        private System.Windows.Forms.Button button1;
     }
 }

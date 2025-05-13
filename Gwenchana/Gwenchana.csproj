@@ -115,6 +115,12 @@
     <Compile Include="GUI\Employee\information.Designer.cs">
       <DependentUpon>information.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Employee\Invoice\Goods_ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Invoice\Goods_ReceiptForm.Designer.cs">
+      <DependentUpon>Goods_ReceiptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Employee\Invoice\CashierOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\information.resx">
       <DependentUpon>information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Invoice\Goods_ReceiptForm.resx">
+      <DependentUpon>Goods_ReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Invoice\CashierOrderForm.resx">
       <DependentUpon>CashierOrderForm.cs</DependentUpon>

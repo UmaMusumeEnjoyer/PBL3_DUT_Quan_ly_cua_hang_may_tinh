@@ -21,7 +21,8 @@ namespace Gwenchana.BussinessLogic
         //}
         public bool AddReceipt(Receipt receipt)
         {
-            return _receiptDAL.AddReceipt(receipt);
+            // _receiptDAL.AddReceipt(receipt);
+            return true;
         }
         //public bool UpdateReceipt(DTO.Receipt receipt)
         //{
