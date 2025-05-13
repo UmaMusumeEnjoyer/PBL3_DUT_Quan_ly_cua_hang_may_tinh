@@ -11,6 +11,7 @@ using Gwenchana.DataAccess;
 
 using System.Data.SqlClient;
 using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.ViewModel;
 
 namespace Gwenchana
 {
@@ -92,6 +93,21 @@ namespace Gwenchana
                     {
                         int id = accountBLL.GetId(username);
                         EmployeeMenu employeeDashboard = new EmployeeMenu(id);
+
+                        CurrentEmployee employee = new CurrentEmployee();
+
+                        employee.GetCurrentEmployee(id);
+                        if (employee.employeeName == null)
+                        {
+                            MessageBox.Show(
+                                "Tài khoản chưa được cấp quyền. Vui lòng liên hệ với Admin để được gán.",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning
+                            );
+                            return;
+                        }
+
                         login_username.Text = "";
                         login_password.Text = "";
                         this.Hide();

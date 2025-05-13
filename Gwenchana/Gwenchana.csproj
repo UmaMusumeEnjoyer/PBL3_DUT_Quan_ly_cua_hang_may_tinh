@@ -52,12 +52,14 @@
     <Compile Include="BussinessLogic\AccessoriesBLL.cs" />
     <Compile Include="BussinessLogic\AccountBLL.cs" />
     <Compile Include="BussinessLogic\EmployeeBLL.cs" />
+    <Compile Include="BussinessLogic\Goods_ReceiptBLL.cs" />
     <Compile Include="BussinessLogic\LaptopBLL.cs" />
     <Compile Include="BussinessLogic\PCBLL.cs" />
     <Compile Include="BussinessLogic\SupplierBLL.cs" />
     <Compile Include="DataAccess\DAL\AccessoriesDAL.cs" />
     <Compile Include="DataAccess\DAL\AccountDAL.cs" />
     <Compile Include="DataAccess\DAL\EmployeeDAL.cs" />
+    <Compile Include="DataAccess\DAL\Goods_ReceiptDAL.cs" />
     <Compile Include="DataAccess\DAL\LaptopDAL.cs" />
     <Compile Include="DataAccess\DAL\PCDAL.cs" />
     <Compile Include="DataAccess\DAL\SupplierDAL.cs" />

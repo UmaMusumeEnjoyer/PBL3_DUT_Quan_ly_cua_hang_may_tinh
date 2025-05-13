@@ -22,16 +22,19 @@ namespace Gwenchana
         private bool isSuccessful;
         private bool isEdit;
         private string button;
+        public int  currentEmployeeID { get; set; }
 
 
         //Constructor
-        public Goods_Receipt()
+        public Goods_Receipt(int cei)
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
-            
+
+            currentEmployeeID = cei;
+
 
             //tabControl1.TabPages.Remove(tabPagePetDetail);
             btnClose.Click += delegate { this.Close(); };

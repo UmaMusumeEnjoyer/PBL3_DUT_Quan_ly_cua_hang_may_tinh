@@ -14,14 +14,18 @@ namespace Gwenchana
 {
     public partial class EmployeeMenu : Form
     {
-        public int CurrentEmployeeId { get; set; }
+        //public CurrentEmployee currentEmployee { get; set; }
+        public int currentEmployeeID { get; set; }
 
         public EmployeeMenu(int id)
         {
             //string username = Login.username;
             
             InitializeComponent();
-            CurrentEmployeeId = id;
+
+            currentEmployeeID = id;
+
+
             hideSubMenu();
         }
 
@@ -233,7 +237,7 @@ namespace Gwenchana
 
         private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            openChildForm(new information(CurrentEmployeeId));
+            openChildForm(new information(currentEmployeeID));
         }
 
         private void button5_Click_2(object sender, EventArgs e)
@@ -249,6 +253,11 @@ namespace Gwenchana
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_HoaDonNhap_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Goods_Receipt(currentEmployeeID));
         }
     }
 }

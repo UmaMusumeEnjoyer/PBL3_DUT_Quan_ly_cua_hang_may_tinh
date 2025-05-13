@@ -78,9 +78,9 @@ namespace Gwenchana
             this.label1.Location = new System.Drawing.Point(53, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.Size = new System.Drawing.Size(135, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Laptop";
+            this.label1.Text = "Hoá đơn nhập";
             // 
             // panel1
             // 
@@ -131,7 +131,7 @@ namespace Gwenchana
             this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePetList.Size = new System.Drawing.Size(858, 378);
             this.tabPagePetList.TabIndex = 0;
-            this.tabPagePetList.Text = "Laptop";
+            this.tabPagePetList.Text = "Danh sách";
             this.tabPagePetList.UseVisualStyleBackColor = true;
             // 
             // btn_ClearFilter
@@ -264,7 +264,7 @@ namespace Gwenchana
             this.tabPagePetDetail.Location = new System.Drawing.Point(4, 29);
             this.tabPagePetDetail.Name = "tabPagePetDetail";
             this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetDetail.Size = new System.Drawing.Size(884, 378);
+            this.tabPagePetDetail.Size = new System.Drawing.Size(858, 378);
             this.tabPagePetDetail.TabIndex = 1;
             this.tabPagePetDetail.Text = "Thông tin chi tiết";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
@@ -446,7 +446,7 @@ namespace Gwenchana
             this.txt_LaptopID.TabIndex = 6;
             this.txt_LaptopID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // LaptopUI
+            // Goods_Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -455,7 +455,7 @@ namespace Gwenchana
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "LaptopUI";
+            this.Name = "Goods_Receipt";
             this.Text = "PetView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
