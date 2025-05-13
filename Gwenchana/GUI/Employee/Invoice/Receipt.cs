@@ -161,11 +161,12 @@ namespace Gwenchana
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            CashierOrderForm cashierOrderForm = new CashierOrderForm();
+            CashierOrderForm cashierOrderForm = new CashierOrderForm(currentEmployeeID);
             //this.Hide();
             //employeeDashboard.ShowDialog();
             
             cashierOrderForm.ShowDialog();
+            LoadData();
             //this.Show();
 
 

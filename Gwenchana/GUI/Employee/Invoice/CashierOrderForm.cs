@@ -18,10 +18,12 @@ namespace Gwenchana
     {
 
         public decimal totalAmount { get; set; }
-        public CashierOrderForm()
+        public int id { get; set; }
+        public CashierOrderForm(int employeeid)
         {
             InitializeComponent();
-
+            
+            id = employeeid;
             txt_productName.Enabled = false;
             txt_productPrice.Enabled = false;
             dgv_Order.Columns.Clear();
@@ -234,14 +236,40 @@ namespace Gwenchana
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
+            Customer selectedCustomer = new Customer();
             using (var selectForm = new CustomerCashUI())
             {
                 if (selectForm.ShowDialog() == DialogResult.OK)
                 {
-                    Customer selectedCustomer = selectForm.currentCustomer;
+                    selectedCustomer = selectForm.currentCustomer;
                  
                     MessageBox.Show("Khách hàng được chọn: " + selectedCustomer.customerName);
                 }
+            }
+
+            EmployeeBLL employeeBLL = new EmployeeBLL();
+            Employee currentEmployee = new Employee();
+            currentEmployee = employeeBLL.GetEmployeeByAccountId(id);
+
+
+
+            List<Product> selectedProducts = new List<Product>();
+            selectedProducts = GetOrderedProductList();
+
+            ReceiptBLL receiptBLL = new ReceiptBLL();
+
+
+            bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts);
+            if (!isSuccess)
+            {
+                MessageBox.Show("Tạo hóa đơn thành công!");
+
+                this.Close();
+                
+            }
+            else
+            {
+                MessageBox.Show("Tạo hóa đơn thất bại!");
             }
 
 
@@ -250,6 +278,29 @@ namespace Gwenchana
 
 
 
+        }
+
+        public List<Product> GetOrderedProductList()
+        {
+            List<Product> productList = new List<Product>();
+            ProductBLL bll = new ProductBLL(); // hoặc dùng DI nếu bạn đã có sẵn instance
+
+            foreach (DataGridViewRow row in dgv_Order.Rows)
+            {
+                if (row.IsNewRow) continue; // bỏ qua dòng trống
+
+                string productId = row.Cells["Product_Id"].Value.ToString();
+                string quantity = row.Cells["quantity"].Value.ToString();
+                Product product = bll.GetProduct(Convert.ToInt32(productId));
+
+                if (product != null)
+                {
+                    product.quantity = Convert.ToInt32(quantity);
+                    productList.Add(product);
+                }
+            }
+
+            return productList;
         }
 
 

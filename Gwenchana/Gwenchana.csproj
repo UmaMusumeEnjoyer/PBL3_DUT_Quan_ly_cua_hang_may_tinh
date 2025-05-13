@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -56,6 +59,7 @@
     <Compile Include="BussinessLogic\Goods_ReceiptBLL.cs" />
     <Compile Include="BussinessLogic\LaptopBLL.cs" />
     <Compile Include="BussinessLogic\PCBLL.cs" />
+    <Compile Include="BussinessLogic\ProductBLL.cs" />
     <Compile Include="BussinessLogic\ReceiptBLL.cs" />
     <Compile Include="BussinessLogic\SupplierBLL.cs" />
     <Compile Include="DataAccess\DAL\AccessoriesDAL.cs" />
@@ -65,6 +69,7 @@
     <Compile Include="DataAccess\DAL\Goods_ReceiptDAL.cs" />
     <Compile Include="DataAccess\DAL\LaptopDAL.cs" />
     <Compile Include="DataAccess\DAL\PCDAL.cs" />
+    <Compile Include="DataAccess\DAL\ProductDAL.cs" />
     <Compile Include="DataAccess\DAL\ReceiptDAL.cs" />
     <Compile Include="DataAccess\DAL\SupplierDAL.cs" />
     <Compile Include="DataAccess\DBConnect\DbConnect.cs" />
@@ -255,6 +260,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

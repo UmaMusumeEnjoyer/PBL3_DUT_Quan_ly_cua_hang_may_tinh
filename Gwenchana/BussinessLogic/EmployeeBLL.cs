@@ -31,5 +31,9 @@ namespace Gwenchana.BussinessLogic
         {
             return _employeeDAL.GetAllEmployeesDataTable();
         }
+        public DataAccess.DTO.Employee GetEmployeeByAccountId(int employeeId)
+        {
+            return _employeeDAL.GetEmployeeById(employeeId);
+        }
     }
 }

@@ -7,6 +7,9 @@ using System.Data;
 using System.Data.SqlClient;
 using Gwenchana.DataAccess.DBConnect;
 using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
+using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Gwenchana.DataAccess.DAL
 {
@@ -55,6 +58,47 @@ namespace Gwenchana.DataAccess.DAL
         {
             return true;
         }
+
+        public bool createReceipt(Employee ce, Customer cs, List<Product> list)
+        {
+            try
+            {
+                using (SqlConnection conn = _db.GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_CreateOrder", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Add parameters
+                        cmd.Parameters.AddWithValue("@CustomerID", cs.Customer_Id);
+                        cmd.Parameters.AddWithValue("@EmployeeID", ce.Empolyee_Id);
+                        //cmd.Parameters.AddWithValue("@EmployeeID", ce.Empolyee_Id);
+
+                        // Chuyển list sản phẩm thành chuỗi JSON
+                        string jsonProductList = Newtonsoft.Json.JsonConvert.SerializeObject(
+                            list.Select(p => new
+                            {
+                                productId = p.Product_Id,
+                                quantity = p.quantity,
+                                price = p.price
+                            })
+                        );
+
+                        cmd.Parameters.AddWithValue("@ProductList", jsonProductList);
+
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tạo hóa đơn: " + ex.Message);
+                return false;
+            }
+        }
+
 
     }
 }

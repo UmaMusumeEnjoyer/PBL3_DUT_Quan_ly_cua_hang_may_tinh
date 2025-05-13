@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Gwenchana.DataAccess.DAL;
 using System.Data;
+using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana.BussinessLogic
 {
@@ -35,6 +37,11 @@ namespace Gwenchana.BussinessLogic
         public DataTable GetAllReceipts()
         {
             return _receiptDAL.GetAllReceipts();
+        }
+
+        public bool createReceipt(Employee ce, Customer cs, List<Product> list)
+        {
+            return _receiptDAL.createReceipt(ce, cs, list);
         }
     }
 }

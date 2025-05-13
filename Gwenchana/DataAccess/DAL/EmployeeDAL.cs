@@ -105,5 +105,27 @@ namespace Gwenchana.DataAccess.DAL
             }
         }
 
+        public Employee GetEmployeeById(int id) 
+        {
+            string sql = "SELECT * FROM Employee WHERE Account_Id = @Employee_Id";
+            SqlParameter[] parameters = {
+                new SqlParameter("@Employee_Id", id)
+            };
+            DataTable dt = _db.GetData(sql, parameters);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                return new Employee
+                {
+                    Empolyee_Id = Convert.ToInt32(row["Employee_Id"]),
+                    employeeName = row["employeeName"].ToString(),
+                    Age = Convert.ToInt32(row["age"]),
+                    phoneNumber = row["phoneNumber"].ToString(),
+                    Account_Id = Convert.ToInt32(row["Account_Id"]),
+                };
+            }
+            return null;
+        }
+
     }
 }

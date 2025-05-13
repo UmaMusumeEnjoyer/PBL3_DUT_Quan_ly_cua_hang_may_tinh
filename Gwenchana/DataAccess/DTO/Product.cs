@@ -14,5 +14,7 @@ namespace Gwenchana.DataAccess.DTO
         public decimal price { get; set; }
         public int stockQuantity { get; set; }
         public string Manufacturer { get; set; }
+
+        public int? quantity { get; set; }
     }
 }
