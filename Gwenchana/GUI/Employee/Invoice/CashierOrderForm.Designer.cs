@@ -31,7 +31,6 @@ namespace Gwenchana
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierOrderForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,8 +60,6 @@ namespace Gwenchana
             this.lb_totalAmount = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_Order = new System.Windows.Forms.DataGridView();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).BeginInit();
             this.panel2.SuspendLayout();
@@ -422,16 +419,6 @@ namespace Gwenchana
             this.dgv_Order.Size = new System.Drawing.Size(379, 426);
             this.dgv_Order.TabIndex = 4;
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
             // CashierOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,8 +471,6 @@ namespace Gwenchana
         private System.Windows.Forms.Label txt_finalTotal;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button cashierOrderForm_receiptBtn;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_productPrice;
         private System.Windows.Forms.TextBox txt_productName;

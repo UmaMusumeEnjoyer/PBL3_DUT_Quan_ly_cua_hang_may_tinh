@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BussinessLogic\AccessoriesBLL.cs" />
     <Compile Include="BussinessLogic\AccountBLL.cs" />
+    <Compile Include="BussinessLogic\CustomerBLL.cs" />
     <Compile Include="BussinessLogic\EmployeeBLL.cs" />
     <Compile Include="BussinessLogic\Goods_ReceiptBLL.cs" />
     <Compile Include="BussinessLogic\LaptopBLL.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="BussinessLogic\SupplierBLL.cs" />
     <Compile Include="DataAccess\DAL\AccessoriesDAL.cs" />
     <Compile Include="DataAccess\DAL\AccountDAL.cs" />
+    <Compile Include="DataAccess\DAL\CustomerDAL.cs" />
     <Compile Include="DataAccess\DAL\EmployeeDAL.cs" />
     <Compile Include="DataAccess\DAL\Goods_ReceiptDAL.cs" />
     <Compile Include="DataAccess\DAL\LaptopDAL.cs" />
@@ -102,6 +104,12 @@
     </Compile>
     <Compile Include="GUI\Admin\AdminMenu.designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Employee\Customer\CustomerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Customer\CustomerUI.Designer.cs">
+      <DependentUpon>CustomerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Employee\EmployeeMenu.cs">
       <SubType>Form</SubType>
@@ -188,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Customer\CustomerUI.resx">
+      <DependentUpon>CustomerUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\EmployeeMenu.resx">
       <DependentUpon>EmployeeMenu.cs</DependentUpon>

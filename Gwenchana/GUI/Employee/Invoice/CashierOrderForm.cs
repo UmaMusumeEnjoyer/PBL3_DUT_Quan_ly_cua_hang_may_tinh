@@ -233,7 +233,9 @@ namespace Gwenchana
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
-
+            CustomerUI customerUI = new CustomerUI();
+            customerUI.ShowDialog();
+            
         }
 
 
