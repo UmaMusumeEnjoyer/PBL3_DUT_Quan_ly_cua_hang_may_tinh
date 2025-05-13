@@ -105,6 +105,12 @@
     <Compile Include="GUI\Admin\AdminMenu.designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Employee\Customer\CustomerCashUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Customer\CustomerCashUI.Designer.cs">
+      <DependentUpon>CustomerCashUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Employee\Customer\CustomerUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Customer\CustomerCashUI.resx">
+      <DependentUpon>CustomerCashUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Customer\CustomerUI.resx">
       <DependentUpon>CustomerUI.cs</DependentUpon>

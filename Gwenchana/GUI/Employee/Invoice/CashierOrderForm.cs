@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Gwenchana.BussinessLogic;
 using Gwenchana.DataAccess;
 using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.DataAccess.DTO;
 
 
 namespace Gwenchana
@@ -233,10 +234,24 @@ namespace Gwenchana
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
-            CustomerUI customerUI = new CustomerUI();
-            customerUI.ShowDialog();
-            
+            using (var selectForm = new CustomerCashUI())
+            {
+                if (selectForm.ShowDialog() == DialogResult.OK)
+                {
+                    Customer selectedCustomer = selectForm.currentCustomer;
+                 
+                    MessageBox.Show("Khách hàng được chọn: " + selectedCustomer.customerName);
+                }
+            }
+
+
+
+
+
+
+
         }
+
 
 
     }
