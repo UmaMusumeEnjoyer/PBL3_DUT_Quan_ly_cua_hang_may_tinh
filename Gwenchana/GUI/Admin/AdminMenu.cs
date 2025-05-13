@@ -229,7 +229,7 @@ namespace Gwenchana
 
         private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            openChildForm(new information());
+            
         }
 
         private void button5_Click_2(object sender, EventArgs e)
@@ -245,6 +245,16 @@ namespace Gwenchana
         private void button5_Click_3(object sender, EventArgs e)
         {
             openChildForm(new Dashboard()); 
+        }
+
+        private void button9_Click_2(object sender, EventArgs e)
+        {
+            openChildForm(new AssignEmployee());
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new Employees());
         }
     }
 }

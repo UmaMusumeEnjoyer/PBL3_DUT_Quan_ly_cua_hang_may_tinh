@@ -95,5 +95,27 @@ namespace Gwenchana.DataAccess.DAL
 
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
+
+        public DataTable GetAllAccountDataTable()
+        {
+            string sql = "SELECT " +
+                        "a.*, " +
+                        "CASE WHEN EXISTS " +
+                        "(SELECT 1 FROM employee e WHERE e.account_Id = a.id) THEN 'Có tồn tại' " +
+                        "ELSE 'Không tồn tại' " +
+                        "END AS TrangThaiTonTai " +
+                        "FROM account a " +
+                        "WHERE a.role <> 'admin'";
+            return _db.GetData(sql);
+        }
+
+        public bool AssignEmployee(int id)
+        {
+            string sql = "INSERT INTO Employee (Account_Id) VALUES (@AccountId)";
+            SqlParameter[] parameters = {
+                new SqlParameter("@AccountId", id)
+            };
+            return _db.ExecuteNonQuery(sql, parameters) > 0;
+        }
     }
 }

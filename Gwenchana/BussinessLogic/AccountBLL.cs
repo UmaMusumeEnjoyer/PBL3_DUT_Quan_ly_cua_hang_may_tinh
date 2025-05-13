@@ -5,15 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Gwenchana.DataAccess.DTO;
+using System.Data;
 
 namespace Gwenchana.BussinessLogic
 {
     public class AccountBLL
     {
+        private readonly AccountDAL _accountDAL = new AccountDAL();
         public bool Login(string username, string password)
         {
-            AccountDAL accountDAL = new AccountDAL();
-            List<Account> accounts = accountDAL.GetAllAccounts();
+            
+            List<Account> accounts = _accountDAL.GetAllAccounts();
             foreach (Account account in accounts)
             {
                 if (account.Username == username && account.Password == password)
@@ -26,8 +28,8 @@ namespace Gwenchana.BussinessLogic
 
         public bool Register(string username, string password, string role)
         {
-            AccountDAL accountDAL = new AccountDAL();
-            List<Account> accounts = accountDAL.GetAllAccounts();
+           
+            List<Account> accounts = _accountDAL.GetAllAccounts();
             foreach (Account account in accounts)
             {
                 if (account.Username == username)
@@ -41,13 +43,13 @@ namespace Gwenchana.BussinessLogic
                 Password = password,
                 Role = "Employee" // Default role
             };
-            return accountDAL.AddAccount(newAccount);
+            return _accountDAL.AddAccount(newAccount);
         }
 
         public string GetRole(string username)
         {
-            AccountDAL accountDAL = new AccountDAL();
-            List<Account> accounts = accountDAL.GetAllAccounts();
+            
+            List<Account> accounts = _accountDAL.GetAllAccounts();
             foreach (Account account in accounts)
             {
                 if (account.Username == username)
@@ -60,33 +62,54 @@ namespace Gwenchana.BussinessLogic
 
         public bool ChangePassword(string username, string newPassword)
         {
-            AccountDAL accountDAL = new AccountDAL();
-            List<Account> accounts = accountDAL.GetAllAccounts();
+            
+            List<Account> accounts = _accountDAL.GetAllAccounts();
             foreach (Account account in accounts)
             {
                 if (account.Username == username)
                 {
                     account.Password = newPassword;
-                    return accountDAL.UpdateAccount(account);
+                    return _accountDAL.UpdateAccount(account);
                 }
             }
             return false;
         }
         public bool ChangeUsername(string oldUsername, string newUsername)
         {
-            AccountDAL accountDAL = new AccountDAL();
-            List<Account> accounts = accountDAL.GetAllAccounts();
+            
+            List<Account> accounts = _accountDAL.GetAllAccounts();
             foreach (Account account in accounts)
             {
                 if (account.Username == oldUsername)
                 {
                     account.Username = newUsername;
-                    return accountDAL.UpdateAccount(account);
+                    return _accountDAL.UpdateAccount(account);
                 }
             }
             return false;
         }
 
+        public DataTable GetAllAccountsDataTable()
+        {
+           
+            return _accountDAL.GetAllAccountDataTable();
+        }
+
+        public bool DeleteAccount(int id)
+        {
+            return _accountDAL.DeleteAccount(id);
+        }
+
+        public bool UpdateAccount(Account account)
+        {
+            return _accountDAL.UpdateAccount(account);
+        }
+
+        public bool AssignEmployee(int id)
+        {
+
+            return _accountDAL.AssignEmployee(id);
+        }
 
     }
 }

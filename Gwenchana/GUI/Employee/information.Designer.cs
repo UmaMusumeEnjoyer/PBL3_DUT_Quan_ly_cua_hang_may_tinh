@@ -37,11 +37,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.txt_Age = new System.Windows.Forms.TextBox();
+            this.txt_PhoneNumber = new System.Windows.Forms.TextBox();
+            this.txt_Username = new System.Windows.Forms.TextBox();
+            this.txt_Password = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +51,8 @@
             this.panel5.Controls.Add(this.label5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1235, 75);
+            this.panel5.Size = new System.Drawing.Size(914, 61);
             this.panel5.TabIndex = 12;
             // 
             // label5
@@ -62,10 +61,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(491, 10);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(362, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(199, 47);
+            this.label5.Size = new System.Drawing.Size(158, 38);
             this.label5.TabIndex = 4;
             this.label5.Text = "Thông Tin";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -76,10 +74,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 151);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(110, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 26);
+            this.label1.Size = new System.Drawing.Size(42, 19);
             this.label1.TabIndex = 13;
             this.label1.Text = "Tên ";
             // 
@@ -89,10 +86,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(148, 219);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(111, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 26);
+            this.label2.Size = new System.Drawing.Size(40, 19);
             this.label2.TabIndex = 14;
             this.label2.Text = "Tuổi";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -103,10 +99,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(147, 303);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(110, 246);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 26);
+            this.label3.Size = new System.Drawing.Size(110, 19);
             this.label3.TabIndex = 15;
             this.label3.Text = "Số điện thoại";
             // 
@@ -116,10 +111,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(148, 380);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(111, 309);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 26);
+            this.label4.Size = new System.Drawing.Size(86, 19);
             this.label4.TabIndex = 16;
             this.label4.Text = "Tài khoản";
             // 
@@ -129,10 +123,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(147, 468);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(110, 380);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 26);
+            this.label6.Size = new System.Drawing.Size(81, 19);
             this.label6.TabIndex = 17;
             this.label6.Text = "Mật khẩu";
             // 
@@ -140,10 +133,9 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(147, 619);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(110, 503);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 43);
+            this.button1.Size = new System.Drawing.Size(119, 35);
             this.button1.TabIndex = 18;
             this.button1.Text = "Lưu thay đổi";
             this.button1.UseVisualStyleBackColor = true;
@@ -152,69 +144,65 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(992, 619);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(744, 503);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 43);
+            this.button2.Size = new System.Drawing.Size(119, 35);
             this.button2.TabIndex = 19;
             this.button2.Text = "Đổi mật khẩu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.ChangePass_Click);
             // 
-            // textBox1
+            // txt_Name
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(331, 151);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(495, 22);
-            this.textBox1.TabIndex = 20;
+            this.txt_Name.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_Name.Location = new System.Drawing.Point(248, 123);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(372, 20);
+            this.txt_Name.TabIndex = 20;
+            this.txt_Name.TextChanged += new System.EventHandler(this.txt_Name_TextChanged);
             // 
-            // textBox2
+            // txt_Age
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(331, 219);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(495, 22);
-            this.textBox2.TabIndex = 21;
+            this.txt_Age.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_Age.Location = new System.Drawing.Point(248, 178);
+            this.txt_Age.Name = "txt_Age";
+            this.txt_Age.Size = new System.Drawing.Size(372, 20);
+            this.txt_Age.TabIndex = 21;
             // 
-            // textBox3
+            // txt_PhoneNumber
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(331, 303);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(495, 22);
-            this.textBox3.TabIndex = 22;
+            this.txt_PhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_PhoneNumber.Location = new System.Drawing.Point(248, 246);
+            this.txt_PhoneNumber.Name = "txt_PhoneNumber";
+            this.txt_PhoneNumber.Size = new System.Drawing.Size(372, 20);
+            this.txt_PhoneNumber.TabIndex = 22;
             // 
-            // textBox4
+            // txt_Username
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Location = new System.Drawing.Point(331, 380);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(495, 22);
-            this.textBox4.TabIndex = 23;
+            this.txt_Username.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_Username.Location = new System.Drawing.Point(248, 309);
+            this.txt_Username.Name = "txt_Username";
+            this.txt_Username.Size = new System.Drawing.Size(372, 20);
+            this.txt_Username.TabIndex = 23;
             // 
-            // textBox5
+            // txt_Password
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.Location = new System.Drawing.Point(331, 468);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(495, 22);
-            this.textBox5.TabIndex = 24;
+            this.txt_Password.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_Password.Location = new System.Drawing.Point(248, 380);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(372, 20);
+            this.txt_Password.TabIndex = 24;
             // 
             // information
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(914, 571);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_Username);
+            this.Controls.Add(this.txt_PhoneNumber);
+            this.Controls.Add(this.txt_Age);
+            this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
@@ -223,9 +211,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel5);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "information";
-            this.Size = new System.Drawing.Size(1235, 742);
             this.Load += new System.EventHandler(this.information_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -245,10 +231,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_Name;
+        private System.Windows.Forms.TextBox txt_Age;
+        private System.Windows.Forms.TextBox txt_PhoneNumber;
+        private System.Windows.Forms.TextBox txt_Username;
+        private System.Windows.Forms.TextBox txt_Password;
     }
 }

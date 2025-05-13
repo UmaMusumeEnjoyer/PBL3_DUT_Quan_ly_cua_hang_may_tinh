@@ -1,4 +1,5 @@
 ﻿using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,12 @@ namespace Gwenchana
 {
     public partial class EmployeeMenu : Form
     {
+        public int CurrentEmployeeId { get; set; }
+
         public EmployeeMenu(int id)
         {
             //string username = Login.username;
+            CurrentEmployeeId = id;
             int userId = id;
             InitializeComponent();
             hideSubMenu();
@@ -229,7 +233,7 @@ namespace Gwenchana
 
         private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            openChildForm(new information());
+            openChildForm(new information(CurrentEmployeeId));
         }
 
         private void button5_Click_2(object sender, EventArgs e)

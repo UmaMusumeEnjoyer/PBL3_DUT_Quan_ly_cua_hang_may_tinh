@@ -174,5 +174,10 @@ namespace Gwenchana.DataAccess.DBConnect
                 }
             }
         }
+
+        public SqlConnection GetConnection()
+        {
+            return new SqlConnection(connectionString);
+        }
     }
 }

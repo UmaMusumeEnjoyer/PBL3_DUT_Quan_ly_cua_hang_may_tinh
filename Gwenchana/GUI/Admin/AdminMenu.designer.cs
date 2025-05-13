@@ -33,24 +33,26 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_HoaDonXuat = new System.Windows.Forms.Button();
             this.btn_HoaDonNhap = new System.Windows.Forms.Button();
-            this.btn_HoaDon = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnTools = new System.Windows.Forms.Button();
             this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.btnPlaylist = new System.Windows.Forms.Button();
             this.panelMediaSubMenu = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.btn_HoaDon = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnTools = new System.Windows.Forms.Button();
+            this.btnPlaylist = new System.Windows.Forms.Button();
+            this.btnMedia = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
@@ -63,6 +65,8 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.button10);
+            this.panelSideMenu.Controls.Add(this.button9);
             this.panelSideMenu.Controls.Add(this.button5);
             this.panelSideMenu.Controls.Add(this.panel1);
             this.panelSideMenu.Controls.Add(this.btn_HoaDon);
@@ -117,69 +121,6 @@
             this.btn_HoaDonNhap.TabIndex = 0;
             this.btn_HoaDonNhap.Text = "Hoá đơn nhập";
             this.btn_HoaDonNhap.UseVisualStyleBackColor = true;
-            // 
-            // btn_HoaDon
-            // 
-            this.btn_HoaDon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_HoaDon.FlatAppearance.BorderSize = 0;
-            this.btn_HoaDon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btn_HoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btn_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HoaDon.ForeColor = System.Drawing.Color.Silver;
-            this.btn_HoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Image")));
-            this.btn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDon.Location = new System.Drawing.Point(0, 513);
-            this.btn_HoaDon.Name = "btn_HoaDon";
-            this.btn_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_HoaDon.Size = new System.Drawing.Size(200, 45);
-            this.btn_HoaDon.TabIndex = 11;
-            this.btn_HoaDon.Text = "Hoá đơn";
-            this.btn_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_HoaDon.UseVisualStyleBackColor = true;
-            this.btn_HoaDon.Click += new System.EventHandler(this.HoaDon_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.Silver;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 816);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(200, 45);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnTools
-            // 
-            this.btnTools.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTools.FlatAppearance.BorderSize = 0;
-            this.btnTools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTools.ForeColor = System.Drawing.Color.Silver;
-            this.btnTools.Image = ((System.Drawing.Image)(resources.GetObject("btnTools.Image")));
-            this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 468);
-            this.btnTools.Name = "btnTools";
-            this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnTools.Size = new System.Drawing.Size(200, 45);
-            this.btnTools.TabIndex = 6;
-            this.btnTools.Text = "Nhà cung cấp";
-            this.btnTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTools.UseVisualStyleBackColor = true;
-            this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
             // 
             // panelPlaylistSubMenu
             // 
@@ -266,27 +207,6 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // btnPlaylist
-            // 
-            this.btnPlaylist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaylist.FlatAppearance.BorderSize = 0;
-            this.btnPlaylist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaylist.ForeColor = System.Drawing.Color.Silver;
-            this.btnPlaylist.Image = ((System.Drawing.Image)(resources.GetObject("btnPlaylist.Image")));
-            this.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaylist.Location = new System.Drawing.Point(0, 258);
-            this.btnPlaylist.Name = "btnPlaylist";
-            this.btnPlaylist.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnPlaylist.Size = new System.Drawing.Size(200, 45);
-            this.btnPlaylist.TabIndex = 3;
-            this.btnPlaylist.Text = "Quản lý kho";
-            this.btnPlaylist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaylist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPlaylist.UseVisualStyleBackColor = true;
-            this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
-            // 
             // panelMediaSubMenu
             // 
             this.panelMediaSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -353,27 +273,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnMedia
-            // 
-            this.btnMedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMedia.FlatAppearance.BorderSize = 0;
-            this.btnMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedia.ForeColor = System.Drawing.Color.Silver;
-            this.btnMedia.Image = ((System.Drawing.Image)(resources.GetObject("btnMedia.Image")));
-            this.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedia.Location = new System.Drawing.Point(0, 92);
-            this.btnMedia.Name = "btnMedia";
-            this.btnMedia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMedia.Size = new System.Drawing.Size(200, 45);
-            this.btnMedia.TabIndex = 1;
-            this.btnMedia.Text = "Sản phẩm";
-            this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMedia.UseVisualStyleBackColor = true;
-            this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
-            // 
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.pictureBox1);
@@ -382,17 +281,6 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(200, 92);
             this.panelLogo.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelChildForm
             // 
@@ -403,6 +291,48 @@
             this.panelChildForm.Size = new System.Drawing.Size(1384, 861);
             this.panelChildForm.TabIndex = 2;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
+            // 
+            // button10
+            // 
+            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.ForeColor = System.Drawing.Color.Silver;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(0, 727);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(200, 45);
+            this.button10.TabIndex = 15;
+            this.button10.Text = "Nhân viên";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ForeColor = System.Drawing.Color.Silver;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(0, 682);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(200, 45);
+            this.button9.TabIndex = 14;
+            this.button9.Text = "Tài khoản";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_2);
             // 
             // button5
             // 
@@ -424,6 +354,122 @@
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_3);
+            // 
+            // btn_HoaDon
+            // 
+            this.btn_HoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_HoaDon.FlatAppearance.BorderSize = 0;
+            this.btn_HoaDon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_HoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HoaDon.ForeColor = System.Drawing.Color.Silver;
+            this.btn_HoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Image")));
+            this.btn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_HoaDon.Location = new System.Drawing.Point(0, 513);
+            this.btn_HoaDon.Name = "btn_HoaDon";
+            this.btn_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_HoaDon.Size = new System.Drawing.Size(200, 45);
+            this.btn_HoaDon.TabIndex = 11;
+            this.btn_HoaDon.Text = "Hoá đơn";
+            this.btn_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_HoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_HoaDon.UseVisualStyleBackColor = true;
+            this.btn_HoaDon.Click += new System.EventHandler(this.HoaDon_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Silver;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(0, 816);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnExit.Size = new System.Drawing.Size(200, 45);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnTools
+            // 
+            this.btnTools.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTools.FlatAppearance.BorderSize = 0;
+            this.btnTools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTools.ForeColor = System.Drawing.Color.Silver;
+            this.btnTools.Image = ((System.Drawing.Image)(resources.GetObject("btnTools.Image")));
+            this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTools.Location = new System.Drawing.Point(0, 468);
+            this.btnTools.Name = "btnTools";
+            this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnTools.Size = new System.Drawing.Size(200, 45);
+            this.btnTools.TabIndex = 6;
+            this.btnTools.Text = "Nhà cung cấp";
+            this.btnTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTools.UseVisualStyleBackColor = true;
+            this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
+            // 
+            // btnPlaylist
+            // 
+            this.btnPlaylist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlaylist.FlatAppearance.BorderSize = 0;
+            this.btnPlaylist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlaylist.ForeColor = System.Drawing.Color.Silver;
+            this.btnPlaylist.Image = ((System.Drawing.Image)(resources.GetObject("btnPlaylist.Image")));
+            this.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaylist.Location = new System.Drawing.Point(0, 258);
+            this.btnPlaylist.Name = "btnPlaylist";
+            this.btnPlaylist.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPlaylist.Size = new System.Drawing.Size(200, 45);
+            this.btnPlaylist.TabIndex = 3;
+            this.btnPlaylist.Text = "Quản lý kho";
+            this.btnPlaylist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlaylist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlaylist.UseVisualStyleBackColor = true;
+            this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
+            // 
+            // btnMedia
+            // 
+            this.btnMedia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMedia.FlatAppearance.BorderSize = 0;
+            this.btnMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMedia.ForeColor = System.Drawing.Color.Silver;
+            this.btnMedia.Image = ((System.Drawing.Image)(resources.GetObject("btnMedia.Image")));
+            this.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedia.Location = new System.Drawing.Point(0, 92);
+            this.btnMedia.Name = "btnMedia";
+            this.btnMedia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnMedia.Size = new System.Drawing.Size(200, 45);
+            this.btnMedia.TabIndex = 1;
+            this.btnMedia.Text = "Sản phẩm";
+            this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMedia.UseVisualStyleBackColor = true;
+            this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(159, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // AdminMenu
             // 
@@ -473,6 +519,8 @@
         private System.Windows.Forms.Button btn_HoaDonXuat;
         private System.Windows.Forms.Button btn_HoaDonNhap;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 
