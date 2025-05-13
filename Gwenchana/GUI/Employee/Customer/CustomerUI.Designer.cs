@@ -297,7 +297,7 @@ namespace Gwenchana
             // 
             this.txt_phoneNumber.Location = new System.Drawing.Point(63, 198);
             this.txt_phoneNumber.Name = "txt_phoneNumber";
-            this.txt_phoneNumber.Size = new System.Drawing.Size(380, 29);
+            this.txt_phoneNumber.Size = new System.Drawing.Size(227, 29);
             this.txt_phoneNumber.TabIndex = 12;
             // 
             // label4
@@ -368,7 +368,7 @@ namespace Gwenchana
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(450, 175);
+            this.label5.Location = new System.Drawing.Point(312, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 21;
@@ -376,9 +376,9 @@ namespace Gwenchana
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(454, 198);
+            this.txt_Email.Location = new System.Drawing.Point(316, 198);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(355, 29);
+            this.txt_Email.Size = new System.Drawing.Size(307, 29);
             this.txt_Email.TabIndex = 20;
             // 
             // CustomerUI

@@ -42,7 +42,7 @@ namespace Gwenchana.DataAccess.DAL
 
         public bool AddCustomer(Customer customer)
         {
-            string sql = @"INSERT INTO Customer (Name, Email, PhoneNumber, Address) 
+            string sql = @"INSERT INTO Customer (customerName, email, phoneNumber, address) 
                            VALUES (@Name, @Email, @PhoneNumber, @Address)";
             SqlParameter[] parameters = {
                 new SqlParameter("@Name", customer.customerName),
@@ -53,4 +53,20 @@ namespace Gwenchana.DataAccess.DAL
             int result = _db.ExecuteNonQuery(sql, parameters);
             return result > 0;
         }
+        public bool UpdateCustomer(Customer customer)
+        {
+            string sql = @"UPDATE Customer 
+                           SET customerName = @Name, email = @Email, phoneNumber = @PhoneNumber, address = @Address 
+                           WHERE Customer_Id = @Id";
+            SqlParameter[] parameters = {
+                new SqlParameter("@Id", customer.Customer_Id),
+                new SqlParameter("@Name", customer.customerName),
+                new SqlParameter("@Email", customer.email),
+                new SqlParameter("@PhoneNumber", customer.phoneNumber),
+                new SqlParameter("@Address", customer.address)
+            };
+            int result = _db.ExecuteNonQuery(sql, parameters);
+            return result > 0;
+        }
+    }
 }

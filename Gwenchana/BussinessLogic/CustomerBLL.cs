@@ -22,5 +22,9 @@ namespace Gwenchana.BussinessLogic
         {
             return _customerDAL.AddCustomer(customer);
         }
+        public bool UpdateCustomer(DataAccess.DTO.Customer customer)
+        {
+            return _customerDAL.UpdateCustomer(customer);
+        }
     }
 }

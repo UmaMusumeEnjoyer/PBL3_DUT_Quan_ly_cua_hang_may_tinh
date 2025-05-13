@@ -94,7 +94,14 @@ namespace Gwenchana
             label3.ForeColor = Color.Gray;
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
-  
+            txt_sodondathuchien.Enabled = false;
+
+            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["customerName"].Value.ToString();
+            txt_phoneNumber.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
+            btn_Address.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
+            txt_Email.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Customer_Id"].Value.ToString();
+            txt_sodondathuchien.Text = dataGridView.CurrentRow.Cells["SoDonDaThucHien"].Value.ToString();
 
 
         }
@@ -124,7 +131,7 @@ namespace Gwenchana
 
             txt_LaptopID.Clear();
 
-            
+            txt_Email.Clear();
 
             // Kích hoạt lại tất cả textbox nếu từng bị disable (Delete mode)
             txt_LaptopName.Enabled = true;
@@ -182,6 +189,7 @@ namespace Gwenchana
                 {
                     message = "Thêm khách hàng thành công!";
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
                 }
                 else
                 {
@@ -189,14 +197,36 @@ namespace Gwenchana
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-
+                
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
             }
-            else if (button == "Delete")
+            else if (button == "Edit")
             {
-                int productID = Convert.ToInt32(dataGridView.CurrentRow.Cells["Product_Id"].Value);
+                int productID = Convert.ToInt32(dataGridView.CurrentRow.Cells["Customer_Id"].Value);
+                CustomerBLL customerBLL = new CustomerBLL();
+                Customer customer = new Customer
+                {
+                    Customer_Id = productID,
+                    customerName = txt_LaptopName.Text,
+                    phoneNumber = txt_phoneNumber.Text,
+                    address = btn_Address.Text,
+                    email = txt_Email.Text,
+                    //SoDonDaThucHien = Convert.ToInt32(txt_sodondathuchien.Text)
+                };
+                isSuccessful = customerBLL.UpdateCustomer(customer);
+                if (isSuccessful)
+                {
+                    message = "Cập nhật khách hàng thành công!";
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                }
+                else
+                {
+                    message = "Cập nhật khách hàng thất bại!";
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
 
                 tabControl1.TabPages.Add(tabPagePetList);
