@@ -29,12 +29,13 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierOrderForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_menuTable = new System.Windows.Forms.DataGridView();
+            this.dgv_Product = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cashierOrderForm_clearBtn = new System.Windows.Forms.Button();
             this.cashierOrderForm_removeBtn = new System.Windows.Forms.Button();
@@ -45,9 +46,9 @@ namespace Gwenchana
             this.cashierOrderForm_quantity = new System.Windows.Forms.NumericUpDown();
             this.cashierOrderForm_prodName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_productID = new System.Windows.Forms.ComboBox();
+            this.cbb_ProductID = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_type = new System.Windows.Forms.ComboBox();
+            this.ccb_ProductFilter = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cashierOrderForm_receiptBtn = new System.Windows.Forms.Button();
@@ -58,26 +59,42 @@ namespace Gwenchana
             this.label11 = new System.Windows.Forms.Label();
             this.cashierOrderForm_orderPrice = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_orderTable = new System.Windows.Forms.DataGridView();
+            this.dgv_Order = new System.Windows.Forms.DataGridView();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.txt_productName = new System.Windows.Forms.TextBox();
+            this.txt_productPrice = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_menuTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_quantity)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_orderTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cashierOrderForm_menuTable);
+            this.panel1.Controls.Add(this.dgv_Product);
             this.panel1.Location = new System.Drawing.Point(18, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(812, 345);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(706, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 36);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Làm mới";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -85,36 +102,38 @@ namespace Gwenchana
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 22);
+            this.label1.Size = new System.Drawing.Size(187, 22);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Danh sách mặt hàng";
+            this.label1.Text = "Danh sách mặt hàng :";
             // 
-            // cashierOrderForm_menuTable
+            // dgv_Product
             // 
-            this.cashierOrderForm_menuTable.AllowUserToAddRows = false;
-            this.cashierOrderForm_menuTable.AllowUserToDeleteRows = false;
-            this.cashierOrderForm_menuTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cashierOrderForm_menuTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cashierOrderForm_menuTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.cashierOrderForm_menuTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cashierOrderForm_menuTable.EnableHeadersVisualStyles = false;
-            this.cashierOrderForm_menuTable.Location = new System.Drawing.Point(16, 59);
-            this.cashierOrderForm_menuTable.Name = "cashierOrderForm_menuTable";
-            this.cashierOrderForm_menuTable.ReadOnly = true;
-            this.cashierOrderForm_menuTable.RowHeadersVisible = false;
-            this.cashierOrderForm_menuTable.Size = new System.Drawing.Size(777, 265);
-            this.cashierOrderForm_menuTable.TabIndex = 2;
+            this.dgv_Product.AllowUserToAddRows = false;
+            this.dgv_Product.AllowUserToDeleteRows = false;
+            this.dgv_Product.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Product.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Product.EnableHeadersVisualStyles = false;
+            this.dgv_Product.Location = new System.Drawing.Point(16, 59);
+            this.dgv_Product.Name = "dgv_Product";
+            this.dgv_Product.ReadOnly = true;
+            this.dgv_Product.RowHeadersVisible = false;
+            this.dgv_Product.Size = new System.Drawing.Size(777, 265);
+            this.dgv_Product.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txt_productPrice);
+            this.panel2.Controls.Add(this.txt_productName);
             this.panel2.Controls.Add(this.cashierOrderForm_clearBtn);
             this.panel2.Controls.Add(this.cashierOrderForm_removeBtn);
             this.panel2.Controls.Add(this.cashierOrderForm_addBtn);
@@ -124,9 +143,9 @@ namespace Gwenchana
             this.panel2.Controls.Add(this.cashierOrderForm_quantity);
             this.panel2.Controls.Add(this.cashierOrderForm_prodName);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cashierOrderForm_productID);
+            this.panel2.Controls.Add(this.cbb_ProductID);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.cashierOrderForm_type);
+            this.panel2.Controls.Add(this.ccb_ProductFilter);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(18, 388);
             this.panel2.Name = "panel2";
@@ -137,13 +156,13 @@ namespace Gwenchana
             // 
             this.cashierOrderForm_clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.cashierOrderForm_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_clearBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashierOrderForm_clearBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierOrderForm_clearBtn.ForeColor = System.Drawing.Color.White;
             this.cashierOrderForm_clearBtn.Location = new System.Drawing.Point(588, 254);
             this.cashierOrderForm_clearBtn.Name = "cashierOrderForm_clearBtn";
             this.cashierOrderForm_clearBtn.Size = new System.Drawing.Size(194, 49);
             this.cashierOrderForm_clearBtn.TabIndex = 24;
-            this.cashierOrderForm_clearBtn.Text = "CLEAR";
+            this.cashierOrderForm_clearBtn.Text = "Xoá toàn bộ";
             this.cashierOrderForm_clearBtn.UseVisualStyleBackColor = false;
             // 
             // cashierOrderForm_removeBtn
@@ -163,14 +182,15 @@ namespace Gwenchana
             // 
             this.cashierOrderForm_addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.cashierOrderForm_addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_addBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashierOrderForm_addBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierOrderForm_addBtn.ForeColor = System.Drawing.Color.White;
             this.cashierOrderForm_addBtn.Location = new System.Drawing.Point(27, 254);
             this.cashierOrderForm_addBtn.Name = "cashierOrderForm_addBtn";
             this.cashierOrderForm_addBtn.Size = new System.Drawing.Size(194, 49);
             this.cashierOrderForm_addBtn.TabIndex = 22;
-            this.cashierOrderForm_addBtn.Text = "ADD";
+            this.cashierOrderForm_addBtn.Text = "Thêm";
             this.cashierOrderForm_addBtn.UseVisualStyleBackColor = false;
+            this.cashierOrderForm_addBtn.Click += new System.EventHandler(this.cashierOrderForm_addBtn_Click);
             // 
             // cashierOrderForm_price
             // 
@@ -228,15 +248,16 @@ namespace Gwenchana
             this.label3.TabIndex = 16;
             this.label3.Text = "Tên sản phẩm :";
             // 
-            // cashierOrderForm_productID
+            // cbb_ProductID
             // 
-            this.cashierOrderForm_productID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_productID.FormattingEnabled = true;
-            this.cashierOrderForm_productID.Location = new System.Drawing.Point(523, 38);
-            this.cashierOrderForm_productID.Name = "cashierOrderForm_productID";
-            this.cashierOrderForm_productID.Size = new System.Drawing.Size(212, 32);
-            this.cashierOrderForm_productID.TabIndex = 15;
-            this.cashierOrderForm_productID.SelectedIndexChanged += new System.EventHandler(this.cashierOrderForm_productID_SelectedIndexChanged);
+            this.cbb_ProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ProductID.FormattingEnabled = true;
+            this.cbb_ProductID.Location = new System.Drawing.Point(523, 38);
+            this.cbb_ProductID.Name = "cbb_ProductID";
+            this.cbb_ProductID.Size = new System.Drawing.Size(212, 32);
+            this.cbb_ProductID.TabIndex = 15;
+            this.cbb_ProductID.SelectedIndexChanged += new System.EventHandler(this.cbb_ProductID_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -248,18 +269,20 @@ namespace Gwenchana
             this.label2.TabIndex = 14;
             this.label2.Text = "Mã sản phẩm :";
             // 
-            // cashierOrderForm_type
+            // ccb_ProductFilter
             // 
-            this.cashierOrderForm_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_type.FormattingEnabled = true;
-            this.cashierOrderForm_type.Items.AddRange(new object[] {
-            "Meal",
-            "Drinks"});
-            this.cashierOrderForm_type.Location = new System.Drawing.Point(143, 38);
-            this.cashierOrderForm_type.Name = "cashierOrderForm_type";
-            this.cashierOrderForm_type.Size = new System.Drawing.Size(212, 32);
-            this.cashierOrderForm_type.TabIndex = 13;
-            this.cashierOrderForm_type.SelectedIndexChanged += new System.EventHandler(this.cashierOrderForm_type_SelectedIndexChanged);
+            this.ccb_ProductFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ccb_ProductFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ccb_ProductFilter.FormattingEnabled = true;
+            this.ccb_ProductFilter.Items.AddRange(new object[] {
+            "Laptop",
+            "PC",
+            "Linh/ Phụ kiện"});
+            this.ccb_ProductFilter.Location = new System.Drawing.Point(143, 38);
+            this.ccb_ProductFilter.Name = "ccb_ProductFilter";
+            this.ccb_ProductFilter.Size = new System.Drawing.Size(212, 32);
+            this.ccb_ProductFilter.TabIndex = 13;
+            this.ccb_ProductFilter.SelectedIndexChanged += new System.EventHandler(this.ccb_ProductFilter_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -282,7 +305,7 @@ namespace Gwenchana
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.cashierOrderForm_orderPrice);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.cashierOrderForm_orderTable);
+            this.panel3.Controls.Add(this.dgv_Order);
             this.panel3.Location = new System.Drawing.Point(848, 26);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(380, 695);
@@ -341,8 +364,6 @@ namespace Gwenchana
             this.cashierOrderForm_amount.Name = "cashierOrderForm_amount";
             this.cashierOrderForm_amount.Size = new System.Drawing.Size(128, 26);
             this.cashierOrderForm_amount.TabIndex = 28;
-            this.cashierOrderForm_amount.TextChanged += new System.EventHandler(this.cashierOrderForm_amount_TextChanged);
-            this.cashierOrderForm_amount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cashierOrderForm_amount_KeyDown);
             // 
             // label11
             // 
@@ -374,34 +395,28 @@ namespace Gwenchana
             this.label10.TabIndex = 25;
             this.label10.Text = "Price ($):";
             // 
-            // cashierOrderForm_orderTable
+            // dgv_Order
             // 
-            this.cashierOrderForm_orderTable.AllowUserToAddRows = false;
-            this.cashierOrderForm_orderTable.AllowUserToDeleteRows = false;
-            this.cashierOrderForm_orderTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cashierOrderForm_orderTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cashierOrderForm_orderTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.cashierOrderForm_orderTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cashierOrderForm_orderTable.EnableHeadersVisualStyles = false;
-            this.cashierOrderForm_orderTable.Location = new System.Drawing.Point(19, 33);
-            this.cashierOrderForm_orderTable.Name = "cashierOrderForm_orderTable";
-            this.cashierOrderForm_orderTable.ReadOnly = true;
-            this.cashierOrderForm_orderTable.RowHeadersVisible = false;
-            this.cashierOrderForm_orderTable.Size = new System.Drawing.Size(346, 334);
-            this.cashierOrderForm_orderTable.TabIndex = 4;
-            this.cashierOrderForm_orderTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierOrderForm_orderTable_CellClick);
-            this.cashierOrderForm_orderTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashierOrderForm_orderTable_CellContentClick);
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument1_BeginPrint);
+            this.dgv_Order.AllowUserToAddRows = false;
+            this.dgv_Order.AllowUserToDeleteRows = false;
+            this.dgv_Order.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Order.EnableHeadersVisualStyles = false;
+            this.dgv_Order.Location = new System.Drawing.Point(19, 33);
+            this.dgv_Order.Name = "dgv_Order";
+            this.dgv_Order.ReadOnly = true;
+            this.dgv_Order.RowHeadersVisible = false;
+            this.dgv_Order.Size = new System.Drawing.Size(346, 334);
+            this.dgv_Order.TabIndex = 4;
             // 
             // printPreviewDialog1
             // 
@@ -413,6 +428,22 @@ namespace Gwenchana
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // txt_productName
+            // 
+            this.txt_productName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_productName.Location = new System.Drawing.Point(131, 108);
+            this.txt_productName.Name = "txt_productName";
+            this.txt_productName.Size = new System.Drawing.Size(306, 26);
+            this.txt_productName.TabIndex = 31;
+            // 
+            // txt_productPrice
+            // 
+            this.txt_productPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_productPrice.Location = new System.Drawing.Point(131, 165);
+            this.txt_productPrice.Name = "txt_productPrice";
+            this.txt_productPrice.Size = new System.Drawing.Size(306, 26);
+            this.txt_productPrice.TabIndex = 32;
+            // 
             // CashierOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,15 +453,17 @@ namespace Gwenchana
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "CashierOrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.CashierOrderForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_menuTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_quantity)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashierOrderForm_orderTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Order)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,11 +473,11 @@ namespace Gwenchana
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView cashierOrderForm_menuTable;
+        private System.Windows.Forms.DataGridView dgv_Product;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cashierOrderForm_type;
+        private System.Windows.Forms.ComboBox ccb_ProductFilter;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cashierOrderForm_productID;
+        private System.Windows.Forms.ComboBox cbb_ProductID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label cashierOrderForm_prodName;
@@ -457,7 +490,7 @@ namespace Gwenchana
         private System.Windows.Forms.Button cashierOrderForm_clearBtn;
         private System.Windows.Forms.Label cashierOrderForm_orderPrice;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView cashierOrderForm_orderTable;
+        private System.Windows.Forms.DataGridView dgv_Order;
         private System.Windows.Forms.TextBox cashierOrderForm_amount;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label cashierOrderForm_change;
@@ -466,5 +499,8 @@ namespace Gwenchana
         private System.Windows.Forms.Button cashierOrderForm_receiptBtn;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_productPrice;
+        private System.Windows.Forms.TextBox txt_productName;
     }
 }
