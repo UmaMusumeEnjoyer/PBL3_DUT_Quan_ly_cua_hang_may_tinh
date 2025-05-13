@@ -46,6 +46,7 @@ namespace Gwenchana
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             
+            dataGridView.Columns["Mã đơn xuất hàng"].Visible = false;
 
 
         }
@@ -160,33 +161,15 @@ namespace Gwenchana
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            button = "Delete";
-            tabControl1.TabPages.Add(tabPagePetDetail);
-            tabControl1.TabPages.Remove(tabPagePetList);
-            tabControl1.SelectedTab = tabPagePetDetail;
-
-            label3.ForeColor = Color.Gray;
-            txt_LaptopID.ForeColor = Color.Gray;
-            txt_LaptopID.Enabled = false;
-            txt_LaptopName.Enabled = false;
-            txt_Manufacturer.Enabled = false;
-            txt_Spetification.Enabled = false;
-            txt_LaptopPrice.Enabled = false;
-            txt_LaptopWeight.Enabled = false;
-            txt_ScreenSize.Enabled = false;
-            txt_LaptopColour.Enabled = false;
-            txt_stockQuantity.Enabled = false;
+            CashierOrderForm cashierOrderForm = new CashierOrderForm();
+            //this.Hide();
+            //employeeDashboard.ShowDialog();
+            
+            cashierOrderForm.ShowDialog();
+            //this.Show();
 
 
-            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
-            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
-            txt_Manufacturer.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
-            txt_Spetification.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
-            txt_LaptopWeight.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
-            txt_ScreenSize.Text = dataGridView.CurrentRow.Cells["screenSize"].Value.ToString();
-            txt_LaptopColour.Text = dataGridView.CurrentRow.Cells["colour"].Value.ToString();
-            txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
-            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
+
 
         }
 

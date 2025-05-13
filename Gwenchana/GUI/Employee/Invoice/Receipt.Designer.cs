@@ -39,8 +39,7 @@ namespace Gwenchana
             this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btn_CreateReceipt = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
@@ -121,8 +120,7 @@ namespace Gwenchana
             this.tabPagePetList.Controls.Add(this.cbb_LaptopSearch);
             this.tabPagePetList.Controls.Add(this.dataGridView);
             this.tabPagePetList.Controls.Add(this.label2);
-            this.tabPagePetList.Controls.Add(this.btnDelete);
-            this.tabPagePetList.Controls.Add(this.btnEdit);
+            this.tabPagePetList.Controls.Add(this.btn_CreateReceipt);
             this.tabPagePetList.Controls.Add(this.btnSearch);
             this.tabPagePetList.Controls.Add(this.txtSearch);
             this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,27 +194,16 @@ namespace Gwenchana
             this.label2.TabIndex = 5;
             this.label2.Text = "Tìm kiếm : ";
             // 
-            // btnDelete
+            // btn_CreateReceipt
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(741, 134);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 30);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(741, 98);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(99, 30);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btn_CreateReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CreateReceipt.Location = new System.Drawing.Point(751, 292);
+            this.btn_CreateReceipt.Name = "btn_CreateReceipt";
+            this.btn_CreateReceipt.Size = new System.Drawing.Size(99, 78);
+            this.btn_CreateReceipt.TabIndex = 4;
+            this.btn_CreateReceipt.Text = "Tạo hoá đơn bán";
+            this.btn_CreateReceipt.UseVisualStyleBackColor = true;
+            this.btn_CreateReceipt.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
@@ -476,8 +463,7 @@ namespace Gwenchana
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePetList;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btn_CreateReceipt;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabPagePetDetail;
