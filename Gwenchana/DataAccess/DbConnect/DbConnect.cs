@@ -179,5 +179,38 @@ namespace Gwenchana.DataAccess.DBConnect
         {
             return new SqlConnection(connectionString);
         }
+        //Thực thi stored procedure và trả về DataTable
+
+        public DataTable ExecuteStoredProcedure(string storedProcedureName, SqlParameter[] parameters = null)
+        {
+            DataTable resultTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        if (parameters != null && parameters.Length > 0)
+                        {
+                            command.Parameters.AddRange(parameters);
+                        }
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(resultTable);
+                        }
+                    }
+                }
+
+                return resultTable;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Lỗi khi thực thi stored procedure {storedProcedureName}: {ex.Message}", ex);
+            }
+        }
     }
 }
