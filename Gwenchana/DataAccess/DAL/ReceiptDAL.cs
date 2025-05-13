@@ -51,5 +51,10 @@ namespace Gwenchana.DataAccess.DAL
             return dt;
         }
 
+        public bool AddReceipt()
+        {
+            return true;
+        }
+
     }
 }

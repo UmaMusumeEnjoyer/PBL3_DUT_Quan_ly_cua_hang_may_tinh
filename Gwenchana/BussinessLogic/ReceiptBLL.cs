@@ -19,10 +19,10 @@ namespace Gwenchana.BussinessLogic
         //{
         //    return _receiptDAL.GetReceiptById(id);
         //}
-        //public bool AddReceipt(DTO.Receipt receipt)
-        //{
-        //    return _receiptDAL.AddReceipt(receipt);
-        //}
+        public bool AddReceipt(Receipt receipt)
+        {
+            return _receiptDAL.AddReceipt(receipt);
+        }
         //public bool UpdateReceipt(DTO.Receipt receipt)
         //{
         //    return _receiptDAL.UpdateReceipt(receipt);

@@ -54,12 +54,11 @@ namespace Gwenchana
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cashierOrderForm_receiptBtn = new System.Windows.Forms.Button();
-            this.cashierOrderForm_payBtn = new System.Windows.Forms.Button();
-            this.cashierOrderForm_change = new System.Windows.Forms.Label();
+            this.txt_finalTotal = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_amount = new System.Windows.Forms.TextBox();
+            this.txt_salePercent = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.cashierOrderForm_orderPrice = new System.Windows.Forms.Label();
+            this.lb_totalAmount = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_Order = new System.Windows.Forms.DataGridView();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -315,12 +314,11 @@ namespace Gwenchana
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.cashierOrderForm_receiptBtn);
-            this.panel3.Controls.Add(this.cashierOrderForm_payBtn);
-            this.panel3.Controls.Add(this.cashierOrderForm_change);
+            this.panel3.Controls.Add(this.txt_finalTotal);
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.cashierOrderForm_amount);
+            this.panel3.Controls.Add(this.txt_salePercent);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.cashierOrderForm_orderPrice);
+            this.panel3.Controls.Add(this.lb_totalAmount);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.dgv_Order);
             this.panel3.Location = new System.Drawing.Point(848, 26);
@@ -332,85 +330,74 @@ namespace Gwenchana
             // 
             this.cashierOrderForm_receiptBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.cashierOrderForm_receiptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_receiptBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashierOrderForm_receiptBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierOrderForm_receiptBtn.ForeColor = System.Drawing.Color.White;
             this.cashierOrderForm_receiptBtn.Location = new System.Drawing.Point(56, 616);
             this.cashierOrderForm_receiptBtn.Name = "cashierOrderForm_receiptBtn";
             this.cashierOrderForm_receiptBtn.Size = new System.Drawing.Size(310, 49);
             this.cashierOrderForm_receiptBtn.TabIndex = 30;
-            this.cashierOrderForm_receiptBtn.Text = "RECEIPT";
+            this.cashierOrderForm_receiptBtn.Text = "Thanh toán";
             this.cashierOrderForm_receiptBtn.UseVisualStyleBackColor = false;
+            this.cashierOrderForm_receiptBtn.Click += new System.EventHandler(this.cashierOrderForm_receiptBtn_Click);
             // 
-            // cashierOrderForm_payBtn
+            // txt_finalTotal
             // 
-            this.cashierOrderForm_payBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.cashierOrderForm_payBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_payBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_payBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierOrderForm_payBtn.Location = new System.Drawing.Point(56, 557);
-            this.cashierOrderForm_payBtn.Name = "cashierOrderForm_payBtn";
-            this.cashierOrderForm_payBtn.Size = new System.Drawing.Size(310, 49);
-            this.cashierOrderForm_payBtn.TabIndex = 29;
-            this.cashierOrderForm_payBtn.Text = "PAY";
-            this.cashierOrderForm_payBtn.UseVisualStyleBackColor = false;
-            // 
-            // cashierOrderForm_change
-            // 
-            this.cashierOrderForm_change.AutoSize = true;
-            this.cashierOrderForm_change.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_change.Location = new System.Drawing.Point(213, 492);
-            this.cashierOrderForm_change.Name = "cashierOrderForm_change";
-            this.cashierOrderForm_change.Size = new System.Drawing.Size(17, 17);
-            this.cashierOrderForm_change.TabIndex = 26;
-            this.cashierOrderForm_change.Text = "0";
+            this.txt_finalTotal.AutoSize = true;
+            this.txt_finalTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_finalTotal.Location = new System.Drawing.Point(189, 564);
+            this.txt_finalTotal.Name = "txt_finalTotal";
+            this.txt_finalTotal.Size = new System.Drawing.Size(17, 17);
+            this.txt_finalTotal.TabIndex = 26;
+            this.txt_finalTotal.Text = "0";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(115, 492);
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(53, 564);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 17);
+            this.label13.Size = new System.Drawing.Size(137, 17);
             this.label13.TabIndex = 25;
-            this.label13.Text = "Change ($):";
+            this.label13.Text = "Số tiền phải trả (đ) :";
             // 
-            // cashierOrderForm_amount
+            // txt_salePercent
             // 
-            this.cashierOrderForm_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_amount.Location = new System.Drawing.Point(216, 444);
-            this.cashierOrderForm_amount.Name = "cashierOrderForm_amount";
-            this.cashierOrderForm_amount.Size = new System.Drawing.Size(128, 26);
-            this.cashierOrderForm_amount.TabIndex = 28;
+            this.txt_salePercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_salePercent.Location = new System.Drawing.Point(192, 516);
+            this.txt_salePercent.Name = "txt_salePercent";
+            this.txt_salePercent.Size = new System.Drawing.Size(128, 26);
+            this.txt_salePercent.TabIndex = 28;
+            this.txt_salePercent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_salePercent_KeyDown);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(115, 449);
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(52, 521);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 17);
+            this.label11.Size = new System.Drawing.Size(118, 17);
             this.label11.TabIndex = 27;
-            this.label11.Text = "Amount ($):";
+            this.label11.Text = "Chiết khấu (%) :";
             // 
-            // cashierOrderForm_orderPrice
+            // lb_totalAmount
             // 
-            this.cashierOrderForm_orderPrice.AutoSize = true;
-            this.cashierOrderForm_orderPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cashierOrderForm_orderPrice.Location = new System.Drawing.Point(213, 408);
-            this.cashierOrderForm_orderPrice.Name = "cashierOrderForm_orderPrice";
-            this.cashierOrderForm_orderPrice.Size = new System.Drawing.Size(17, 17);
-            this.cashierOrderForm_orderPrice.TabIndex = 26;
-            this.cashierOrderForm_orderPrice.Text = "0";
+            this.lb_totalAmount.AutoSize = true;
+            this.lb_totalAmount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_totalAmount.Location = new System.Drawing.Point(189, 480);
+            this.lb_totalAmount.Name = "lb_totalAmount";
+            this.lb_totalAmount.Size = new System.Drawing.Size(17, 17);
+            this.lb_totalAmount.TabIndex = 26;
+            this.lb_totalAmount.Text = "0";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(132, 408);
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(53, 479);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 17);
+            this.label10.Size = new System.Drawing.Size(102, 17);
             this.label10.TabIndex = 25;
-            this.label10.Text = "Price ($):";
+            this.label10.Text = "Tổng tiền (đ) :";
             // 
             // dgv_Order
             // 
@@ -432,7 +419,7 @@ namespace Gwenchana
             this.dgv_Order.Name = "dgv_Order";
             this.dgv_Order.ReadOnly = true;
             this.dgv_Order.RowHeadersVisible = false;
-            this.dgv_Order.Size = new System.Drawing.Size(379, 334);
+            this.dgv_Order.Size = new System.Drawing.Size(379, 426);
             this.dgv_Order.TabIndex = 4;
             // 
             // printPreviewDialog1
@@ -489,14 +476,13 @@ namespace Gwenchana
         private System.Windows.Forms.Button btn_productAdd;
         private System.Windows.Forms.Button cashierOrderForm_removeBtn;
         private System.Windows.Forms.Button cashierOrderForm_clearBtn;
-        private System.Windows.Forms.Label cashierOrderForm_orderPrice;
+        private System.Windows.Forms.Label lb_totalAmount;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgv_Order;
-        private System.Windows.Forms.TextBox cashierOrderForm_amount;
+        private System.Windows.Forms.TextBox txt_salePercent;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label cashierOrderForm_change;
+        private System.Windows.Forms.Label txt_finalTotal;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button cashierOrderForm_payBtn;
         private System.Windows.Forms.Button cashierOrderForm_receiptBtn;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
