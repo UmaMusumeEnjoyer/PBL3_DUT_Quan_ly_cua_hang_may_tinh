@@ -23,15 +23,15 @@ namespace Gwenchana
         private bool isEdit;
         private string button;
 
-
+        public int currentEmployeeID { get; set; }
         //Constructor
-        public Receipt()
+        public Receipt(int employeeID)
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
-            
+            currentEmployeeID = employeeID;
 
             //tabControl1.TabPages.Remove(tabPagePetDetail);
             btnClose.Click += delegate { this.Close(); };
@@ -39,21 +39,14 @@ namespace Gwenchana
 
         private void LoadData()
         {
-            LaptopBLL laptopBLL = new LaptopBLL();
-            DataTable dt = laptopBLL.GetAllLaptopsDataTable();
+            ReceiptBLL receiptBLL = new ReceiptBLL();
+            DataTable dt = receiptBLL.GetAllReceipts();
             dataGridView.DataSource = dt;
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.Columns["Product_Id"].Visible = false;
-            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
-            dataGridView.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-            dataGridView.Columns["weight"].HeaderText = "Trọng lượng";
-            dataGridView.Columns["screenSize"].HeaderText = "Kích cỡ màn hình";
-            dataGridView.Columns["colour"].HeaderText = "Màu sắc";
-            dataGridView.Columns["price"].HeaderText = "Giá";
-            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            
+
 
         }
 

@@ -259,5 +259,10 @@ namespace Gwenchana
         {
             openChildForm(new Goods_Receipt(currentEmployeeID));
         }
+
+        private void btn_HoaDonXuat_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Receipt(currentEmployeeID));
+        }
     }
 }

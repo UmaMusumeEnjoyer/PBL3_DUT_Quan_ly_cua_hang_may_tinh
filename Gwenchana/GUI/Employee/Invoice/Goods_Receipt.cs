@@ -42,21 +42,14 @@ namespace Gwenchana
 
         private void LoadData()
         {
-            LaptopBLL laptopBLL = new LaptopBLL();
-            DataTable dt = laptopBLL.GetAllLaptopsDataTable();
+            Goods_ReceiptBLL goodsReceiptBLL = new Goods_ReceiptBLL();
+            DataTable dt = goodsReceiptBLL.GetAllGoodsReceipt();
             dataGridView.DataSource = dt;
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
-            dataGridView.Columns["Product_Id"].Visible = false;
-            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
-            dataGridView.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-            dataGridView.Columns["weight"].HeaderText = "Trọng lượng";
-            dataGridView.Columns["screenSize"].HeaderText = "Kích cỡ màn hình";
-            dataGridView.Columns["colour"].HeaderText = "Màu sắc";
-            dataGridView.Columns["price"].HeaderText = "Giá";
-            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+
+
 
         }
 

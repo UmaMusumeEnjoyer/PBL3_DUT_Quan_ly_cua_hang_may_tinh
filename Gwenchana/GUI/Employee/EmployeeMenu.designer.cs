@@ -115,6 +115,7 @@
             this.btn_HoaDonXuat.TabIndex = 1;
             this.btn_HoaDonXuat.Text = "Hoá đơn xuất";
             this.btn_HoaDonXuat.UseVisualStyleBackColor = true;
+            this.btn_HoaDonXuat.Click += new System.EventHandler(this.btn_HoaDonXuat_Click);
             // 
             // btn_HoaDonNhap
             // 
