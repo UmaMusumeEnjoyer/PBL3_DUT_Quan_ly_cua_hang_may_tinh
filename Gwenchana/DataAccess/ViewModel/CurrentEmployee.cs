@@ -11,52 +11,41 @@ namespace Gwenchana.DataAccess.ViewModel
 {
     public class CurrentEmployee
     {
-        public string employeeName { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string? employeeName { get; set; }
         public int? Age { get; set; }
-        public string phoneNumber { get; set; }
+        public string? phoneNumber { get; set; }
 
-        public int? Account_Id { get; set; }
-
-        public int Id { get; set; }
-        public string? Username { get; set; }
-        public string? Password { get; set; }
-        //public string Role { get; set; }
+        public int Employee_Id { get; set; }
+        public int Account_Id { get; set; }
 
         private readonly DBConnect.DbConnect _db = new DBConnect.DbConnect();
 
-        public CurrentEmployee getCurrentEmployee(int id)
+        public void GetCurrentEmployee(int id)
         {
-            
-            string sql = "SELECT" +
-                "E.[Employee_Id] AS [Id]," +
-                "E.[employeeName]," +
-                "E.[age] AS [Age]," +
-                "E.[phoneNumber]," +
-                "E.[Account_Id]," +
-                "A.[username] AS [Username]," +
-                "A.[password] AS [Password]" +
-                "FROM" +
-                "[dbo].[Employee] E" +
-                "LEFT JOIN " +
-                "[dbo].[Account] A ON E.[Account_Id] = A.[@Id];";
-
+            string sql = "select * from Account join Employee on Account.Id = Employee.Account_Id and Account_Id = @Account_Id";
             SqlParameter[] parameters = {
-                new SqlParameter("@Id", id)
+                new SqlParameter("@Account_Id", id)
             };
-            DataTable dataTable = _db.GetData(sql);
-            CurrentEmployee currentEmployee = new CurrentEmployee()
+            DataTable dt = _db.GetData(sql, parameters);
+            if (dt.Rows.Count > 0)
             {
-                employeeName = dataTable.Rows[0]["employeeName"].ToString(),
-                Age = Convert.ToInt32(dataTable.Rows[0]["Age"]),
-                phoneNumber = dataTable.Rows[0]["phoneNumber"].ToString(),
-                Account_Id = Convert.ToInt32(dataTable.Rows[0]["Account_Id"]),
-                Id = Convert.ToInt32(dataTable.Rows[0]["Id"]),
-                Username = dataTable.Rows[0]["Username"].ToString(),
-                Password = dataTable.Rows[0]["Password"].ToString()
-            };
-            return currentEmployee;
+                DataRow row = dt.Rows[0];
+                this.Account_Id = Convert.ToInt32(row["Id"]);
+                this.username = row["username"].ToString();
+                this.password = row["password"].ToString();
+                this.employeeName = row["employeeName"].ToString();
+                this.Age = Convert.ToInt32(row["age"]);
+                this.phoneNumber = row["phoneNumber"].ToString();
+                this.Employee_Id = Convert.ToInt32(row["Employee_Id"]);
+                this.employeeName = row["employeeName"].ToString();
+            }
         }
-        
-       
+
+
+
+
+
     }
 }

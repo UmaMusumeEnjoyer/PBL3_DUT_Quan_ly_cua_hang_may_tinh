@@ -20,12 +20,11 @@ namespace Gwenchana
     public partial class information: Form
     {
         public int id { get; set; }
-        public CurrentEmployee employee { get; set; }
+        //public CurrentEmployee employee { get; set; }
         public information(int employe)
         {
             id = employe;
-            employee = new CurrentEmployee();
-            employee = employee.getCurrentEmployee(id);
+
             LoadData();
             InitializeComponent();
 
@@ -33,12 +32,16 @@ namespace Gwenchana
         
         void LoadData()
         {
+            
+            CurrentEmployee employee = new CurrentEmployee();
+            employee.GetCurrentEmployee(id);
             txt_Name.Text = employee.employeeName;
             txt_Age.Text = employee.Age.ToString();
-            //txt_Phone.Text = employee.phoneNumber;
-            txt_Username.Text = employee.Username;
-            txt_Password.Text = employee.Password;
-            //txt_AccountId.Text = employee.Account_Id.ToString();
+            txt_PhoneNumber.Text = employee.phoneNumber;
+            txt_Username.Text = employee.username;
+            txt_Password.Text = employee.password;
+
+
 
         }
 
