@@ -22,7 +22,16 @@ namespace Gwenchana
 
             txt_productName.Enabled = false;
             txt_productPrice.Enabled = false;
+            dgv_Order.Columns.Clear();
 
+            dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
+            dgv_Order.Columns.Add("productName", "Tên sản phẩm");
+            dgv_Order.Columns.Add("price", "Giá");
+            dgv_Order.Columns.Add("quantity", "Số lượng");
+            dgv_Order.Columns.Add("totalPrice", "Thành tiền");
+
+            dgv_Order.ReadOnly = true;
+            dgv_Order.AllowUserToAddRows = false;
         }
 
         public void ClearDataGridViewData()
@@ -116,6 +125,8 @@ namespace Gwenchana
                     // Gán dữ liệu vào các TextBox
                     txt_productName.Text = row.Cells["productName"].Value.ToString();
                     txt_productPrice.Text = row.Cells["price"].Value.ToString();
+                    productQuantity.Value = 1; // Đặt giá trị mặc định cho số lượng là 1
+                    productQuantity.Maximum = Convert.ToInt32(row.Cells["stockQuantity"].Value); // Đặt giá trị tối đa cho số lượng là số lượng tồn kho
 
                     // Trỏ DataGridView tới dòng tương ứng
                     row.Selected = true;
@@ -135,9 +146,46 @@ namespace Gwenchana
                 MessageBox.Show("Vui lòng chọn sản phẩm trước khi thêm vào giỏ hàng.");
                 return;
             }
+            else
+            {
+                if (dgv_Product.CurrentRow != null)
+                {
+                    DataGridViewRow selectedRow = dgv_Product.CurrentRow;
+
+                    string productId = selectedRow.Cells["Product_Id"].Value.ToString();
+                    string productName = selectedRow.Cells["productName"].Value.ToString();
+                    decimal price = Convert.ToDecimal(selectedRow.Cells["price"].Value);
+                    int quantity = (int)productQuantity.Value;
+                    decimal totalPrice = price * quantity;
+
+                    // Kiểm tra nếu sản phẩm đã tồn tại trong dgv_SelectedProducts thì cộng dồn số lượng
+                    bool found = false;
+                    foreach (DataGridViewRow row in dgv_Order.Rows)
+                    {
+                        if (row.Cells["Product_Id"].Value.ToString() == productId)
+                        {
+                            int oldQty = Convert.ToInt32(row.Cells["quantity"].Value);
+                            row.Cells["quantity"].Value = oldQty + quantity;
+                            row.Cells["totalPrice"].Value = (oldQty + quantity) * price;
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found)
+                    {
+                        dgv_Order.Rows.Add(productId, productName, price, quantity, totalPrice);
+                    }
+                }
+            }
         }
 
         private void CashierOrderForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cashierOrderForm_quantity_ValueChanged(object sender, EventArgs e)
         {
 
         }
