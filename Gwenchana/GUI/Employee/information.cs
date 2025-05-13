@@ -11,8 +11,8 @@ using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.ViewModel;
 using Gwenchana.DataAccess;
 using Gwenchana.DataAccess.DBConnect;
-using Gwenchana.DataAccess.ViewModel;
 using Gwenchana.BussinessLogic;
+using System.CodeDom.Compiler;
 
 //using CuaHangMayTinh.UI.Authentication;
 
@@ -21,11 +21,13 @@ namespace Gwenchana
     public partial class information: Form
     {
         public int id { get; set; }
+        public string temp { get; set; }
         //public CurrentEmployee employee { get; set; }
         public information(int employe)
         {
             InitializeComponent();
             id = employe;
+            
 
             LoadData();
             
@@ -34,7 +36,16 @@ namespace Gwenchana
         
         void LoadData()
         {
-            
+            txt_Name.Enabled = true;
+            txt_Age.Enabled = true;
+            txt_PhoneNumber.Enabled = true;
+            txt_Username.Enabled = true;
+            txt_Password.Enabled = true;
+            button2.Visible = true;
+
+
+
+
             CurrentEmployee employee = new CurrentEmployee();
             employee.GetCurrentEmployee(id);
             txt_Name.Text = employee.employeeName;
@@ -47,6 +58,7 @@ namespace Gwenchana
             txt_Username.Enabled = false;
             txt_Password.Enabled = false;
 
+         
         }
 
         private void information_Load(object sender, EventArgs e)
@@ -71,7 +83,16 @@ namespace Gwenchana
 
         private void ChangePass_Click(object sender, EventArgs e)
         {
+            temp = "ChangeAccount";
 
+            txt_Age.Enabled = false;
+            txt_Name.Enabled = false;
+            txt_PhoneNumber.Enabled = false;
+            txt_Username.Enabled = true;
+            txt_Password.Enabled = true;
+            button2.Visible = false;
+    
+           
         }
 
         private void txt_Name_TextChanged(object sender, EventArgs e)
@@ -83,25 +104,54 @@ namespace Gwenchana
         {
             CurrentEmployee employee = new CurrentEmployee();
             employee.GetCurrentEmployee(id);
-            EmployeeBLL employeeBLL = new EmployeeBLL();
-            Employee employee1 = new Employee()
+            if (temp == "ChangeAccount")
             {
-                Empolyee_Id = employee.Employee_Id,
-                employeeName = txt_Name.Text,
-                Age = int.Parse(txt_Age.Text),
-                phoneNumber = txt_PhoneNumber.Text,
-                Account_Id = employee.Account_Id
-            };
+                AccountBLL accountBLL = new AccountBLL();
+                Account account = new Account()
+                {
+                    Id = employee.Account_Id,
+                    Username = txt_Username.Text,
+                    Password = txt_Password.Text,
+                    Role = "Employee"
+                };
+                if (accountBLL.UpdateAccount(account))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại");
+                }
+            }
+            else 
+            {
 
-            if (employeeBLL.UpdateEmployee(employee1))
-            {
-                MessageBox.Show("Cập nhật thành công");
-                LoadData();
+                EmployeeBLL employeeBLL = new EmployeeBLL();
+                Employee employee1 = new Employee()
+                {
+                    Empolyee_Id = employee.Employee_Id,
+                    employeeName = txt_Name.Text,
+                    Age = int.Parse(txt_Age.Text),
+                    phoneNumber = txt_PhoneNumber.Text,
+                    Account_Id = employee.Account_Id
+                };
+
+                if (employeeBLL.UpdateEmployee(employee1))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại");
+                }
             }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại");
-            }
+        }
+
+        private void btn_ChangeAccount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
