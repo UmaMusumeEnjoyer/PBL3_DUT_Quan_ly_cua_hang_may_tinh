@@ -28,7 +28,7 @@ namespace Gwenchana
         private void hideSubMenu()
         {
             panelMediaSubMenu.Visible = false;
-            panelPlaylistSubMenu.Visible = false;
+            //panelPlaylistSubMenu.Visible = false;
             //panelToolsSubMenu.Visible = false;
             panel1.Visible = false;
         }
@@ -88,7 +88,7 @@ namespace Gwenchana
 
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPlaylistSubMenu);
+            //showSubMenu(panelPlaylistSubMenu);
         }
 
         #region PlayListManagemetSubMenu

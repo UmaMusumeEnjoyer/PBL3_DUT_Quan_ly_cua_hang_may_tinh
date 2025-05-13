@@ -111,6 +111,18 @@
     <Compile Include="GUI\Employee\information.Designer.cs">
       <DependentUpon>information.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Employee\Invoice\Goods_Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Invoice\Goods_Receipt.Designer.cs">
+      <DependentUpon>Goods_Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Employee\Invoice\Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Invoice\Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Employee\Products\AccessoriesUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\information.resx">
       <DependentUpon>information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Invoice\Goods_Receipt.resx">
+      <DependentUpon>Goods_Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Invoice\Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Products\AccessoriesUI.resx">
       <DependentUpon>AccessoriesUI.cs</DependentUpon>
