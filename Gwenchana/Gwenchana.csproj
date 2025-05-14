@@ -274,7 +274,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="sssss.sql" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\Trường_Đại_học_Bách_khoa,_Đại_học_Đà_Nẵng.svg.png" />
   </ItemGroup>

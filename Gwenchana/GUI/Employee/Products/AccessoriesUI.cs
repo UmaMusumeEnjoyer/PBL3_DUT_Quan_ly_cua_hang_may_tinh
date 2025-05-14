@@ -166,6 +166,12 @@ namespace Gwenchana
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            int stockQuantity = Convert.ToInt32(dataGridView.CurrentRow.Cells["stockQuantity"].Value);
+            if (stockQuantity > 0)
+            {
+                MessageBox.Show("Không thể xoá vì còn hàng tồn kho", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             button = "Delete";
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
