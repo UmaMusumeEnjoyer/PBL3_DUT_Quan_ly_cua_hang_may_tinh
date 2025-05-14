@@ -73,11 +73,11 @@ namespace Gwenchana
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 17);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 25);
+            this.label1.Size = new System.Drawing.Size(134, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đơn bán";
             // 
@@ -107,6 +107,7 @@ namespace Gwenchana
             this.tabControl1.Controls.Add(this.tabPagePetList);
             this.tabControl1.Controls.Add(this.tabPagePetDetail);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -124,10 +125,10 @@ namespace Gwenchana
             this.tabPagePetList.Controls.Add(this.btnSearch);
             this.tabPagePetList.Controls.Add(this.txtSearch);
             this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPagePetList.Location = new System.Drawing.Point(4, 29);
+            this.tabPagePetList.Location = new System.Drawing.Point(4, 30);
             this.tabPagePetList.Name = "tabPagePetList";
             this.tabPagePetList.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetList.Size = new System.Drawing.Size(858, 378);
+            this.tabPagePetList.Size = new System.Drawing.Size(858, 377);
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
             this.tabPagePetList.UseVisualStyleBackColor = true;
@@ -135,6 +136,7 @@ namespace Gwenchana
             // btn_ClearFilter
             // 
             this.btn_ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ClearFilter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ClearFilter.Location = new System.Drawing.Point(747, 6);
             this.btn_ClearFilter.Name = "btn_ClearFilter";
             this.btn_ClearFilter.Size = new System.Drawing.Size(74, 28);
@@ -146,10 +148,10 @@ namespace Gwenchana
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(512, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 20);
+            this.label7.Size = new System.Drawing.Size(80, 21);
             this.label7.TabIndex = 9;
             this.label7.Text = "Tiêu chí :";
             // 
@@ -181,22 +183,23 @@ namespace Gwenchana
             this.dataGridView.Location = new System.Drawing.Point(24, 73);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(711, 297);
+            this.dataGridView.Size = new System.Drawing.Size(711, 296);
             this.dataGridView.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(96, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tìm kiếm : ";
             // 
             // btn_CreateReceipt
             // 
             this.btn_CreateReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CreateReceipt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateReceipt.Location = new System.Drawing.Point(751, 292);
             this.btn_CreateReceipt.Name = "btn_CreateReceipt";
             this.btn_CreateReceipt.Size = new System.Drawing.Size(99, 78);
@@ -208,6 +211,7 @@ namespace Gwenchana
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(642, 37);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(99, 30);
@@ -248,10 +252,10 @@ namespace Gwenchana
             this.tabPagePetDetail.Controls.Add(this.label3);
             this.tabPagePetDetail.Controls.Add(this.txt_LaptopID);
             this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPagePetDetail.Location = new System.Drawing.Point(4, 29);
+            this.tabPagePetDetail.Location = new System.Drawing.Point(4, 30);
             this.tabPagePetDetail.Name = "tabPagePetDetail";
             this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetDetail.Size = new System.Drawing.Size(858, 378);
+            this.tabPagePetDetail.Size = new System.Drawing.Size(858, 377);
             this.tabPagePetDetail.TabIndex = 1;
             this.tabPagePetDetail.Text = "Thông tin chi tiết";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
@@ -259,10 +263,10 @@ namespace Gwenchana
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(668, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.Size = new System.Drawing.Size(82, 21);
             this.label5.TabIndex = 25;
             this.label5.Text = "Màu sắc :";
             // 
@@ -276,10 +280,10 @@ namespace Gwenchana
             // labelxxx
             // 
             this.labelxxx.AutoSize = true;
-            this.labelxxx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelxxx.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelxxx.Location = new System.Drawing.Point(256, 31);
             this.labelxxx.Name = "labelxxx";
-            this.labelxxx.Size = new System.Drawing.Size(137, 20);
+            this.labelxxx.Size = new System.Drawing.Size(149, 21);
             this.labelxxx.TabIndex = 23;
             this.labelxxx.Text = "Số lượng tồn kho :";
             // 
@@ -293,10 +297,10 @@ namespace Gwenchana
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(460, 97);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(160, 20);
+            this.label6.Size = new System.Drawing.Size(178, 21);
             this.label6.TabIndex = 21;
             this.label6.Text = "Kích thước màn hình :";
             // 
@@ -310,10 +314,10 @@ namespace Gwenchana
             // labelxyz
             // 
             this.labelxyz.AutoSize = true;
-            this.labelxyz.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelxyz.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelxyz.Location = new System.Drawing.Point(263, 97);
             this.labelxyz.Name = "labelxyz";
-            this.labelxyz.Size = new System.Drawing.Size(86, 20);
+            this.labelxyz.Size = new System.Drawing.Size(89, 21);
             this.labelxyz.TabIndex = 19;
             this.labelxyz.Text = "Cân nặng :";
             // 
@@ -328,10 +332,10 @@ namespace Gwenchana
             // lb_Email
             // 
             this.lb_Email.AutoSize = true;
-            this.lb_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Email.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Email.Location = new System.Drawing.Point(59, 240);
             this.lb_Email.Name = "lb_Email";
-            this.lb_Email.Size = new System.Drawing.Size(77, 20);
+            this.lb_Email.Size = new System.Drawing.Size(82, 21);
             this.lb_Email.TabIndex = 17;
             this.lb_Email.Text = "Giá bán : ";
             // 
@@ -344,6 +348,7 @@ namespace Gwenchana
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(260, 304);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(183, 44);
@@ -354,6 +359,7 @@ namespace Gwenchana
             // 
             // btnSave
             // 
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(63, 304);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(183, 44);
@@ -365,10 +371,10 @@ namespace Gwenchana
             // lb6
             // 
             this.lb6.AutoSize = true;
-            this.lb6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb6.Location = new System.Drawing.Point(59, 175);
             this.lb6.Name = "lb6";
-            this.lb6.Size = new System.Drawing.Size(84, 20);
+            this.lb6.Size = new System.Drawing.Size(92, 21);
             this.lb6.TabIndex = 13;
             this.lb6.Text = "Cấu hình : ";
             // 
@@ -382,10 +388,10 @@ namespace Gwenchana
             // labelxxxxxx
             // 
             this.labelxxxxxx.AutoSize = true;
-            this.labelxxxxxx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelxxxxxx.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelxxxxxx.Location = new System.Drawing.Point(59, 97);
             this.labelxxxxxx.Name = "labelxxxxxx";
-            this.labelxxxxxx.Size = new System.Drawing.Size(102, 20);
+            this.labelxxxxxx.Size = new System.Drawing.Size(106, 21);
             this.labelxxxxxx.TabIndex = 11;
             this.labelxxxxxx.Text = "Nhà sản xuất";
             // 
@@ -400,10 +406,10 @@ namespace Gwenchana
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(460, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 20);
+            this.label4.Size = new System.Drawing.Size(48, 21);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tên :";
             // 
@@ -417,10 +423,10 @@ namespace Gwenchana
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(59, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
+            this.label3.Size = new System.Drawing.Size(43, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Mã :";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -443,7 +449,7 @@ namespace Gwenchana
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Receipt";
-            this.Text = "PetView";
+            this.Text = "Hoá đơn xuất";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);

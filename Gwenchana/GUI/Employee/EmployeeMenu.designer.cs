@@ -81,7 +81,7 @@
             this.btn_ThongTinCaNhan.ForeColor = System.Drawing.Color.Silver;
             this.btn_ThongTinCaNhan.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThongTinCaNhan.Image")));
             this.btn_ThongTinCaNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(0, 427);
+            this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(0, 421);
             this.btn_ThongTinCaNhan.Name = "btn_ThongTinCaNhan";
             this.btn_ThongTinCaNhan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_ThongTinCaNhan.Size = new System.Drawing.Size(200, 45);
@@ -98,7 +98,7 @@
             this.panel1.Controls.Add(this.btn_HoaDonXuat);
             this.panel1.Controls.Add(this.btn_HoaDonNhap);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 348);
+            this.panel1.Location = new System.Drawing.Point(0, 342);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 79);
             this.panel1.TabIndex = 0;
@@ -145,7 +145,7 @@
             this.btn_HoaDon.ForeColor = System.Drawing.Color.Silver;
             this.btn_HoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Image")));
             this.btn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDon.Location = new System.Drawing.Point(0, 303);
+            this.btn_HoaDon.Location = new System.Drawing.Point(0, 297);
             this.btn_HoaDon.Name = "btn_HoaDon";
             this.btn_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_HoaDon.Size = new System.Drawing.Size(200, 45);
@@ -187,7 +187,7 @@
             this.btnTools.ForeColor = System.Drawing.Color.Silver;
             this.btnTools.Image = ((System.Drawing.Image)(resources.GetObject("btnTools.Image")));
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 258);
+            this.btnTools.Location = new System.Drawing.Point(0, 252);
             this.btnTools.Name = "btnTools";
             this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnTools.Size = new System.Drawing.Size(200, 45);
@@ -207,7 +207,7 @@
             this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 137);
             this.panelMediaSubMenu.Name = "panelMediaSubMenu";
-            this.panelMediaSubMenu.Size = new System.Drawing.Size(200, 121);
+            this.panelMediaSubMenu.Size = new System.Drawing.Size(200, 115);
             this.panelMediaSubMenu.TabIndex = 2;
             // 
             // button4
@@ -222,7 +222,7 @@
             this.button4.Location = new System.Drawing.Point(0, 80);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(200, 40);
+            this.button4.Size = new System.Drawing.Size(200, 35);
             this.button4.TabIndex = 2;
             this.button4.Text = "Linh/Phụ kiện";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -300,7 +300,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, -11);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(243, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -332,6 +332,7 @@
             this.MinimumSize = new System.Drawing.Size(1600, 900);
             this.Name = "EmployeeMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu nhân viên";
             this.panelSideMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMediaSubMenu.ResumeLayout(false);
