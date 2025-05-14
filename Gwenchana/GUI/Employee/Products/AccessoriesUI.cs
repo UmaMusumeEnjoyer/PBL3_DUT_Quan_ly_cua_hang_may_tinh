@@ -53,7 +53,13 @@ namespace Gwenchana
 
         }
 
-
+        public void ChangeTab()
+        {
+            button = "Special";
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+        }
 
         private void AssociateAndRaiseViewEvents()
         {
@@ -245,6 +251,11 @@ namespace Gwenchana
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
+            }
+            else if(button == "Special")
+            {
+                txt_AccessoriesID.ForeColor = Color.Gray;
+                txt_AccessoriesID.Enabled = false;
             }
         }
 

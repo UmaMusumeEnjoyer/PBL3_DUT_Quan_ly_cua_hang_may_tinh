@@ -48,7 +48,8 @@ namespace Gwenchana
 
         private void ccb_ProductFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(ccb_ProductFilter.SelectedItem.ToString())
+            cbb_ProductID.Items.Clear();
+            switch (ccb_ProductFilter.SelectedItem.ToString())
             {
 
                 case "PC":

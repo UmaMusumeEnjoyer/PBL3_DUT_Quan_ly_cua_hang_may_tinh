@@ -30,6 +30,8 @@ namespace Gwenchana
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.login_signupBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@ namespace Gwenchana
             this.label4 = new System.Windows.Forms.Label();
             this.login_showPass = new System.Windows.Forms.CheckBox();
             this.login_btn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,14 +63,33 @@ namespace Gwenchana
             this.panel1.Size = new System.Drawing.Size(267, 400);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Gwenchana.Properties.Resources.Trường_Đại_học_Bách_khoa__Đại_học_Đà_Nẵng_svg__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(31, 56);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(198, 148);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(55, 216);
+            this.label6.Location = new System.Drawing.Point(51, 223);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 19);
+            this.label6.Size = new System.Drawing.Size(164, 23);
             this.label6.TabIndex = 2;
             this.label6.Text = "Cửa hàng máy tính";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -83,7 +102,7 @@ namespace Gwenchana
             this.login_signupBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
             this.login_signupBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.login_signupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.login_signupBtn.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_signupBtn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_signupBtn.ForeColor = System.Drawing.Color.White;
             this.login_signupBtn.Location = new System.Drawing.Point(22, 356);
             this.login_signupBtn.Name = "login_signupBtn";
@@ -96,11 +115,11 @@ namespace Gwenchana
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(84, 329);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 14);
+            this.label5.Size = new System.Drawing.Size(95, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "Đăng ký tài khoản";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -120,10 +139,10 @@ namespace Gwenchana
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(286, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 22);
+            this.label2.Size = new System.Drawing.Size(181, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Đăng nhập tài khoản\r\n";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -131,10 +150,10 @@ namespace Gwenchana
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(287, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 16);
+            this.label3.Size = new System.Drawing.Size(91, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tên đăng nhập:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -161,20 +180,20 @@ namespace Gwenchana
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(287, 197);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Mật khẩu:";
             // 
             // login_showPass
             // 
             this.login_showPass.AutoSize = true;
-            this.login_showPass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_showPass.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_showPass.Location = new System.Drawing.Point(439, 253);
             this.login_showPass.Name = "login_showPass";
-            this.login_showPass.Size = new System.Drawing.Size(105, 18);
+            this.login_showPass.Size = new System.Drawing.Size(96, 19);
             this.login_showPass.TabIndex = 7;
             this.login_showPass.Text = "Hiện mật khẩu";
             this.login_showPass.UseVisualStyleBackColor = true;
@@ -188,7 +207,7 @@ namespace Gwenchana
             this.login_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
             this.login_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
             this.login_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.login_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_btn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_btn.ForeColor = System.Drawing.Color.White;
             this.login_btn.Location = new System.Drawing.Point(290, 292);
             this.login_btn.Name = "login_btn";
@@ -197,25 +216,6 @@ namespace Gwenchana
             this.login_btn.Text = "ĐĂNG NHẬP";
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Gwenchana.Properties.Resources.Trường_Đại_học_Bách_khoa__Đại_học_Đà_Nẵng_svg__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 56);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(198, 148);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 

@@ -55,7 +55,7 @@
             // panelSideMenu
             // 
             this.panelSideMenu.AutoScroll = true;
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.BackColor = System.Drawing.Color.Gray;
             this.panelSideMenu.Controls.Add(this.btn_ThongTinCaNhan);
             this.panelSideMenu.Controls.Add(this.panel1);
             this.panelSideMenu.Controls.Add(this.btn_HoaDon);
@@ -65,6 +65,7 @@
             this.panelSideMenu.Controls.Add(this.btnMedia);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSideMenu.ForeColor = System.Drawing.Color.CadetBlue;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(200, 861);
@@ -104,6 +105,7 @@
             // 
             // btn_HoaDonXuat
             // 
+            this.btn_HoaDonXuat.BackColor = System.Drawing.Color.Gray;
             this.btn_HoaDonXuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_HoaDonXuat.FlatAppearance.BorderSize = 0;
             this.btn_HoaDonXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -114,11 +116,12 @@
             this.btn_HoaDonXuat.Size = new System.Drawing.Size(200, 40);
             this.btn_HoaDonXuat.TabIndex = 1;
             this.btn_HoaDonXuat.Text = "Hoá đơn xuất";
-            this.btn_HoaDonXuat.UseVisualStyleBackColor = true;
+            this.btn_HoaDonXuat.UseVisualStyleBackColor = false;
             this.btn_HoaDonXuat.Click += new System.EventHandler(this.btn_HoaDonXuat_Click);
             // 
             // btn_HoaDonNhap
             // 
+            this.btn_HoaDonNhap.BackColor = System.Drawing.Color.Gray;
             this.btn_HoaDonNhap.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_HoaDonNhap.FlatAppearance.BorderSize = 0;
             this.btn_HoaDonNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -129,7 +132,7 @@
             this.btn_HoaDonNhap.Size = new System.Drawing.Size(200, 40);
             this.btn_HoaDonNhap.TabIndex = 0;
             this.btn_HoaDonNhap.Text = "Hoá đơn nhập";
-            this.btn_HoaDonNhap.UseVisualStyleBackColor = true;
+            this.btn_HoaDonNhap.UseVisualStyleBackColor = false;
             this.btn_HoaDonNhap.Click += new System.EventHandler(this.btn_HoaDonNhap_Click);
             // 
             // btn_HoaDon
@@ -209,6 +212,7 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Gray;
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
@@ -222,11 +226,12 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "Linh/Phụ kiện";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Gray;
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
@@ -240,11 +245,12 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "PC";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
@@ -258,7 +264,7 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Laptop";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnMedia
@@ -294,9 +300,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(3, -11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(159, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(243, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -304,7 +310,7 @@
             // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(200, 0);
             this.panelChildForm.Name = "panelChildForm";

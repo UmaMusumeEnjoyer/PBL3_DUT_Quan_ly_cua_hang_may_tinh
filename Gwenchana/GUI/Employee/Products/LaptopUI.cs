@@ -81,7 +81,13 @@ namespace Gwenchana
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-       
+       public void ChangeTab()
+        {
+            button = "Special";
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -257,6 +263,11 @@ namespace Gwenchana
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
+            }
+            else if(button =="Special")
+            {
+                txt_LaptopID.ForeColor = Color.Gray;
+                txt_LaptopID.Enabled = false;
             }
         }
 

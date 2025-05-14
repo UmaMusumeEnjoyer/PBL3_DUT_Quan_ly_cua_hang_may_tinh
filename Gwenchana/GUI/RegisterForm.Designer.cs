@@ -38,11 +38,11 @@ namespace Gwenchana
             this.label2 = new System.Windows.Forms.Label();
             this.exit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.signup_loginBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,7 +56,7 @@ namespace Gwenchana
             this.signup_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
             this.signup_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
             this.signup_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signup_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_btn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_btn.ForeColor = System.Drawing.Color.White;
             this.signup_btn.Location = new System.Drawing.Point(294, 292);
             this.signup_btn.Name = "signup_btn";
@@ -69,10 +69,10 @@ namespace Gwenchana
             // signup_showPass
             // 
             this.signup_showPass.AutoSize = true;
-            this.signup_showPass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_showPass.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_showPass.Location = new System.Drawing.Point(443, 253);
             this.signup_showPass.Name = "signup_showPass";
-            this.signup_showPass.Size = new System.Drawing.Size(105, 18);
+            this.signup_showPass.Size = new System.Drawing.Size(96, 19);
             this.signup_showPass.TabIndex = 16;
             this.signup_showPass.Text = "Hiện mật khẩu";
             this.signup_showPass.UseVisualStyleBackColor = true;
@@ -91,10 +91,10 @@ namespace Gwenchana
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(291, 197);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 14;
             this.label4.Text = "Mật khẩu";
             // 
@@ -110,20 +110,20 @@ namespace Gwenchana
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(291, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 16);
+            this.label3.Size = new System.Drawing.Size(88, 15);
             this.label3.TabIndex = 12;
             this.label3.Text = "Tên đăng nhập";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(290, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 22);
+            this.label2.Size = new System.Drawing.Size(161, 22);
             this.label2.TabIndex = 11;
             this.label2.Text = "Đăng ký tài khoản";
             // 
@@ -154,47 +154,6 @@ namespace Gwenchana
             this.panel1.Size = new System.Drawing.Size(267, 400);
             this.panel1.TabIndex = 9;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(55, 216);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 19);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Cửa hàng máy tính";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // signup_loginBtn
-            // 
-            this.signup_loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.signup_loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signup_loginBtn.FlatAppearance.BorderSize = 0;
-            this.signup_loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
-            this.signup_loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.signup_loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signup_loginBtn.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_loginBtn.ForeColor = System.Drawing.Color.White;
-            this.signup_loginBtn.Location = new System.Drawing.Point(22, 356);
-            this.signup_loginBtn.Name = "signup_loginBtn";
-            this.signup_loginBtn.Size = new System.Drawing.Size(226, 31);
-            this.signup_loginBtn.TabIndex = 1;
-            this.signup_loginBtn.Text = "ĐĂNG NHẬP";
-            this.signup_loginBtn.UseVisualStyleBackColor = false;
-            this.signup_loginBtn.Click += new System.EventHandler(this.signup_loginBtn_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(37, 329);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(190, 14);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Đăng nhập vào tài khoản của bạn";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Gwenchana.Properties.Resources.Trường_Đại_học_Bách_khoa__Đại_học_Đà_Nẵng_svg__1_;
@@ -212,6 +171,47 @@ namespace Gwenchana
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(55, 216);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 23);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Cửa hàng máy tính";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // signup_loginBtn
+            // 
+            this.signup_loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.signup_loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signup_loginBtn.FlatAppearance.BorderSize = 0;
+            this.signup_loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
+            this.signup_loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.signup_loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signup_loginBtn.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_loginBtn.ForeColor = System.Drawing.Color.White;
+            this.signup_loginBtn.Location = new System.Drawing.Point(22, 356);
+            this.signup_loginBtn.Name = "signup_loginBtn";
+            this.signup_loginBtn.Size = new System.Drawing.Size(226, 31);
+            this.signup_loginBtn.TabIndex = 1;
+            this.signup_loginBtn.Text = "ĐĂNG NHẬP";
+            this.signup_loginBtn.UseVisualStyleBackColor = false;
+            this.signup_loginBtn.Click += new System.EventHandler(this.signup_loginBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(54, 329);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Đăng nhập vào tài khoản của bạn";
             // 
             // RegisterForm
             // 

@@ -8,6 +8,7 @@ using System.Drawing.Printing;
 using System.Windows.Forms;
 using Gwenchana.BussinessLogic;
 using Gwenchana.DataAccess;
+using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.ViewModel;
 
 
@@ -17,6 +18,7 @@ namespace Gwenchana
     {
 
         public decimal totalAmount { get; set; }
+        public string choice { get; set; }
         public Goods_ReceiptForm()
         {
             InitializeComponent();
@@ -45,7 +47,8 @@ namespace Gwenchana
 
         private void ccb_ProductFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(ccb_ProductFilter.SelectedItem.ToString())
+            cbb_ProductID.Items.Clear();
+            switch (ccb_ProductFilter.SelectedItem.ToString())
             {
 
                 case "PC":
@@ -128,7 +131,7 @@ namespace Gwenchana
                     txt_productName.Text = row.Cells["productName"].Value.ToString();
                     txt_productPrice.Text = row.Cells["price"].Value.ToString();
                     productQuantity.Value = 1; // Đặt giá trị mặc định cho số lượng là 1
-                    productQuantity.Maximum = Convert.ToInt32(row.Cells["stockQuantity"].Value); // Đặt giá trị tối đa cho số lượng là số lượng tồn kho
+
 
                     // Trỏ DataGridView tới dòng tương ứng
                     row.Selected = true;
@@ -201,12 +204,63 @@ namespace Gwenchana
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
+            //Customer selectedCustomer = new Customer();
+            //using (var selectForm = new CustomerCashUI())
+            //{
+            //    if (selectForm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        selectedCustomer = selectForm.currentCustomer;
 
+            //        MessageBox.Show("Khách hàng được chọn: " + selectedCustomer.customerName);
+            //    }
+            //}
+
+            //EmployeeBLL employeeBLL = new EmployeeBLL();
+            //Employee currentEmployee = new Employee();
+            //currentEmployee = employeeBLL.GetEmployeeByAccountId(id);
+
+
+
+            //List<Product> selectedProducts = new List<Product>();
+            //selectedProducts = GetOrderedProductList();
+
+            //ReceiptBLL receiptBLL = new ReceiptBLL();
+
+
+            //bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts);
+            //if (!isSuccess)
+            //{
+            //    MessageBox.Show("Tạo hóa đơn thành công!");
+
+            //    this.Close();
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Tạo hóa đơn thất bại!");
+            //}
         }
 
         private void cashierOrderForm_removeBtn_Click(object sender, EventArgs e)
         {
-
+            switch(ccb_ProductFilter.SelectedItem.ToString())
+            {
+                case "PC":
+                        PCUI pCUI = new PCUI();
+                    pCUI.ChangeTab();
+                    pCUI.ShowDialog();
+                    break;
+                case "Laptop":
+                    LaptopUI laptopUI = new LaptopUI();
+                    laptopUI.ChangeTab();
+                    laptopUI.ShowDialog();
+                    break;
+                case "Linh/ Phụ kiện":
+                    AccessoriesUI accessoriesUI = new AccessoriesUI();
+                    accessoriesUI.ChangeTab();
+                    accessoriesUI.ShowDialog();
+                    break;
+            }
         }
     }
 }
