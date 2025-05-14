@@ -16,5 +16,10 @@ namespace Gwenchana.BussinessLogic
         {
             return _goodsReceiptDAL.GetAllGoodsReceipt();
         }
+        //public bool createGoodsReceipt()
+        //{
+            
+        //}
+
     }
 }

@@ -29,9 +29,9 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierOrderForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Goods_ReceiptForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,10 +54,6 @@ namespace Gwenchana
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cashierOrderForm_receiptBtn = new System.Windows.Forms.Button();
-            this.txt_finalTotal = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_salePercent = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.lb_totalAmount = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_Order = new System.Windows.Forms.DataGridView();
@@ -111,14 +107,14 @@ namespace Gwenchana
             this.dgv_Product.AllowUserToDeleteRows = false;
             this.dgv_Product.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Product.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Product.EnableHeadersVisualStyles = false;
             this.dgv_Product.Location = new System.Drawing.Point(16, 59);
@@ -184,14 +180,15 @@ namespace Gwenchana
             // 
             this.cashierOrderForm_removeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.cashierOrderForm_removeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cashierOrderForm_removeBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashierOrderForm_removeBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierOrderForm_removeBtn.ForeColor = System.Drawing.Color.White;
             this.cashierOrderForm_removeBtn.Location = new System.Drawing.Point(285, 254);
             this.cashierOrderForm_removeBtn.Name = "cashierOrderForm_removeBtn";
             this.cashierOrderForm_removeBtn.Size = new System.Drawing.Size(194, 49);
             this.cashierOrderForm_removeBtn.TabIndex = 23;
-            this.cashierOrderForm_removeBtn.Text = "REMOVE";
+            this.cashierOrderForm_removeBtn.Text = "Thêm mới";
             this.cashierOrderForm_removeBtn.UseVisualStyleBackColor = false;
+            this.cashierOrderForm_removeBtn.Click += new System.EventHandler(this.cashierOrderForm_removeBtn_Click);
             // 
             // btn_productAdd
             // 
@@ -314,10 +311,6 @@ namespace Gwenchana
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.cashierOrderForm_receiptBtn);
-            this.panel3.Controls.Add(this.txt_finalTotal);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.txt_salePercent);
-            this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.lb_totalAmount);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.dgv_Order);
@@ -336,54 +329,15 @@ namespace Gwenchana
             this.cashierOrderForm_receiptBtn.Name = "cashierOrderForm_receiptBtn";
             this.cashierOrderForm_receiptBtn.Size = new System.Drawing.Size(310, 49);
             this.cashierOrderForm_receiptBtn.TabIndex = 30;
-            this.cashierOrderForm_receiptBtn.Text = "Thanh toán";
+            this.cashierOrderForm_receiptBtn.Text = "Nhập hàng";
             this.cashierOrderForm_receiptBtn.UseVisualStyleBackColor = false;
             this.cashierOrderForm_receiptBtn.Click += new System.EventHandler(this.cashierOrderForm_receiptBtn_Click);
-            // 
-            // txt_finalTotal
-            // 
-            this.txt_finalTotal.AutoSize = true;
-            this.txt_finalTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_finalTotal.Location = new System.Drawing.Point(189, 564);
-            this.txt_finalTotal.Name = "txt_finalTotal";
-            this.txt_finalTotal.Size = new System.Drawing.Size(17, 17);
-            this.txt_finalTotal.TabIndex = 26;
-            this.txt_finalTotal.Text = "0";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(53, 564);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(137, 17);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Số tiền phải trả (đ) :";
-            // 
-            // txt_salePercent
-            // 
-            this.txt_salePercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_salePercent.Location = new System.Drawing.Point(192, 516);
-            this.txt_salePercent.Name = "txt_salePercent";
-            this.txt_salePercent.Size = new System.Drawing.Size(128, 26);
-            this.txt_salePercent.TabIndex = 28;
-            this.txt_salePercent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_salePercent_KeyDown);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(52, 521);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(118, 17);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Chiết khấu (%) :";
             // 
             // lb_totalAmount
             // 
             this.lb_totalAmount.AutoSize = true;
             this.lb_totalAmount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_totalAmount.Location = new System.Drawing.Point(189, 480);
+            this.lb_totalAmount.Location = new System.Drawing.Point(189, 528);
             this.lb_totalAmount.Name = "lb_totalAmount";
             this.lb_totalAmount.Size = new System.Drawing.Size(17, 17);
             this.lb_totalAmount.TabIndex = 26;
@@ -393,7 +347,7 @@ namespace Gwenchana
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(53, 479);
+            this.label10.Location = new System.Drawing.Point(53, 527);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(102, 17);
             this.label10.TabIndex = 25;
@@ -405,14 +359,14 @@ namespace Gwenchana
             this.dgv_Order.AllowUserToDeleteRows = false;
             this.dgv_Order.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Order.EnableHeadersVisualStyles = false;
             this.dgv_Order.Location = new System.Drawing.Point(19, 33);
@@ -432,7 +386,7 @@ namespace Gwenchana
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // CashierOrderForm
+            // Goods_ReceiptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -440,7 +394,7 @@ namespace Gwenchana
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "CashierOrderForm";
+            this.Name = "Goods_ReceiptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.CashierOrderForm_Load);
             this.panel1.ResumeLayout(false);
@@ -479,10 +433,6 @@ namespace Gwenchana
         private System.Windows.Forms.Label lb_totalAmount;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgv_Order;
-        private System.Windows.Forms.TextBox txt_salePercent;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label txt_finalTotal;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button cashierOrderForm_receiptBtn;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;

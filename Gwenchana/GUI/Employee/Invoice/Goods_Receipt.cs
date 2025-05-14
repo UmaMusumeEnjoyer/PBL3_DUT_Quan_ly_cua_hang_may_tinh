@@ -49,6 +49,18 @@ namespace Gwenchana
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
 
+            dataGridView.Columns["Mã phiếu nhập"].Visible = false; // Ẩn cột Mã phiếu nhập
+            dataGridView.Columns["Ngày nhập hàng"].HeaderText = "Ngày nhập hàng";
+            dataGridView.Columns["Tên nhân viên nhập"].HeaderText = "Tên nhân viên nhập";
+            dataGridView.Columns["Số điện thoại NV"].HeaderText = "Số điện thoại NV";
+            dataGridView.Columns["Mã sản phẩm"].HeaderText = "Mã sản phẩm";
+            dataGridView.Columns["Tên sản phẩm"].HeaderText = "Tên sản phẩm";
+            dataGridView.Columns["Số lượng nhập"].HeaderText = "Số lượng nhập";
+            dataGridView.Columns["Giá nhập"].HeaderText = "Giá nhập";
+            dataGridView.Columns["Thành tiền"].HeaderText = "Thành tiền";
+            dataGridView.Columns["Nhà cung cấp"].HeaderText = "Nhà cung cấp";
+            dataGridView.Columns["Hãng sản xuất"].HeaderText = "Hãng sản xuất";
+
 
 
         }

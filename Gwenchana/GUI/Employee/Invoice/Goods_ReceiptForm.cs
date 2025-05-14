@@ -197,41 +197,14 @@ namespace Gwenchana
         {
 
         }
-        private void txt_salePercent_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (string.IsNullOrWhiteSpace(txt_salePercent.Text))
-                {
-                    // Nếu không nhập gì -> giữ nguyên giá gốc
-                    txt_finalTotal.Text = totalAmount.ToString();
-                    return;
-                }
 
-                if (decimal.TryParse(txt_salePercent.Text, out decimal discountPercent))
-                {
-                    if (discountPercent < 0 || discountPercent > 100)
-                    {
-                        MessageBox.Show("Phần trăm giảm giá phải từ 0 đến 100.");
-                        txt_salePercent.Text = "";
-                        return;
-                    }
-
-                    decimal discountAmount = totalAmount * discountPercent / 100;
-                    decimal finalAmount = totalAmount - discountAmount;
-                    txt_finalTotal.Text = finalAmount.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng nhập số hợp lệ cho phần trăm giảm giá.");
-                    txt_salePercent.Text = "";
-                }
-
-                e.SuppressKeyPress = true;
-            }
-        }
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cashierOrderForm_removeBtn_Click(object sender, EventArgs e)
         {
 
         }
