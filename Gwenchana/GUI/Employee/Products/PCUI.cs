@@ -48,7 +48,7 @@ namespace Gwenchana
             dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
             dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
             dataGridView.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-            //dataGridView.Columns["weight"].HeaderText = "Trọng lượng";
+            
             dataGridView.Columns["price"].HeaderText = "Giá";
 
             dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
@@ -274,10 +274,12 @@ namespace Gwenchana
             if (cbb_PcSearch.SelectedItem.ToString() == "Tên")
             {
                 dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.productName.Contains(searchText)).ToList();
+
             }
             else if (cbb_PcSearch.SelectedItem.ToString() == "Nhà sản xuất")
             {
                 dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.Manufacturer.Contains(searchText)).ToList();
+
             }
             else if (cbb_PcSearch.SelectedItem.ToString() == "Cấu hình")
             {

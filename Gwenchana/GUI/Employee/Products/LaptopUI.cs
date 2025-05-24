@@ -286,6 +286,7 @@ namespace Gwenchana
             if (cbb_LaptopSearch.SelectedItem.ToString() == "Màu sắc")
             {
                 dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
+                //LoadData();
             }
             else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
             {

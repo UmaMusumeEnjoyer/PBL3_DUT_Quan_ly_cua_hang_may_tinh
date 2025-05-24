@@ -273,6 +273,7 @@ namespace Gwenchana
             this.lblTotalProfit.Size = new System.Drawing.Size(78, 25);
             this.lblTotalProfit.TabIndex = 1;
             this.lblTotalProfit.Text = "100000";
+            this.lblTotalProfit.Click += new System.EventHandler(this.lblTotalProfit_Click);
             // 
             // label5
             // 
@@ -287,7 +288,7 @@ namespace Gwenchana
             // 
             // chartGrossRevenue
             // 
-            this.chartGrossRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.chartGrossRevenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chartGrossRevenue.ChartAreas.Add(chartArea1);
@@ -435,7 +436,7 @@ namespace Gwenchana
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.dgvUnderstock);
@@ -539,6 +540,7 @@ namespace Gwenchana
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

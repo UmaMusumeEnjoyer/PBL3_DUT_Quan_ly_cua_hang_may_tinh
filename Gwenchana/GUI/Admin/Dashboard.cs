@@ -133,5 +133,10 @@ namespace Gwenchana
         {
 
         }
+
+        private void lblTotalProfit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

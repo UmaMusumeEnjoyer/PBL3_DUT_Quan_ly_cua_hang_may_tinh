@@ -267,20 +267,35 @@ namespace Gwenchana
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < dataGridView.Rows.Count; i++)
+            string searchText = txtSearch.Text.Trim();
+            //string a = cbb_LaptopSearch.SelectedItem.ToString();
+
+            AccessoriesBLL laptopBLL = new AccessoriesBLL();
+
+            if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
             {
-                if (dataGridView.Rows[i].Cells[1].Value.ToString().Contains(txtSearch.Text))
-                {
-                    dataGridView.Rows[i].Selected = true;
-                    dataGridView.CurrentCell = dataGridView.Rows[i].Cells[1];
-                    break;
-                }
+                dataGridView.DataSource = laptopBLL.GetAllAccessoriesList().Where(l => l.productName.Contains(searchText)).ToList();
+            }
+            else if (cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
+            {
+                dataGridView.DataSource = laptopBLL.GetAllAccessoriesList().Where(l => l.Manufacturer.Contains(searchText)).ToList();
+            }
+            else if (cbb_LaptopSearch.SelectedItem.ToString() == "Loại")
+            {
+                dataGridView.DataSource = laptopBLL.GetAllAccessoriesList().Where(l => l.Type.Contains(searchText)).ToList();
             }
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_ClearFilter_Click(object sender, EventArgs e)
+        {
+            cbb_LaptopSearch.SelectedIndex = -1;
+            txtSearch.Clear();
+            LoadData();
         }
     }
 }
