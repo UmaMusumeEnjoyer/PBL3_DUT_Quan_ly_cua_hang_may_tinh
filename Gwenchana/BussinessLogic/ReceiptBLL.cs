@@ -39,9 +39,14 @@ namespace Gwenchana.BussinessLogic
             return _receiptDAL.GetAllReceipts();
         }
 
+        public DataTable GetAllReceiptsByID(int ID)
+        {
+            return _receiptDAL.GetAllReceiptsByID(ID);
+        }
+
         public bool createReceipt(Employee ce, Customer cs, List<Product> list)
         {
-            return _receiptDAL.createReceipt(ce, cs, list);
+            return _receiptDAL.CreateReceipt(ce, cs, list);
         }
     }
 }

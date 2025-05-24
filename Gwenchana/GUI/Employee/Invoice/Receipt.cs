@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.DAL;
+using Gwenchana.GUI.Employee.Invoice;
 
 
 
@@ -45,8 +46,9 @@ namespace Gwenchana
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
-            
-            dataGridView.Columns["Mã đơn xuất hàng"].Visible = false;
+
+            //dataGridView.Columns["Mã đơn xuất hàng"].Visible = false;
+            dataGridView.Columns["Receipt_Id"].Visible = false;
 
 
         }
@@ -290,6 +292,18 @@ namespace Gwenchana
         private void cbb_LaptopSearch_TextUpdate(object sender, EventArgs e)
         {
             string a = cbb_LaptopSearch.SelectedItem.ToString();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_ReceiptDetails_Click(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(dataGridView.CurrentRow.Cells["Receipt_Id"].Value);
+            Receipt_Details details = new Receipt_Details(ID);
+            details.ShowDialog();
         }
     }
 }

@@ -12,5 +12,7 @@ namespace Gwenchana.DataAccess.DTO
         public int Customer_Id { get; set; }
         public int Employee_Id { get; set; }
         public DateTime receiptDate { get; set; }
+
+        public Decimal ReceiptTotal { get; set; }
     }
 }
