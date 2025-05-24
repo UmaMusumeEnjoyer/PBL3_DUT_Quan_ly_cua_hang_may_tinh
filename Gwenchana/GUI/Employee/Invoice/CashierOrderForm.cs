@@ -235,6 +235,13 @@ namespace Gwenchana
             }
         }
 
+        private decimal GetFinalTotal()
+        {
+            if (decimal.TryParse(txt_finalTotal.Text, out decimal finalTotal))
+                return finalTotal;
+            return totalAmount;
+        }
+
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
             Customer selectedCustomer = new Customer();
@@ -243,7 +250,6 @@ namespace Gwenchana
                 if (selectForm.ShowDialog() == DialogResult.OK)
                 {
                     selectedCustomer = selectForm.currentCustomer;
-                 
                     MessageBox.Show("Khách hàng được chọn: " + selectedCustomer.customerName);
                 }
             }
@@ -252,33 +258,21 @@ namespace Gwenchana
             Employee currentEmployee = new Employee();
             currentEmployee = employeeBLL.GetEmployeeByAccountId(id);
 
-
-
             List<Product> selectedProducts = new List<Product>();
             selectedProducts = GetOrderedProductList();
 
+            decimal finalTotal = GetFinalTotal();
             ReceiptBLL receiptBLL = new ReceiptBLL();
-
-
-            bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts);
+            bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts, finalTotal);
             if (!isSuccess)
             {
                 MessageBox.Show("Tạo hóa đơn thành công!");
-
                 this.Close();
-                
             }
             else
             {
                 MessageBox.Show("Tạo hóa đơn thất bại!");
             }
-
-
-
-
-
-
-
         }
 
         public List<Product> GetOrderedProductList()

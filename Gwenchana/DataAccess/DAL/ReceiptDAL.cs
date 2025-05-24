@@ -152,7 +152,7 @@ namespace Gwenchana.DataAccess.DAL
             return true;
         }
 
-        public bool CreateReceipt(Employee ce, Customer cs, List<Product> list)
+        public bool CreateReceipt(Employee ce, Customer cs, List<Product> list, decimal finalTotal)
         {
             try
             {
@@ -164,13 +164,14 @@ namespace Gwenchana.DataAccess.DAL
 
                         cmd.Parameters.AddWithValue("@CustomerID", cs.Customer_Id);
                         cmd.Parameters.AddWithValue("@EmployeeID", ce.Empolyee_Id);
+                        cmd.Parameters.AddWithValue("@ReceiptTotal", finalTotal);
 
                         string jsonProductList = Newtonsoft.Json.JsonConvert.SerializeObject(
                             list.Select(p => new
                             {
-                                productId = p.Product_Id,
-                                quantity = p.quantity,
-                                price = p.price
+                                Product_Id = p.Product_Id, // Đảm bảo tên trường khớp với stored procedure
+                                Quantity = p.quantity,
+                                Price = p.price
                             })
                         );
 

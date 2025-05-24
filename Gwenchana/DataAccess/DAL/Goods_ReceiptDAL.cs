@@ -43,5 +43,33 @@ namespace Gwenchana.DataAccess.DAL
             return _db.GetData(query);
         }
 
+        public int InsertGoodsReceipt(int employeeId, DateTime receiptDate)
+        {
+            string query = @"INSERT INTO Goods_Receipt (Employee_Id, goodsReceiptDate) VALUES (@Employee_Id, @goodsReceiptDate); SELECT SCOPE_IDENTITY();";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Employee_Id", employeeId),
+                new SqlParameter("@goodsReceiptDate", receiptDate)
+            };
+            object result = _db.ExecuteScalar(query, parameters);
+            return Convert.ToInt32(result);
+        }
+
+        public void InsertGoodsReceiptDetails(int goodsReceiptId, List<Gwenchana.DataAccess.DTO.Details> detailsList)
+        {
+            foreach (var detail in detailsList)
+            {
+                string query = @"INSERT INTO Details (GoodsReceipt_Id, Product_Id, quantity, productPrice) VALUES (@GoodsReceipt_Id, @Product_Id, @quantity, @productPrice)";
+                SqlParameter[] parameters = new SqlParameter[]
+                {
+                    new SqlParameter("@GoodsReceipt_Id", goodsReceiptId),
+                    new SqlParameter("@Product_Id", detail.Product_Id),
+                    new SqlParameter("@quantity", detail.quantity),
+                    new SqlParameter("@productPrice", detail.productPrice)
+                };
+                _db.ExecuteNonQuery(query, parameters);
+            }
+        }
+
     }
 }

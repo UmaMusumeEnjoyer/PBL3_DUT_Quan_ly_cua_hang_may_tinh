@@ -44,9 +44,9 @@ namespace Gwenchana.BussinessLogic
             return _receiptDAL.GetAllReceiptsByID(ID);
         }
 
-        public bool createReceipt(Employee ce, Customer cs, List<Product> list)
+        public bool createReceipt(Employee ce, Customer cs, List<Product> list, decimal finalTotal)
         {
-            return _receiptDAL.CreateReceipt(ce, cs, list);
+            return _receiptDAL.CreateReceipt(ce, cs, list, finalTotal);
         }
 
         public List<ReceiptViewModel> getallreceipts()
