@@ -244,22 +244,14 @@ namespace Gwenchana
             string searchText = txtSearch.Text.Trim();
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
 
-            LaptopBLL laptopBLL = new LaptopBLL();
-            if (cbb_LaptopSearch.SelectedItem.ToString() == "Màu sắc")
+            ReceiptBLL laptopBLL = new ReceiptBLL();
+            if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên nhân viên")
             {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
+                dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.EmployeeName.Contains(searchText)).ToList();
             }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
+            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên khách hàng")
             {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.productName.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Manufacturer.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Cân nặng")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Weight ==Convert.ToDecimal(searchText)).ToList();
+                dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.CustomerName.Contains(searchText)).ToList();
             }
 
 

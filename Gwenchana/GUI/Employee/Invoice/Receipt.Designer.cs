@@ -162,10 +162,8 @@ namespace Gwenchana
             this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_LaptopSearch.FormattingEnabled = true;
             this.cbb_LaptopSearch.Items.AddRange(new object[] {
-            "Tên",
-            "Hãng sản xuất",
-            "Cân nặng",
-            "Màu sắc"});
+            "Tên nhân viên",
+            "Tên khách hàng"});
             this.cbb_LaptopSearch.Location = new System.Drawing.Point(601, 6);
             this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
             this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 28);

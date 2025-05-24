@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using Gwenchana.DataAccess.DBConnect;
 using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
 
 namespace Gwenchana.DataAccess.DAL
 {
@@ -83,6 +84,65 @@ namespace Gwenchana.DataAccess.DAL
 
             return dt;
         }
+
+        public List<ReceiptViewModel> Getdetailreceipts ()
+        {
+            List<ReceiptViewModel> list = new List<ReceiptViewModel>();
+            DataTable dt = new DataTable();
+
+            string query = @"
+        SELECT 
+            r.Receipt_Id AS [Mã đơn hàng],
+            CONVERT(VARCHAR(10), r.receiptDate, 103) AS [Ngày xuất hàng],
+            e.employeeName AS [Tên nhân viên],
+            c.customerName AS [Tên khách hàng],
+            p.productName AS [Tên sản phẩm],
+            p.Manufacturer AS [Hãng sản xuất],
+            d.quantity AS [Số lượng],
+            d.productPrice AS [Giá bán (VNĐ)],
+            (d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
+        FROM Receipt r
+        JOIN Employee e ON r.Employee_Id = e.Employee_Id
+        JOIN Customer c ON r.Customer_Id = c.Customer_Id
+        JOIN Details d ON r.Receipt_Id = d.Receipt_Id
+        JOIN Product p ON d.Product_Id = p.Product_Id
+       
+    ";
+
+            using (SqlConnection conn = _db.GetConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            foreach (DataRow row in dt.Rows)
+            {
+                var detail = new ReceiptViewModel
+                {
+                    Receipt_Id = Convert.ToInt32(row["Mã đơn hàng"]),
+                    ReceiptDate = row["Ngày xuất hàng"].ToString(),
+                    EmployeeName = row["Tên nhân viên"].ToString(),
+                    CustomerName = row["Tên khách hàng"].ToString(),
+                    ProductName = row["Tên sản phẩm"].ToString(),
+                    Manufacturer = row["Hãng sản xuất"].ToString(),
+                    Quantity = Convert.ToInt32(row["Số lượng"]),
+                    ProductPrice = Convert.ToDecimal(row["Giá bán (VNĐ)"]),
+                    TotalPrice = Convert.ToDecimal(row["Thành tiền (VNĐ)"])
+                };
+
+                list.Add(detail);
+            }
+
+            return list;
+        }
+
 
 
 

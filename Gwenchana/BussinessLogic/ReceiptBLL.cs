@@ -48,5 +48,10 @@ namespace Gwenchana.BussinessLogic
         {
             return _receiptDAL.CreateReceipt(ce, cs, list);
         }
+
+        public List<ReceiptViewModel> getallreceipts()
+        {
+            return _receiptDAL.Getdetailreceipts();
+        }
     }
 }
