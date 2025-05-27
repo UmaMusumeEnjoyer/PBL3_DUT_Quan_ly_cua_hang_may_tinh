@@ -115,7 +115,7 @@ namespace Gwenchana
         }
         public void setcbb_ProductID()
         {
-            cbb_ProductID.Items.Clear();
+            //cbb_ProductID.Items.Clear();
             for (int i = 0; i < dgv_Product.Rows.Count; i++)
             {
                 cbb_ProductID.Items.Add(dgv_Product.Rows[i].Cells[0].Value.ToString());
@@ -268,7 +268,26 @@ namespace Gwenchana
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            switch (ccb_ProductFilter.SelectedItem.ToString())
+            {
+                case "PC":
+                    PCUI pCUI = new PCUI();
+                    pCUI.ChangeTab();
+                    pCUI.ShowDialog();
+                    break;
+                case "Laptop":
+                    LaptopUI laptopUI = new LaptopUI();
+                    laptopUI.ChangeTab();
+                    laptopUI.ShowDialog();
+                    break;
+                case "Linh/ Phụ kiện":
+                    AccessoriesUI accessoriesUI = new AccessoriesUI();
+                    accessoriesUI.ChangeTab();
+                    accessoriesUI.ShowDialog();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
