@@ -245,11 +245,11 @@ namespace Gwenchana
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
 
             ReceiptBLL laptopBLL = new ReceiptBLL();
-            if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên nhân viên")
+            if (cbb_ReceiptFilter.SelectedItem.ToString() == "Tên nhân viên")
             {
                 dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.EmployeeName.Contains(searchText)).ToList();
             }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên khách hàng")
+            else if(cbb_ReceiptFilter.SelectedItem.ToString() == "Tên khách hàng")
             {
                 dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.CustomerName.Contains(searchText)).ToList();
             }
@@ -276,14 +276,14 @@ namespace Gwenchana
 
         private void btn_ClearFilter_Click(object sender, EventArgs e)
         {
-            cbb_LaptopSearch.SelectedIndex = -1;
+            cbb_ReceiptFilter.SelectedIndex = -1;
             txtSearch.Clear();
             LoadData();
         }
 
         private void cbb_LaptopSearch_TextUpdate(object sender, EventArgs e)
         {
-            string a = cbb_LaptopSearch.SelectedItem.ToString();
+            string a = cbb_ReceiptFilter.SelectedItem.ToString();
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

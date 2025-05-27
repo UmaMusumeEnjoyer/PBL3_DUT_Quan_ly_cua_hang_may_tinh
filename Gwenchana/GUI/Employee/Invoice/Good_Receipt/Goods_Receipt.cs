@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.DAL;
 using Gwenchana.GUI.Employee.Invoice;
+using Gwenchana.DataAccess.ViewModel;
 
 
 
@@ -270,29 +271,25 @@ namespace Gwenchana
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-            //string a = cbb_LaptopSearch.SelectedItem.ToString();
-
-            LaptopBLL laptopBLL = new LaptopBLL();
-            if (cbb_LaptopSearch.SelectedItem.ToString() == "Màu sắc")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.productName.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Manufacturer.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Cân nặng")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Weight ==Convert.ToDecimal(searchText)).ToList();
-            }
+            string employeeName = "";
+            string supplierName = "";
 
 
-
+            Goods_ReceiptBLL goodsReceiptBLL = new Goods_ReceiptBLL();
             
+
+            if (cbb_Goods_Receipt_Search.SelectedItem != null)
+            {
+                if (cbb_Goods_Receipt_Search.SelectedItem.ToString() == "Tên nhân viên")
+                {
+                    dataGridView.DataSource = goodsReceiptBLL.GetAllGoodsReceiptDetails().Where(l => l.EmployeeName.Contains(searchText)).ToList();
+                }
+                else if (cbb_Goods_Receipt_Search.SelectedItem.ToString() == "Tên nhà cung cấp")
+                {
+                    dataGridView.DataSource = goodsReceiptBLL.GetAllGoodsReceiptDetails().Where(l => l.SupplierName.Contains(searchText)).ToList();
+                }
+            }
+
         }
 
         private void txt_Manufacturer_TextChanged(object sender, EventArgs e)
@@ -312,14 +309,14 @@ namespace Gwenchana
 
         private void btn_ClearFilter_Click(object sender, EventArgs e)
         {
-            cbb_LaptopSearch.SelectedIndex = -1;
+            cbb_Goods_Receipt_Search.SelectedIndex = -1;
             txtSearch.Clear();
             LoadData();
         }
 
         private void cbb_LaptopSearch_TextUpdate(object sender, EventArgs e)
         {
-            string a = cbb_LaptopSearch.SelectedItem.ToString();
+            string a = cbb_Goods_Receipt_Search.SelectedItem.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -34,10 +34,11 @@ namespace Gwenchana
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
+            this.cbb_Goods_Receipt_Search = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@ namespace Gwenchana
             this.txt_LaptopName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_LaptopID = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -121,7 +121,7 @@ namespace Gwenchana
             this.tabPagePetList.Controls.Add(this.button1);
             this.tabPagePetList.Controls.Add(this.btn_ClearFilter);
             this.tabPagePetList.Controls.Add(this.label7);
-            this.tabPagePetList.Controls.Add(this.cbb_LaptopSearch);
+            this.tabPagePetList.Controls.Add(this.cbb_Goods_Receipt_Search);
             this.tabPagePetList.Controls.Add(this.dataGridView);
             this.tabPagePetList.Controls.Add(this.label2);
             this.tabPagePetList.Controls.Add(this.btnSearch);
@@ -134,6 +134,18 @@ namespace Gwenchana
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
             this.tabPagePetList.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(747, 190);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 87);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Chi tiết đơn nhập";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -169,21 +181,19 @@ namespace Gwenchana
             this.label7.TabIndex = 9;
             this.label7.Text = "Tiêu chí :";
             // 
-            // cbb_LaptopSearch
+            // cbb_Goods_Receipt_Search
             // 
-            this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_LaptopSearch.FormattingEnabled = true;
-            this.cbb_LaptopSearch.Items.AddRange(new object[] {
-            "Tên",
-            "Hãng sản xuất",
-            "Cân nặng",
-            "Màu sắc"});
-            this.cbb_LaptopSearch.Location = new System.Drawing.Point(601, 6);
-            this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
-            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 28);
-            this.cbb_LaptopSearch.TabIndex = 8;
-            this.cbb_LaptopSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.cbb_LaptopSearch.TextUpdate += new System.EventHandler(this.cbb_LaptopSearch_TextUpdate);
+            this.cbb_Goods_Receipt_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_Goods_Receipt_Search.FormattingEnabled = true;
+            this.cbb_Goods_Receipt_Search.Items.AddRange(new object[] {
+            "Tên nhân viên",
+            "Tên nhà cung cấp"});
+            this.cbb_Goods_Receipt_Search.Location = new System.Drawing.Point(601, 6);
+            this.cbb_Goods_Receipt_Search.Name = "cbb_Goods_Receipt_Search";
+            this.cbb_Goods_Receipt_Search.Size = new System.Drawing.Size(140, 28);
+            this.cbb_Goods_Receipt_Search.TabIndex = 8;
+            this.cbb_Goods_Receipt_Search.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbb_Goods_Receipt_Search.TextUpdate += new System.EventHandler(this.cbb_LaptopSearch_TextUpdate);
             // 
             // dataGridView
             // 
@@ -439,18 +449,6 @@ namespace Gwenchana
             this.txt_LaptopID.TabIndex = 6;
             this.txt_LaptopID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(747, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 87);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Chi tiết đơn nhập";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Goods_Receipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -506,7 +504,7 @@ namespace Gwenchana
         private System.Windows.Forms.TextBox txt_LaptopWeight;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_LaptopColour;
-        private System.Windows.Forms.ComboBox cbb_LaptopSearch;
+        private System.Windows.Forms.ComboBox cbb_Goods_Receipt_Search;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_ClearFilter;
         private System.Windows.Forms.Button button1;

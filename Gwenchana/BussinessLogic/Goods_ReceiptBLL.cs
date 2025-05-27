@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.DAL;
+using Gwenchana.DataAccess.ViewModel;
 
 namespace Gwenchana.BussinessLogic
 {
@@ -25,6 +26,10 @@ namespace Gwenchana.BussinessLogic
         public DataTable GetAllGoodsReceiptsByID(int ID)
         {
             return _goodsReceiptDAL.GetAllGoodsReceiptsByID(ID);
+        }
+        public List<GoodsReceiptViewModel> GetAllGoodsReceiptDetails()
+        {
+            return _goodsReceiptDAL.GetAllGoodsReceiptDetails();
         }
 
     }

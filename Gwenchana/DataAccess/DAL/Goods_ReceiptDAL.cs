@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.SqlClient;
 using Gwenchana.DataAccess.DBConnect;
 using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
+
 
 namespace Gwenchana.DataAccess.DAL
 {
@@ -115,6 +117,56 @@ WHERE gr.GoodsReceipt_Id = @ID;
             }
         }
 
+
+        public List<GoodsReceiptViewModel> GetAllGoodsReceiptDetails()
+        {
+            var list = new List<GoodsReceiptViewModel>();
+            DbConnect _db1 = new DbConnect();
+            using (SqlConnection conn = _db1.GetConnection())
+            {
+                string sql = @"
+        SELECT
+            gr.GoodsReceipt_Id,
+            gr.goodsReceiptDate,
+            e.employeeName,
+            p.productName,
+            p.Manufacturer,
+            s.supplierName,
+            d.quantity,
+            d.productPrice,
+            (d.quantity * d.productPrice) AS TotalAmount
+        FROM Goods_Receipt gr
+        JOIN Employee e ON gr.Employee_Id = e.Employee_Id
+        JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
+        JOIN Product p ON d.Product_Id = p.Product_Id
+        JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
+        ";
+
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(new GoodsReceiptViewModel
+                            {
+                                GoodsReceiptId = reader.GetInt32(0),
+                                GoodsReceiptDate = reader.GetDateTime(1),
+                                EmployeeName = reader.GetString(2),
+                                ProductName = reader.GetString(3),
+                                Manufacturer = reader.GetString(4),
+                                SupplierName = reader.GetString(5),
+                                Quantity = reader.GetInt32(6),
+                                ProductPrice = reader.GetDecimal(7),
+                                TotalAmount = reader.GetDecimal(8)
+                            });
+                        }
+                    }
+                }
+            }
+            return list;
+        }
     }
 
 

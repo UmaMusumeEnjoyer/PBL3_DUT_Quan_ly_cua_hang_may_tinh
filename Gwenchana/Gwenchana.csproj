@@ -86,6 +86,7 @@
     <Compile Include="DataAccess\DTO\Supplier.cs" />
     <Compile Include="DataAccess\ViewModel\AdminDashboard.cs" />
     <Compile Include="DataAccess\ViewModel\CurrentEmployee.cs" />
+    <Compile Include="DataAccess\ViewModel\GoodsReceiptViewModel.cs" />
     <Compile Include="DataAccess\ViewModel\ReceiptViewModel.cs" />
     <Compile Include="GUI\Admin\Employees.cs">
       <SubType>Form</SubType>

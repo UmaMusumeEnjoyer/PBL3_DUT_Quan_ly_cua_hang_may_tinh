@@ -36,6 +36,7 @@ namespace Gwenchana
             dgv_Order.Columns.Add("Product_price", "Giá bán");
             dgv_Order.Columns.Add("quantity", "Số lượng nhập");
             dgv_Order.Columns.Add("totalPrice", "Thành tiền");
+            dgv_Order.Columns.Add("Supplier_Id", "Mã nhà cung cấp");
 
             dgv_Order.ReadOnly = true;
             dgv_Order.AllowUserToAddRows = false;
@@ -166,6 +167,7 @@ namespace Gwenchana
                     decimal price = Convert.ToDecimal(selectedRow.Cells["price"].Value);
                     int quantity = (int)productQuantity.Value;
                     decimal totalPrice = price * quantity;
+                    int supplierId = Convert.ToInt32(selectedRow.Cells["Supplier_Id"].Value);
 
                     // Kiểm tra nếu sản phẩm đã tồn tại trong dgv_SelectedProducts thì cộng dồn số lượng
                     bool found = false;
@@ -183,7 +185,7 @@ namespace Gwenchana
 
                     if (!found)
                     {
-                        dgv_Order.Rows.Add(productId, productName, price, quantity, totalPrice);
+                        dgv_Order.Rows.Add(productId, productName, price, quantity, totalPrice, supplierId);
                     }
                 }
             }
