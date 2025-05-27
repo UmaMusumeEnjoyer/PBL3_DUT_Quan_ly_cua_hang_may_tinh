@@ -278,13 +278,19 @@ namespace Gwenchana
             switch (ccb_ProductFilter.SelectedItem.ToString())
             {
                 case "PC":
-
+                    AddProduct addProduct = new AddProduct("PC");
+                    addProduct.ShowDialog();
+                    addProduct.ChangeTab();
                     break;
                 case "Laptop":
-
+                    AddProduct addProduct1 = new AddProduct("Laptop");
+                    addProduct1.ShowDialog();
+                    addProduct1.ChangeTab();
                     break;
                 case "Linh/ Phụ kiện":
-
+                    AddProduct addProduct2 = new AddProduct("Accessories");
+                    addProduct2.ShowDialog();
+                    addProduct2.ChangeTab();
                     break;
                 default:
                     break;

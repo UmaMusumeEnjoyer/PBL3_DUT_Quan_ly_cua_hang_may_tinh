@@ -45,7 +45,7 @@ namespace Gwenchana
             this.lb_Email = new System.Windows.Forms.Label();
             this.txt_LaptopPrice = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btn_LaptopSave = new System.Windows.Forms.Button();
             this.lb6 = new System.Windows.Forms.Label();
             this.txt_Spetification = new System.Windows.Forms.TextBox();
             this.labelxxxxxx = new System.Windows.Forms.Label();
@@ -55,13 +55,12 @@ namespace Gwenchana
             this.label3 = new System.Windows.Forms.Label();
             this.txt_LaptopID = new System.Windows.Forms.TextBox();
             this.tabPagePC = new System.Windows.Forms.TabPage();
-            this.tabPageAccessories = new System.Windows.Forms.TabPage();
             this.txt_ = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_pcPrice = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_SavePC = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_pcSpecs = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@ namespace Gwenchana
             this.txt_pcName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_ProductID = new System.Windows.Forms.TextBox();
+            this.tabPageAccessories = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_AccessoriesstockQuantity = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@ namespace Gwenchana
             this.label13 = new System.Windows.Forms.Label();
             this.txt_AccessoriesPrice = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_AccessoriesSave = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_AccessoriesOverview = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -151,7 +151,7 @@ namespace Gwenchana
             this.tabPageLaptop.Controls.Add(this.lb_Email);
             this.tabPageLaptop.Controls.Add(this.txt_LaptopPrice);
             this.tabPageLaptop.Controls.Add(this.btnCancel);
-            this.tabPageLaptop.Controls.Add(this.btnSave);
+            this.tabPageLaptop.Controls.Add(this.btn_LaptopSave);
             this.tabPageLaptop.Controls.Add(this.lb6);
             this.tabPageLaptop.Controls.Add(this.txt_Spetification);
             this.tabPageLaptop.Controls.Add(this.labelxxxxxx);
@@ -265,15 +265,15 @@ namespace Gwenchana
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnSave
+            // btn_LaptopSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(63, 304);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(183, 44);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btn_LaptopSave.Location = new System.Drawing.Point(63, 304);
+            this.btn_LaptopSave.Name = "btn_LaptopSave";
+            this.btn_LaptopSave.Size = new System.Drawing.Size(183, 44);
+            this.btn_LaptopSave.TabIndex = 14;
+            this.btn_LaptopSave.Text = "Lưu";
+            this.btn_LaptopSave.UseVisualStyleBackColor = true;
+            this.btn_LaptopSave.Click += new System.EventHandler(this.btn_LaptopSave_Click);
             // 
             // lb6
             // 
@@ -353,7 +353,7 @@ namespace Gwenchana
             this.tabPagePC.Controls.Add(this.label2);
             this.tabPagePC.Controls.Add(this.txt_pcPrice);
             this.tabPagePC.Controls.Add(this.button1);
-            this.tabPagePC.Controls.Add(this.button2);
+            this.tabPagePC.Controls.Add(this.btn_SavePC);
             this.tabPagePC.Controls.Add(this.label7);
             this.tabPagePC.Controls.Add(this.txt_pcSpecs);
             this.tabPagePC.Controls.Add(this.label8);
@@ -369,31 +369,6 @@ namespace Gwenchana
             this.tabPagePC.TabIndex = 2;
             this.tabPagePC.Text = "PC";
             this.tabPagePC.UseVisualStyleBackColor = true;
-            // 
-            // tabPageAccessories
-            // 
-            this.tabPageAccessories.Controls.Add(this.label11);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesstockQuantity);
-            this.tabPageAccessories.Controls.Add(this.label12);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesType);
-            this.tabPageAccessories.Controls.Add(this.label13);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesPrice);
-            this.tabPageAccessories.Controls.Add(this.button3);
-            this.tabPageAccessories.Controls.Add(this.button4);
-            this.tabPageAccessories.Controls.Add(this.label14);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesOverview);
-            this.tabPageAccessories.Controls.Add(this.label15);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesManufacturer);
-            this.tabPageAccessories.Controls.Add(this.label16);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesName);
-            this.tabPageAccessories.Controls.Add(this.label17);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesID);
-            this.tabPageAccessories.Location = new System.Drawing.Point(4, 30);
-            this.tabPageAccessories.Name = "tabPageAccessories";
-            this.tabPageAccessories.Size = new System.Drawing.Size(858, 377);
-            this.tabPageAccessories.TabIndex = 3;
-            this.tabPageAccessories.Text = "Linh / Phụ kiện";
-            this.tabPageAccessories.UseVisualStyleBackColor = true;
             // 
             // txt_
             // 
@@ -438,14 +413,15 @@ namespace Gwenchana
             this.button1.Text = "Huỷ";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_SavePC
             // 
-            this.button2.Location = new System.Drawing.Point(48, 303);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 44);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_SavePC.Location = new System.Drawing.Point(48, 303);
+            this.btn_SavePC.Name = "btn_SavePC";
+            this.btn_SavePC.Size = new System.Drawing.Size(183, 44);
+            this.btn_SavePC.TabIndex = 28;
+            this.btn_SavePC.Text = "Lưu";
+            this.btn_SavePC.UseVisualStyleBackColor = true;
+            this.btn_SavePC.Click += new System.EventHandler(this.btn_SavePC_Click);
             // 
             // label7
             // 
@@ -515,6 +491,31 @@ namespace Gwenchana
             this.txt_ProductID.Size = new System.Drawing.Size(154, 29);
             this.txt_ProductID.TabIndex = 20;
             // 
+            // tabPageAccessories
+            // 
+            this.tabPageAccessories.Controls.Add(this.label11);
+            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesstockQuantity);
+            this.tabPageAccessories.Controls.Add(this.label12);
+            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesType);
+            this.tabPageAccessories.Controls.Add(this.label13);
+            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesPrice);
+            this.tabPageAccessories.Controls.Add(this.button3);
+            this.tabPageAccessories.Controls.Add(this.btn_AccessoriesSave);
+            this.tabPageAccessories.Controls.Add(this.label14);
+            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesOverview);
+            this.tabPageAccessories.Controls.Add(this.label15);
+            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesManufacturer);
+            this.tabPageAccessories.Controls.Add(this.label16);
+            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesName);
+            this.tabPageAccessories.Controls.Add(this.label17);
+            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesID);
+            this.tabPageAccessories.Location = new System.Drawing.Point(4, 30);
+            this.tabPageAccessories.Name = "tabPageAccessories";
+            this.tabPageAccessories.Size = new System.Drawing.Size(858, 377);
+            this.tabPageAccessories.TabIndex = 3;
+            this.tabPageAccessories.Text = "Linh / Phụ kiện";
+            this.tabPageAccessories.UseVisualStyleBackColor = true;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -576,15 +577,16 @@ namespace Gwenchana
             this.button3.Text = "Huỷ";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_AccessoriesSave
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(136, 303);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(183, 44);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "Lưu";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_AccessoriesSave.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AccessoriesSave.Location = new System.Drawing.Point(136, 303);
+            this.btn_AccessoriesSave.Name = "btn_AccessoriesSave";
+            this.btn_AccessoriesSave.Size = new System.Drawing.Size(183, 44);
+            this.btn_AccessoriesSave.TabIndex = 30;
+            this.btn_AccessoriesSave.Text = "Lưu";
+            this.btn_AccessoriesSave.UseVisualStyleBackColor = true;
+            this.btn_AccessoriesSave.Click += new System.EventHandler(this.btn_AccessoriesSave_Click);
             // 
             // label14
             // 
@@ -685,7 +687,7 @@ namespace Gwenchana
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPageLaptop;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btn_LaptopSave;
         private System.Windows.Forms.Label lb6;
         private System.Windows.Forms.TextBox txt_Spetification;
         private System.Windows.Forms.Label labelxxxxxx;
@@ -713,7 +715,7 @@ namespace Gwenchana
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_pcPrice;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_SavePC;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_pcSpecs;
         private System.Windows.Forms.Label label8;
@@ -729,7 +731,7 @@ namespace Gwenchana
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_AccessoriesPrice;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_AccessoriesSave;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_AccessoriesOverview;
         private System.Windows.Forms.Label label15;
