@@ -18,11 +18,13 @@ namespace Gwenchana
     {
 
         public decimal totalAmount { get; set; }
-        public string choice { get; set; }
-        public Goods_ReceiptForm()
+        //public string choice { get; set; }
+        public int Id { get; set; }
+        public Goods_ReceiptForm(int id)
         {
             InitializeComponent();
 
+            Id = id;
             txt_productName.Enabled = false;
             txt_productPrice.Enabled = false;
             dgv_Order.Columns.Clear();
@@ -261,6 +263,11 @@ namespace Gwenchana
                     accessoriesUI.ShowDialog();
                     break;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

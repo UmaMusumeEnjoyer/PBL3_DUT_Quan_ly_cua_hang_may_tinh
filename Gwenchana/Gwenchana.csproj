@@ -135,40 +135,40 @@
     <Compile Include="GUI\Employee\information.Designer.cs">
       <DependentUpon>information.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Goods_ReceiptForm.cs">
+    <Compile Include="GUI\Employee\Invoice\Good_Receipt\Goods_ReceiptForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Goods_ReceiptForm.Designer.cs">
+    <Compile Include="GUI\Employee\Invoice\Good_Receipt\Goods_ReceiptForm.Designer.cs">
       <DependentUpon>Goods_ReceiptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\CashierOrderForm.cs">
+    <Compile Include="GUI\Employee\Invoice\Receipt\CashierOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\CashierOrderForm.Designer.cs">
+    <Compile Include="GUI\Employee\Invoice\Receipt\CashierOrderForm.Designer.cs">
       <DependentUpon>CashierOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Goods_Receipt.cs">
+    <Compile Include="GUI\Employee\Invoice\Good_Receipt\Goods_Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Goods_Receipt.Designer.cs">
+    <Compile Include="GUI\Employee\Invoice\Good_Receipt\Goods_Receipt.Designer.cs">
       <DependentUpon>Goods_Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Receipt.cs">
+    <Compile Include="GUI\Employee\Invoice\Receipt\Receipt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Receipt.Designer.cs">
+    <Compile Include="GUI\Employee\Invoice\Receipt\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Goods_Receipt_Details.cs">
+    <Compile Include="GUI\Employee\Invoice\Good_Receipt\Goods_Receipt_Details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Goods_Receipt_Details.Designer.cs">
+    <Compile Include="GUI\Employee\Invoice\Good_Receipt\Goods_Receipt_Details.Designer.cs">
       <DependentUpon>Goods_Receipt_Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Receipt_Details.cs">
+    <Compile Include="GUI\Employee\Invoice\Receipt\Receipt_Details.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Employee\Invoice\Receipt_Details.Designer.cs">
+    <Compile Include="GUI\Employee\Invoice\Receipt\Receipt_Details.Designer.cs">
       <DependentUpon>Receipt_Details.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Employee\Products\AccessoriesUI.cs">
@@ -233,22 +233,22 @@
     <EmbeddedResource Include="GUI\Employee\information.resx">
       <DependentUpon>information.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Invoice\Goods_ReceiptForm.resx">
+    <EmbeddedResource Include="GUI\Employee\Invoice\Good_Receipt\Goods_ReceiptForm.resx">
       <DependentUpon>Goods_ReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Invoice\CashierOrderForm.resx">
+    <EmbeddedResource Include="GUI\Employee\Invoice\Receipt\CashierOrderForm.resx">
       <DependentUpon>CashierOrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Invoice\Goods_Receipt.resx">
+    <EmbeddedResource Include="GUI\Employee\Invoice\Good_Receipt\Goods_Receipt.resx">
       <DependentUpon>Goods_Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Invoice\Receipt.resx">
+    <EmbeddedResource Include="GUI\Employee\Invoice\Receipt\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Invoice\Goods_Receipt_Details.resx">
+    <EmbeddedResource Include="GUI\Employee\Invoice\Good_Receipt\Goods_Receipt_Details.resx">
       <DependentUpon>Goods_Receipt_Details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Employee\Invoice\Receipt_Details.resx">
+    <EmbeddedResource Include="GUI\Employee\Invoice\Receipt\Receipt_Details.resx">
       <DependentUpon>Receipt_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Products\AccessoriesUI.resx">

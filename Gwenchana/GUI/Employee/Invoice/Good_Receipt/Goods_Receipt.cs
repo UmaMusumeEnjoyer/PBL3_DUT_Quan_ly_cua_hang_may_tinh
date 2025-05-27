@@ -324,8 +324,8 @@ namespace Gwenchana
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Goods_ReceiptForm goodsReceiptForm = new Goods_ReceiptForm(currentEmployeeID);
-            //goodsReceiptForm.ShowDialog();
+            Goods_ReceiptForm goodsReceiptForm = new Goods_ReceiptForm(currentEmployeeID);
+            goodsReceiptForm.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
