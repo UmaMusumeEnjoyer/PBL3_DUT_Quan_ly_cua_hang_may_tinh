@@ -62,5 +62,45 @@ JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id";
             }
         }
 
+        public DataTable GetAllGoodsReceiptsByID(int ID)
+        {
+            DataTable dt = new DataTable();
+
+            string query = @"
+SELECT 
+    gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
+    CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
+    e.employeeName AS [Tên nhân viên],
+    s.supplierName AS [Tên nhà phân phối],
+    p.productName AS [Tên sản phẩm],
+    p.Manufacturer AS [Hãng sản xuất],
+    d.quantity AS [Số lượng],
+    d.productPrice AS [Giá nhập (VNĐ)],
+    (d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
+FROM Goods_Receipt gr
+JOIN Employee e ON gr.Employee_Id = e.Employee_Id
+JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
+JOIN Product p ON d.Product_Id = p.Product_Id
+JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
+WHERE gr.GoodsReceipt_Id = @ID;
+            ";
+
+            using (SqlConnection conn = _db.GetConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID", ID);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
     }
 }

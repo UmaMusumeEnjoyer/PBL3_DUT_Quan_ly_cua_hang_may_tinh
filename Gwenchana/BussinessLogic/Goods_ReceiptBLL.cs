@@ -30,5 +30,10 @@ namespace Gwenchana.BussinessLogic
             }
         }
 
+        public DataTable GetAllGoodsReceiptsByID(int ID)
+        {
+            return _goodsReceiptDAL.GetAllGoodsReceiptsByID(ID);
+        }
+
     }
 }

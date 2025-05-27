@@ -25,8 +25,8 @@ namespace Gwenchana.GUI.Employee.Invoice
 
         private void LoadData()
         {
-            ReceiptBLL receiptBLL = new ReceiptBLL();
-            DataTable dt = receiptBLL.GetAllReceiptsByID(Receipt_ID);
+            Goods_ReceiptBLL receiptBLL = new Goods_ReceiptBLL();
+            DataTable dt = receiptBLL.GetAllGoodsReceiptsByID(Receipt_ID);
             dataGridView1.DataSource = dt;
             dataGridView1.ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;

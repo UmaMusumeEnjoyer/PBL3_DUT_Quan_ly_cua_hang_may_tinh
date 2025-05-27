@@ -19,11 +19,10 @@ namespace Gwenchana
 
         public decimal totalAmount { get; set; }
         public string choice { get; set; }
-        private int _employeeId;
-        public Goods_ReceiptForm(int employeeId)
+        public Goods_ReceiptForm()
         {
             InitializeComponent();
-            _employeeId = employeeId;
+
             txt_productName.Enabled = false;
             txt_productPrice.Enabled = false;
             dgv_Order.Columns.Clear();
@@ -205,33 +204,41 @@ namespace Gwenchana
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
-            if (dgv_Order.Rows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng thêm sản phẩm vào đơn nhập hàng.");
-                return;
-            }
-            List<Details> detailsList = new List<Details>();
-            foreach (DataGridViewRow row in dgv_Order.Rows)
-            {
-                if (row.IsNewRow) continue;
-                detailsList.Add(new Details
-                {
-                    Product_Id = Convert.ToInt32(row.Cells["Product_Id"].Value),
-                    quantity = Convert.ToInt32(row.Cells["quantity"].Value),
-                    productPrice = Convert.ToDecimal(row.Cells["price"].Value)
-                });
-            }
-            Goods_ReceiptBLL bll = new Goods_ReceiptBLL();
-            bool isSuccess = bll.CreateGoodsReceipt(_employeeId, DateTime.Now, detailsList);
-            if (isSuccess)
-            {
-                MessageBox.Show("Tạo đơn nhập hàng thành công!");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Tạo đơn nhập hàng thất bại!");
-            }
+            //Customer selectedCustomer = new Customer();
+            //using (var selectForm = new CustomerCashUI())
+            //{
+            //    if (selectForm.ShowDialog() == DialogResult.OK)
+            //    {
+            //        selectedCustomer = selectForm.currentCustomer;
+
+            //        MessageBox.Show("Khách hàng được chọn: " + selectedCustomer.customerName);
+            //    }
+            //}
+
+            //EmployeeBLL employeeBLL = new EmployeeBLL();
+            //Employee currentEmployee = new Employee();
+            //currentEmployee = employeeBLL.GetEmployeeByAccountId(id);
+
+
+
+            //List<Product> selectedProducts = new List<Product>();
+            //selectedProducts = GetOrderedProductList();
+
+            //ReceiptBLL receiptBLL = new ReceiptBLL();
+
+
+            //bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts);
+            //if (!isSuccess)
+            //{
+            //    MessageBox.Show("Tạo hóa đơn thành công!");
+
+            //    this.Close();
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Tạo hóa đơn thất bại!");
+            //}
         }
 
         private void cashierOrderForm_removeBtn_Click(object sender, EventArgs e)

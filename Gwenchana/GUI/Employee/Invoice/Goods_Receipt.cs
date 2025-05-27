@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.DAL;
+using Gwenchana.GUI.Employee.Invoice;
 
 
 
@@ -323,8 +324,15 @@ namespace Gwenchana
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Goods_ReceiptForm goodsReceiptForm = new Goods_ReceiptForm(currentEmployeeID);
-            goodsReceiptForm.ShowDialog();
+            //Goods_ReceiptForm goodsReceiptForm = new Goods_ReceiptForm(currentEmployeeID);
+            //goodsReceiptForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(dataGridView.CurrentRow.Cells["Mã đơn nhập hàng"].Value);
+            Goods_Receipt_Details details = new Goods_Receipt_Details(ID);
+            details.ShowDialog();
         }
     }
 }
