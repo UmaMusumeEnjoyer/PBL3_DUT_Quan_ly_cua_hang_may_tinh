@@ -278,19 +278,13 @@ namespace Gwenchana
             switch (ccb_ProductFilter.SelectedItem.ToString())
             {
                 case "PC":
-                    PCUI pCUI = new PCUI();
-                    pCUI.ChangeTab();
-                    pCUI.ShowDialog();
+
                     break;
                 case "Laptop":
-                    LaptopUI laptopUI = new LaptopUI();
-                    laptopUI.ChangeTab();
-                    laptopUI.ShowDialog();
+
                     break;
                 case "Linh/ Phụ kiện":
-                    AccessoriesUI accessoriesUI = new AccessoriesUI();
-                    accessoriesUI.ChangeTab();
-                    accessoriesUI.ShowDialog();
+
                     break;
                 default:
                     break;
