@@ -159,6 +159,12 @@
     <Compile Include="GUI\Employee\Invoice\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Employee\Invoice\Goods_Receipt_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee\Invoice\Goods_Receipt_Details.Designer.cs">
+      <DependentUpon>Goods_Receipt_Details.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Employee\Invoice\Receipt_Details.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Invoice\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Employee\Invoice\Goods_Receipt_Details.resx">
+      <DependentUpon>Goods_Receipt_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Invoice\Receipt_Details.resx">
       <DependentUpon>Receipt_Details.cs</DependentUpon>

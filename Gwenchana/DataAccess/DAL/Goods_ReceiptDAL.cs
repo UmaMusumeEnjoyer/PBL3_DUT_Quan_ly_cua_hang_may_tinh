@@ -15,30 +15,21 @@ namespace Gwenchana.DataAccess.DAL
         public DataTable GetAllGoodsReceipt()
         {
             string query = @"
-            SELECT 
-                gr.GoodsReceipt_Id AS [Mã phiếu nhập],
-                gr.goodsReceiptDate AS [Ngày nhập hàng],
-                e.employeeName AS [Tên nhân viên nhập],
-                e.phoneNumber AS [Số điện thoại NV],
-                p.Product_Id AS [Mã sản phẩm],
-                p.productName AS [Tên sản phẩm],
-                d.quantity AS [Số lượng nhập],
-                d.productPrice AS [Giá nhập],
-                (d.quantity * d.productPrice) AS [Thành tiền],
-                s.supplierName AS [Nhà cung cấp],
-                p.Manufacturer AS [Hãng sản xuất]
-            FROM 
-                [dbo].[Goods_Receipt] gr
-            INNER JOIN 
-                [dbo].[Employee] e ON gr.Employee_Id = e.Employee_Id
-            INNER JOIN 
-                [dbo].[Details] d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
-            INNER JOIN 
-                [dbo].[Product] p ON d.Product_Id = p.Product_Id
-            INNER JOIN 
-                [dbo].[Supplier] s ON p.Supplier_Id = s.Supplier_Id
-            ORDER BY 
-                gr.goodsReceiptDate DESC, gr.GoodsReceipt_Id";
+SELECT 
+    gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
+    CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
+    e.employeeName AS [Tên nhân viên],
+    p.productName AS [Tên sản phẩm],
+    p.Manufacturer AS [Hãng sản xuất],
+    s.supplierName AS [Tên nhà phân phối],
+    d.quantity AS [Số lượng],
+    d.productPrice AS [Giá nhập (VNĐ)],
+    (d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
+FROM Goods_Receipt gr
+JOIN Employee e ON gr.Employee_Id = e.Employee_Id
+JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
+JOIN Product p ON d.Product_Id = p.Product_Id
+JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id";
 
             return _db.GetData(query);
         }
