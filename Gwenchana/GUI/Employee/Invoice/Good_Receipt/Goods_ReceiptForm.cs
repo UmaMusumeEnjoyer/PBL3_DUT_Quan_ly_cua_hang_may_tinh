@@ -268,6 +268,13 @@ namespace Gwenchana
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Sua lai doan if nay
+            if (ccb_ProductFilter.SelectedItem == null || string.IsNullOrEmpty(ccb_ProductFilter.SelectedItem.ToString()))
+            {
+                //Viet toi thong bao chua chon danh muc can them
+                MessageBox.Show("Vui lòng chọn danh mục sản phẩm trước khi thêm sản phẩm.");
+                return;
+            }
             switch (ccb_ProductFilter.SelectedItem.ToString())
             {
                 case "PC":

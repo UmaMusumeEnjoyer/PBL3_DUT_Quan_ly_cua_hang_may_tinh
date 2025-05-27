@@ -263,6 +263,10 @@ namespace Gwenchana
                 txt_ProductID.ForeColor = Color.Gray;
                 txt_ProductID.Enabled = false;
             }
+            else
+            {
+
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -275,6 +275,10 @@ namespace Gwenchana
                 txt_LaptopID.ForeColor = Color.Gray;
                 txt_LaptopID.Enabled = false;
             }
+            else
+            {
+
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

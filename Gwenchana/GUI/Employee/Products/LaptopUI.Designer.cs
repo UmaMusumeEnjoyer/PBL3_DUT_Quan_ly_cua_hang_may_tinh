@@ -266,10 +266,10 @@ namespace Gwenchana
             this.tabPagePetDetail.Controls.Add(this.label3);
             this.tabPagePetDetail.Controls.Add(this.txt_LaptopID);
             this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPagePetDetail.Location = new System.Drawing.Point(4, 29);
+            this.tabPagePetDetail.Location = new System.Drawing.Point(4, 30);
             this.tabPagePetDetail.Name = "tabPagePetDetail";
             this.tabPagePetDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePetDetail.Size = new System.Drawing.Size(858, 378);
+            this.tabPagePetDetail.Size = new System.Drawing.Size(858, 377);
             this.tabPagePetDetail.TabIndex = 1;
             this.tabPagePetDetail.Text = "Thông tin chi tiết";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
@@ -461,6 +461,7 @@ namespace Gwenchana
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LaptopUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laptop";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

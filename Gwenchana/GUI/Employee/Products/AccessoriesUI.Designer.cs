@@ -34,6 +34,9 @@ namespace Gwenchana
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.btn_ClearFilter = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -57,9 +60,6 @@ namespace Gwenchana
             this.txt_AccessoriesName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_AccessoriesID = new System.Windows.Forms.TextBox();
-            this.btn_ClearFilter = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -130,6 +130,41 @@ namespace Gwenchana
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
             this.tabPagePetList.UseVisualStyleBackColor = true;
+            // 
+            // btn_ClearFilter
+            // 
+            this.btn_ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ClearFilter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearFilter.Location = new System.Drawing.Point(773, 8);
+            this.btn_ClearFilter.Name = "btn_ClearFilter";
+            this.btn_ClearFilter.Size = new System.Drawing.Size(74, 28);
+            this.btn_ClearFilter.TabIndex = 13;
+            this.btn_ClearFilter.Text = "Xoá";
+            this.btn_ClearFilter.UseVisualStyleBackColor = true;
+            this.btn_ClearFilter.Click += new System.EventHandler(this.btn_ClearFilter_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(538, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 21);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Tiêu chí :";
+            // 
+            // cbb_LaptopSearch
+            // 
+            this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_LaptopSearch.FormattingEnabled = true;
+            this.cbb_LaptopSearch.Items.AddRange(new object[] {
+            "Tên",
+            "Nhà sản xuất",
+            "Loại"});
+            this.cbb_LaptopSearch.Location = new System.Drawing.Point(627, 8);
+            this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
+            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 28);
+            this.cbb_LaptopSearch.TabIndex = 11;
             // 
             // dataGridView
             // 
@@ -372,41 +407,6 @@ namespace Gwenchana
             this.txt_AccessoriesID.TabIndex = 6;
             this.txt_AccessoriesID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // btn_ClearFilter
-            // 
-            this.btn_ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ClearFilter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ClearFilter.Location = new System.Drawing.Point(773, 8);
-            this.btn_ClearFilter.Name = "btn_ClearFilter";
-            this.btn_ClearFilter.Size = new System.Drawing.Size(74, 28);
-            this.btn_ClearFilter.TabIndex = 13;
-            this.btn_ClearFilter.Text = "Xoá";
-            this.btn_ClearFilter.UseVisualStyleBackColor = true;
-            this.btn_ClearFilter.Click += new System.EventHandler(this.btn_ClearFilter_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(538, 11);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 21);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Tiêu chí :";
-            // 
-            // cbb_LaptopSearch
-            // 
-            this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_LaptopSearch.FormattingEnabled = true;
-            this.cbb_LaptopSearch.Items.AddRange(new object[] {
-            "Tên",
-            "Nhà sản xuất",
-            "Loại"});
-            this.cbb_LaptopSearch.Location = new System.Drawing.Point(627, 8);
-            this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
-            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 28);
-            this.cbb_LaptopSearch.TabIndex = 11;
-            // 
             // AccessoriesUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -417,6 +417,7 @@ namespace Gwenchana
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AccessoriesUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Linh phụ kiện";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
