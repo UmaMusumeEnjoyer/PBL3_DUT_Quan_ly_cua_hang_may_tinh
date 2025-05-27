@@ -11,6 +11,7 @@ using Gwenchana.DataAccess;
 using Gwenchana.DataAccess.DAL;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.ViewModel;
+using Newtonsoft.Json;
 
 
 namespace Gwenchana
@@ -218,6 +219,7 @@ namespace Gwenchana
 
                 string productId = row.Cells["Product_Id"].Value.ToString();
                 string quantity = row.Cells["quantity"].Value.ToString();
+                string supplierID = row.Cells["Supplier_Id"].Value.ToString();
                 Product product = bll.GetProduct(Convert.ToInt32(productId));
 
                 if (product != null)
@@ -235,13 +237,15 @@ namespace Gwenchana
             EmployeeBLL employeeBLL = new EmployeeBLL();
             Employee currentEmployee = new Employee();
             currentEmployee = employeeBLL.GetEmployeeByAccountId(Id);
-            
 
+            
 
             Goods_ReceiptBLL goods_ReceiptBLL = new Goods_ReceiptBLL();
 
             List<Product> selectedProducts = new List<Product>();
             selectedProducts = GetOrderedProductList();
+
+
 
             if (selectedProducts == null || selectedProducts.Count == 0)
             {
