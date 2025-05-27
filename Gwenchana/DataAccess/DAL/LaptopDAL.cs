@@ -36,9 +36,20 @@ namespace Gwenchana.DataAccess.DAL
 
         public DataTable GetAllLaptopsDataTable()
         {
-            string sql = "select Product.Product_Id, PRODUCT.productName,PRODUCT.Manufacturer, Laptop.specification, " +
-                "Laptop.weight,Laptop.screenSize, Laptop.colour,PRODUCT.price, PRODUCT.stockQuantity " +
-                "from Laptop join Product on Laptop.Product_Id = Product.Product_Id";
+            string sql = "SELECT Product.Product_Id, " +
+                         "Product.productName, " +
+                         "Product.Manufacturer, " +
+                         "Laptop.specification, " +
+                         "Laptop.weight, " +
+                         "Laptop.screenSize, " +
+                         "Laptop.colour, " +
+                         "Product.price, " +
+                         "Product.stockQuantity, " +
+                         "Product.Supplier_Id, " +
+                         "Supplier.supplierName " +
+                         "FROM Laptop " +
+                         "JOIN Product ON Laptop.Product_Id = Product.Product_Id " +
+                         "JOIN Supplier ON Product.Supplier_Id = Supplier.Supplier_Id";
             return _db.GetData(sql);
         }
 

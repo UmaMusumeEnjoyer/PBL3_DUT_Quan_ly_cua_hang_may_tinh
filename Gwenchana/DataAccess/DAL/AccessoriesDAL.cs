@@ -35,9 +35,18 @@ namespace Gwenchana.DataAccess.DAL
 
         public DataTable GetAllAccessoriesDataTable()
         {
-            string sql = "select Accessories.Product_Id, PRODUCT.productName,PRODUCT.Manufacturer, Accessories.overview, " +
-                "Accessories.type, PRODUCT.price, PRODUCT.stockQuantity " +
-                "from Accessories join Product on Accessories.Product_Id = Product.Product_Id";
+            string sql = "SELECT Accessories.Product_Id, " +
+                         "Product.productName, " +
+                         "Product.Manufacturer, " +
+                         "Accessories.overview, " +
+                         "Accessories.type, " +
+                         "Product.price, " +
+                         "Product.stockQuantity, " +
+                         "Product.Supplier_Id, " +
+                         "Supplier.supplierName " +
+                         "FROM Accessories " +
+                         "JOIN Product ON Accessories.Product_Id = Product.Product_Id " +
+                         "JOIN Supplier ON Product.Supplier_Id = Supplier.Supplier_Id";
             return db.GetData(sql);
         }
 

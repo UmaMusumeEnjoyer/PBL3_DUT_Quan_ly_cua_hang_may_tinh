@@ -8,6 +8,7 @@ using System.Drawing.Printing;
 using System.Windows.Forms;
 using Gwenchana.BussinessLogic;
 using Gwenchana.DataAccess;
+using Gwenchana.DataAccess.DAL;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.ViewModel;
 
@@ -29,11 +30,11 @@ namespace Gwenchana
             txt_productPrice.Enabled = false;
             dgv_Order.Columns.Clear();
 
-            //dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
+            dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
             dgv_Order.Columns.Add("productName", "Tên sản phẩm");
-            dgv_Order.Columns.Add("price", "Giá nhập");
+            //dgv_Order.Columns.Add("price", "");
             dgv_Order.Columns.Add("Product_price", "Giá bán");
-            dgv_Order.Columns.Add("quantity", "Số lượng");
+            dgv_Order.Columns.Add("quantity", "Số lượng nhập");
             dgv_Order.Columns.Add("totalPrice", "Thành tiền");
 
             dgv_Order.ReadOnly = true;
@@ -188,7 +189,7 @@ namespace Gwenchana
             }
             // Cập nhật lại tổng tiền
             totalAmount += Convert.ToDecimal(txt_productPrice.Text) * productQuantity.Value;
-            lb_totalAmount.Text = totalAmount.ToString();
+            
 
 
 
@@ -204,44 +205,64 @@ namespace Gwenchana
 
         }
 
+        public List<Product> GetOrderedProductList()
+        {
+            List<Product> productList = new List<Product>();
+            ProductBLL bll = new ProductBLL(); // hoặc dùng DI nếu bạn đã có sẵn instance
+
+            foreach (DataGridViewRow row in dgv_Order.Rows)
+            {
+                if (row.IsNewRow) continue; // bỏ qua dòng trống
+
+                string productId = row.Cells["Product_Id"].Value.ToString();
+                string quantity = row.Cells["quantity"].Value.ToString();
+                Product product = bll.GetProduct(Convert.ToInt32(productId));
+
+                if (product != null)
+                {
+                    product.quantity = Convert.ToInt32(quantity);
+                    productList.Add(product);
+                }
+            }
+
+            return productList;
+        }
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
-            //Customer selectedCustomer = new Customer();
-            //using (var selectForm = new CustomerCashUI())
-            //{
-            //    if (selectForm.ShowDialog() == DialogResult.OK)
-            //    {
-            //        selectedCustomer = selectForm.currentCustomer;
-
-            //        MessageBox.Show("Khách hàng được chọn: " + selectedCustomer.customerName);
-            //    }
-            //}
-
-            //EmployeeBLL employeeBLL = new EmployeeBLL();
-            //Employee currentEmployee = new Employee();
-            //currentEmployee = employeeBLL.GetEmployeeByAccountId(id);
+            EmployeeBLL employeeBLL = new EmployeeBLL();
+            Employee currentEmployee = new Employee();
+            currentEmployee = employeeBLL.GetEmployeeByAccountId(Id);
+            
 
 
+            Goods_ReceiptBLL goods_ReceiptBLL = new Goods_ReceiptBLL();
 
-            //List<Product> selectedProducts = new List<Product>();
-            //selectedProducts = GetOrderedProductList();
+            List<Product> selectedProducts = new List<Product>();
+            selectedProducts = GetOrderedProductList();
 
-            //ReceiptBLL receiptBLL = new ReceiptBLL();
+            if (selectedProducts == null || selectedProducts.Count == 0)
+            {
+                MessageBox.Show("Không có sản phẩm nào được chọn để nhập hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (currentEmployee == null)
+            {
+                MessageBox.Show("Không thể xác định nhân viên hiện tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            //bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts);
-            //if (!isSuccess)
-            //{
-            //    MessageBox.Show("Tạo hóa đơn thành công!");
-
-            //    this.Close();
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Tạo hóa đơn thất bại!");
-            //}
+            bool isSuccess = goods_ReceiptBLL.CreateGoodsReceipt(Id, currentEmployee, selectedProducts);
+            if (isSuccess)
+            {
+                MessageBox.Show("Tạo hóa đơn nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tạo hóa đơn nhập thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cashierOrderForm_removeBtn_Click(object sender, EventArgs e)
@@ -295,6 +316,11 @@ namespace Gwenchana
         }
 
         private void dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgv_Product_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

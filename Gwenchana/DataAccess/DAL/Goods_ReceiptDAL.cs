@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Gwenchana.DataAccess.DBConnect;
+using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana.DataAccess.DAL
 {
@@ -34,33 +35,6 @@ JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id";
             return _db.GetData(query);
         }
 
-        public int InsertGoodsReceipt(int employeeId, DateTime receiptDate)
-        {
-            string query = @"INSERT INTO Goods_Receipt (Employee_Id, goodsReceiptDate) VALUES (@Employee_Id, @goodsReceiptDate); SELECT SCOPE_IDENTITY();";
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-                new SqlParameter("@Employee_Id", employeeId),
-                new SqlParameter("@goodsReceiptDate", receiptDate)
-            };
-            object result = _db.ExecuteScalar(query, parameters);
-            return Convert.ToInt32(result);
-        }
-
-        public void InsertGoodsReceiptDetails(int goodsReceiptId, List<Gwenchana.DataAccess.DTO.Details> detailsList)
-        {
-            foreach (var detail in detailsList)
-            {
-                string query = @"INSERT INTO Details (GoodsReceipt_Id, Product_Id, quantity, productPrice) VALUES (@GoodsReceipt_Id, @Product_Id, @quantity, @productPrice)";
-                SqlParameter[] parameters = new SqlParameter[]
-                {
-                    new SqlParameter("@GoodsReceipt_Id", goodsReceiptId),
-                    new SqlParameter("@Product_Id", detail.Product_Id),
-                    new SqlParameter("@quantity", detail.quantity),
-                    new SqlParameter("@productPrice", detail.productPrice)
-                };
-                _db.ExecuteNonQuery(query, parameters);
-            }
-        }
 
         public DataTable GetAllGoodsReceiptsByID(int ID)
         {
@@ -102,5 +76,46 @@ WHERE gr.GoodsReceipt_Id = @ID;
             return dt;
         }
 
+
+        public bool ImportProducts(int supplierId, int employeeId, List<Product> products)
+        {
+            try
+            {
+                using (SqlConnection conn = _db.GetConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand("sp_ImportProducts", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Tham số đầu vào
+                        cmd.Parameters.AddWithValue("@SupplierID", supplierId);
+                        cmd.Parameters.AddWithValue("@EmployeeID", employeeId);
+
+                        // Chuyển danh sách sản phẩm sang JSON format
+                        string jsonProductList = Newtonsoft.Json.JsonConvert.SerializeObject(
+                            products.Select(p => new
+                            {
+                                productId = p.Product_Id, // Lưu ý: key này phải trùng với định nghĩa trong procedure
+                                quantity = p.quantity,
+                                price = p.price
+                            })
+                        );
+                        cmd.Parameters.AddWithValue("@ProductList", jsonProductList);
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Lỗi khi nhập hàng: " + ex.Message);
+                return false;
+            }
+        }
+
     }
+
+
 }

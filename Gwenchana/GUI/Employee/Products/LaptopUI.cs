@@ -54,6 +54,8 @@ namespace Gwenchana
             dataGridView.Columns["colour"].HeaderText = "Màu sắc";
             dataGridView.Columns["price"].HeaderText = "Giá";
             dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            dataGridView.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
+            dataGridView.Columns["supplierName"].HeaderText = "Nhà cung cấp"; // Hiển thị tên nhà cung cấp nếu cần
 
         }
 

@@ -178,6 +178,7 @@ namespace Gwenchana
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(737, 292);
             this.dataGridView.TabIndex = 7;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // label2
             // 

@@ -107,30 +107,24 @@ namespace Gwenchana
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void btn_ClearFilter_Click(object sender, EventArgs e)
-        {
-            //cbb_LaptopSearch.SelectedIndex = -1;
-            //txtSearch.Clear();
-            //LoadData();
-        }
-
-        private void cbb_LaptopSearch_TextUpdate(object sender, EventArgs e)
-        {
-            //string a = cbb_LaptopSearch.SelectedItem.ToString();
-        }
 
         private void btn_SavePC_Click(object sender, EventArgs e)
         {
+
+
+
+
             this.Close();
         }
 
         private void btn_LaptopSave_Click(object sender, EventArgs e)
         {
+
+
+
+
+
+
             this.Close();
         }
 

@@ -52,6 +52,9 @@ namespace Gwenchana
             dataGridView.Columns["price"].HeaderText = "Giá";
 
             dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            //dataGridView.Columns["Supplier_Id"].HeaderText = "Mã nhà cung cấp";
+            dataGridView.Columns["Supplier_Id"].Visible = false;
+            dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
 
         }
 
@@ -311,6 +314,11 @@ namespace Gwenchana
             cbb_PcSearch.SelectedIndex = -1;
             txtSearch.Clear();
             LoadData();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

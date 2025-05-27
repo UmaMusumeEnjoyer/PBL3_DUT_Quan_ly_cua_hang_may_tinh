@@ -16,18 +16,10 @@ namespace Gwenchana.BussinessLogic
         {
             return _goodsReceiptDAL.GetAllGoodsReceipt();
         }
-        public bool CreateGoodsReceipt(int employeeId, DateTime receiptDate, List<Gwenchana.DataAccess.DTO.Details> detailsList)
+
+        public bool CreateGoodsReceipt(int supplierId, Employee ce, List<Product> list)
         {
-            try
-            {
-                int goodsReceiptId = _goodsReceiptDAL.InsertGoodsReceipt(employeeId, receiptDate);
-                _goodsReceiptDAL.InsertGoodsReceiptDetails(goodsReceiptId, detailsList);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+            return _goodsReceiptDAL.ImportProducts(supplierId ,ce.Empolyee_Id, list);
         }
 
         public DataTable GetAllGoodsReceiptsByID(int ID)

@@ -38,14 +38,18 @@ namespace Gwenchana.DataAccess.DAL
 
         public DataTable GetAllPCsDataTable()
         {
-            string sql = "select " +
+            string sql = "SELECT " +
                 "PC.Product_Id, " +
-                "PRODUCT.productName," +
+                "PRODUCT.productName, " +
                 "PC.specification, " +
                 "PRODUCT.Manufacturer, " +
                 "PRODUCT.price, " +
-                "Product.stockQuantity  " +
-                "from PC join Product on PC.Product_Id = PRODUCT.Product_Id";
+                "Product.stockQuantity, " +
+                "PRODUCT.Supplier_Id, " +
+                "SUPPLIER.supplierName " +
+                "FROM PC " +
+                "JOIN Product ON PC.Product_Id = PRODUCT.Product_Id " +
+                "JOIN Supplier ON PRODUCT.Supplier_Id = SUPPLIER.Supplier_Id";
             return _db.GetData(sql);
         }
 
