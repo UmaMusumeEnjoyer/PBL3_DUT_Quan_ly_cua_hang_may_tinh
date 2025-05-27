@@ -29,36 +29,46 @@ namespace Gwenchana
         public AddProduct(string selected)
         {
             InitializeComponent();
-            //AssociateAndRaiseViewEvents();
-            
+            SupplierBLL supplierBLL = new SupplierBLL();
+            DataTable cbbData = new DataTable();
+            cbbData = supplierBLL.GetAllSuppliersDataTable();
+
             selectedProduct = selected;
             if(selectedProduct == "Laptop")
             {
-                //tabControl1.TabPages.Add(tabPageLaptop);
-                //tabControl1.TabPages.Remove(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePC);
                 tabControl1.TabPages.Remove(tabPageAccessories);
                 tabControl1.SelectedTab = tabPageLaptop;
+                
+
+
+                ccb_NhaCungCap1.DataSource = cbbData;
+                ccb_NhaCungCap1.DisplayMember = "supplierName";
+
+
+
             }
             else if(selectedProduct == "PC")
             {
-                //tabControl1.TabPages.Add(tabPagePC);
-                //tabControl1.TabPages.Remove(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPageLaptop);
                 tabControl1.TabPages.Remove(tabPageAccessories);
-                tabControl1.SelectedTab = tabPagePC;
+
+
+                ccb_NhaCungCap2.DataSource = cbbData;
+                ccb_NhaCungCap2.DisplayMember = "supplierName";
             }
-            else if(selectedProduct == "Accessories") // Special tab for other purposes
+            else if(selectedProduct == "Accessories") 
             {
-                //tabControl1.TabPages.Add(tabPageAccessories);
-                //tabControl1.TabPages.Remove(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPageLaptop);
                 tabControl1.TabPages.Remove(tabPagePC);
-                tabControl1.SelectedTab = tabPageAccessories;
+
+
+                ccb_NhaCungCap3.DataSource = cbbData;
+                ccb_NhaCungCap3.DisplayMember = "supplierName";
             }
 
 
-            btnClose.Click += delegate { this.Close(); };
+            
         } 
 
 
@@ -70,13 +80,6 @@ namespace Gwenchana
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-       public void ChangeTab()
-        {
-            button = "Special";
-            tabControl1.TabPages.Add(tabPageLaptop);
-            //tabControl1.TabPages.Remove(tabPagePetList);
-            tabControl1.SelectedTab = tabPageLaptop;
-        }
 
         private void txtPetId_TextChanged(object sender, EventArgs e)
         {
@@ -134,6 +137,11 @@ namespace Gwenchana
         private void btn_AccessoriesSave_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ccb_NhaCungCap1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
