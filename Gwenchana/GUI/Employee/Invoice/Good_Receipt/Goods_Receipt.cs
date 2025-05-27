@@ -36,6 +36,8 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
             currentEmployeeID = cei;
+            dtpStartDate.Enabled = false;
+            dtpEndDate.Enabled = false;
 
 
             //tabControl1.TabPages.Remove(tabPagePetDetail);
@@ -288,6 +290,13 @@ namespace Gwenchana
                 {
                     dataGridView.DataSource = goodsReceiptBLL.GetAllGoodsReceiptDetails().Where(l => l.SupplierName.Contains(searchText)).ToList();
                 }
+                else if (cbb_Goods_Receipt_Search.SelectedItem.ToString() == "Thời gian")
+                {
+                    DateTime startDate = dtpStartDate.Value.Date;
+                    DateTime endDate = dtpEndDate.Value.Date;
+                    dataGridView.DataSource = goodsReceiptBLL.GetAllGoodsReceiptDetails()
+                        .Where(l => l.GoodsReceiptDate >= startDate && l.GoodsReceiptDate <= endDate).ToList();
+                }
             }
 
         }
@@ -304,13 +313,22 @@ namespace Gwenchana
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
+            if (cbb_Goods_Receipt_Search.SelectedItem != null)
+            {
+                if (cbb_Goods_Receipt_Search.SelectedItem.ToString() == "Thời gian")
+                {
+                    dtpStartDate.Enabled = true;
+                    dtpEndDate.Enabled = true;
+                }
+            }
         }
 
         private void btn_ClearFilter_Click(object sender, EventArgs e)
         {
             cbb_Goods_Receipt_Search.SelectedIndex = -1;
             txtSearch.Clear();
+            dtpStartDate.Enabled = false;
+            dtpEndDate.Enabled = false;
             LoadData();
         }
 

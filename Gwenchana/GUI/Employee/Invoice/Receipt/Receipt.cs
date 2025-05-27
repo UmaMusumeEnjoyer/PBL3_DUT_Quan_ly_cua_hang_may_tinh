@@ -33,7 +33,8 @@ namespace Gwenchana
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
             currentEmployeeID = employeeID;
-
+            dtpStartDate.Enabled = false;
+            dtpEndDate.Enabled = false;
             //tabControl1.TabPages.Remove(tabPagePetDetail);
             btnClose.Click += delegate { this.Close(); };
         }
@@ -249,14 +250,33 @@ namespace Gwenchana
             {
                 dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.EmployeeName.Contains(searchText)).ToList();
             }
-            else if(cbb_ReceiptFilter.SelectedItem.ToString() == "Tên khách hàng")
+            else if (cbb_ReceiptFilter.SelectedItem.ToString() == "Tên khách hàng")
             {
                 dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.CustomerName.Contains(searchText)).ToList();
             }
-
-
-
-            
+            else if (cbb_ReceiptFilter.SelectedItem.ToString() == "Thời gian")
+            {
+                DateTime startDate = dtpStartDate.Value.Date;
+                DateTime endDate = dtpEndDate.Value.Date;
+                if (startDate > endDate)
+                {
+                    MessageBox.Show("Ngày bắt đầu không thể lớn hơn ngày kết thúc.");
+                    return;
+                }
+                dataGridView.DataSource = laptopBLL.getallreceipts()
+                    .Where(l => {
+                        DateTime parsedDate;
+                        bool valid = DateTime.TryParseExact(
+                            l.ReceiptDate,
+                            "dd/MM/yyyy", // Đổi thành định dạng thực tế của bạn
+                            System.Globalization.CultureInfo.InvariantCulture,
+                            System.Globalization.DateTimeStyles.None,
+                            out parsedDate
+                        );
+                        return valid && parsedDate >= startDate && parsedDate <= endDate;
+                    })
+                    .ToList();
+            }
         }
 
         private void txt_Manufacturer_TextChanged(object sender, EventArgs e)
@@ -271,13 +291,23 @@ namespace Gwenchana
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
+            if (cbb_ReceiptFilter.SelectedItem != null)
+            {
+                string selectedFilter = cbb_ReceiptFilter.SelectedItem.ToString();
+                if (selectedFilter == "Thời gian")
+                {
+                    dtpStartDate.Enabled = true;
+                    dtpEndDate.Enabled = true;
+                }
+            }
         }
 
         private void btn_ClearFilter_Click(object sender, EventArgs e)
         {
             cbb_ReceiptFilter.SelectedIndex = -1;
             txtSearch.Clear();
+            dtpStartDate.Enabled = false;
+            dtpEndDate.Enabled = false;
             LoadData();
         }
 
