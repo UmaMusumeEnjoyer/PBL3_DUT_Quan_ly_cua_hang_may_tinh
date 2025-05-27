@@ -272,7 +272,7 @@ namespace Gwenchana
             switch(ccb_ProductFilter.SelectedItem.ToString())
             {
                 case "PC":
-                        PCUI pCUI = new PCUI();
+                    PCUI pCUI = new PCUI();
                     pCUI.ChangeTab();
                     pCUI.ShowDialog();
                     break;
