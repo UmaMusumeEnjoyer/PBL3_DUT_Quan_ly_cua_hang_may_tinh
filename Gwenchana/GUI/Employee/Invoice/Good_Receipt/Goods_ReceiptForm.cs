@@ -29,9 +29,10 @@ namespace Gwenchana
             txt_productPrice.Enabled = false;
             dgv_Order.Columns.Clear();
 
-            dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
+            //dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
             dgv_Order.Columns.Add("productName", "Tên sản phẩm");
-            dgv_Order.Columns.Add("price", "Giá");
+            dgv_Order.Columns.Add("price", "Giá nhập");
+            dgv_Order.Columns.Add("Product_price", "Giá bán");
             dgv_Order.Columns.Add("quantity", "Số lượng");
             dgv_Order.Columns.Add("totalPrice", "Thành tiền");
 
@@ -266,6 +267,11 @@ namespace Gwenchana
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
