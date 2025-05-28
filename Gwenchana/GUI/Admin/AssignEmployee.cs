@@ -30,7 +30,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
             //tabControl1.TabPages.Remove(tabPagePetDetail);
-            btnClose.Click += delegate { this.Close(); };
+            //btnClose.Click += delegate { this.Close(); };
         }
 
         private void LoadData()
