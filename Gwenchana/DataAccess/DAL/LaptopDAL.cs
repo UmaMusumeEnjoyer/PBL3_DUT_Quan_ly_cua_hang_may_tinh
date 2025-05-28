@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Gwenchana.DataAccess.DBConnect;
+using Gwenchana.DataAccess.DTO;
+using System.Diagnostics;
+using System.Drawing;
 
 namespace Gwenchana.DataAccess.DAL
 {
@@ -103,6 +107,54 @@ namespace Gwenchana.DataAccess.DAL
             catch
             {
                 return false;
+            }
+        }
+
+        public bool AddLaptop(DTO.Laptop laptop, DTO.Product product)
+        {
+            using (var connection = _db.GetConnection())
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1. Thêm vào bảng Product
+                        var cmdProduct = new SqlCommand(
+                            @"INSERT INTO Product (Supplier_Id, productName, price, stockQuantity, Manufacturer)
+                      VALUES (@Supplier_Id, @productName, @price, @stockQuantity, @Manufacturer);
+                      SELECT CAST(SCOPE_IDENTITY() as int);", connection, transaction);
+
+                        cmdProduct.Parameters.AddWithValue("@Supplier_Id", product.Supplier_Id);
+                        cmdProduct.Parameters.AddWithValue("@productName", product.productName);
+                        cmdProduct.Parameters.AddWithValue("@price", product.price);
+                        cmdProduct.Parameters.AddWithValue("@stockQuantity", product.stockQuantity);
+                        cmdProduct.Parameters.AddWithValue("@Manufacturer", (object)product.Manufacturer ?? DBNull.Value);
+
+                        int productId = Convert.ToInt32(cmdProduct.ExecuteScalar());
+
+                        // 2. Thêm vào bảng Laptop
+                        var cmdLaptop = new SqlCommand(
+                            @"INSERT INTO Laptop (Product_Id, weight, screenSize, specification, colour)
+                      VALUES (@Product_Id, @weight, @screenSize, @specification, @colour);", connection, transaction);
+
+                        cmdLaptop.Parameters.AddWithValue("@Product_Id", productId);
+                        cmdLaptop.Parameters.AddWithValue("@weight", laptop.Weight);
+                        cmdLaptop.Parameters.AddWithValue("@screenSize", (object)laptop.screenSize ?? DBNull.Value);
+                        cmdLaptop.Parameters.AddWithValue("@specification", (object)laptop.Spectification ?? DBNull.Value);
+                        cmdLaptop.Parameters.AddWithValue("@colour", (object)laptop.Colour ?? DBNull.Value);
+
+                        cmdLaptop.ExecuteNonQuery();
+
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        return false;
+                    }
+                }
             }
         }
     }

@@ -32,5 +32,10 @@ namespace Gwenchana.BussinessLogic
         {
             return _laptopDAL.DeleteLaptop(id);
         }
+
+        public bool AddLaptop(Laptop laptop, Product product)
+        {
+            return _laptopDAL.AddLaptop(laptop, product);
+        }
     }
 }

@@ -341,6 +341,7 @@ namespace Gwenchana
         {
             Goods_ReceiptForm goodsReceiptForm = new Goods_ReceiptForm(currentEmployeeID);
             goodsReceiptForm.ShowDialog();
+            LoadData();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -33,7 +33,7 @@ namespace Gwenchana
 
             dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
             dgv_Order.Columns.Add("productName", "Tên sản phẩm");
-            //dgv_Order.Columns.Add("price", "");
+            //dgv_Order.Columns.Add("Price", "");
             dgv_Order.Columns.Add("Product_price", "Giá bán");
             dgv_Order.Columns.Add("quantity", "Số lượng nhập");
             dgv_Order.Columns.Add("totalPrice", "Thành tiền");
@@ -208,25 +208,25 @@ namespace Gwenchana
 
         }
 
-        public List<Product> GetOrderedProductList()
+        public List<ProductViewModel> GetOrderedProductList()
         {
-            List<Product> productList = new List<Product>();
-            ProductBLL bll = new ProductBLL(); // hoặc dùng DI nếu bạn đã có sẵn instance
+            List<ProductViewModel> productList = new List<ProductViewModel>();
 
             foreach (DataGridViewRow row in dgv_Order.Rows)
             {
-                if (row.IsNewRow) continue; // bỏ qua dòng trống
+                if (row.IsNewRow) continue; // Bỏ qua dòng trống
 
-                string productId = row.Cells["Product_Id"].Value.ToString();
-                string quantity = row.Cells["quantity"].Value.ToString();
-                string supplierID = row.Cells["Supplier_Id"].Value.ToString();
-                Product product = bll.GetProduct(Convert.ToInt32(productId));
-
-                if (product != null)
+                var productVM = new ProductViewModel
                 {
-                    product.quantity = Convert.ToInt32(quantity);
-                    productList.Add(product);
-                }
+                    Product_Id = Convert.ToInt32(row.Cells["Product_Id"].Value),
+                    ProductQuantity = Convert.ToInt32(row.Cells["quantity"].Value),
+                    Product_SupplierId = Convert.ToInt32(row.Cells["Supplier_Id"].Value),
+                    ProductPrice = Convert.ToDecimal(row.Cells["Product_price"].Value),
+
+
+                };
+
+                productList.Add(productVM);
             }
 
             return productList;
@@ -242,7 +242,7 @@ namespace Gwenchana
 
             Goods_ReceiptBLL goods_ReceiptBLL = new Goods_ReceiptBLL();
 
-            List<Product> selectedProducts = new List<Product>();
+            List<ProductViewModel> selectedProducts = new List<ProductViewModel>();
             selectedProducts = GetOrderedProductList();
 
 
@@ -259,7 +259,7 @@ namespace Gwenchana
                 return;
             }
 
-            bool isSuccess = goods_ReceiptBLL.CreateGoodsReceipt(Id, currentEmployee, selectedProducts);
+            bool isSuccess = goods_ReceiptBLL.CreateGoodsReceipt(currentEmployee, selectedProducts);
             if (isSuccess)
             {
                 MessageBox.Show("Tạo hóa đơn nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -307,6 +307,7 @@ namespace Gwenchana
                 case "PC":
                     AddProduct addProduct = new AddProduct("PC");
                     addProduct.ShowDialog();
+                    //LoadData();
                     break;
                 case "Laptop":
                     AddProduct addProduct1 = new AddProduct("Laptop");

@@ -79,7 +79,7 @@ WHERE gr.GoodsReceipt_Id = @ID;
         }
 
 
-        public bool ImportProducts(int supplierId, int employeeId, List<Product> products)
+        public bool ImportProducts(int employeeId, List<ProductViewModel> products)
         {
             try
             {
@@ -89,17 +89,17 @@ WHERE gr.GoodsReceipt_Id = @ID;
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        // Tham số đầu vào
-                        cmd.Parameters.AddWithValue("@SupplierID", supplierId);
+                        // Tham số đầu vào mới KHÔNG còn @SupplierID
                         cmd.Parameters.AddWithValue("@EmployeeID", employeeId);
 
-                        // Chuyển danh sách sản phẩm sang JSON format
+                        // Chuyển danh sách sản phẩm sang JSON format (bao gồm supplierId)
                         string jsonProductList = Newtonsoft.Json.JsonConvert.SerializeObject(
                             products.Select(p => new
                             {
-                                productId = p.Product_Id, // Lưu ý: key này phải trùng với định nghĩa trong procedure
-                                quantity = p.quantity,
-                                price = p.price
+                                productId = p.Product_Id,       // Phải đúng key
+                                quantity = p.ProductQuantity,
+                                price = p.ProductPrice,
+                                supplierId = p.Product_SupplierId    // Đảm bảo ProductViewModel có trường này!
                             })
                         );
                         cmd.Parameters.AddWithValue("@ProductList", jsonProductList);
