@@ -1,4 +1,5 @@
 ﻿using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +12,27 @@ using System.Windows.Forms;
 
 namespace Gwenchana
 {
-    public partial class AdminMenu : Form
+    public partial class EmployeeMenu1 : Form
     {
-        public AdminMenu()
+        //public CurrentEmployee currentEmployee { get; set; }
+        public int currentEmployeeID { get; set; }
+
+        public EmployeeMenu1()
         {
             //string username = Login.username;
             
             InitializeComponent();
+
+            //currentEmployeeID = id;
+
+            CurrentEmployee employee = new CurrentEmployee();
+            //employee.GetCurrentEmployee(id);
+            //if(employee.employeeName == null || employee.phoneNumber == null || employee.Age == 0)
+            //{
+            //    MessageBox.Show("Vui lòng cập nhật thông tin cá nhân trước khi sử dụng ứng dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    openChildForm(new information(id));
+            //}
+
             hideSubMenu();
         }
 
@@ -82,10 +97,10 @@ namespace Gwenchana
         }
         #endregion
 
-        //private void btnPlaylist_Click(object sender, EventArgs e)
-        //{
-        //    showSubMenu(panelPlaylistSubMenu);
-        //}
+        private void btnPlaylist_Click(object sender, EventArgs e)
+        {
+            //showSubMenu(panelPlaylistSubMenu);
+        }
 
         #region PlayListManagemetSubMenu
         private void button8_Click(object sender, EventArgs e)
@@ -229,7 +244,7 @@ namespace Gwenchana
 
         private void btn_ThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            
+            openChildForm(new information(currentEmployeeID));
         }
 
         private void button5_Click_2(object sender, EventArgs e)
@@ -242,19 +257,39 @@ namespace Gwenchana
 
         }
 
-        private void button5_Click_3(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            openChildForm(new Dashboard()); 
+
         }
 
-        private void button9_Click_2(object sender, EventArgs e)
+        private void btn_HoaDonNhap_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Goods_Receipt(currentEmployeeID));
+        }
+
+        private void btn_HoaDonXuat_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Receipt(currentEmployeeID));
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new CustomerUI());
+        }
+
+        private void button5_Click_3(object sender, EventArgs e)
+        {
+            openChildForm(new Dashboard());
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
         {
             openChildForm(new AssignEmployee());
         }
 
-        private void button10_Click_1(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new Employees());
+            openChildForm(new Employees()); 
         }
     }
 }

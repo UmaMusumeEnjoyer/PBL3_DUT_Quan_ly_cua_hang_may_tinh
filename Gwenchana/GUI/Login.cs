@@ -81,7 +81,7 @@ namespace Gwenchana
                     if(accountBLL.GetRole(username) == "Admin")
                     {
                         //Dashboard dashboard = new Dashboard();
-                        AdminMenu dashboard = new AdminMenu();
+                        EmployeeMenu1 dashboard = new EmployeeMenu1();
                         login_username.Text = "";
                         login_password.Text = "";
                         this.Hide();

@@ -89,6 +89,12 @@
     <Compile Include="DataAccess\ViewModel\GoodsReceiptViewModel.cs" />
     <Compile Include="DataAccess\ViewModel\ProductViewModel.cs" />
     <Compile Include="DataAccess\ViewModel\ReceiptViewModel.cs" />
+    <Compile Include="GUI\Admin\AdminMenu1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin\AdminMenu1.designer.cs">
+      <DependentUpon>AdminMenu1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Admin\Employees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,12 +112,6 @@
     </Compile>
     <Compile Include="GUI\Admin\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Admin\AdminMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Admin\AdminMenu.designer.cs">
-      <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Employee\Customer\CustomerCashUI.cs">
       <SubType>Form</SubType>
@@ -217,6 +217,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Admin\AdminMenu1.resx">
+      <DependentUpon>AdminMenu1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,9 +228,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Admin\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Admin\AdminMenu.resx">
-      <DependentUpon>AdminMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee\Customer\CustomerCashUI.resx">
       <DependentUpon>CustomerCashUI.cs</DependentUpon>
@@ -322,6 +322,9 @@
     <None Include="Resources\personal-information.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\review.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\employee.png" />
     <Content Include="sssss.sql" />
   </ItemGroup>
   <ItemGroup>
