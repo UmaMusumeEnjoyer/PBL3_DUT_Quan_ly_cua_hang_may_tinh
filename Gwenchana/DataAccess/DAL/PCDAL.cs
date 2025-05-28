@@ -101,5 +101,51 @@ namespace Gwenchana.DataAccess.DAL
                 return false;
             }
         }
+
+        public bool AddPC(PC pc, Product product)
+        {
+            using (var connection = _db.GetConnection())
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1. Thêm vào bảng Product
+                        var cmdProduct = new SqlCommand(
+                            @"INSERT INTO Product (Supplier_Id, productName, price, stockQuantity, Manufacturer)
+                              VALUES (@Supplier_Id, @productName, @price, @stockQuantity, @Manufacturer);
+                              SELECT CAST(SCOPE_IDENTITY() as int);", connection, transaction);
+
+                        cmdProduct.Parameters.AddWithValue("@Supplier_Id", product.Supplier_Id);
+                        cmdProduct.Parameters.AddWithValue("@productName", product.productName);
+                        cmdProduct.Parameters.AddWithValue("@price", product.price);
+                        cmdProduct.Parameters.AddWithValue("@stockQuantity", product.stockQuantity);
+                        cmdProduct.Parameters.AddWithValue("@Manufacturer", (object)product.Manufacturer ?? DBNull.Value);
+
+                        int productId = Convert.ToInt32(cmdProduct.ExecuteScalar());
+
+                        // 2. Thêm vào bảng PC (chú ý tên cột là specification)
+                        var cmdPC = new SqlCommand(
+                            @"INSERT INTO PC (Product_Id, specification)
+                              VALUES (@Product_Id, @specification);", connection, transaction);
+
+                        cmdPC.Parameters.AddWithValue("@Product_Id", productId);
+                        cmdPC.Parameters.AddWithValue("@specification", (object)pc.Spetification ?? DBNull.Value);
+
+                        cmdPC.ExecuteNonQuery();
+
+                        transaction.Commit();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        // Nếu muốn hiển thị lỗi: MessageBox.Show(ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

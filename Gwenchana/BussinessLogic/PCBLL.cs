@@ -32,5 +32,10 @@ namespace Gwenchana.BussinessLogic
             return _pcDAL.DeletePC(id);
         }
 
+
+        public bool AddPC(PC pc, Product product)
+        {
+            return _pcDAL.AddPC(pc, product);
+        }
     }
 }

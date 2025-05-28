@@ -57,7 +57,7 @@ namespace Gwenchana
 
                 ccb_NhaCungCap2.DataSource = cbbData;
                 ccb_NhaCungCap2.DisplayMember = "supplierName";
-                ccb_NhaCungCap1.ValueMember = "Supplier_Id";
+                ccb_NhaCungCap2.ValueMember = "Supplier_Id";
             }
             else if(selectedProduct == "Accessories") 
             {
@@ -67,7 +67,7 @@ namespace Gwenchana
 
                 ccb_NhaCungCap3.DataSource = cbbData;
                 ccb_NhaCungCap3.DisplayMember = "supplierName";
-                ccb_NhaCungCap1.ValueMember = "Supplier_Id";
+                ccb_NhaCungCap3.ValueMember = "Supplier_Id";
             }
 
 
@@ -113,6 +113,42 @@ namespace Gwenchana
 
         private void btn_SavePC_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // 1. Lấy dữ liệu từ các control trên form
+                var product = new Product
+                {
+                    Supplier_Id = Convert.ToInt32(ccb_NhaCungCap2.SelectedValue),
+                    productName = txt_pcName.Text.Trim(),
+                    price = decimal.Parse(txt_pcPrice.Text),
+                    //stockQuantity = int.Parse(.Text),
+                    Manufacturer = txt_pcManufacturer.Text.Trim()
+                };
+
+                var laptop = new PC
+                {
+                    Spetification = txt_pcSpecs.Text.Trim(),
+                };
+
+                // 2. Thêm vào database qua DAL
+                var pcbll = new PCBLL();
+                bool result = pcbll.AddPC(laptop, product);
+
+                // 3. Thông báo kết quả cho người dùng
+                if (result)
+                {
+                    MessageBox.Show("Thêm PC thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm PC thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_LaptopSave_Click(object sender, EventArgs e)
@@ -164,6 +200,11 @@ namespace Gwenchana
         }
 
         private void ccb_NhaCungCap1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_pcSpecs_TextChanged(object sender, EventArgs e)
         {
 
         }

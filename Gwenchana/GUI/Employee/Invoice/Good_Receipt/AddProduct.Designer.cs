@@ -33,6 +33,8 @@ namespace Gwenchana
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageLaptop = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ccb_NhaCungCap1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_LaptopColour = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,6 +52,8 @@ namespace Gwenchana
             this.label4 = new System.Windows.Forms.Label();
             this.txt_LaptopName = new System.Windows.Forms.TextBox();
             this.tabPagePC = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ccb_NhaCungCap2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_pcPrice = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,10 +61,12 @@ namespace Gwenchana
             this.label7 = new System.Windows.Forms.Label();
             this.txt_pcSpecs = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_pcSupplier = new System.Windows.Forms.TextBox();
+            this.txt_pcManufacturer = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_pcName = new System.Windows.Forms.TextBox();
             this.tabPageAccessories = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ccb_NhaCungCap3 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_AccessoriesstockQuantity = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -75,12 +81,6 @@ namespace Gwenchana
             this.txt_AccessoriesManufacturer = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txt_AccessoriesName = new System.Windows.Forms.TextBox();
-            this.ccb_NhaCungCap1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.ccb_NhaCungCap2 = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.ccb_NhaCungCap3 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageLaptop.SuspendLayout();
@@ -150,6 +150,26 @@ namespace Gwenchana
             this.tabPageLaptop.TabIndex = 1;
             this.tabPageLaptop.Text = "Laptop";
             this.tabPageLaptop.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(519, 240);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 20);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Nhà cung cấp :";
+            // 
+            // ccb_NhaCungCap1
+            // 
+            this.ccb_NhaCungCap1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ccb_NhaCungCap1.FormattingEnabled = true;
+            this.ccb_NhaCungCap1.Location = new System.Drawing.Point(523, 263);
+            this.ccb_NhaCungCap1.Name = "ccb_NhaCungCap1";
+            this.ccb_NhaCungCap1.Size = new System.Drawing.Size(241, 32);
+            this.ccb_NhaCungCap1.TabIndex = 26;
+            this.ccb_NhaCungCap1.SelectedIndexChanged += new System.EventHandler(this.ccb_NhaCungCap1_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -303,7 +323,7 @@ namespace Gwenchana
             this.tabPagePC.Controls.Add(this.label7);
             this.tabPagePC.Controls.Add(this.txt_pcSpecs);
             this.tabPagePC.Controls.Add(this.label8);
-            this.tabPagePC.Controls.Add(this.txt_pcSupplier);
+            this.tabPagePC.Controls.Add(this.txt_pcManufacturer);
             this.tabPagePC.Controls.Add(this.label9);
             this.tabPagePC.Controls.Add(this.txt_pcName);
             this.tabPagePC.Location = new System.Drawing.Point(4, 30);
@@ -313,6 +333,25 @@ namespace Gwenchana
             this.tabPagePC.TabIndex = 2;
             this.tabPagePC.Text = "PC";
             this.tabPagePC.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(483, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(115, 20);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Nhà cung cấp :";
+            // 
+            // ccb_NhaCungCap2
+            // 
+            this.ccb_NhaCungCap2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ccb_NhaCungCap2.FormattingEnabled = true;
+            this.ccb_NhaCungCap2.Location = new System.Drawing.Point(487, 207);
+            this.ccb_NhaCungCap2.Name = "ccb_NhaCungCap2";
+            this.ccb_NhaCungCap2.Size = new System.Drawing.Size(241, 29);
+            this.ccb_NhaCungCap2.TabIndex = 32;
             // 
             // label2
             // 
@@ -366,6 +405,7 @@ namespace Gwenchana
             this.txt_pcSpecs.Name = "txt_pcSpecs";
             this.txt_pcSpecs.Size = new System.Drawing.Size(767, 29);
             this.txt_pcSpecs.TabIndex = 26;
+            this.txt_pcSpecs.TextChanged += new System.EventHandler(this.txt_pcSpecs_TextChanged);
             // 
             // label8
             // 
@@ -377,12 +417,12 @@ namespace Gwenchana
             this.label8.TabIndex = 25;
             this.label8.Text = "Nhà sản xuất :";
             // 
-            // txt_pcSupplier
+            // txt_pcManufacturer
             // 
-            this.txt_pcSupplier.Location = new System.Drawing.Point(415, 68);
-            this.txt_pcSupplier.Name = "txt_pcSupplier";
-            this.txt_pcSupplier.Size = new System.Drawing.Size(183, 29);
-            this.txt_pcSupplier.TabIndex = 24;
+            this.txt_pcManufacturer.Location = new System.Drawing.Point(415, 68);
+            this.txt_pcManufacturer.Name = "txt_pcManufacturer";
+            this.txt_pcManufacturer.Size = new System.Drawing.Size(183, 29);
+            this.txt_pcManufacturer.TabIndex = 24;
             // 
             // label9
             // 
@@ -425,6 +465,25 @@ namespace Gwenchana
             this.tabPageAccessories.TabIndex = 3;
             this.tabPageAccessories.Text = "Linh / Phụ kiện";
             this.tabPageAccessories.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(539, 240);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(115, 20);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "Nhà cung cấp :";
+            // 
+            // ccb_NhaCungCap3
+            // 
+            this.ccb_NhaCungCap3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ccb_NhaCungCap3.FormattingEnabled = true;
+            this.ccb_NhaCungCap3.Location = new System.Drawing.Point(543, 263);
+            this.ccb_NhaCungCap3.Name = "ccb_NhaCungCap3";
+            this.ccb_NhaCungCap3.Size = new System.Drawing.Size(241, 29);
+            this.ccb_NhaCungCap3.TabIndex = 38;
             // 
             // label11
             // 
@@ -549,64 +608,6 @@ namespace Gwenchana
             this.txt_AccessoriesName.Size = new System.Drawing.Size(251, 29);
             this.txt_AccessoriesName.TabIndex = 24;
             // 
-            // ccb_NhaCungCap1
-            // 
-            this.ccb_NhaCungCap1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ccb_NhaCungCap1.FormattingEnabled = true;
-            this.ccb_NhaCungCap1.Location = new System.Drawing.Point(523, 263);
-            this.ccb_NhaCungCap1.Name = "ccb_NhaCungCap1";
-            this.ccb_NhaCungCap1.Size = new System.Drawing.Size(241, 32);
-            this.ccb_NhaCungCap1.TabIndex = 26;
-            this.ccb_NhaCungCap1.SelectedIndexChanged += new System.EventHandler(this.ccb_NhaCungCap1_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(519, 240);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 20);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Nhà cung cấp :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(483, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 20);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Nhà cung cấp :";
-            // 
-            // ccb_NhaCungCap2
-            // 
-            this.ccb_NhaCungCap2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ccb_NhaCungCap2.FormattingEnabled = true;
-            this.ccb_NhaCungCap2.Location = new System.Drawing.Point(487, 207);
-            this.ccb_NhaCungCap2.Name = "ccb_NhaCungCap2";
-            this.ccb_NhaCungCap2.Size = new System.Drawing.Size(241, 29);
-            this.ccb_NhaCungCap2.TabIndex = 32;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(539, 240);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 20);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "Nhà cung cấp :";
-            // 
-            // ccb_NhaCungCap3
-            // 
-            this.ccb_NhaCungCap3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ccb_NhaCungCap3.FormattingEnabled = true;
-            this.ccb_NhaCungCap3.Location = new System.Drawing.Point(543, 263);
-            this.ccb_NhaCungCap3.Name = "ccb_NhaCungCap3";
-            this.ccb_NhaCungCap3.Size = new System.Drawing.Size(241, 29);
-            this.ccb_NhaCungCap3.TabIndex = 38;
-            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -663,7 +664,7 @@ namespace Gwenchana
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_pcSpecs;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt_pcSupplier;
+        private System.Windows.Forms.TextBox txt_pcManufacturer;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_pcName;
         private System.Windows.Forms.Label label11;

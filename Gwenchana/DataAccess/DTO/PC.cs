@@ -8,7 +8,6 @@ namespace Gwenchana.DataAccess.DTO
 {
     public class PC : Product
     {
-        //public int Product_Id { get; set; }
         public string Spetification { get; set; }
     }
 }
