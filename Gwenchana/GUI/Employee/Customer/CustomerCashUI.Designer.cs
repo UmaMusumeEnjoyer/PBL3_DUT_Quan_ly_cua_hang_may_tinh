@@ -34,6 +34,7 @@ namespace Gwenchana
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_addCustomer = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@ namespace Gwenchana
             this.txt_LaptopName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_LaptopID = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -129,6 +129,17 @@ namespace Gwenchana
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
             this.tabPagePetList.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(741, 244);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 126);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Tạo đơn mua";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_addCustomer
             // 
@@ -383,17 +394,6 @@ namespace Gwenchana
             this.txt_LaptopID.TabIndex = 6;
             this.txt_LaptopID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(741, 244);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 126);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Tạo đơn mua";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // CustomerCashUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -404,6 +404,7 @@ namespace Gwenchana
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CustomerCashUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PetView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

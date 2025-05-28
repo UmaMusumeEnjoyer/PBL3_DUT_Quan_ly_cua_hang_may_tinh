@@ -50,7 +50,7 @@ namespace Gwenchana
             // 
             // signup_btn
             // 
-            this.signup_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.signup_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(24)))), ((int)(((byte)(26)))));
             this.signup_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signup_btn.FlatAppearance.BorderSize = 0;
             this.signup_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -141,7 +141,7 @@ namespace Gwenchana
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -186,7 +186,7 @@ namespace Gwenchana
             // 
             // signup_loginBtn
             // 
-            this.signup_loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.signup_loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(24)))), ((int)(((byte)(26)))));
             this.signup_loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signup_loginBtn.FlatAppearance.BorderSize = 0;
             this.signup_loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
@@ -217,7 +217,7 @@ namespace Gwenchana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(575, 400);
             this.Controls.Add(this.signup_btn);
             this.Controls.Add(this.signup_showPass);

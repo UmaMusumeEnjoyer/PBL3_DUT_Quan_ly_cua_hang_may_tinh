@@ -152,6 +152,7 @@ namespace Gwenchana
             this.txt_productPrice.Name = "txt_productPrice";
             this.txt_productPrice.Size = new System.Drawing.Size(330, 26);
             this.txt_productPrice.TabIndex = 32;
+            this.txt_productPrice.TextChanged += new System.EventHandler(this.txt_productPrice_TextChanged);
             // 
             // txt_productName
             // 

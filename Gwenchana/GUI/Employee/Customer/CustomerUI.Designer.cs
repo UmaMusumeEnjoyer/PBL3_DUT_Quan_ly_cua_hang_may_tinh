@@ -34,6 +34,7 @@ namespace Gwenchana
             this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.btn_addCustomer = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
@@ -43,6 +44,10 @@ namespace Gwenchana
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_sodondathuchien = new System.Windows.Forms.TextBox();
             this.lb_Email = new System.Windows.Forms.Label();
             this.btn_Address = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -53,11 +58,6 @@ namespace Gwenchana
             this.txt_LaptopName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_LaptopID = new System.Windows.Forms.TextBox();
-            this.btn_addCustomer = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_sodondathuchien = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_Email = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -127,6 +127,17 @@ namespace Gwenchana
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
             this.tabPagePetList.UseVisualStyleBackColor = true;
+            // 
+            // btn_addCustomer
+            // 
+            this.btn_addCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_addCustomer.Location = new System.Drawing.Point(741, 134);
+            this.btn_addCustomer.Name = "btn_addCustomer";
+            this.btn_addCustomer.Size = new System.Drawing.Size(99, 30);
+            this.btn_addCustomer.TabIndex = 11;
+            this.btn_addCustomer.Text = "Thêm";
+            this.btn_addCustomer.UseVisualStyleBackColor = true;
+            this.btn_addCustomer.Click += new System.EventHandler(this.btn_addCustomer_Click);
             // 
             // btn_ClearFilter
             // 
@@ -246,6 +257,40 @@ namespace Gwenchana
             this.tabPagePetDetail.Text = "Thông tin chi tiết";
             this.tabPagePetDetail.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(312, 175);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 20);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Email :";
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Location = new System.Drawing.Point(316, 198);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(307, 29);
+            this.txt_Email.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(312, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Số đơn đã thực hiện :";
+            // 
+            // txt_sodondathuchien
+            // 
+            this.txt_sodondathuchien.Location = new System.Drawing.Point(316, 120);
+            this.txt_sodondathuchien.Name = "txt_sodondathuchien";
+            this.txt_sodondathuchien.Size = new System.Drawing.Size(183, 29);
+            this.txt_sodondathuchien.TabIndex = 18;
+            // 
             // lb_Email
             // 
             this.lb_Email.AutoSize = true;
@@ -336,51 +381,6 @@ namespace Gwenchana
             this.txt_LaptopID.TabIndex = 6;
             this.txt_LaptopID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
-            // btn_addCustomer
-            // 
-            this.btn_addCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_addCustomer.Location = new System.Drawing.Point(741, 134);
-            this.btn_addCustomer.Name = "btn_addCustomer";
-            this.btn_addCustomer.Size = new System.Drawing.Size(99, 30);
-            this.btn_addCustomer.TabIndex = 11;
-            this.btn_addCustomer.Text = "Thêm";
-            this.btn_addCustomer.UseVisualStyleBackColor = true;
-            this.btn_addCustomer.Click += new System.EventHandler(this.btn_addCustomer_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(312, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 20);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Số đơn đã thực hiện :";
-            // 
-            // txt_sodondathuchien
-            // 
-            this.txt_sodondathuchien.Location = new System.Drawing.Point(316, 120);
-            this.txt_sodondathuchien.Name = "txt_sodondathuchien";
-            this.txt_sodondathuchien.Size = new System.Drawing.Size(183, 29);
-            this.txt_sodondathuchien.TabIndex = 18;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(312, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 20);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Email :";
-            // 
-            // txt_Email
-            // 
-            this.txt_Email.Location = new System.Drawing.Point(316, 198);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(307, 29);
-            this.txt_Email.TabIndex = 20;
-            // 
             // CustomerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -391,6 +391,7 @@ namespace Gwenchana
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CustomerUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PetView";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

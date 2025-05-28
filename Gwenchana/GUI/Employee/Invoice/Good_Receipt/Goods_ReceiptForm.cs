@@ -389,5 +389,10 @@ namespace Gwenchana
         {
 
         }
+
+        private void txt_productPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
