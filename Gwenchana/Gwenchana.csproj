@@ -305,6 +305,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pictures\order.png" />
+    <None Include="Resources\order.png" />
+    <None Include="Resources\laptop.png" />
+    <None Include="Resources\in-stock.png" />
+    <None Include="Resources\in-stock %281%29.png" />
+    <None Include="Resources\computer.png" />
+    <None Include="Resources\computer %281%29.png" />
+    <None Include="Resources\graphic-card.png" />
+    <None Include="Resources\augmented-reality.png" />
+    <None Include="Resources\in-stock %282%29.png" />
+    <None Include="Resources\invoice.png" />
+    <None Include="Resources\file-import.png" />
+    <None Include="Resources\import.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\personal-information.png" />
+    <None Include="Resources\logout.png" />
     <Content Include="sssss.sql" />
   </ItemGroup>
   <ItemGroup>

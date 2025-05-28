@@ -59,11 +59,11 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(375, 9);
+            this.label5.Location = new System.Drawing.Point(372, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 36);
+            this.label5.Size = new System.Drawing.Size(185, 42);
             this.label5.TabIndex = 4;
             this.label5.Text = "Thông Tin";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -74,7 +74,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 120);
+            this.label1.Location = new System.Drawing.Point(187, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 24);
             this.label1.TabIndex = 13;
@@ -86,7 +86,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(111, 178);
+            this.label2.Location = new System.Drawing.Point(187, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 24);
             this.label2.TabIndex = 14;
@@ -99,7 +99,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(110, 242);
+            this.label3.Location = new System.Drawing.Point(187, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 24);
             this.label3.TabIndex = 15;
@@ -111,7 +111,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(111, 304);
+            this.label4.Location = new System.Drawing.Point(187, 331);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 24);
             this.label4.TabIndex = 16;
@@ -123,7 +123,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(110, 375);
+            this.label6.Location = new System.Drawing.Point(187, 402);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 24);
             this.label6.TabIndex = 17;
@@ -135,9 +135,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(96, 502);
+            this.button1.Location = new System.Drawing.Point(752, 509);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 35);
+            this.button1.Size = new System.Drawing.Size(150, 50);
             this.button1.TabIndex = 18;
             this.button1.Text = "Lưu thay đổi";
             this.button1.UseVisualStyleBackColor = false;
@@ -149,9 +149,9 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(691, 502);
+            this.button2.Location = new System.Drawing.Point(31, 353);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 35);
+            this.button2.Size = new System.Drawing.Size(150, 50);
             this.button2.TabIndex = 19;
             this.button2.Text = "Chỉnh sửa tài khoản";
             this.button2.UseVisualStyleBackColor = false;
@@ -161,7 +161,7 @@
             // 
             this.txt_Name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_Name.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Name.Location = new System.Drawing.Point(248, 125);
+            this.txt_Name.Location = new System.Drawing.Point(319, 139);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(372, 32);
             this.txt_Name.TabIndex = 20;
@@ -171,7 +171,7 @@
             // 
             this.txt_Age.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_Age.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Age.Location = new System.Drawing.Point(248, 178);
+            this.txt_Age.Location = new System.Drawing.Point(319, 192);
             this.txt_Age.Name = "txt_Age";
             this.txt_Age.Size = new System.Drawing.Size(372, 32);
             this.txt_Age.TabIndex = 21;
@@ -180,7 +180,7 @@
             // 
             this.txt_PhoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_PhoneNumber.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PhoneNumber.Location = new System.Drawing.Point(248, 246);
+            this.txt_PhoneNumber.Location = new System.Drawing.Point(319, 260);
             this.txt_PhoneNumber.Name = "txt_PhoneNumber";
             this.txt_PhoneNumber.Size = new System.Drawing.Size(372, 32);
             this.txt_PhoneNumber.TabIndex = 22;
@@ -189,7 +189,7 @@
             // 
             this.txt_Username.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_Username.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Username.Location = new System.Drawing.Point(248, 309);
+            this.txt_Username.Location = new System.Drawing.Point(319, 323);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(372, 32);
             this.txt_Username.TabIndex = 23;
@@ -198,7 +198,7 @@
             // 
             this.txt_Password.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_Password.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Password.Location = new System.Drawing.Point(248, 380);
+            this.txt_Password.Location = new System.Drawing.Point(319, 394);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(372, 32);
             this.txt_Password.TabIndex = 24;

@@ -107,7 +107,7 @@ namespace Gwenchana
             this.login_signupBtn.Location = new System.Drawing.Point(22, 356);
             this.login_signupBtn.Name = "login_signupBtn";
             this.login_signupBtn.Size = new System.Drawing.Size(226, 31);
-            this.login_signupBtn.TabIndex = 1;
+            this.login_signupBtn.TabIndex = 5;
             this.login_signupBtn.Text = "ĐĂNG KÝ";
             this.login_signupBtn.UseVisualStyleBackColor = false;
             this.login_signupBtn.Click += new System.EventHandler(this.login_signupBtn_Click);
@@ -165,7 +165,7 @@ namespace Gwenchana
             this.login_username.Multiline = true;
             this.login_username.Name = "login_username";
             this.login_username.Size = new System.Drawing.Size(261, 30);
-            this.login_username.TabIndex = 4;
+            this.login_username.TabIndex = 0;
             // 
             // login_password
             // 
@@ -175,7 +175,7 @@ namespace Gwenchana
             this.login_password.Name = "login_password";
             this.login_password.PasswordChar = '*';
             this.login_password.Size = new System.Drawing.Size(261, 30);
-            this.login_password.TabIndex = 6;
+            this.login_password.TabIndex = 1;
             // 
             // label4
             // 
@@ -194,7 +194,7 @@ namespace Gwenchana
             this.login_showPass.Location = new System.Drawing.Point(439, 253);
             this.login_showPass.Name = "login_showPass";
             this.login_showPass.Size = new System.Drawing.Size(96, 19);
-            this.login_showPass.TabIndex = 7;
+            this.login_showPass.TabIndex = 3;
             this.login_showPass.Text = "Hiện mật khẩu";
             this.login_showPass.UseVisualStyleBackColor = true;
             this.login_showPass.CheckedChanged += new System.EventHandler(this.login_showPass_CheckedChanged);
@@ -212,7 +212,7 @@ namespace Gwenchana
             this.login_btn.Location = new System.Drawing.Point(290, 292);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(93, 34);
-            this.login_btn.TabIndex = 8;
+            this.login_btn.TabIndex = 4;
             this.login_btn.Text = "ĐĂNG NHẬP";
             this.login_btn.UseVisualStyleBackColor = false;
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
