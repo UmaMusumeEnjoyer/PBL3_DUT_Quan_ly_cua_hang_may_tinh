@@ -271,5 +271,10 @@ namespace Gwenchana
         {
             openChildForm(new Receipt(currentEmployeeID));
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new CustomerUI());
+        }
     }
 }

@@ -321,6 +321,7 @@
     <None Include="Resources\export.png" />
     <None Include="Resources\personal-information.png" />
     <None Include="Resources\logout.png" />
+    <None Include="Resources\review.png" />
     <Content Include="sssss.sql" />
   </ItemGroup>
   <ItemGroup>

@@ -162,11 +162,14 @@ namespace Gwenchana
             // 
             // ccb_NhaCungCap1
             // 
+            this.ccb_NhaCungCap1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.ccb_NhaCungCap1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ccb_NhaCungCap1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ccb_NhaCungCap1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ccb_NhaCungCap1.FormattingEnabled = true;
             this.ccb_NhaCungCap1.Location = new System.Drawing.Point(523, 263);
             this.ccb_NhaCungCap1.Name = "ccb_NhaCungCap1";
-            this.ccb_NhaCungCap1.Size = new System.Drawing.Size(241, 32);
+            this.ccb_NhaCungCap1.Size = new System.Drawing.Size(241, 29);
             this.ccb_NhaCungCap1.TabIndex = 26;
             this.ccb_NhaCungCap1.SelectedIndexChanged += new System.EventHandler(this.ccb_NhaCungCap1_SelectedIndexChanged);
             // 
@@ -351,7 +354,9 @@ namespace Gwenchana
             // 
             // ccb_NhaCungCap2
             // 
+            this.ccb_NhaCungCap2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.ccb_NhaCungCap2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ccb_NhaCungCap2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ccb_NhaCungCap2.FormattingEnabled = true;
             this.ccb_NhaCungCap2.Location = new System.Drawing.Point(487, 207);
             this.ccb_NhaCungCap2.Name = "ccb_NhaCungCap2";
@@ -487,7 +492,9 @@ namespace Gwenchana
             // 
             // ccb_NhaCungCap3
             // 
+            this.ccb_NhaCungCap3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.ccb_NhaCungCap3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ccb_NhaCungCap3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ccb_NhaCungCap3.FormattingEnabled = true;
             this.ccb_NhaCungCap3.Location = new System.Drawing.Point(454, 227);
             this.ccb_NhaCungCap3.Name = "ccb_NhaCungCap3";

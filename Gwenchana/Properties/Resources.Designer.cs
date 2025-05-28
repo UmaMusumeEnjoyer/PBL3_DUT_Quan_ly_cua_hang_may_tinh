@@ -213,6 +213,16 @@ namespace Gwenchana.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap review {
+            get {
+                object obj = ResourceManager.GetObject("review", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Trường_Đại_học_Bách_khoa__Đại_học_Đà_Nẵng_svg {
             get {
                 object obj = ResourceManager.GetObject("Trường_Đại_học_Bách_khoa,_Đại_học_Đà_Nẵng.svg", resourceCulture);
