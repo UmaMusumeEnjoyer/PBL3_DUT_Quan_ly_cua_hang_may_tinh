@@ -44,5 +44,10 @@ namespace Gwenchana.BussinessLogic
         {
             return _accessoriesDAL.GetAllAccessories();
         }
+
+        public bool AddAccessories(Accessories accessories, Product product)
+        {
+            return _accessoriesDAL.AddAccessories(accessories, product);
+        }
     }
 }

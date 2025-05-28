@@ -42,11 +42,12 @@ namespace Gwenchana.DataAccess.ViewModel
             this.numCustomers = Convert.ToInt32(_db.ExecuteScalar("SELECT COUNT(*) FROM Customer"));
             this.numSuppliers = Convert.ToInt32(_db.ExecuteScalar("SELECT COUNT(*) FROM Supplier"));
             this.numProducts = Convert.ToInt32(_db.ExecuteScalar("SELECT COUNT(*) FROM Product"));
+
             SqlParameter[] parameters = {
-                new SqlParameter("@StartDate", this.startDate),
-                new SqlParameter("@EndDate", this.endDate)
-            };
-            this.numProducts = Convert.ToInt32(_db.ExecuteScalar(
+        new SqlParameter("@StartDate", this.startDate),
+        new SqlParameter("@EndDate", this.endDate)
+    };
+            this.numReceipts = Convert.ToInt32(_db.ExecuteScalar(
                 "SELECT COUNT(*) FROM Receipt WHERE receiptDate BETWEEN @StartDate AND @EndDate", parameters));
         }
 
@@ -56,23 +57,18 @@ namespace Gwenchana.DataAccess.ViewModel
             Understock = new List<KeyValuePair<string, int>>();
             DbConnect _db = new DbConnect();
 
-            // Truy vấn top 5 sản phẩm bán chạy nhất
+            // Top 5 best-selling products
             string topProductQuery = @"
         SELECT TOP 5
             p.Product_Id,
             p.productName,
             p.Manufacturer,
             SUM(d.quantity) AS TotalQuantitySold
-        FROM 
-            [dbo].[Product] p
-        JOIN 
-            [dbo].[Details] d ON p.Product_Id = d.Product_Id
-        WHERE 
-            d.Receipt_Id IS NOT NULL
-        GROUP BY 
-            p.Product_Id, p.productName, p.Manufacturer
-        ORDER BY 
-            TotalQuantitySold DESC;";
+        FROM Product p
+        JOIN Details d ON p.Product_Id = d.Product_Id
+        WHERE d.Receipt_Id IS NOT NULL
+        GROUP BY p.Product_Id, p.productName, p.Manufacturer
+        ORDER BY TotalQuantitySold DESC;";
 
             DataTable topProductsTable = _db.GetData(topProductQuery);
             foreach (DataRow row in topProductsTable.Rows)
@@ -82,7 +78,7 @@ namespace Gwenchana.DataAccess.ViewModel
                 TopProducts.Add(new KeyValuePair<string, int>(name, quantity));
             }
 
-            // Truy vấn 5 sản phẩm tồn kho thấp nhất
+            // 5 products with lowest stock
             string understockQuery = @"
         SELECT TOP 5 
             p.Product_Id,
@@ -90,12 +86,9 @@ namespace Gwenchana.DataAccess.ViewModel
             p.Manufacturer,
             p.price,
             p.stockQuantity
-        FROM 
-            [dbo].[Product] p
-        WHERE 
-            p.stockQuantity IS NOT NULL
-        ORDER BY 
-            p.stockQuantity ASC;";
+        FROM Product p
+        WHERE p.stockQuantity IS NOT NULL
+        ORDER BY p.stockQuantity ASC;";
 
             DataTable understockTable = _db.GetData(understockQuery);
             foreach (DataRow row in understockTable.Rows)
@@ -106,20 +99,19 @@ namespace Gwenchana.DataAccess.ViewModel
             }
         }
 
-
         private void GetOrderAnalisys()
         {
             GrossRevenueList = new List<RevenueByDate>();
             TotalProfit = 0;
             TotalRevenue = 0;
 
-            //DbConnect _db = new DbConnect();
-
             string query = @"
-                SELECT receiptDate, SUM(productPrice * quantity) as Total
-                From Receipt r join Details d on r.Receipt_Id = d.Receipt_Id 
-                Where receiptDate between @fromDate and @toDate
-                Group BY receiptDate";
+        SELECT r.receiptDate, SUM(p.price * d.quantity) as Total
+        FROM Receipt r
+        JOIN Details d ON r.Receipt_Id = d.Receipt_Id
+        JOIN Product p ON d.Product_Id = p.Product_Id
+        WHERE r.receiptDate BETWEEN @fromDate AND @toDate
+        GROUP BY r.receiptDate";
 
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -140,7 +132,7 @@ namespace Gwenchana.DataAccess.ViewModel
 
             TotalProfit = TotalRevenue * 0.2m;
 
-            // Group dữ liệu theo thời gian
+            // ... phần group by thời gian giữ nguyên như cũ
             if (numberDays <= 1)
             {
                 GrossRevenueList = resultTable

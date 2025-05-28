@@ -67,8 +67,6 @@ namespace Gwenchana
             this.tabPageAccessories = new System.Windows.Forms.TabPage();
             this.label17 = new System.Windows.Forms.Label();
             this.ccb_NhaCungCap3 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_AccessoriesstockQuantity = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_AccessoriesType = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -445,8 +443,6 @@ namespace Gwenchana
             // 
             this.tabPageAccessories.Controls.Add(this.label17);
             this.tabPageAccessories.Controls.Add(this.ccb_NhaCungCap3);
-            this.tabPageAccessories.Controls.Add(this.label11);
-            this.tabPageAccessories.Controls.Add(this.txt_AccessoriesstockQuantity);
             this.tabPageAccessories.Controls.Add(this.label12);
             this.tabPageAccessories.Controls.Add(this.txt_AccessoriesType);
             this.tabPageAccessories.Controls.Add(this.label13);
@@ -470,7 +466,7 @@ namespace Gwenchana
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(539, 240);
+            this.label17.Location = new System.Drawing.Point(450, 204);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(115, 20);
             this.label17.TabIndex = 39;
@@ -480,33 +476,16 @@ namespace Gwenchana
             // 
             this.ccb_NhaCungCap3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ccb_NhaCungCap3.FormattingEnabled = true;
-            this.ccb_NhaCungCap3.Location = new System.Drawing.Point(543, 263);
+            this.ccb_NhaCungCap3.Location = new System.Drawing.Point(454, 227);
             this.ccb_NhaCungCap3.Name = "ccb_NhaCungCap3";
             this.ccb_NhaCungCap3.Size = new System.Drawing.Size(241, 29);
             this.ccb_NhaCungCap3.TabIndex = 38;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(539, 30);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 21);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Số lượng tồn kho :";
-            // 
-            // txt_AccessoriesstockQuantity
-            // 
-            this.txt_AccessoriesstockQuantity.Location = new System.Drawing.Point(543, 53);
-            this.txt_AccessoriesstockQuantity.Name = "txt_AccessoriesstockQuantity";
-            this.txt_AccessoriesstockQuantity.Size = new System.Drawing.Size(183, 29);
-            this.txt_AccessoriesstockQuantity.TabIndex = 36;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(329, 30);
+            this.label12.Location = new System.Drawing.Point(655, 65);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(128, 21);
             this.label12.TabIndex = 35;
@@ -514,7 +493,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesType
             // 
-            this.txt_AccessoriesType.Location = new System.Drawing.Point(333, 53);
+            this.txt_AccessoriesType.Location = new System.Drawing.Point(659, 88);
             this.txt_AccessoriesType.Name = "txt_AccessoriesType";
             this.txt_AccessoriesType.Size = new System.Drawing.Size(183, 29);
             this.txt_AccessoriesType.TabIndex = 34;
@@ -523,7 +502,7 @@ namespace Gwenchana
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(132, 239);
+            this.label13.Location = new System.Drawing.Point(43, 203);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 21);
             this.label13.TabIndex = 33;
@@ -531,7 +510,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesPrice
             // 
-            this.txt_AccessoriesPrice.Location = new System.Drawing.Point(136, 262);
+            this.txt_AccessoriesPrice.Location = new System.Drawing.Point(47, 226);
             this.txt_AccessoriesPrice.Name = "txt_AccessoriesPrice";
             this.txt_AccessoriesPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_AccessoriesPrice.TabIndex = 32;
@@ -539,7 +518,7 @@ namespace Gwenchana
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(333, 303);
+            this.button3.Location = new System.Drawing.Point(244, 267);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(183, 44);
             this.button3.TabIndex = 31;
@@ -549,7 +528,7 @@ namespace Gwenchana
             // btn_AccessoriesSave
             // 
             this.btn_AccessoriesSave.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AccessoriesSave.Location = new System.Drawing.Point(136, 303);
+            this.btn_AccessoriesSave.Location = new System.Drawing.Point(47, 267);
             this.btn_AccessoriesSave.Name = "btn_AccessoriesSave";
             this.btn_AccessoriesSave.Size = new System.Drawing.Size(183, 44);
             this.btn_AccessoriesSave.TabIndex = 30;
@@ -561,7 +540,7 @@ namespace Gwenchana
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(132, 174);
+            this.label14.Location = new System.Drawing.Point(43, 138);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 21);
             this.label14.TabIndex = 29;
@@ -569,7 +548,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesOverview
             // 
-            this.txt_AccessoriesOverview.Location = new System.Drawing.Point(136, 197);
+            this.txt_AccessoriesOverview.Location = new System.Drawing.Point(47, 161);
             this.txt_AccessoriesOverview.Name = "txt_AccessoriesOverview";
             this.txt_AccessoriesOverview.Size = new System.Drawing.Size(590, 29);
             this.txt_AccessoriesOverview.TabIndex = 28;
@@ -578,7 +557,7 @@ namespace Gwenchana
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(468, 101);
+            this.label15.Location = new System.Drawing.Point(379, 65);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(115, 21);
             this.label15.TabIndex = 27;
@@ -586,7 +565,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesManufacturer
             // 
-            this.txt_AccessoriesManufacturer.Location = new System.Drawing.Point(472, 124);
+            this.txt_AccessoriesManufacturer.Location = new System.Drawing.Point(383, 88);
             this.txt_AccessoriesManufacturer.Name = "txt_AccessoriesManufacturer";
             this.txt_AccessoriesManufacturer.Size = new System.Drawing.Size(252, 29);
             this.txt_AccessoriesManufacturer.TabIndex = 26;
@@ -595,7 +574,7 @@ namespace Gwenchana
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(132, 101);
+            this.label16.Location = new System.Drawing.Point(43, 65);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(48, 21);
             this.label16.TabIndex = 25;
@@ -603,7 +582,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesName
             // 
-            this.txt_AccessoriesName.Location = new System.Drawing.Point(136, 124);
+            this.txt_AccessoriesName.Location = new System.Drawing.Point(47, 88);
             this.txt_AccessoriesName.Name = "txt_AccessoriesName";
             this.txt_AccessoriesName.Size = new System.Drawing.Size(251, 29);
             this.txt_AccessoriesName.TabIndex = 24;
@@ -667,8 +646,6 @@ namespace Gwenchana
         private System.Windows.Forms.TextBox txt_pcManufacturer;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_pcName;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_AccessoriesstockQuantity;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_AccessoriesType;
         private System.Windows.Forms.Label label13;

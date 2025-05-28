@@ -295,10 +295,8 @@ namespace Gwenchana
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Sua lai doan if nay
             if (ccb_ProductFilter.SelectedItem == null || string.IsNullOrEmpty(ccb_ProductFilter.SelectedItem.ToString()))
             {
-                //Viet toi thong bao chua chon danh muc can them
                 MessageBox.Show("Vui lòng chọn danh mục sản phẩm trước khi thêm sản phẩm.");
                 return;
             }
@@ -307,19 +305,79 @@ namespace Gwenchana
                 case "PC":
                     AddProduct addProduct = new AddProduct("PC");
                     addProduct.ShowDialog();
-                    //LoadData();
+                    LoadPCData(); // <-- Gọi hàm này sau khi thêm PC
                     break;
                 case "Laptop":
                     AddProduct addProduct1 = new AddProduct("Laptop");
                     addProduct1.ShowDialog();
+                    LoadLaptopData(); // <-- Gọi hàm này sau khi thêm Laptop
                     break;
                 case "Linh/ Phụ kiện":
                     AddProduct addProduct2 = new AddProduct("Accessories");
                     addProduct2.ShowDialog();
+                    LoadAccessoriesData(); // <-- Gọi hàm này sau khi thêm phụ kiện
                     break;
                 default:
                     break;
             }
+        }
+
+        private void LoadPCData()
+        {
+            ClearDataGridViewData();
+            PCBLL pcBLL = new PCBLL();
+            DataTable dt = pcBLL.GetAllPCsDataTable();
+            dgv_Product.ReadOnly = true;
+            dgv_Product.AllowUserToAddRows = false;
+            dgv_Product.AllowUserToDeleteRows = false;
+            dgv_Product.DataSource = dt;
+            dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
+            dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
+            dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dgv_Product.Columns["specification"].HeaderText = "Thông số kỹ thuật";
+            dgv_Product.Columns["price"].HeaderText = "Giá";
+            dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            setcbb_ProductID();
+        }
+
+        private void LoadLaptopData()
+        {
+            ClearDataGridViewData();
+            LaptopBLL laptopBLL = new LaptopBLL();
+            DataTable dtt = laptopBLL.GetAllLaptopsDataTable();
+            dgv_Product.DataSource = dtt;
+            dgv_Product.ReadOnly = true;
+            dgv_Product.AllowUserToAddRows = false;
+            dgv_Product.AllowUserToDeleteRows = false;
+            dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
+            dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
+            dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dgv_Product.Columns["specification"].HeaderText = "Thông số kỹ thuật";
+            dgv_Product.Columns["weight"].HeaderText = "Trọng lượng";
+            dgv_Product.Columns["screenSize"].HeaderText = "Kích cỡ màn hình";
+            dgv_Product.Columns["colour"].HeaderText = "Màu sắc";
+            dgv_Product.Columns["price"].HeaderText = "Giá";
+            dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            setcbb_ProductID();
+        }
+
+        private void LoadAccessoriesData()
+        {
+            ClearDataGridViewData();
+            AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
+            DataTable dttt = accessoriesBLL.GetAllAccessoriesDataTable();
+            dgv_Product.ReadOnly = true;
+            dgv_Product.AllowUserToAddRows = false;
+            dgv_Product.AllowUserToDeleteRows = false;
+            dgv_Product.DataSource = dttt;
+            dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
+            dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
+            dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dgv_Product.Columns["overview"].HeaderText = "Mô tả";
+            dgv_Product.Columns["type"].HeaderText = "Loại sản phẩm";
+            dgv_Product.Columns["price"].HeaderText = "Giá";
+            dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            setcbb_ProductID();
         }
 
         private void dgv_Order_CellContentClick(object sender, DataGridViewCellEventArgs e)

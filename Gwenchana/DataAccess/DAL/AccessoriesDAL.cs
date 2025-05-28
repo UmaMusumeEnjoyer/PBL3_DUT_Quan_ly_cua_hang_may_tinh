@@ -99,5 +99,42 @@ namespace Gwenchana.DataAccess.DAL
                 return false;
             }
         }
+
+
+        public bool AddAccessories(DTO.Accessories accessories, DTO.Product product)
+        {
+            try
+            {
+                // Thêm thông tin vào bảng Product
+                string sqlProduct = "INSERT INTO Product (productName, Manufacturer, price, stockQuantity, Supplier_Id) " +
+                                    "VALUES (@productName, @Manufacturer, @price, @stockQuantity, @Supplier_Id); " +
+                                    "SELECT SCOPE_IDENTITY();"; // Lấy ID mới được tạo
+                var parametersProduct = new[]
+                {
+                    new SqlParameter("@productName", product.productName),
+                    new SqlParameter("@Manufacturer", product.Manufacturer),
+                    new SqlParameter("@price", product.price),
+                    new SqlParameter("@stockQuantity", product.stockQuantity),
+                    new SqlParameter("@Supplier_Id", product.Supplier_Id)
+                };
+                // Thực thi câu lệnh SQL và lấy ID mới
+                int newProductId = Convert.ToInt32(db.ExecuteScalar(sqlProduct, parametersProduct));
+                // Thêm thông tin vào bảng Accessories với ID mới
+                string sqlAccessories = "INSERT INTO Accessories (Product_Id, overview, type) " +
+                                        "VALUES (@Product_Id, @overview, @type)";
+                var parametersAccessories = new[]
+                {
+                    new SqlParameter("@Product_Id", newProductId),
+                    new SqlParameter("@overview", accessories.Overview),
+                    new SqlParameter("@type", accessories.Type)
+                };
+                return db.ExecuteNonQuery(sqlAccessories, parametersAccessories) > 0;
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Lỗi: " + ex.Message);
+                return false;
+            }
+        }
     }
 }

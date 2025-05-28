@@ -196,6 +196,41 @@ namespace Gwenchana
 
         private void btn_AccessoriesSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // 1. Lấy dữ liệu từ các control trên form
+                var product = new Product
+                {
+                    Supplier_Id = Convert.ToInt32(ccb_NhaCungCap3.SelectedValue),
+                    productName = txt_AccessoriesName.Text.Trim(),
+                    price = decimal.Parse(txt_AccessoriesPrice.Text),
+                    //stockQuantity = int.Parse(.Text),
+                    Manufacturer = txt_AccessoriesManufacturer.Text.Trim()
+                };
+                var accessories = new Accessories
+                {
+                    Type = txt_AccessoriesType.Text.Trim(),
+                    Overview = txt_AccessoriesOverview.Text.Trim()
+
+                };
+                // 2. Thêm vào database qua DAL
+                var accessoriesDAL = new AccessoriesDAL();
+                bool result = accessoriesDAL.AddAccessories(accessories, product);
+                // 3. Thông báo kết quả cho người dùng
+                if (result)
+                {
+                    MessageBox.Show("Thêm phụ kiện thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm phụ kiện thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             this.Close();
         }
 
