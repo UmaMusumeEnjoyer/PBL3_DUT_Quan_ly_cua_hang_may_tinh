@@ -36,7 +36,7 @@ namespace Gwenchana
             dtpStartDate.Enabled = false;
             dtpEndDate.Enabled = false;
             //tabControl1.TabPages.Remove(tabPagePetDetail);
-            btnClose.Click += delegate { this.Close(); };
+            //btnClose.Click += delegate { this.Close(); };
         }
 
         private void LoadData()

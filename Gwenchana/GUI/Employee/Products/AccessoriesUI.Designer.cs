@@ -29,7 +29,7 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -150,6 +150,7 @@ namespace Gwenchana
             // 
             this.cbb_LaptopSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_LaptopSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_LaptopSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cbb_LaptopSearch.FormattingEnabled = true;
             this.cbb_LaptopSearch.Items.AddRange(new object[] {
@@ -158,7 +159,7 @@ namespace Gwenchana
             "Loại"});
             this.cbb_LaptopSearch.Location = new System.Drawing.Point(627, 8);
             this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
-            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 28);
+            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 27);
             this.cbb_LaptopSearch.TabIndex = 11;
             // 
             // dataGridView
@@ -170,14 +171,14 @@ namespace Gwenchana
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 78);
             this.dataGridView.Name = "dataGridView";
@@ -243,6 +244,7 @@ namespace Gwenchana
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(24, 46);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(638, 26);
@@ -287,6 +289,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesstockQuantity
             // 
+            this.txt_AccessoriesstockQuantity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesstockQuantity.Location = new System.Drawing.Point(470, 54);
             this.txt_AccessoriesstockQuantity.Name = "txt_AccessoriesstockQuantity";
             this.txt_AccessoriesstockQuantity.Size = new System.Drawing.Size(183, 29);
@@ -304,6 +307,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesType
             // 
+            this.txt_AccessoriesType.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesType.Location = new System.Drawing.Point(260, 54);
             this.txt_AccessoriesType.Name = "txt_AccessoriesType";
             this.txt_AccessoriesType.Size = new System.Drawing.Size(183, 29);
@@ -321,6 +325,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesPrice
             // 
+            this.txt_AccessoriesPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesPrice.Location = new System.Drawing.Point(63, 263);
             this.txt_AccessoriesPrice.Name = "txt_AccessoriesPrice";
             this.txt_AccessoriesPrice.Size = new System.Drawing.Size(380, 29);
@@ -364,6 +369,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesOverview
             // 
+            this.txt_AccessoriesOverview.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesOverview.Location = new System.Drawing.Point(63, 198);
             this.txt_AccessoriesOverview.Name = "txt_AccessoriesOverview";
             this.txt_AccessoriesOverview.Size = new System.Drawing.Size(590, 29);
@@ -381,6 +387,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesManufacturer
             // 
+            this.txt_AccessoriesManufacturer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesManufacturer.Location = new System.Drawing.Point(399, 125);
             this.txt_AccessoriesManufacturer.Name = "txt_AccessoriesManufacturer";
             this.txt_AccessoriesManufacturer.Size = new System.Drawing.Size(252, 29);
@@ -398,6 +405,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesName
             // 
+            this.txt_AccessoriesName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesName.Location = new System.Drawing.Point(63, 125);
             this.txt_AccessoriesName.Name = "txt_AccessoriesName";
             this.txt_AccessoriesName.Size = new System.Drawing.Size(251, 29);
@@ -416,6 +424,7 @@ namespace Gwenchana
             // 
             // txt_AccessoriesID
             // 
+            this.txt_AccessoriesID.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesID.Location = new System.Drawing.Point(63, 54);
             this.txt_AccessoriesID.Name = "txt_AccessoriesID";
             this.txt_AccessoriesID.Size = new System.Drawing.Size(154, 29);

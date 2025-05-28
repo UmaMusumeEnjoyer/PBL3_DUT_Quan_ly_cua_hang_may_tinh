@@ -38,11 +38,11 @@ namespace Gwenchana
             this.label2 = new System.Windows.Forms.Label();
             this.exit = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.signup_loginBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,7 +80,7 @@ namespace Gwenchana
             // 
             // signup_password
             // 
-            this.signup_password.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_password.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_password.Location = new System.Drawing.Point(294, 217);
             this.signup_password.Multiline = true;
             this.signup_password.Name = "signup_password";
@@ -100,7 +100,7 @@ namespace Gwenchana
             // 
             // signup_username
             // 
-            this.signup_username.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signup_username.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_username.Location = new System.Drawing.Point(294, 153);
             this.signup_username.Multiline = true;
             this.signup_username.Name = "signup_username";
@@ -154,24 +154,6 @@ namespace Gwenchana
             this.panel1.Size = new System.Drawing.Size(267, 400);
             this.panel1.TabIndex = 9;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Gwenchana.Properties.Resources.Trường_Đại_học_Bách_khoa__Đại_học_Đà_Nẵng_svg__1_;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 56);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(198, 148);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -212,6 +194,24 @@ namespace Gwenchana
             this.label5.Size = new System.Drawing.Size(165, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "Đăng nhập vào tài khoản của bạn";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Gwenchana.Properties.Resources.Trường_Đại_học_Bách_khoa__Đại_học_Đà_Nẵng_svg__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(31, 56);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(198, 148);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // RegisterForm
             // 

@@ -31,7 +31,6 @@ namespace Gwenchana
         {
             this.tttt = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -80,23 +79,12 @@ namespace Gwenchana
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.tttt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 56);
             this.panel1.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(825, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(37, 30);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -438,7 +426,6 @@ namespace Gwenchana
         private System.Windows.Forms.TextBox txt_LaptopName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_LaptopID;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lb_Email;
         private System.Windows.Forms.TextBox btn_Address;
         private System.Windows.Forms.ComboBox cbb_LaptopSearch;

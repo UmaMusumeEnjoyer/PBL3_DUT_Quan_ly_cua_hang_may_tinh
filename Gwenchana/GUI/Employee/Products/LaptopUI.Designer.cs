@@ -29,7 +29,7 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -154,6 +154,7 @@ namespace Gwenchana
             // 
             this.cbb_LaptopSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_LaptopSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_LaptopSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cbb_LaptopSearch.FormattingEnabled = true;
             this.cbb_LaptopSearch.Items.AddRange(new object[] {
@@ -163,7 +164,7 @@ namespace Gwenchana
             "Màu sắc"});
             this.cbb_LaptopSearch.Location = new System.Drawing.Point(601, 6);
             this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
-            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 28);
+            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 27);
             this.cbb_LaptopSearch.TabIndex = 8;
             this.cbb_LaptopSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.cbb_LaptopSearch.TextUpdate += new System.EventHandler(this.cbb_LaptopSearch_TextUpdate);
@@ -177,14 +178,14 @@ namespace Gwenchana
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 73);
             this.dataGridView.Name = "dataGridView";
@@ -249,6 +250,7 @@ namespace Gwenchana
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(24, 41);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(612, 26);
@@ -297,6 +299,7 @@ namespace Gwenchana
             // 
             // txt_LaptopColour
             // 
+            this.txt_LaptopColour.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopColour.Location = new System.Drawing.Point(672, 120);
             this.txt_LaptopColour.Name = "txt_LaptopColour";
             this.txt_LaptopColour.Size = new System.Drawing.Size(154, 29);
@@ -314,6 +317,7 @@ namespace Gwenchana
             // 
             // txt_stockQuantity
             // 
+            this.txt_stockQuantity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_stockQuantity.Location = new System.Drawing.Point(260, 54);
             this.txt_stockQuantity.Name = "txt_stockQuantity";
             this.txt_stockQuantity.Size = new System.Drawing.Size(154, 29);
@@ -331,6 +335,7 @@ namespace Gwenchana
             // 
             // txt_ScreenSize
             // 
+            this.txt_ScreenSize.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScreenSize.Location = new System.Drawing.Point(464, 120);
             this.txt_ScreenSize.Name = "txt_ScreenSize";
             this.txt_ScreenSize.Size = new System.Drawing.Size(183, 29);
@@ -348,6 +353,7 @@ namespace Gwenchana
             // 
             // txt_LaptopWeight
             // 
+            this.txt_LaptopWeight.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopWeight.Location = new System.Drawing.Point(267, 120);
             this.txt_LaptopWeight.Name = "txt_LaptopWeight";
             this.txt_LaptopWeight.Size = new System.Drawing.Size(154, 29);
@@ -366,6 +372,7 @@ namespace Gwenchana
             // 
             // txt_LaptopPrice
             // 
+            this.txt_LaptopPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopPrice.Location = new System.Drawing.Point(63, 263);
             this.txt_LaptopPrice.Name = "txt_LaptopPrice";
             this.txt_LaptopPrice.Size = new System.Drawing.Size(380, 29);
@@ -409,6 +416,7 @@ namespace Gwenchana
             // 
             // txt_Spetification
             // 
+            this.txt_Spetification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Spetification.Location = new System.Drawing.Point(63, 198);
             this.txt_Spetification.Name = "txt_Spetification";
             this.txt_Spetification.Size = new System.Drawing.Size(550, 29);
@@ -426,6 +434,7 @@ namespace Gwenchana
             // 
             // txt_Manufacturer
             // 
+            this.txt_Manufacturer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Manufacturer.Location = new System.Drawing.Point(63, 120);
             this.txt_Manufacturer.Name = "txt_Manufacturer";
             this.txt_Manufacturer.Size = new System.Drawing.Size(183, 29);
@@ -444,6 +453,7 @@ namespace Gwenchana
             // 
             // txt_LaptopName
             // 
+            this.txt_LaptopName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopName.Location = new System.Drawing.Point(464, 54);
             this.txt_LaptopName.Name = "txt_LaptopName";
             this.txt_LaptopName.Size = new System.Drawing.Size(183, 29);
@@ -462,6 +472,7 @@ namespace Gwenchana
             // 
             // txt_LaptopID
             // 
+            this.txt_LaptopID.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopID.Location = new System.Drawing.Point(63, 54);
             this.txt_LaptopID.Name = "txt_LaptopID";
             this.txt_LaptopID.Size = new System.Drawing.Size(154, 29);

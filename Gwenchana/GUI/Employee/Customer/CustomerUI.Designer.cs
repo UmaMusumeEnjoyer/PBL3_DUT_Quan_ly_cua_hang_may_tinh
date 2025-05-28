@@ -29,9 +29,9 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tttt = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
             this.btn_addCustomer = new System.Windows.Forms.Button();
@@ -68,34 +68,24 @@ namespace Gwenchana
             // tttt
             // 
             this.tttt.AutoSize = true;
-            this.tttt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tttt.Location = new System.Drawing.Point(53, 17);
+            this.tttt.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tttt.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tttt.Location = new System.Drawing.Point(22, 9);
             this.tttt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tttt.Name = "tttt";
-            this.tttt.Size = new System.Drawing.Size(201, 25);
+            this.tttt.Size = new System.Drawing.Size(317, 36);
             this.tttt.TabIndex = 0;
             this.tttt.Text = "Thông tin khách hàng";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
             this.panel1.Controls.Add(this.tttt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 56);
             this.panel1.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(825, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(37, 30);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -110,6 +100,7 @@ namespace Gwenchana
             // 
             // tabPagePetList
             // 
+            this.tabPagePetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
             this.tabPagePetList.Controls.Add(this.btn_addCustomer);
             this.tabPagePetList.Controls.Add(this.btn_ClearFilter);
             this.tabPagePetList.Controls.Add(this.label7);
@@ -126,7 +117,6 @@ namespace Gwenchana
             this.tabPagePetList.Size = new System.Drawing.Size(858, 378);
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
-            this.tabPagePetList.UseVisualStyleBackColor = true;
             // 
             // btn_addCustomer
             // 
@@ -153,10 +143,10 @@ namespace Gwenchana
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(512, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 20);
+            this.label7.Size = new System.Drawing.Size(80, 21);
             this.label7.TabIndex = 9;
             this.label7.Text = "Tiêu chí :";
             // 
@@ -183,8 +173,17 @@ namespace Gwenchana
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 73);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -194,10 +193,10 @@ namespace Gwenchana
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(96, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tìm kiếm : ";
             // 
@@ -425,7 +424,6 @@ namespace Gwenchana
         private System.Windows.Forms.TextBox txt_LaptopName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_LaptopID;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lb_Email;
         private System.Windows.Forms.TextBox btn_Address;
         private System.Windows.Forms.ComboBox cbb_LaptopSearch;
