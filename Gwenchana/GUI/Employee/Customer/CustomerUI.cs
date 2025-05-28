@@ -240,23 +240,19 @@ namespace Gwenchana
             string searchText = txtSearch.Text.Trim();
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
 
-            LaptopBLL laptopBLL = new LaptopBLL();
-            if (cbb_LaptopSearch.SelectedItem.ToString() == "Màu sắc")
+            //LaptopBLL laptopBLL = new LaptopBLL();
+            CustomerBLL customerBLL = new CustomerBLL();
+            if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
             {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
+                //dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
+                dataGridView.DataSource = customerBLL.GetAllCustomers().Where(c => c.customerName.Contains(searchText)).ToList();
             }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
+            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Số điện thoại")
             {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.productName.Contains(searchText)).ToList();
+                //dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.productName.Contains(searchText)).ToList();
+                dataGridView.DataSource = customerBLL.GetAllCustomers().Where(c => c.phoneNumber.Contains(searchText)).ToList();
             }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Manufacturer.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Cân nặng")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Weight ==Convert.ToDecimal(searchText)).ToList();
-            }
+
 
 
 

@@ -23,10 +23,10 @@ namespace Gwenchana.DataAccess.DAL
             {
                 list.Add(new Customer
                 {
-                    Customer_Id = Convert.ToInt32(row["Id"]),
-                    customerName = row["Name"].ToString(),
-                    email = row["Email"].ToString(),
-                    phoneNumber = row["PhoneNumber"].ToString(),
+                    Customer_Id = Convert.ToInt32(row["Customer_Id"]),
+                    customerName = row["customerName"].ToString(),
+                    email = row["email"].ToString(),
+                    phoneNumber = row["phoneNumber"].ToString(),
                     address = row["address"].ToString()
                 });
             }

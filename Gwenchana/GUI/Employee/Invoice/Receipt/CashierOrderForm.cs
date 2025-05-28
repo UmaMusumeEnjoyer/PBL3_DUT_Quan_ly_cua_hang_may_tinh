@@ -244,34 +244,33 @@ namespace Gwenchana
 
         private void cashierOrderForm_receiptBtn_Click(object sender, EventArgs e)
         {
-            Customer selectedCustomer = new Customer();
+            Customer selectedCustomer = null;
             using (var selectForm = new CustomerCashUI())
             {
                 if (selectForm.ShowDialog() == DialogResult.OK)
                 {
                     selectedCustomer = selectForm.currentCustomer;
                     MessageBox.Show("Khách hàng được chọn: " + selectedCustomer.customerName);
+
+                    EmployeeBLL employeeBLL = new EmployeeBLL();
+                    Employee currentEmployee = employeeBLL.GetEmployeeByAccountId(id);
+
+                    List<Product> selectedProducts = GetOrderedProductList();
+
+                    decimal finalTotal = GetFinalTotal();
+                    ReceiptBLL receiptBLL = new ReceiptBLL();
+                    bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts, finalTotal);
+                    if (!isSuccess)
+                    {
+                        MessageBox.Show("Tạo hóa đơn thành công!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tạo hóa đơn thất bại!");
+                    }
                 }
-            }
-
-            EmployeeBLL employeeBLL = new EmployeeBLL();
-            Employee currentEmployee = new Employee();
-            currentEmployee = employeeBLL.GetEmployeeByAccountId(id);
-
-            List<Product> selectedProducts = new List<Product>();
-            selectedProducts = GetOrderedProductList();
-
-            decimal finalTotal = GetFinalTotal();
-            ReceiptBLL receiptBLL = new ReceiptBLL();
-            bool isSuccess = receiptBLL.createReceipt(currentEmployee, selectedCustomer, selectedProducts, finalTotal);
-            if (!isSuccess)
-            {
-                MessageBox.Show("Tạo hóa đơn thành công!");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Tạo hóa đơn thất bại!");
+                // Nếu người dùng bấm Cancel hoặc đóng form thì KHÔNG tạo đơn, KHÔNG hiện ra thông báo!
             }
         }
 
