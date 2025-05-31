@@ -253,7 +253,7 @@ namespace Gwenchana
                 }
                 else
                 {
-                    message = "Xoá nhà phân phối thất bại.";
+                    message = "Xoá nhà phân phối thất bại, hãy xoá những sản phẩm của nhà phân phối này.";
                     MessageBox.Show(message);
                 }
                 tabControl1.TabPages.Add(tabPagePetList);

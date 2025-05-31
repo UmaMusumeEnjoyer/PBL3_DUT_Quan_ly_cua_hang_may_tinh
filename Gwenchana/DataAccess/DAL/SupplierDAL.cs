@@ -81,10 +81,18 @@ namespace Gwenchana.DataAccess.DAL
 
         public bool DeleteSupplier(int id)
         {
+            // Kiểm tra còn Product nào tham chiếu không
+            string checkProduct = "SELECT COUNT(*) FROM Product WHERE Supplier_Id = @Supplier_Id";
+            SqlParameter[] parameters = { new SqlParameter("@Supplier_Id", id) };
+            int count = (int)_db.ExecuteScalar(checkProduct, parameters);
+            if (count > 0)
+            {
+                // Còn sản phẩm, không cho xoá
+                return false;
+            }
+
+            // Nếu không còn, thực hiện xoá
             string sql = "DELETE FROM Supplier WHERE Supplier_Id = @Supplier_Id";
-            SqlParameter[] parameters = {
-                new SqlParameter("@Supplier_Id", id)
-            };
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
 
