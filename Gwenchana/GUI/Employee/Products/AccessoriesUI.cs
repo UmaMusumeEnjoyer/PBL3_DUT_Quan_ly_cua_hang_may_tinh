@@ -277,6 +277,11 @@ namespace Gwenchana
         {
             string searchText = txtSearch.Text.Trim();
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(searchText))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             AccessoriesBLL laptopBLL = new AccessoriesBLL();
 
@@ -291,6 +296,11 @@ namespace Gwenchana
             else if (cbb_LaptopSearch.SelectedItem.ToString() == "Loại")
             {
                 dataGridView.DataSource = laptopBLL.GetAllAccessoriesList().Where(l => l.Type.Contains(searchText)).ToList();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
         }
 

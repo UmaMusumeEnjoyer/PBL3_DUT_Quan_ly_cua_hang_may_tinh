@@ -286,7 +286,19 @@ namespace Gwenchana
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
+
+            // Kiểm tra xem người dùng đã nhập từ khóa tìm kiếm và chọn loại tìm kiếm chưa
+            if (cbb_LaptopSearch.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(searchText) || cbb_LaptopSearch.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm và chọn loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             LaptopBLL laptopBLL = new LaptopBLL();
             if (cbb_LaptopSearch.SelectedItem.ToString() == "Màu sắc")
@@ -306,6 +318,7 @@ namespace Gwenchana
             {
                 dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Weight ==Convert.ToDecimal(searchText)).ToList();
             }
+
 
 
 

@@ -292,6 +292,11 @@ namespace Gwenchana
             {
                 dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.Spetification.Contains(searchText)).ToList();
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void txt_SupplierPhone_TextChanged(object sender, EventArgs e)
