@@ -138,6 +138,7 @@ namespace Gwenchana
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(20, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 21);

@@ -97,8 +97,8 @@ namespace Gwenchana.DataAccess.DAL
             string sql = "SELECT " +
                         "a.*, " +
                         "CASE WHEN EXISTS " +
-                        "(SELECT 1 FROM employee e WHERE e.account_Id = a.id) THEN 'Có tồn tại' " +
-                        "ELSE 'Không tồn tại' " +
+                        "(SELECT 1 FROM employee e WHERE e.account_Id = a.id) THEN 'YES' " +
+                        "ELSE 'NO' " +
                         "END AS TrangThaiTonTai " +
                         "FROM account a " +
                         "WHERE a.role <> 'admin'";
