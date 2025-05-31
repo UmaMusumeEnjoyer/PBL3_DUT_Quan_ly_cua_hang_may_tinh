@@ -43,6 +43,7 @@ namespace Gwenchana
             dgv_Order.ReadOnly = true;
             dgv_Order.AllowUserToAddRows = false;
             totalAmount = 0;
+            button2.Enabled = false; // Disable the export button initially
         }
 
         public void ClearDataGridViewData()
@@ -273,6 +274,8 @@ namespace Gwenchana
                     {
                         MessageBox.Show("Tạo hóa đơn thành công!");
                         //this.Close();
+                        // In hóa đơn
+                        button2.Enabled = true; // Kích hoạt nút xuất PDF
                     }
                     else
                     {
@@ -463,7 +466,7 @@ namespace Gwenchana
             totalTable.AddCell(new PdfPCell(new Phrase("Tổng tiền:", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_LEFT });
             totalTable.AddCell(new PdfPCell(new Phrase(tongTien.ToString("N0") + " VNĐ", vietnameseFont)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT });
 
-            totalTable.AddCell(new PdfPCell(new Phrase("Chiết khấu (" + salePercent.ToString("N0") + "%):", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_LEFT });
+            totalTable.AddCell(new PdfPCell(new Phrase("Giảm giá (" + salePercent.ToString("N0") + "%):", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_LEFT });
             totalTable.AddCell(new PdfPCell(new Phrase("-" + chietKhau.ToString("N0") + " VNĐ", vietnameseFont)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT });
 
             totalTable.AddCell(new PdfPCell(new Phrase("Tiền cần phải trả:", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_LEFT });

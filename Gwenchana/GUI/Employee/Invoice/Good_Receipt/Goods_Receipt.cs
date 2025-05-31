@@ -276,6 +276,11 @@ namespace Gwenchana
             string employeeName = "";
             string supplierName = "";
 
+            if (cbb_Goods_Receipt_Search.SelectedItem != null)
+            {
+                employeeName = cbb_Goods_Receipt_Search.SelectedItem.ToString();
+            }
+
 
             Goods_ReceiptBLL goodsReceiptBLL = new Goods_ReceiptBLL();
             

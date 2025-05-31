@@ -244,6 +244,11 @@ namespace Gwenchana
         {
             string searchText = txtSearch.Text.Trim();
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(searchText) && cbb_ReceiptFilter.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm hoặc chọn bộ lọc.");
+                return;
+            }
 
             ReceiptBLL laptopBLL = new ReceiptBLL();
             if (cbb_ReceiptFilter.SelectedItem.ToString() == "Tên nhân viên")

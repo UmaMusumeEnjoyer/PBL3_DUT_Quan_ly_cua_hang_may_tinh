@@ -241,6 +241,12 @@ namespace Gwenchana
             string searchText = txtSearch.Text.Trim();
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
 
+            if (string.IsNullOrEmpty(searchText) || cbb_LaptopSearch.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm và nhập từ khóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             //LaptopBLL laptopBLL = new LaptopBLL();
             CustomerBLL customerBLL = new CustomerBLL();
             if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
