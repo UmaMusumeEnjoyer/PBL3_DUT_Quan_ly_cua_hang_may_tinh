@@ -320,11 +320,11 @@ namespace Gwenchana
 
         private void ExportInvoiceToPDF(string filePath)
         {
-            // Đường dẫn font chữ hỗ trợ tiếng Việt, nên để sẵn file arial.ttf trong thư mục chạy ứng dụng hoặc dùng font hệ thống
+            // Đường dẫn font Times New Roman chuẩn trên Windows
             string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "times.ttf");
             if (!File.Exists(fontPath))
             {
-                MessageBox.Show("Không tìm thấy font Arial. Vui lòng đảm bảo file arial.ttf có trong thư mục C:\\Windows\\Fonts.");
+                MessageBox.Show("Không tìm thấy font Times New Roman (times.ttf). Vui lòng đảm bảo file này có trong thư mục C:\\Windows\\Fonts.");
                 return;
             }
             BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
@@ -335,26 +335,44 @@ namespace Gwenchana
             string storeName = "CỬA HÀNG MÁY TÍNH BÁCH KHOA ĐÀ NẴNG";
             string storeAddress = "54 Nguyễn Lương Bằng, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng";
             string storePhone = "0123 456 789";
-            //string invoiceNumber = (lbl_invoiceId != null) ? lbl_invoiceId.Text : ""; // đổi lại nếu tên control khác
             DateTime invoiceDate = DateTime.Now;
             string employeeName = CurrentEmployee.employeeName;
             string customerName = (currentCustomer != null) ? currentCustomer.customerName : "";
 
             // Lấy danh sách sản phẩm từ DataGridView
             var products = new List<dynamic>();
+            decimal tongTien = 0;
             foreach (DataGridViewRow row in dgv_Order.Rows)
             {
                 if (row.IsNewRow) continue;
+                decimal price = row.Cells["price"].Value != null ? Convert.ToDecimal(row.Cells["price"].Value) : 0;
+                int quantity = row.Cells["quantity"].Value != null ? Convert.ToInt32(row.Cells["quantity"].Value) : 0;
+                decimal total = row.Cells["totalPrice"].Value != null ? Convert.ToDecimal(row.Cells["totalPrice"].Value) : 0;
                 products.Add(new
                 {
                     Id = row.Cells["Product_Id"].Value?.ToString() ?? "",
                     Name = row.Cells["productName"].Value?.ToString() ?? "",
-                    Price = row.Cells["price"].Value != null ? Convert.ToDecimal(row.Cells["price"].Value) : 0,
-                    Quantity = row.Cells["quantity"].Value != null ? Convert.ToInt32(row.Cells["quantity"].Value) : 0,
-                    Total = row.Cells["totalPrice"].Value != null ? Convert.ToDecimal(row.Cells["totalPrice"].Value) : 0
+                    Price = price,
+                    Quantity = quantity,
+                    Total = total
                 });
+                tongTien += total;
             }
-            decimal finalTotal = totalAmount;
+
+            // Lấy chiết khấu phần trăm từ textbox (nếu có)
+            decimal chietKhau = 0;
+            decimal salePercent = 0;
+            decimal.TryParse(txt_salePercent?.Text, out salePercent);
+            if (salePercent > 0 && salePercent <= 100)
+            {
+                chietKhau = tongTien * salePercent / 100;
+            }
+
+            // Tiền cần phải trả
+            decimal tienCanTra = tongTien - chietKhau;
+
+            // Nếu bạn có biến/label/txt_finalTotal chứa tiền cần trả thực tế thì dùng nó thay vì tính lại.
+            // decimal.TryParse(txt_finalTotal.Text, out tienCanTra);
 
             // Bắt đầu tạo file PDF
             Document doc = new Document(PageSize.A5, 20, 20, 20, 20);
@@ -379,8 +397,6 @@ namespace Gwenchana
             PdfPTable infoTable = new PdfPTable(2);
             infoTable.WidthPercentage = 100;
             infoTable.SetWidths(new float[] { 30f, 70f });
-            //infoTable.AddCell(new PdfPCell(new Phrase("Số hóa đơn:", vietnameseFontBold)) { Border = 0 });
-            //infoTable.AddCell(new PdfPCell(new Phrase(invoiceNumber, vietnameseFont)) { Border = 0 });
             infoTable.AddCell(new PdfPCell(new Phrase("Ngày:", vietnameseFontBold)) { Border = 0 });
             infoTable.AddCell(new PdfPCell(new Phrase(invoiceDate.ToString("dd/MM/yyyy"), vietnameseFont)) { Border = 0 });
             infoTable.AddCell(new PdfPCell(new Phrase("Nhân viên:", vietnameseFontBold)) { Border = 0 });
@@ -416,25 +432,49 @@ namespace Gwenchana
 
             doc.Add(new Paragraph("--------------------------------------------------------", vietnameseFont));
 
-            // Tổng tiền
-            Paragraph total = new Paragraph("TỔNG CỘNG: " + finalTotal.ToString("N0") + " VNĐ", vietnameseFontBold)
-            {
-                Alignment = Element.ALIGN_RIGHT,
-                SpacingBefore = 5,
-                SpacingAfter = 10
-            };
-            doc.Add(total);
+            // Tổng tiền, chiết khấu, tiền phải trả
+            PdfPTable totalTable = new PdfPTable(2);
+            totalTable.WidthPercentage = 60;
+            totalTable.HorizontalAlignment = Element.ALIGN_RIGHT;
+            totalTable.SetWidths(new float[] { 50f, 50f });
+
+            totalTable.AddCell(new PdfPCell(new Phrase("Tổng tiền:", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_LEFT });
+            totalTable.AddCell(new PdfPCell(new Phrase(tongTien.ToString("N0") + " VNĐ", vietnameseFont)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+            totalTable.AddCell(new PdfPCell(new Phrase("Chiết khấu (" + salePercent.ToString("N0") + "%):", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_LEFT });
+            totalTable.AddCell(new PdfPCell(new Phrase("-" + chietKhau.ToString("N0") + " VNĐ", vietnameseFont)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+            totalTable.AddCell(new PdfPCell(new Phrase("Tiền cần phải trả:", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_LEFT });
+            totalTable.AddCell(new PdfPCell(new Phrase(tienCanTra.ToString("N0") + " VNĐ", vietnameseFontBold)) { Border = 0, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+            doc.Add(totalTable);
 
             // Lời cảm ơn
             Paragraph thanks = new Paragraph("Cảm ơn quý khách. Hẹn gặp lại!", vietnameseFont)
             {
                 Alignment = Element.ALIGN_CENTER,
-                SpacingBefore = 10
+                SpacingBefore = 12
             };
             doc.Add(thanks);
 
             doc.Close();
         }
+
+
+        private void cashierOrderForm_clearBtn_Click(object sender, EventArgs e)
+        {
+            dgv_Order.Rows.Clear();
+            totalAmount = 0;
+            lb_totalAmount.Text = "0";
+            txt_finalTotal.Text = "0";
+            txt_salePercent.Text = "";
+            txt_productName.Text = "";
+            txt_productPrice.Text = "";
+            cbb_ProductID.Items.Clear();
+            ccb_ProductFilter.SelectedIndex = -1;
+            ClearDataGridViewData();
+        }
+
+
     }
-    
 }

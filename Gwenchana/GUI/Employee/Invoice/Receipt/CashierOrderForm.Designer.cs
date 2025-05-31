@@ -53,6 +53,7 @@ namespace Gwenchana
             this.ccb_ProductFilter = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.cashierOrderForm_receiptBtn = new System.Windows.Forms.Button();
             this.txt_finalTotal = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@ namespace Gwenchana
             this.lb_totalAmount = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_Order = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).BeginInit();
             this.panel2.SuspendLayout();
@@ -320,6 +320,20 @@ namespace Gwenchana
             this.panel3.Size = new System.Drawing.Size(416, 695);
             this.panel3.TabIndex = 2;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(21, 616);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 49);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Lập hoá đơn";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // cashierOrderForm_receiptBtn
             // 
             this.cashierOrderForm_receiptBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
@@ -343,6 +357,7 @@ namespace Gwenchana
             this.txt_finalTotal.Size = new System.Drawing.Size(17, 17);
             this.txt_finalTotal.TabIndex = 26;
             this.txt_finalTotal.Text = "0";
+            //this.txt_finalTotal.Click += new System.EventHandler(this.txt_finalTotal_Click);
             // 
             // label13
             // 
@@ -423,20 +438,6 @@ namespace Gwenchana
             this.dgv_Order.RowHeadersVisible = false;
             this.dgv_Order.Size = new System.Drawing.Size(379, 426);
             this.dgv_Order.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(21, 616);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 49);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Lập hoá đơn";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // CashierOrderForm
             // 
