@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gwenchana.DataAccess.DTO
 {
@@ -15,6 +11,9 @@ namespace Gwenchana.DataAccess.DTO
         public int stockQuantity { get; set; }
         public string Manufacturer { get; set; }
 
+        
+        // Lưu số lượng sản phẩm KHÁCH HÀNG MUỐN MUA (không phải số lượng tồn kho)
+        // [NotMapped]
         public int? quantity { get; set; }
     }
 }
