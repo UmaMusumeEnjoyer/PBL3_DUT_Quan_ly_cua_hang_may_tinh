@@ -371,26 +371,48 @@ namespace Gwenchana
             // Tiền cần phải trả
             decimal tienCanTra = tongTien - chietKhau;
 
-            // Nếu bạn có biến/label/txt_finalTotal chứa tiền cần trả thực tế thì dùng nó thay vì tính lại.
-            // decimal.TryParse(txt_finalTotal.Text, out tienCanTra);
-
             // Bắt đầu tạo file PDF
             Document doc = new Document(PageSize.A5, 20, 20, 20, 20);
             PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
             doc.Open();
 
-            // Tiêu đề
-            Paragraph title = new Paragraph("HÓA ĐƠN BÁN HÀNG", vietnameseFontBold)
-            {
-                Alignment = Element.ALIGN_CENTER,
-                SpacingAfter = 8
-            };
-            doc.Add(title);
+            // === THÊM LOGO VÀ THÔNG TIN CỬA HÀNG CẠNH NHAU ===
+            //string logoPath = Path.Combine(Application.StartupPath, "logo.png"); // Đặt file logo.png cùng thư mục exe
+            string logoPath = Path.Combine(Application.StartupPath, "Pictures", "logo.png");
+            PdfPTable headerTable = new PdfPTable(2);
+            headerTable.WidthPercentage = 100;
+            headerTable.SetWidths(new float[] { 20f, 80f }); // Cột ảnh : cột chữ
 
-            // Thông tin cửa hàng
-            doc.Add(new Paragraph(storeName, vietnameseFontBold) { Alignment = Element.ALIGN_CENTER });
-            doc.Add(new Paragraph(storeAddress, vietnameseFont) { Alignment = Element.ALIGN_CENTER });
-            doc.Add(new Paragraph("Điện thoại: " + storePhone, vietnameseFont) { Alignment = Element.ALIGN_CENTER });
+            // Cột 1: Logo
+            if (File.Exists(logoPath))
+            {
+                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(logoPath);
+                logo.ScaleAbsolute(60f, 60f);
+                PdfPCell logoCell = new PdfPCell(logo);
+                logoCell.Border = 0;
+                logoCell.HorizontalAlignment = Element.ALIGN_LEFT;
+                logoCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                headerTable.AddCell(logoCell);
+            }
+            else
+            {
+                PdfPCell emptyCell = new PdfPCell(new Phrase(""));
+                emptyCell.Border = 0;
+                headerTable.AddCell(emptyCell);
+            }
+
+            // Cột 2: Các dòng chữ tiêu đề
+            PdfPCell infoCell = new PdfPCell();
+            infoCell.Border = 0;
+            infoCell.HorizontalAlignment = Element.ALIGN_LEFT;
+            infoCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            infoCell.AddElement(new Paragraph("HÓA ĐƠN BÁN HÀNG", vietnameseFontBold));
+            infoCell.AddElement(new Paragraph(storeName, vietnameseFontBold));
+            infoCell.AddElement(new Paragraph(storeAddress, vietnameseFont));
+            infoCell.AddElement(new Paragraph("Điện thoại: " + storePhone, vietnameseFont));
+            headerTable.AddCell(infoCell);
+
+            doc.Add(headerTable);
             doc.Add(new Paragraph("--------------------------------------------------------", vietnameseFont));
 
             // Thông tin hóa đơn

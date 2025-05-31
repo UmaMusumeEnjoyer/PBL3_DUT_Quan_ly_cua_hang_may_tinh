@@ -311,6 +311,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pictures\logo.png" />
     <Content Include="Pictures\order.png" />
     <None Include="Resources\order.png" />
     <None Include="Resources\laptop.png" />
