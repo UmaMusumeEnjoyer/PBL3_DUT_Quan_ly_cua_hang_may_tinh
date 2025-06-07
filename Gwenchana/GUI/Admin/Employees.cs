@@ -236,14 +236,20 @@ namespace Gwenchana
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < dataGridView.Rows.Count; i++)
+            bool found = false;
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
                 if (dataGridView.Rows[i].Cells[1].Value.ToString().Contains(txtSearch.Text))
                 {
+                    found = true;
                     dataGridView.Rows[i].Selected = true;
                     dataGridView.CurrentCell = dataGridView.Rows[i].Cells[1];
                     break;
                 }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên với tên: " + txtSearch.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
