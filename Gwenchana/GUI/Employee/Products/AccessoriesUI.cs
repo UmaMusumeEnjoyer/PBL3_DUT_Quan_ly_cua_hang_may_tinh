@@ -351,5 +351,10 @@ namespace Gwenchana
             txtSearch.Clear();
             LoadData();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
