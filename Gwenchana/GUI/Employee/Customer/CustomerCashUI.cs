@@ -23,6 +23,7 @@ namespace Gwenchana
         private bool isEdit;
         private string button;
         public Customer currentCustomer { get; set; }
+        private DataTable customerData;
 
 
         //Constructor
@@ -33,17 +34,14 @@ namespace Gwenchana
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
             
-
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
         }
 
         private void LoadData()
         {
             CustomerBLL customerBLL = new CustomerBLL();
-            DataTable dt = customerBLL.GetAllCustomersDataTable();
+            customerData = customerBLL.GetAllCustomersDataTable();
 
-            dataGridView.DataSource = dt;
+            dataGridView.DataSource = customerData;
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
@@ -239,30 +237,37 @@ namespace Gwenchana
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-            //string a = cbb_LaptopSearch.SelectedItem.ToString();
-
-            if (string.IsNullOrEmpty(searchText) || cbb_LaptopSearch.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(searchText))
             {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm và nhập từ khóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            //LaptopBLL laptopBLL = new LaptopBLL();
-            CustomerBLL customerBLL = new CustomerBLL();
-            if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
+            if (customerData == null) LoadData();
+
+            string filter = "";
+            if (cbb_LaptopSearch.SelectedItem == null)
             {
-                //dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
-                dataGridView.DataSource = customerBLL.GetAllCustomers().Where(c => c.customerName.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Số điện thoại")
-            {
-                //dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.productName.Contains(searchText)).ToList();
-                dataGridView.DataSource = customerBLL.GetAllCustomers().Where(c => c.phoneNumber.Contains(searchText)).ToList();
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            switch (cbb_LaptopSearch.SelectedItem.ToString())
+            {
+                case "Tên":
+                    filter = $"customerName LIKE '%{searchText.Replace("'", "''")}%'";
+                    break;
+                case "Số điện thoại":
+                    filter = $"phoneNumber LIKE '%{searchText.Replace("'", "''")}%'";
+                    break;
+                default:
+                    MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+            }
 
-
-            
+            DataView dv = new DataView(customerData);
+            dv.RowFilter = filter;
+            dataGridView.DataSource = dv;
         }
 
         private void txt_Manufacturer_TextChanged(object sender, EventArgs e)
