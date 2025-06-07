@@ -377,17 +377,44 @@ namespace Gwenchana
             txt_AccessoriesstockQuantity.Enabled = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            tabControl1.TabPages.Add(tabPagePetList);
-            tabControl1.TabPages.Remove(tabPagePetDetail);
-            tabControl1.SelectedTab = tabPagePetList;
-            LoadData();
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
-            ResetFormState();
+            if (!tabControl1.TabPages.Contains(tabPagePetList))
+                tabControl1.TabPages.Add(tabPagePetList);
+            if (tabControl1.TabPages.Contains(tabPagePetDetail))
+                tabControl1.TabPages.Remove(tabPagePetDetail);
+            tabControl1.SelectedTab = tabPagePetList;
+
+
+            // Hiển thị lại các nút Save và Cancel
+            btnSave.Visible = true;
+            btnCancel.Visible = true;
+            button2.Visible = false; // Ẩn nút "Xem chi tiết" sau khi đã xem xong
+            // Đặt lại trạng thái của các ô nhập liệu về mặc định
+            txt_AccessoriesID.Clear();
+            txt_AccessoriesName.Clear();
+            txt_AccessoriesManufacturer.Clear();
+            txt_AccessoriesOverview.Clear();
+            txt_AccessoriesType.Clear();
+            txt_AccessoriesPrice.Clear();
+            txt_AccessoriesstockQuantity.Clear();
+            // Đặt lại màu sắc và trạng thái của các ô nhập liệu
+            txt_AccessoriesID.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesID.Enabled = true;
+            //label3.ForeColor = SystemColors.ControlText;
+            txt_AccessoriesName.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesName.Enabled = true;
+            txt_AccessoriesManufacturer.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesManufacturer.Enabled = true;
+            txt_AccessoriesOverview.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesOverview.Enabled = true;
+            txt_AccessoriesType.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesType.Enabled = true;
+            txt_AccessoriesPrice.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesPrice.Enabled = true;
+            txt_AccessoriesstockQuantity.ForeColor = SystemColors.WindowText;
+            txt_AccessoriesstockQuantity.Enabled = true;
+
         }
     }
 }
