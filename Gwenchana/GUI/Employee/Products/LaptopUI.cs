@@ -23,7 +23,7 @@ namespace Gwenchana
         private bool isEdit;
         private string button;
 
-
+        private DataTable laptopData;
         //Constructor
         public LaptopUI()
         {
@@ -40,11 +40,13 @@ namespace Gwenchana
         private void LoadData()
         {
             LaptopBLL laptopBLL = new LaptopBLL();
-            DataTable dt = laptopBLL.GetAllLaptopsDataTable();
-            dataGridView.DataSource = dt;
+            laptopData = laptopBLL.GetAllLaptopsDataTable();
+            
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.DataSource = laptopData;
+
             dataGridView.Columns["Product_Id"].Visible = false;
             dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
             dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
@@ -286,42 +288,43 @@ namespace Gwenchana
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-
-            // Kiểm tra xem người dùng đã nhập từ khóa tìm kiếm và chọn loại tìm kiếm chưa
-            if (cbb_LaptopSearch.SelectedIndex == -1)
+            if (string.IsNullOrEmpty(searchText))
             {
-                MessageBox.Show("Vui lòng chọn loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            //string a = cbb_LaptopSearch.SelectedItem.ToString();
-            if (string.IsNullOrEmpty(searchText) || cbb_LaptopSearch.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm và chọn loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            LaptopBLL laptopBLL = new LaptopBLL();
-            if (cbb_LaptopSearch.SelectedItem.ToString() == "Màu sắc")
+            if (laptopData == null) LoadData();
+
+            string filter = "";
+            if (cbb_LaptopSearch.SelectedItem == null)
             {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Colour.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.productName.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Manufacturer.Contains(searchText)).ToList();
-            }
-            else if(cbb_LaptopSearch.SelectedItem.ToString() == "Cân nặng")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllLaptops().Where(l => l.Weight ==Convert.ToDecimal(searchText)).ToList();
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            switch (cbb_LaptopSearch.SelectedItem.ToString())
+            {
+                case "Màu sắc":
+                    filter = $"colour LIKE '%{searchText.Replace("'", "''")}%'";
+                    break;
+                case "Tên":
+                    filter = $"productName LIKE '%{searchText.Replace("'", "''")}%'";
+                    break;
+                case "Hãng sản xuất":
+                    filter = $"Manufacturer LIKE '%{searchText.Replace("'", "''")}%'";
+                    break;
+                case "Cân nặng":
+                    filter = $"CONVERT(Weight, 'System.String') LIKE '%{searchText.Replace("'", "''")}%'";
+                    break;
+                default:
+                    MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+            }
 
-
-
-            
+            DataView dv = new DataView(laptopData);
+            dv.RowFilter = filter;
+            dataGridView.DataSource = dv;
         }
 
         private void txt_Manufacturer_TextChanged(object sender, EventArgs e)
