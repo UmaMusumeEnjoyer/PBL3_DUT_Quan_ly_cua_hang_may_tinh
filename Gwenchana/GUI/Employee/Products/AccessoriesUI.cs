@@ -1,4 +1,6 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.DAL;
+using Gwenchana.DataAccess.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana
 {
@@ -32,17 +33,37 @@ namespace Gwenchana
             //tabControl1.TabPages.Remove(tabPagePetDetail);
             //btnClose.Click += delegate { this.Close(); };
         }
-
+        private DataTable accessoriesData;
         private void LoadData()
         {
+            //AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
+            //DataTable dt = accessoriesBLL.GetAllAccessoriesDataTable();
+            //dataGridView.ReadOnly = true;
+            //dataGridView.AllowUserToAddRows = false;
+            //dataGridView.AllowUserToDeleteRows = false;
+
+            //dataGridView.DataSource = dt;
+            //dataGridView.Columns["Product_Id"].Visible = false; // Ẩn cột Product_Id
+            //dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
+            //dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            //dataGridView.Columns["overview"].HeaderText = "Mô tả";
+            //dataGridView.Columns["type"].HeaderText = "Loại sản phẩm";
+            //dataGridView.Columns["price"].HeaderText = "Giá";
+            //dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            //dataGridView.Columns["Supplier_Id"].HeaderText = "Nhà cung cấp";
+            //dataGridView.Columns["supplierName"].Visible = false; // Ẩn cột supplierName
+
+            //dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
             AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
-            DataTable dt = accessoriesBLL.GetAllAccessoriesDataTable();
+            accessoriesData = accessoriesBLL.GetAllAccessoriesDataTable(); // Lưu lại DataTable gốc
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
-            
-            dataGridView.DataSource = dt;
-            dataGridView.Columns["Product_Id"].Visible = false; // Ẩn cột Product_Id
+
+            dataGridView.DataSource = accessoriesData; // Gán DataTable gốc
+
+            // Định dạng lại cột như ban đầu
+            dataGridView.Columns["Product_Id"].Visible = false;
             dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
             dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
             dataGridView.Columns["overview"].HeaderText = "Mô tả";
@@ -50,10 +71,8 @@ namespace Gwenchana
             dataGridView.Columns["price"].HeaderText = "Giá";
             dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
             dataGridView.Columns["Supplier_Id"].HeaderText = "Nhà cung cấp";
-            dataGridView.Columns["supplierName"].Visible = false; // Ẩn cột supplierName
-
+            dataGridView.Columns["supplierName"].Visible = false;
             dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
-
 
         }
 
@@ -276,32 +295,48 @@ namespace Gwenchana
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-            //string a = cbb_LaptopSearch.SelectedItem.ToString();
             if (string.IsNullOrEmpty(searchText))
             {
                 MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            AccessoriesBLL laptopBLL = new AccessoriesBLL();
+            // Sử dụng DataView để filter trên DataTable gốc
+            if (accessoriesData == null)
+            {
+                LoadData(); // Đảm bảo DataTable đã có dữ liệu
+            }
+
+            string filter = "";
+            if (cbb_LaptopSearch.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
             {
-                dataGridView.DataSource = laptopBLL.GetAllAccessoriesList().Where(l => l.productName.Contains(searchText)).ToList();
+                filter = $"productName LIKE '%{searchText.Replace("'", "''")}%'";
             }
             else if (cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
             {
-                dataGridView.DataSource = laptopBLL.GetAllAccessoriesList().Where(l => l.Manufacturer.Contains(searchText)).ToList();
+                filter = $"Manufacturer LIKE '%{searchText.Replace("'", "''")}%'";
             }
             else if (cbb_LaptopSearch.SelectedItem.ToString() == "Loại")
             {
-                dataGridView.DataSource = laptopBLL.GetAllAccessoriesList().Where(l => l.Type.Contains(searchText)).ToList();
+                filter = $"type LIKE '%{searchText.Replace("'", "''")}%'";
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            DataView dv = new DataView(accessoriesData);
+            dv.RowFilter = filter;
+            dataGridView.DataSource = dv;
+
+            // Các định dạng cột vẫn giữ nguyên vì DataTable/DataView không thay đổi cấu trúc cột
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
