@@ -32,9 +32,7 @@ namespace Gwenchana
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
             
-
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
+            button2.Visible = false; // Ẩn nút button1 nếu không cần thiết
         }
 
         private void LoadData()
@@ -352,6 +350,98 @@ namespace Gwenchana
         private void cbb_LaptopSearch_TextUpdate(object sender, EventArgs e)
         {
             string a = cbb_LaptopSearch.SelectedItem.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Thực hiện tương tự AccessoriesUI
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+            button2.Visible = true;
+
+            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
+            txt_LaptopID.Enabled = false;
+            txt_LaptopID.ForeColor = Color.Gray;
+
+            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
+            txt_LaptopName.Enabled = false;
+            txt_LaptopName.ForeColor = Color.Gray;
+
+            txt_Manufacturer.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
+            txt_Manufacturer.Enabled = false;
+            txt_Manufacturer.ForeColor = Color.Gray;
+
+            txt_Spetification.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
+            txt_Spetification.Enabled = false;
+            txt_Spetification.ForeColor = Color.Gray;
+
+            txt_LaptopWeight.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
+            txt_LaptopWeight.Enabled = false;
+            txt_LaptopWeight.ForeColor = Color.Gray;
+
+            txt_ScreenSize.Text = dataGridView.CurrentRow.Cells["screenSize"].Value.ToString();
+            txt_ScreenSize.Enabled = false;
+            txt_ScreenSize.ForeColor = Color.Gray;
+
+            txt_LaptopColour.Text = dataGridView.CurrentRow.Cells["colour"].Value.ToString();
+            txt_LaptopColour.Enabled = false;
+            txt_LaptopColour.ForeColor = Color.Gray;
+
+            txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
+            txt_LaptopPrice.Enabled = false;
+            txt_LaptopPrice.ForeColor = Color.Gray;
+
+            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
+            txt_stockQuantity.Enabled = false;
+            txt_stockQuantity.ForeColor = Color.Gray;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!tabControl1.TabPages.Contains(tabPagePetList))
+                tabControl1.TabPages.Add(tabPagePetList);
+            if (tabControl1.TabPages.Contains(tabPagePetDetail))
+                tabControl1.TabPages.Remove(tabPagePetDetail);
+            tabControl1.SelectedTab = tabPagePetList;
+
+            // Reset trạng thái logic
+            btnSave.Visible = true;
+            btnCancel.Visible = true;
+            button2.Visible = false;
+
+            txt_LaptopID.Clear();
+            txt_LaptopName.Clear();
+            txt_Manufacturer.Clear();
+            txt_Spetification.Clear();
+            txt_LaptopWeight.Clear();
+            txt_ScreenSize.Clear();
+            txt_LaptopColour.Clear();
+            txt_LaptopPrice.Clear();
+            txt_stockQuantity.Clear();
+
+            txt_LaptopID.ForeColor = SystemColors.WindowText;
+            txt_LaptopName.ForeColor = SystemColors.WindowText; 
+            txt_Manufacturer.ForeColor = SystemColors.WindowText;
+            txt_Spetification.ForeColor = SystemColors.WindowText;
+            txt_LaptopWeight.ForeColor = SystemColors.WindowText;
+            txt_ScreenSize.ForeColor = SystemColors.WindowText;
+            txt_LaptopColour.ForeColor = SystemColors.WindowText;
+            txt_LaptopPrice.ForeColor = SystemColors.WindowText;
+            txt_stockQuantity.ForeColor = SystemColors.WindowText;
+
+            txt_LaptopID.Enabled = true;
+            txt_LaptopName.Enabled = true;
+            txt_Manufacturer.Enabled = true;
+            txt_Spetification.Enabled = true;
+            txt_LaptopWeight.Enabled = true;
+            txt_ScreenSize.Enabled = true;
+            txt_LaptopColour.Enabled = true;
+            txt_LaptopPrice.Enabled = true;
+            txt_stockQuantity.Enabled = true;
         }
     }
 }

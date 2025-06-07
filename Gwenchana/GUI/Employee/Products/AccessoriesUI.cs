@@ -344,7 +344,6 @@ namespace Gwenchana
 
             btnSave.Visible = false;
             btnCancel.Visible = false;
-
             button2.Visible = true;
 
 
