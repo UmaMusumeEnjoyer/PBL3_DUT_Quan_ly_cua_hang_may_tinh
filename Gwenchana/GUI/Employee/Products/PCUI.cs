@@ -31,8 +31,7 @@ namespace Gwenchana
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
+            button2.Visible = false; // Ẩn nút Clear Filter
         }
 
         private void LoadData()
@@ -332,6 +331,81 @@ namespace Gwenchana
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+            button2.Visible = true;
+
+            txt_ProductID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
+            txt_ProductID.Enabled = false;
+            txt_ProductID.ForeColor = Color.Gray;
+
+            txt_pcName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
+            txt_pcName.Enabled = false;
+            txt_pcName.ForeColor = Color.Gray;
+
+            txt_pcSupplier.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
+            txt_pcSupplier.Enabled = false;
+            txt_pcSupplier.ForeColor = Color.Gray;
+
+            txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
+            txt_pcSpecs.Enabled = false;
+            txt_pcSpecs.ForeColor = Color.Gray;
+
+            txt_pcPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
+            txt_pcPrice.Enabled = false;
+            txt_pcPrice.ForeColor = Color.Gray;
+
+            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
+            txt_stockQuantity.Enabled = false;
+            txt_stockQuantity.ForeColor = Color.Gray;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!tabControl1.TabPages.Contains(tabPagePetList))
+                tabControl1.TabPages.Add(tabPagePetList);
+            if (tabControl1.TabPages.Contains(tabPagePetDetail))
+                tabControl1.TabPages.Remove(tabPagePetDetail);
+            tabControl1.SelectedTab = tabPagePetList;
+
+            btnSave.Visible = true;
+            btnCancel.Visible = true;
+            button2.Visible = false;
+
+            txt_ProductID.Clear();
+            txt_pcName.Clear();
+            txt_pcSupplier.Clear();
+            txt_pcSpecs.Clear();
+            txt_pcPrice.Clear();
+            txt_stockQuantity.Clear();
+
+            txt_ProductID.Enabled = true;
+            txt_ProductID.ForeColor = SystemColors.WindowText;
+
+            txt_pcName.Enabled = true;
+            txt_pcName.ForeColor = SystemColors.WindowText;
+
+            txt_pcSupplier.Enabled = true;
+            txt_pcSupplier.ForeColor = SystemColors.WindowText;
+
+            txt_stockQuantity.Enabled = true;
+            txt_stockQuantity.ForeColor = SystemColors.WindowText;
+
+            txt_pcSpecs.Enabled = true;
+            txt_pcSpecs.ForeColor = SystemColors.WindowText;
+
+            txt_pcPrice.Enabled = true;
+            txt_pcPrice.ForeColor = SystemColors.WindowText;
+
 
         }
     }
