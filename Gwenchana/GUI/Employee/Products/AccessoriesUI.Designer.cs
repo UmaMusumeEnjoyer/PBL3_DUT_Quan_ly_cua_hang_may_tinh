@@ -60,6 +60,7 @@ namespace Gwenchana
             this.label3 = new System.Windows.Forms.Label();
             this.txt_AccessoriesID = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -246,6 +247,7 @@ namespace Gwenchana
             // tabPagePetDetail
             // 
             this.tabPagePetDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(221)))));
+            this.tabPagePetDetail.Controls.Add(this.button2);
             this.tabPagePetDetail.Controls.Add(this.label8);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesstockQuantity);
             this.tabPagePetDetail.Controls.Add(this.label7);
@@ -438,6 +440,19 @@ namespace Gwenchana
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Location = new System.Drawing.Point(693, 304);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(183, 44);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Quay về";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // AccessoriesUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -495,5 +510,6 @@ namespace Gwenchana
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbb_LaptopSearch;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

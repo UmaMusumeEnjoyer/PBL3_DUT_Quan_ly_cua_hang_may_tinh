@@ -29,30 +29,12 @@ namespace Gwenchana
             AssociateAndRaiseViewEvents();
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
+            button2.Visible = false; // Ẩn nút "Thêm mới" trong tab PetList
 
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
         }
         private DataTable accessoriesData;
         private void LoadData()
         {
-            //AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
-            //DataTable dt = accessoriesBLL.GetAllAccessoriesDataTable();
-            //dataGridView.ReadOnly = true;
-            //dataGridView.AllowUserToAddRows = false;
-            //dataGridView.AllowUserToDeleteRows = false;
-
-            //dataGridView.DataSource = dt;
-            //dataGridView.Columns["Product_Id"].Visible = false; // Ẩn cột Product_Id
-            //dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
-            //dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
-            //dataGridView.Columns["overview"].HeaderText = "Mô tả";
-            //dataGridView.Columns["type"].HeaderText = "Loại sản phẩm";
-            //dataGridView.Columns["price"].HeaderText = "Giá";
-            //dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
-            //dataGridView.Columns["Supplier_Id"].HeaderText = "Nhà cung cấp";
-            //dataGridView.Columns["supplierName"].Visible = false; // Ẩn cột supplierName
-
             //dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
             AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
             accessoriesData = accessoriesBLL.GetAllAccessoriesDataTable(); // Lưu lại DataTable gốc
@@ -174,6 +156,8 @@ namespace Gwenchana
             txt_AccessoriesID.Enabled = true;
             txt_AccessoriesID.ForeColor = SystemColors.WindowText;
             label3.ForeColor = SystemColors.ControlText;
+            txt_AccessoriesType.Enabled = true;
+            txt_AccessoriesType.ForeColor = SystemColors.WindowText;
 
             // Chuyển về trang danh sách
             if (!tabControl1.TabPages.Contains(tabPagePetList))
@@ -354,7 +338,56 @@ namespace Gwenchana
 
         private void button1_Click(object sender, EventArgs e)
         {
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
 
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+
+            button2.Visible = true;
+
+
+            txt_AccessoriesID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+            txt_AccessoriesID.ForeColor = Color.Gray;
+            txt_AccessoriesID.Enabled = false;
+
+            txt_AccessoriesName.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+            txt_AccessoriesName.ForeColor = Color.Gray;
+            txt_AccessoriesName.Enabled = false;
+            
+            txt_AccessoriesManufacturer.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+            txt_AccessoriesManufacturer.ForeColor = Color.Gray;
+            txt_AccessoriesManufacturer.Enabled = false;
+
+            txt_AccessoriesOverview.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
+            txt_AccessoriesOverview.ForeColor = Color.Gray;
+            txt_AccessoriesOverview.Enabled = false;
+
+            txt_AccessoriesType.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
+            txt_AccessoriesType.ForeColor = Color.Gray;
+            txt_AccessoriesType.Enabled = false;
+
+            txt_AccessoriesPrice.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
+            txt_AccessoriesPrice.ForeColor = Color.Gray;
+            txt_AccessoriesPrice.Enabled = false;
+
+            txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
+            txt_AccessoriesstockQuantity.ForeColor = Color.Gray;
+            txt_AccessoriesstockQuantity.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(tabPagePetList);
+            tabControl1.TabPages.Remove(tabPagePetDetail);
+            tabControl1.SelectedTab = tabPagePetList;
+            LoadData();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ResetFormState();
         }
     }
 }
