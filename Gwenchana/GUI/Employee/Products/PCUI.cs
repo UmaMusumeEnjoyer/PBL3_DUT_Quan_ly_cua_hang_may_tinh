@@ -20,6 +20,8 @@ namespace Gwenchana
         private bool isEdit;
         private string button;
 
+        private DataTable pcData;
+
 
         //Constructor
         public PCUI()
@@ -36,13 +38,12 @@ namespace Gwenchana
         private void LoadData()
         {
             PCBLL pcBLL = new PCBLL();
-            //List<Supplier> suppliers = supplierBLL.GetAllSuppliers();
-            DataTable dt = pcBLL.GetAllPCsDataTable();
+            pcData = pcBLL.GetAllPCsDataTable();
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
-            
-            dataGridView.DataSource = dt;
+
+            dataGridView.DataSource = pcData;
 
             dataGridView.Columns["Product_Id"].Visible = false;
             dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
@@ -275,28 +276,36 @@ namespace Gwenchana
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-            //string a = cbb_LaptopSearch.SelectedItem.ToString();
-
-            PCBLL laptopBLL = new PCBLL();
-            if (cbb_PcSearch.SelectedItem.ToString() == "Tên")
+            if (string.IsNullOrEmpty(searchText))
             {
-                dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.productName.Contains(searchText)).ToList();
-
-            }
-            else if (cbb_PcSearch.SelectedItem.ToString() == "Nhà sản xuất")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.Manufacturer.Contains(searchText)).ToList();
-
-            }
-            else if (cbb_PcSearch.SelectedItem.ToString() == "Cấu hình")
-            {
-                dataGridView.DataSource = laptopBLL.GetAllPCs().Where(l => l.Spetification.Contains(searchText)).ToList();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (pcData == null) LoadData();
+
+            string filter = "";
+            if (cbb_PcSearch.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cbb_PcSearch.SelectedItem.ToString() == "Tên")
+                filter = $"productName LIKE '%{searchText.Replace("'", "''")}%'";
+            else if (cbb_PcSearch.SelectedItem.ToString() == "Nhà sản xuất")
+                filter = $"Manufacturer LIKE '%{searchText.Replace("'", "''")}%'";
+            else if (cbb_PcSearch.SelectedItem.ToString() == "Cấu hình")
+                filter = $"specification LIKE '%{searchText.Replace("'", "''")}%'";
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataView dv = new DataView(pcData);
+            dv.RowFilter = filter;
+            dataGridView.DataSource = dv;
         }
 
         private void txt_SupplierPhone_TextChanged(object sender, EventArgs e)
