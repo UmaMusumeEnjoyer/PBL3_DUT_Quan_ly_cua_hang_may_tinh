@@ -39,6 +39,10 @@ namespace Gwenchana
             dtpStartDate.Enabled = false;
             dtpEndDate.Enabled = false;
 
+            if(currentEmployeeID == 0)
+            {
+                button1.Visible = false; // Ẩn nút Thêm đơn nhập hàng nếu không có nhân viên đăng nhập
+            }
 
             //tabControl1.TabPages.Remove(tabPagePetDetail);
             //btnClose.Click += delegate { this.Close(); };

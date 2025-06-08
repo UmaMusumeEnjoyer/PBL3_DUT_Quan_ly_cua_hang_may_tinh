@@ -35,8 +35,11 @@ namespace Gwenchana
             currentEmployeeID = employeeID;
             dtpStartDate.Enabled = false;
             dtpEndDate.Enabled = false;
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
+            if(currentEmployeeID == 0)
+            {
+                btn_CreateReceipt.Visible = false;
+            }
+
         }
 
         private void LoadData()
