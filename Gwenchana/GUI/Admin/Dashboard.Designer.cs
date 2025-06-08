@@ -39,7 +39,6 @@ namespace Gwenchana
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -47,15 +46,12 @@ namespace Gwenchana
             this.btnLast30Days = new System.Windows.Forms.Button();
             this.btnLast7Days = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblNumOrders = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.lblTotalProfit = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.chartGrossRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -156,7 +152,6 @@ namespace Gwenchana
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblNumOrders);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(14, 55);
@@ -164,17 +159,6 @@ namespace Gwenchana
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(278, 73);
             this.panel1.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-            this.label3.Location = new System.Drawing.Point(225, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "+15%";
             // 
             // lblNumOrders
             // 
@@ -202,7 +186,6 @@ namespace Gwenchana
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.lblTotalRevenue);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(302, 55);
@@ -210,17 +193,6 @@ namespace Gwenchana
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(458, 73);
             this.panel2.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-            this.label10.Location = new System.Drawing.Point(405, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 21);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "+21%";
             // 
             // lblTotalRevenue
             // 
@@ -247,7 +219,6 @@ namespace Gwenchana
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.lblTotalProfit);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(770, 55);
@@ -256,17 +227,6 @@ namespace Gwenchana
             this.panel3.Size = new System.Drawing.Size(420, 73);
             this.panel3.TabIndex = 11;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(141)))), ((int)(((byte)(181)))));
-            this.label11.Location = new System.Drawing.Point(367, 27);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 21);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "+19%";
             // 
             // lblTotalProfit
             // 
@@ -455,14 +415,6 @@ namespace Gwenchana
             // 
             this.dgvUnderstock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUnderstock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUnderstock.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUnderstock.Location = new System.Drawing.Point(15, 45);
             this.dgvUnderstock.Name = "dgvUnderstock";
             this.dgvUnderstock.Size = new System.Drawing.Size(574, 185);
@@ -589,9 +541,6 @@ namespace Gwenchana
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvUnderstock;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnToday;
         private System.Windows.Forms.Button btnCustomDate;
         private System.Windows.Forms.Button btnOkCustomDate;
