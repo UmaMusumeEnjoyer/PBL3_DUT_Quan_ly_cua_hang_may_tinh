@@ -32,12 +32,14 @@ namespace Gwenchana
             dgv_Order.Columns.Clear();
 
             dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
+            dgv_Order.Columns["Product_Id"].Visible = false; // Ẩn cột Product_Id nếu không cần thiết
             dgv_Order.Columns.Add("productName", "Tên sản phẩm");
             //dgv_Order.Columns.Add("Price", "");
             dgv_Order.Columns.Add("Product_price", "Giá bán");
             dgv_Order.Columns.Add("quantity", "Số lượng nhập");
             dgv_Order.Columns.Add("totalPrice", "Thành tiền");
             dgv_Order.Columns.Add("Supplier_Id", "Mã nhà cung cấp");
+            dgv_Order.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
 
             dgv_Order.ReadOnly = true;
             dgv_Order.AllowUserToAddRows = false;
@@ -71,6 +73,8 @@ namespace Gwenchana
                     dgv_Product.Columns["specification"].HeaderText = "Thông số kỹ thuật";
                     dgv_Product.Columns["price"].HeaderText = "Giá";
                     dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+                    dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
+                    dgv_Product.Columns["supplierName"].HeaderText = "Nhà cung cấp";
                     setcbb_ProductID();
                     break;
 
@@ -91,6 +95,8 @@ namespace Gwenchana
                     dgv_Product.Columns["colour"].HeaderText = "Màu sắc";
                     dgv_Product.Columns["price"].HeaderText = "Giá";
                     dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+                    dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
+                    dgv_Product.Columns["supplierName"].HeaderText = "Nhà cung cấp";
                     setcbb_ProductID();
                     break;
 
@@ -109,6 +115,8 @@ namespace Gwenchana
                     dgv_Product.Columns["type"].HeaderText = "Loại sản phẩm";
                     dgv_Product.Columns["price"].HeaderText = "Giá";
                     dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+                    dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
+                    dgv_Product.Columns["supplierName"].HeaderText = "Nhà cung cấp"; // Hiển thị tên nhà cung cấp nếu cần thiết
                     setcbb_ProductID();
                     break;
 
