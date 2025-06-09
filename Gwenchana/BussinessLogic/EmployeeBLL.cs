@@ -16,7 +16,6 @@ namespace Gwenchana.BussinessLogic
         }
         public bool AddEmployee(DataAccess.DTO.Employee employee)
         {
-            // Implement the logic to add an employee
             return true;
         }
         public bool UpdateEmployee(DataAccess.DTO.Employee employee)

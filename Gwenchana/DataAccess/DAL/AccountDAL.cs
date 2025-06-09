@@ -8,7 +8,6 @@ namespace Gwenchana.DataAccess.DAL
     public class AccountDAL
     {
         private readonly DBConnect.DbConnect _db = new DBConnect.DbConnect();
-
         public List<Account> GetAllAccounts()
         {
             var list = new List<Account>(); 
@@ -28,17 +27,14 @@ namespace Gwenchana.DataAccess.DAL
             }
             return list;
         }
-
         public Account GetAccountById(int id)
         {
             string sql = "SELECT * FROM Account WHERE Id = @Id";
             SqlParameter[] parameters = {
                 new SqlParameter("@Id", id)
             };
-
             DataTable dt = _db.GetData(sql, parameters);
             if (dt.Rows.Count == 0) return null;
-
             DataRow row = dt.Rows[0];
             return new Account
             {
@@ -49,7 +45,6 @@ namespace Gwenchana.DataAccess.DAL
                 Role = row["Role"].ToString()
             };
         }
-
         public bool AddAccount(Account account)
         {
             string sql = @"INSERT INTO Account (Username, Password, Role) 
@@ -60,10 +55,8 @@ namespace Gwenchana.DataAccess.DAL
               
                 new SqlParameter("@Role", account.Role)
             };
-
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
-
         public bool UpdateAccount(Account account)
         {
             string sql = @"UPDATE Account SET 
@@ -78,20 +71,16 @@ namespace Gwenchana.DataAccess.DAL
                 new SqlParameter("@Role", account.Role),
                 new SqlParameter("@Id", account.Id)
             };
-
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
-
         public bool DeleteAccount(int id)
         {
             string sql = "DELETE FROM Account WHERE Id = @Id";
             SqlParameter[] parameters = {
                 new SqlParameter("@Id", id)
             };
-
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
-
         public DataTable GetAllAccountDataTable()
         {
             string sql = "SELECT " +
@@ -104,7 +93,6 @@ namespace Gwenchana.DataAccess.DAL
                         "WHERE a.role <> 'admin'";
             return _db.GetData(sql);
         }
-
         public bool AssignEmployee(int id)
         {
             string sql = "INSERT INTO Employee (Account_Id) VALUES (@AccountId)";
@@ -113,21 +101,18 @@ namespace Gwenchana.DataAccess.DAL
             };
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
-
         public int GetID(string username)
         {
             string sql = "SELECT Id FROM Account WHERE Username = @Username";
             SqlParameter[] parameters = {
         new SqlParameter("@Username", username)
         };
-
             object result = _db.ExecuteScalar(sql, parameters);
             if (result != null && result != DBNull.Value)
             {
                 return Convert.ToInt32(result);
             }
-            return -1; // Không tìm thấy
+            return -1; 
         }
-
     }
 }

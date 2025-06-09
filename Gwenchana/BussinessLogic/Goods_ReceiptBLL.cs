@@ -17,12 +17,10 @@ namespace Gwenchana.BussinessLogic
         {
             return _goodsReceiptDAL.GetAllGoodsReceipt();
         }
-
         public bool CreateGoodsReceipt(Employee ce, List<ProductViewModel> list)
         {
             return _goodsReceiptDAL.ImportProducts(ce.Empolyee_Id, list);
         }
-
         public DataTable GetAllGoodsReceiptsByID(int ID)
         {
             return _goodsReceiptDAL.GetAllGoodsReceiptsByID(ID);

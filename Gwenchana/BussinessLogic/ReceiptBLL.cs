@@ -13,42 +13,23 @@ namespace Gwenchana.BussinessLogic
     public class ReceiptBLL
     {
         private readonly ReceiptDAL _receiptDAL = new ReceiptDAL();
-        //public List<DTO.Receipt> GetAllReceipts()
-        //{
-        //    return _receiptDAL.GetAllReceipts();
-        //}
-        //public DTO.Receipt GetReceiptById(int id)
-        //{
-        //    return _receiptDAL.GetReceiptById(id);
-        //}
         public bool AddReceipt()
         {
              return _receiptDAL.AddReceipts();
             
         }
-        //public bool UpdateReceipt(DTO.Receipt receipt)
-        //{
-        //    return _receiptDAL.UpdateReceipt(receipt);
-        //}
-        //public bool DeleteReceipt(int id)
-        //{
-        //    return _receiptDAL.DeleteReceipt(id);
-        //}
         public DataTable GetAllReceipts()
         {
             return _receiptDAL.GetAllReceipts();
         }
-
         public DataTable GetAllReceiptsByID(int ID)
         {
             return _receiptDAL.GetAllReceiptsByID(ID);
         }
-
         public bool createReceipt(Employee ce, Customer cs, List<Product> list, decimal finalTotal)
         {
             return _receiptDAL.CreateReceipt(ce, cs, list, finalTotal);
         }
-
         public List<ReceiptViewModel> getallreceipts()
         {
             return _receiptDAL.Getdetailreceipts();

@@ -32,7 +32,6 @@ namespace Gwenchana.DataAccess.DAL
             }
             return list;
         }
-
         public DataTable GetAllAccessoriesDataTable()
         {
             string sql = "SELECT Accessories.Product_Id, " +
@@ -49,7 +48,6 @@ namespace Gwenchana.DataAccess.DAL
                          "JOIN Supplier ON Product.Supplier_Id = Supplier.Supplier_Id";
             return db.GetData(sql);
         }
-
         public bool DeleteAccessories(int id) 
         {
             try
@@ -66,12 +64,10 @@ namespace Gwenchana.DataAccess.DAL
                 return false;
             }
         }
-
         public bool UpdateAccessories(DTO.Accessories accessories)
         {
             try
             {
-                // Cập nhật thông tin trong bảng Product
                 string sqlProduct = "UPDATE Product SET productName = @productName, Manufacturer = @Manufacturer, price = @price, stockQuantity = @stockQuantity WHERE Product_Id = @Product_Id";
                 var parametersProduct = new[]
                 {
@@ -81,7 +77,6 @@ namespace Gwenchana.DataAccess.DAL
                     new SqlParameter("@stockQuantity", accessories.stockQuantity),
                     new SqlParameter("@Product_Id", accessories.Product_Id)
                 };
-                // Cập nhật thông tin trong bảng Accessories
                 string sqlAccessories = "UPDATE Accessories SET overview = @overview, type = @type WHERE Product_Id = @Product_Id";
                 var parametersAccessories = new[]
                 {
@@ -89,26 +84,21 @@ namespace Gwenchana.DataAccess.DAL
                     new SqlParameter("@type", accessories.Type),
                     new SqlParameter("@Product_Id", accessories.Product_Id)
                 };
-                // Thực thi cả hai câu lệnh SQL trong một giao dịch
                 return db.ExecuteNonQuery(sqlProduct, parametersProduct) > 0 &&
                        db.ExecuteNonQuery(sqlAccessories, parametersAccessories) > 0;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Lỗi: " + ex.Message);
                 return false;
             }
         }
-
-
         public bool AddAccessories(DTO.Accessories accessories, DTO.Product product)
         {
             try
             {
-                // Thêm thông tin vào bảng Product
                 string sqlProduct = "INSERT INTO Product (productName, Manufacturer, price, stockQuantity, Supplier_Id) " +
                                     "VALUES (@productName, @Manufacturer, @price, @stockQuantity, @Supplier_Id); " +
-                                    "SELECT SCOPE_IDENTITY();"; // Lấy ID mới được tạo
+                                    "SELECT SCOPE_IDENTITY();";
                 var parametersProduct = new[]
                 {
                     new SqlParameter("@productName", product.productName),
@@ -117,9 +107,7 @@ namespace Gwenchana.DataAccess.DAL
                     new SqlParameter("@stockQuantity", product.stockQuantity),
                     new SqlParameter("@Supplier_Id", product.Supplier_Id)
                 };
-                // Thực thi câu lệnh SQL và lấy ID mới
                 int newProductId = Convert.ToInt32(db.ExecuteScalar(sqlProduct, parametersProduct));
-                // Thêm thông tin vào bảng Accessories với ID mới
                 string sqlAccessories = "INSERT INTO Accessories (Product_Id, overview, type) " +
                                         "VALUES (@Product_Id, @overview, @type)";
                 var parametersAccessories = new[]
@@ -132,7 +120,6 @@ namespace Gwenchana.DataAccess.DAL
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Lỗi: " + ex.Message);
                 return false;
             }
         }

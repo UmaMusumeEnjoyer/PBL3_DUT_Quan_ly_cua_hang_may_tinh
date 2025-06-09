@@ -32,14 +32,12 @@ namespace Gwenchana.DataAccess.DAL
             }
             return list;
         }
-
         public DataTable GetAllCustomersDataTable()
         {
             string sql = "SELECT c.*, COUNT(r.Receipt_Id) AS SoDonDaThucHien FROM Customer c LEFT JOIN Receipt r ON c.Customer_Id = r.Customer_Id GROUP BY c.Customer_Id, c.customerName, c.phoneNumber, c.address, c.email";
             DataTable dt = _db.GetData(sql);
             return dt;
         }
-
         public bool AddCustomer(Customer customer)
         {
             string sql = @"INSERT INTO Customer (customerName, email, phoneNumber, address) 

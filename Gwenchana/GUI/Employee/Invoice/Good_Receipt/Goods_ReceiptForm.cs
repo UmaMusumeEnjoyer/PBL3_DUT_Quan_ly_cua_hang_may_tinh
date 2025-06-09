@@ -402,5 +402,17 @@ namespace Gwenchana
         {
 
         }
+
+        private void cashierOrderForm_clearBtn_Click(object sender, EventArgs e)
+        {
+            // Xóa tất cả các hàng trong DataGridView dgv_Order
+            dgv_Order.Rows.Clear();
+            totalAmount = 0; // Đặt lại tổng tiền về 0
+            txt_productName.Clear(); // Xóa tên sản phẩm
+            txt_productPrice.Clear(); // Xóa giá sản phẩm
+            productQuantity.Value = 1; // Đặt lại số lượng về 1
+            cbb_ProductID.Items.Clear(); // Xóa danh sách ID sản phẩm đã chọn
+            MessageBox.Show("Đã xóa giỏ hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

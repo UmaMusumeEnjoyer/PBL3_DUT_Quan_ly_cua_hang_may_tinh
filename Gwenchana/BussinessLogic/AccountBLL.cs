@@ -25,7 +25,6 @@ namespace Gwenchana.BussinessLogic
             }
             return false;
         }
-
         public bool Register(string username, string password, string role)
         {
            
@@ -45,7 +44,6 @@ namespace Gwenchana.BussinessLogic
             };
             return _accountDAL.AddAccount(newAccount);
         }
-
         public string GetRole(string username)
         {
             
@@ -59,7 +57,6 @@ namespace Gwenchana.BussinessLogic
             }
             return null;
         }
-
         public bool ChangePassword(string username, string newPassword)
         {
             
@@ -88,29 +85,24 @@ namespace Gwenchana.BussinessLogic
             }
             return false;
         }
-
         public DataTable GetAllAccountsDataTable()
         {
            
             return _accountDAL.GetAllAccountDataTable();
         }
-
         public bool DeleteAccount(int id)
         {
             return _accountDAL.DeleteAccount(id);
         }
-
         public bool UpdateAccount(Account account)
         {
             return _accountDAL.UpdateAccount(account);
         }
-
         public bool AssignEmployee(int id)
         {
 
             return _accountDAL.AssignEmployee(id);
         }
-
         public int GetId(string username)
         {
             return _accountDAL.GetID(username);

@@ -18,21 +18,23 @@ namespace Gwenchana.DataAccess.DAL
         public DataTable GetAllGoodsReceipt()
         {
             string query = @"
-SELECT 
-    gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
-    CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
-    e.employeeName AS [Tên nhân viên],
-    p.productName AS [Tên sản phẩm],
-    p.Manufacturer AS [Hãng sản xuất],
-    s.supplierName AS [Tên nhà phân phối],
-    d.quantity AS [Số lượng],
-    d.productPrice AS [Giá nhập (VNĐ)],
-    (d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
-FROM Goods_Receipt gr
-JOIN Employee e ON gr.Employee_Id = e.Employee_Id
-JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
-JOIN Product p ON d.Product_Id = p.Product_Id
-JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id";
+                SELECT 
+                    gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
+                    CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
+                    e.employeeName AS [Tên nhân viên],
+                    s.supplierName AS [Tên nhà phân phối],
+                    SUM(d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
+                FROM Goods_Receipt gr
+                JOIN Employee e ON gr.Employee_Id = e.Employee_Id
+                JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
+                JOIN Product p ON d.Product_Id = p.Product_Id
+                JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
+                GROUP BY 
+                    gr.GoodsReceipt_Id,
+                    gr.goodsReceiptDate,
+                    e.employeeName,
+                    s.supplierName
+                ORDER BY gr.goodsReceiptDate DESC, gr.GoodsReceipt_Id";
 
             return _db.GetData(query);
         }
@@ -43,24 +45,23 @@ JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id";
             DataTable dt = new DataTable();
 
             string query = @"
-SELECT 
-    gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
-    CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
-    e.employeeName AS [Tên nhân viên],
-    s.supplierName AS [Tên nhà phân phối],
-    p.productName AS [Tên sản phẩm],
-    p.Manufacturer AS [Hãng sản xuất],
-    d.quantity AS [Số lượng],
-    d.productPrice AS [Giá nhập (VNĐ)],
-    (d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
-FROM Goods_Receipt gr
-JOIN Employee e ON gr.Employee_Id = e.Employee_Id
-JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
-JOIN Product p ON d.Product_Id = p.Product_Id
-JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
-WHERE gr.GoodsReceipt_Id = @ID;
+                SELECT 
+                    gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
+                    CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
+                    e.employeeName AS [Tên nhân viên],
+                    s.supplierName AS [Tên nhà phân phối],
+                    p.productName AS [Tên sản phẩm],
+                    p.Manufacturer AS [Hãng sản xuất],
+                    d.quantity AS [Số lượng],
+                    d.productPrice AS [Giá nhập (VNĐ)],
+                    (d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
+                FROM Goods_Receipt gr
+                JOIN Employee e ON gr.Employee_Id = e.Employee_Id
+                JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
+                JOIN Product p ON d.Product_Id = p.Product_Id
+                JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
+                WHERE gr.GoodsReceipt_Id = @ID;
             ";
-
             using (SqlConnection conn = _db.GetConnection())
             {
                 conn.Open();
@@ -77,8 +78,6 @@ WHERE gr.GoodsReceipt_Id = @ID;
 
             return dt;
         }
-
-
         public bool ImportProducts(int employeeId, List<ProductViewModel> products)
         {
             try
@@ -125,22 +124,22 @@ WHERE gr.GoodsReceipt_Id = @ID;
             using (SqlConnection conn = _db1.GetConnection())
             {
                 string sql = @"
-        SELECT
-            gr.GoodsReceipt_Id,
-            gr.goodsReceiptDate,
-            e.employeeName,
-            p.productName,
-            p.Manufacturer,
-            s.supplierName,
-            d.quantity,
-            d.productPrice,
-            (d.quantity * d.productPrice) AS TotalAmount
-        FROM Goods_Receipt gr
-        JOIN Employee e ON gr.Employee_Id = e.Employee_Id
-        JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
-        JOIN Product p ON d.Product_Id = p.Product_Id
-        JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
-        ";
+                    SELECT
+                        gr.GoodsReceipt_Id,
+                        gr.goodsReceiptDate,
+                        e.employeeName,
+                        p.productName,
+                        p.Manufacturer,
+                        s.supplierName,
+                        d.quantity,
+                        d.productPrice,
+                        (d.quantity * d.productPrice) AS TotalAmount
+                    FROM Goods_Receipt gr
+                    JOIN Employee e ON gr.Employee_Id = e.Employee_Id
+                    JOIN Details d ON gr.GoodsReceipt_Id = d.GoodsReceipt_Id
+                    JOIN Product p ON d.Product_Id = p.Product_Id
+                    JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
+                ";
 
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {

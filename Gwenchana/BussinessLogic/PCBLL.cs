@@ -16,23 +16,18 @@ namespace Gwenchana.BussinessLogic
         {
             return _pcDAL.GetAllPCs();
         }
-
         public DataTable GetAllPCsDataTable()
         {
             return _pcDAL.GetAllPCsDataTable();
         }
-
         public bool UpdatePC(PC pc)
         {
             return _pcDAL.UpdatePC(pc);
         }
-
         public bool DeletePC(int id)
         {
             return _pcDAL.DeletePC(id);
         }
-
-
         public bool AddPC(PC pc, Product product)
         {
             return _pcDAL.AddPC(pc, product);

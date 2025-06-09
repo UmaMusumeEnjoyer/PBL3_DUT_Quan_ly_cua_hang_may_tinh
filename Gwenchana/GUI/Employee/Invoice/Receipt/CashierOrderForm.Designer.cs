@@ -349,7 +349,7 @@ namespace Gwenchana
             this.cashierOrderForm_receiptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cashierOrderForm_receiptBtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierOrderForm_receiptBtn.ForeColor = System.Drawing.Color.White;
-            this.cashierOrderForm_receiptBtn.Location = new System.Drawing.Point(264, 756);
+            this.cashierOrderForm_receiptBtn.Location = new System.Drawing.Point(342, 756);
             this.cashierOrderForm_receiptBtn.Name = "cashierOrderForm_receiptBtn";
             this.cashierOrderForm_receiptBtn.Size = new System.Drawing.Size(134, 49);
             this.cashierOrderForm_receiptBtn.TabIndex = 30;

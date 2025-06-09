@@ -30,13 +30,11 @@ namespace Gwenchana.DataAccess.DAL
             }
             return list;
         }
-
         public DataTable GetAllEmployeesDataTable()
         {
             string sql = "select * from Employee";
             return _db.GetData(sql);
         }
-
         public bool UpdateEmployee(DTO.Employee employee)
         {
             try
@@ -66,8 +64,6 @@ namespace Gwenchana.DataAccess.DAL
                     try
                     {
                         int? accountId = null;
-
-                        // Lấy Account_Id từ Employee
                         using (var cmd = new SqlCommand("SELECT Account_Id FROM Employee WHERE Employee_Id = @Employee_Id", connection, transaction))
                         {
                             cmd.Parameters.AddWithValue("@Employee_Id", id);
@@ -75,15 +71,11 @@ namespace Gwenchana.DataAccess.DAL
                             if (result != DBNull.Value && result != null)
                                 accountId = Convert.ToInt32(result);
                         }
-
-                        // Xóa Employee
                         using (var cmd = new SqlCommand("DELETE FROM Employee WHERE Employee_Id = @Employee_Id", connection, transaction))
                         {
                             cmd.Parameters.AddWithValue("@Employee_Id", id);
                             cmd.ExecuteNonQuery();
                         }
-
-                        // Xóa Account nếu có
                         if (accountId.HasValue)
                         {
                             using (var cmd = new SqlCommand("DELETE FROM Account WHERE id = @AccountId", connection, transaction))
@@ -92,7 +84,6 @@ namespace Gwenchana.DataAccess.DAL
                                 cmd.ExecuteNonQuery();
                             }
                         }
-
                         transaction.Commit();
                         return true;
                     }
@@ -126,6 +117,5 @@ namespace Gwenchana.DataAccess.DAL
             }
             return null;
         }
-
     }
 }
