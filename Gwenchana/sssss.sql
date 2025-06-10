@@ -1,6 +1,6 @@
 USE [PBL3]
 GO
-/****** Object:  Table [dbo].[Accessories]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Accessories]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +15,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Account]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Account]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -35,7 +35,7 @@ UNIQUE NONCLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customer]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Customer]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -52,7 +52,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Details]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Details]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -70,7 +70,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Employee]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Employee]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -81,13 +81,14 @@ CREATE TABLE [dbo].[Employee](
 	[age] [int] NULL,
 	[phoneNumber] [nvarchar](20) NULL,
 	[Account_Id] [int] NULL,
+	[EmploymentStatus] [nvarchar](50) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[Employee_Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Goods_Receipt]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Goods_Receipt]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -102,7 +103,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Laptop]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Laptop]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -119,7 +120,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PC]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[PC]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,14 +134,14 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Product](
 	[Product_Id] [int] IDENTITY(1,1) NOT NULL,
-	[Supplier_Id] [int] NOT NULL,
+	[Supplier_Id] [int] NULL,
 	[productName] [nvarchar](100) NOT NULL,
 	[price] [decimal](10, 2) NULL,
 	[stockQuantity] [int] NULL,
@@ -151,7 +152,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Receipt]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Receipt]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -168,7 +169,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Supplier]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  Table [dbo].[Supplier]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -184,6 +185,8 @@ PRIMARY KEY CLUSTERED
 	[Supplier_Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Employee] ADD  DEFAULT (N'Đang làm việc') FOR [EmploymentStatus]
 GO
 ALTER TABLE [dbo].[Accessories]  WITH NOCHECK ADD FOREIGN KEY([Product_Id])
 REFERENCES [dbo].[Product] ([Product_Id])
@@ -216,8 +219,11 @@ ALTER TABLE [dbo].[PC]  WITH NOCHECK ADD FOREIGN KEY([Product_Id])
 REFERENCES [dbo].[Product] ([Product_Id])
 ON DELETE CASCADE
 GO
-ALTER TABLE [dbo].[Product]  WITH NOCHECK ADD FOREIGN KEY([Supplier_Id])
+ALTER TABLE [dbo].[Product]  WITH CHECK ADD  CONSTRAINT [FK__Product__Supplie__4F7CD00D] FOREIGN KEY([Supplier_Id])
 REFERENCES [dbo].[Supplier] ([Supplier_Id])
+ON DELETE SET NULL
+GO
+ALTER TABLE [dbo].[Product] CHECK CONSTRAINT [FK__Product__Supplie__4F7CD00D]
 GO
 ALTER TABLE [dbo].[Receipt]  WITH NOCHECK ADD FOREIGN KEY([Customer_Id])
 REFERENCES [dbo].[Customer] ([Customer_Id])
@@ -229,7 +235,7 @@ ALTER TABLE [dbo].[Details]  WITH NOCHECK ADD CHECK  (([productPrice]>=(0)))
 GO
 ALTER TABLE [dbo].[Details]  WITH NOCHECK ADD CHECK  (([quantity]>(0)))
 GO
-/****** Object:  StoredProcedure [dbo].[sp_CreateOrder]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_CreateOrder]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -348,7 +354,7 @@ BEGIN
     END CATCH
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ImportProducts]    Script Date: 5/28/2025 9:10:46 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ImportProducts]    Script Date: 6/10/2025 8:06:54 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
