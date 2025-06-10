@@ -110,7 +110,7 @@ namespace Gwenchana
             txt_pcPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
-
+            btnSave.Text = "Cập nhật";
 
         }
 
@@ -203,7 +203,7 @@ namespace Gwenchana
             //txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
-
+            btnSave.Text = "Xoá";
 
         }
 

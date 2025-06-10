@@ -114,6 +114,8 @@ namespace Gwenchana
             txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
+
+            btnSave.Text = "Cập nhật";
         }
 
         private void txtPetId_TextChanged(object sender, EventArgs e)
@@ -208,6 +210,8 @@ namespace Gwenchana
             txt_LaptopColour.Text = dataGridView.CurrentRow.Cells["colour"].Value.ToString();
             txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
+
+            btnSave.Text = "Xoá sản phẩm";
 
         }
 

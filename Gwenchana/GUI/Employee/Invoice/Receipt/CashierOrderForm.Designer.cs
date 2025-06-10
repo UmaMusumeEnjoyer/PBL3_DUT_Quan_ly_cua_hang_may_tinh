@@ -194,6 +194,7 @@ namespace Gwenchana
             this.cashierOrderForm_clearBtn.TabIndex = 24;
             this.cashierOrderForm_clearBtn.Text = "Xoá toàn bộ";
             this.cashierOrderForm_clearBtn.UseVisualStyleBackColor = false;
+            this.cashierOrderForm_clearBtn.Click += new System.EventHandler(this.cashierOrderForm_clearBtn_Click_1);
             // 
             // btn_productAdd
             // 

@@ -111,6 +111,9 @@ namespace Gwenchana
             txt_AccessoriesPrice.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
             txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
 
+            // Đặt lại trạng thái của các ô nhập liệu
+            btnSave.Text = "Cập nhật";
+
         }
 
         private void txtPetId_TextChanged(object sender, EventArgs e)
@@ -202,6 +205,8 @@ namespace Gwenchana
             txt_AccessoriesType.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();
             txt_AccessoriesPrice.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
             txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
+
+            btnSave.Text = "Xóa";
 
 
 
