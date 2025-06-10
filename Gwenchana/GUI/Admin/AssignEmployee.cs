@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
 
 namespace Gwenchana
 {
@@ -36,6 +37,7 @@ namespace Gwenchana
         private void LoadData()
         {
             AccountBLL accountBLL = new AccountBLL();
+            //EmployeeBLL employeeBLL = new EmployeeBLL();
             DataTable dt = accountBLL.GetAllAccountsDataTable();
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
@@ -152,6 +154,13 @@ namespace Gwenchana
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            CurrentEmployee currentEmployee = new CurrentEmployee();
+            currentEmployee.GetCurrentEmployee(int.Parse(dataGridView.CurrentRow.Cells[0].Value.ToString()));
+            if (currentEmployee.TrangThai == "Đang làm việc")
+            {
+                MessageBox.Show("Nhân viên chưa nghỉ việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             button = "Delete";
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
@@ -167,10 +176,6 @@ namespace Gwenchana
             txt_AccessoriesID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
             txt_Username.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
             txt_Password.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
-
-
-
-
 
         }
 
@@ -209,6 +214,8 @@ namespace Gwenchana
                 AccountBLL accountBLL = new AccountBLL();
                 int accountId = int.Parse(txt_AccessoriesID.Text);
                 isSuccessful = accountBLL.DeleteAccount(accountId);
+                
+
                 if (isSuccessful)
                 {
                     message = "Xóa tài khoản thành công!";
@@ -219,10 +226,6 @@ namespace Gwenchana
                     message = "Xóa tài khoản thất bại!";
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
-
-
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;

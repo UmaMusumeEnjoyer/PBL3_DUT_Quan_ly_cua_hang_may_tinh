@@ -419,6 +419,7 @@ namespace Gwenchana
             this.dgvUnderstock.Name = "dgvUnderstock";
             this.dgvUnderstock.Size = new System.Drawing.Size(574, 185);
             this.dgvUnderstock.TabIndex = 3;
+            this.dgvUnderstock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnderstock_CellContentClick);
             // 
             // label13
             // 

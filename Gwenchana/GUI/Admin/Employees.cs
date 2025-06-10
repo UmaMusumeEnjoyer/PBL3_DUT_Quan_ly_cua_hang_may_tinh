@@ -48,6 +48,9 @@ namespace Gwenchana
             dataGridView.Columns[1].HeaderText = "Họ và tên";
             dataGridView.Columns[2].HeaderText = "Tuổi";
             dataGridView.Columns[3].HeaderText = "Số điện thoại";
+            dataGridView.Columns[4].HeaderText = "Account ID";
+            dataGridView.Columns[4].Visible = false; // Hide the Account ID column
+            dataGridView.Columns[5].HeaderText = "Trạng thái"; // Hide the Password column
 
 
         }
@@ -93,6 +96,7 @@ namespace Gwenchana
             txt_EmployeeName.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
             txt_PhoneNumber.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
             txt_Age.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+            cbb_TrangThai.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
 
         }
 
@@ -187,7 +191,7 @@ namespace Gwenchana
                     employeeName = txt_EmployeeName.Text,
                     phoneNumber = txt_PhoneNumber.Text,
                     Age = int.Parse(txt_Age.Text),
-
+                    TrangThai = cbb_TrangThai.Text
                 };
                 isSuccessful = employeeBLL.UpdateEmployee(employee);
                 if (isSuccessful)
@@ -220,7 +224,7 @@ namespace Gwenchana
                 }
                 else
                 {
-                    message = "Xoá tài khoản thất bại!";
+                    message = "Nhân viên có đơn hàng, xoá tài khoản thất bại!";
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
@@ -259,6 +263,11 @@ namespace Gwenchana
         }
 
         private void txt_Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbb_TrangThai_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -185,6 +185,7 @@ namespace Gwenchana
             // 
             // txt_LaptopColour
             // 
+            this.txt_LaptopColour.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopColour.Location = new System.Drawing.Point(672, 120);
             this.txt_LaptopColour.Name = "txt_LaptopColour";
             this.txt_LaptopColour.Size = new System.Drawing.Size(154, 29);
@@ -202,6 +203,7 @@ namespace Gwenchana
             // 
             // txt_ScreenSize
             // 
+            this.txt_ScreenSize.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ScreenSize.Location = new System.Drawing.Point(464, 120);
             this.txt_ScreenSize.Name = "txt_ScreenSize";
             this.txt_ScreenSize.Size = new System.Drawing.Size(183, 29);
@@ -219,6 +221,7 @@ namespace Gwenchana
             // 
             // txt_LaptopWeight
             // 
+            this.txt_LaptopWeight.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopWeight.Location = new System.Drawing.Point(267, 120);
             this.txt_LaptopWeight.Name = "txt_LaptopWeight";
             this.txt_LaptopWeight.Size = new System.Drawing.Size(154, 29);
@@ -237,6 +240,7 @@ namespace Gwenchana
             // 
             // txt_LaptopPrice
             // 
+            this.txt_LaptopPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopPrice.Location = new System.Drawing.Point(63, 263);
             this.txt_LaptopPrice.Name = "txt_LaptopPrice";
             this.txt_LaptopPrice.Size = new System.Drawing.Size(380, 29);
@@ -280,6 +284,7 @@ namespace Gwenchana
             // 
             // txt_Spetification
             // 
+            this.txt_Spetification.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Spetification.Location = new System.Drawing.Point(63, 198);
             this.txt_Spetification.Name = "txt_Spetification";
             this.txt_Spetification.Size = new System.Drawing.Size(550, 29);
@@ -297,6 +302,7 @@ namespace Gwenchana
             // 
             // txt_Manufacturer
             // 
+            this.txt_Manufacturer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Manufacturer.Location = new System.Drawing.Point(63, 120);
             this.txt_Manufacturer.Name = "txt_Manufacturer";
             this.txt_Manufacturer.Size = new System.Drawing.Size(183, 29);
@@ -315,6 +321,7 @@ namespace Gwenchana
             // 
             // txt_LaptopName
             // 
+            this.txt_LaptopName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LaptopName.Location = new System.Drawing.Point(63, 48);
             this.txt_LaptopName.Name = "txt_LaptopName";
             this.txt_LaptopName.Size = new System.Drawing.Size(286, 29);

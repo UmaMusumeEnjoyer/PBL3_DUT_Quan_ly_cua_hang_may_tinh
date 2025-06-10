@@ -325,6 +325,7 @@ namespace Gwenchana
                 ExportInvoiceToPDF(sfd.FileName);
                 MessageBox.Show("Xuất hóa đơn ra PDF thành công!");
             }
+            this.Close(); 
         }
 
         private void ExportInvoiceToPDF(string filePath)

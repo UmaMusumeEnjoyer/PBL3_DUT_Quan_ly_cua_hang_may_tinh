@@ -22,6 +22,7 @@ namespace Gwenchana.DataAccess.DAL
                     gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
                     CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
                     e.employeeName AS [Tên nhân viên],
+                    e.EmploymentStatus AS [Trạng thái],
                     s.supplierName AS [Tên nhà phân phối],
                     SUM(d.quantity * d.productPrice) AS [Thành tiền (VNĐ)]
                 FROM Goods_Receipt gr
@@ -33,13 +34,11 @@ namespace Gwenchana.DataAccess.DAL
                     gr.GoodsReceipt_Id,
                     gr.goodsReceiptDate,
                     e.employeeName,
+                    e.EmploymentStatus,
                     s.supplierName
                 ORDER BY gr.goodsReceiptDate DESC, gr.GoodsReceipt_Id";
-
             return _db.GetData(query);
         }
-
-
         public DataTable GetAllGoodsReceiptsByID(int ID)
         {
             DataTable dt = new DataTable();
@@ -49,6 +48,7 @@ namespace Gwenchana.DataAccess.DAL
                     gr.GoodsReceipt_Id AS [Mã đơn nhập hàng],
                     CONVERT(VARCHAR(10), gr.goodsReceiptDate, 103) AS [Ngày nhập hàng],
                     e.employeeName AS [Tên nhân viên],
+                    e.EmploymentStatus AS [Trạng thái],
                     s.supplierName AS [Tên nhà phân phối],
                     p.productName AS [Tên sản phẩm],
                     p.Manufacturer AS [Hãng sản xuất],
@@ -61,7 +61,7 @@ namespace Gwenchana.DataAccess.DAL
                 JOIN Product p ON d.Product_Id = p.Product_Id
                 JOIN Supplier s ON p.Supplier_Id = s.Supplier_Id
                 WHERE gr.GoodsReceipt_Id = @ID;
-            ";
+             ";
             using (SqlConnection conn = _db.GetConnection())
             {
                 conn.Open();
@@ -75,7 +75,6 @@ namespace Gwenchana.DataAccess.DAL
                     }
                 }
             }
-
             return dt;
         }
         public bool ImportProducts(int employeeId, List<ProductViewModel> products)

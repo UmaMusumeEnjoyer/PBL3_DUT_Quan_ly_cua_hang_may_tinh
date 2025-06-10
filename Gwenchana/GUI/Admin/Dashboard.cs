@@ -138,5 +138,10 @@ namespace Gwenchana
         {
 
         }
+
+        private void dgvUnderstock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

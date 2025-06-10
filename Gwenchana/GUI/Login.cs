@@ -92,7 +92,7 @@ namespace Gwenchana
                     else if (accountBLL.GetRole(username) == "Employee")
                     {
                         int id = accountBLL.GetId(username);
-                        EmployeeMenu employeeDashboard = new EmployeeMenu(id);
+                        
 
                         CurrentEmployee employee = new CurrentEmployee();
 
@@ -107,7 +107,18 @@ namespace Gwenchana
                             );
                             return;
                         }
+                        if (employee.TrangThai == "Đã nghỉ việc")
+                        {
+                            MessageBox.Show(
+                                "Bạn đã nghỉ việc! Không thể đăng nhập vào ứng dụng.",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning
+                            );
+                            return;
+                        }
 
+                        EmployeeMenu employeeDashboard = new EmployeeMenu(id);
                         login_username.Text = "";
                         login_password.Text = "";
                         this.Hide();

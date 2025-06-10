@@ -134,7 +134,8 @@ namespace Gwenchana
                     employeeName = txt_Name.Text,
                     Age = int.Parse(txt_Age.Text),
                     phoneNumber = txt_PhoneNumber.Text,
-                    Account_Id = employee.Account_Id
+                    Account_Id = employee.Account_Id,
+                    TrangThai = employee.TrangThai
                 };
 
                 if (employeeBLL.UpdateEmployee(employee1))

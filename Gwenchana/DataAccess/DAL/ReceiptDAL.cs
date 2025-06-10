@@ -22,6 +22,7 @@ namespace Gwenchana.DataAccess.DAL
             r.Receipt_Id,
             CONVERT(VARCHAR(10), r.receiptDate, 103) AS [Ngày xuất hàng], -- DD/MM/YYYY
             e.employeeName AS [Tên nhân viên],
+            e.EmploymentStatus AS [Trạng thái],
             e.phoneNumber AS [SĐT nhân viên],
             c.customerName AS [Tên khách hàng],
             c.phoneNumber AS [SĐT khách hàng],
@@ -54,6 +55,7 @@ namespace Gwenchana.DataAccess.DAL
                     r.Receipt_Id AS [Mã đơn hàng],
                     CONVERT(VARCHAR(10), r.receiptDate, 103) AS [Ngày xuất hàng],
                     e.employeeName AS [Tên nhân viên],
+                    e.EmploymentStatus AS [Trạng thái],
                     c.customerName AS [Tên khách hàng],
                     p.productName AS [Tên sản phẩm],
                     p.Manufacturer AS [Hãng sản xuất],
@@ -95,6 +97,7 @@ namespace Gwenchana.DataAccess.DAL
             r.Receipt_Id AS [Mã đơn hàng],
             CONVERT(VARCHAR(10), r.receiptDate, 103) AS [Ngày xuất hàng],
             e.employeeName AS [Tên nhân viên],
+            e.EmploymentStatus AS [Trạng thái],
             c.customerName AS [Tên khách hàng],
             p.productName AS [Tên sản phẩm],
             p.Manufacturer AS [Hãng sản xuất],

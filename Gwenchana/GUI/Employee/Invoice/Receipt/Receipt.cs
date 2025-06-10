@@ -50,8 +50,6 @@ namespace Gwenchana
             dataGridView.ReadOnly = true;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
-
-            //dataGridView.Columns["Mã đơn xuất hàng"].Visible = false;
             dataGridView.Columns["Receipt_Id"].Visible = false;
 
 

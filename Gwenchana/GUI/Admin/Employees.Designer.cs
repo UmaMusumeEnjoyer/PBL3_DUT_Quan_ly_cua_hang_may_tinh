@@ -29,14 +29,12 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -51,6 +49,8 @@ namespace Gwenchana
             this.txt_EmployeeName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_AccessoriesID = new System.Windows.Forms.TextBox();
+            this.cbb_TrangThai = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -97,7 +97,6 @@ namespace Gwenchana
             this.tabPagePetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
             this.tabPagePetList.Controls.Add(this.dataGridView);
             this.tabPagePetList.Controls.Add(this.label2);
-            this.tabPagePetList.Controls.Add(this.btnDelete);
             this.tabPagePetList.Controls.Add(this.btnEdit);
             this.tabPagePetList.Controls.Add(this.btnSearch);
             this.tabPagePetList.Controls.Add(this.txtSearch);
@@ -118,14 +117,6 @@ namespace Gwenchana
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 63);
             this.dataGridView.Name = "dataGridView";
@@ -145,20 +136,6 @@ namespace Gwenchana
             this.label2.TabIndex = 5;
             this.label2.Text = "Tìm kiếm :";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.Location = new System.Drawing.Point(767, 175);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 30);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -167,7 +144,7 @@ namespace Gwenchana
             this.btnEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEdit.Location = new System.Drawing.Point(767, 139);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(99, 30);
+            this.btnEdit.Size = new System.Drawing.Size(99, 90);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -200,6 +177,8 @@ namespace Gwenchana
             // tabPagePetDetail
             // 
             this.tabPagePetDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
+            this.tabPagePetDetail.Controls.Add(this.label5);
+            this.tabPagePetDetail.Controls.Add(this.cbb_TrangThai);
             this.tabPagePetDetail.Controls.Add(this.label4);
             this.tabPagePetDetail.Controls.Add(this.txt_Age);
             this.tabPagePetDetail.Controls.Add(this.lb_Email);
@@ -319,6 +298,30 @@ namespace Gwenchana
             this.txt_AccessoriesID.TabIndex = 6;
             this.txt_AccessoriesID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
+            // cbb_TrangThai
+            // 
+            this.cbb_TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_TrangThai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_TrangThai.FormattingEnabled = true;
+            this.cbb_TrangThai.Items.AddRange(new object[] {
+            "Đang làm việc",
+            "Đã nghỉ việc"});
+            this.cbb_TrangThai.Location = new System.Drawing.Point(524, 206);
+            this.cbb_TrangThai.Name = "cbb_TrangThai";
+            this.cbb_TrangThai.Size = new System.Drawing.Size(174, 29);
+            this.cbb_TrangThai.TabIndex = 20;
+            this.cbb_TrangThai.SelectedIndexChanged += new System.EventHandler(this.cbb_TrangThai_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(520, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 21);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Trạng thái :";
+            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -349,7 +352,6 @@ namespace Gwenchana
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePetList;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
@@ -365,5 +367,7 @@ namespace Gwenchana
         private System.Windows.Forms.TextBox txt_PhoneNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Age;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbb_TrangThai;
     }
 }

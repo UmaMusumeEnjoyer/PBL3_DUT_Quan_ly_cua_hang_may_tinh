@@ -26,6 +26,7 @@ namespace Gwenchana.DataAccess.DAL
                     Age = Convert.ToInt32(row["age"]),
                     phoneNumber = row["phoneNumber"].ToString(),
                     Account_Id = Convert.ToInt32(row["Account_Id"]),
+                    TrangThai = row["EmploymentStatus"] != DBNull.Value ? row["EmploymentStatus"].ToString() : null // Handle null value for TrangThai
                 });
             }
             return list;
@@ -39,13 +40,14 @@ namespace Gwenchana.DataAccess.DAL
         {
             try
             {
-                string sql = "UPDATE Employee SET employeeName = @employeeName, age = @age, phoneNumber = @phoneNumber WHERE Employee_Id = @Employee_Id";
+                string sql = "UPDATE Employee SET employeeName = @employeeName, age = @age, phoneNumber = @phoneNumber, EmploymentStatus = @employmentStatus WHERE Employee_Id = @Employee_Id";
                 var parameters = new[]
                 {
                     new SqlParameter("@employeeName", employee.employeeName),
                     new SqlParameter("@age", employee.Age),
                     new SqlParameter("@phoneNumber", employee.phoneNumber),
-                    new SqlParameter("@Employee_Id", employee.Empolyee_Id)
+                    new SqlParameter("@Employee_Id", employee.Empolyee_Id),
+                    new SqlParameter("@employmentStatus", employee.TrangThai ?? (object)DBNull.Value) // Handle null TrangThai
                 };
                 return _db.ExecuteNonQuery(sql, parameters) > 0;
             }

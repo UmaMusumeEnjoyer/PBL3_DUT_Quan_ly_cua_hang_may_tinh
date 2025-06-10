@@ -90,7 +90,7 @@ namespace Gwenchana.DataAccess.DAL
         {
             try
             {
-                string sql = "DELETE FROM Product WHERE Product_Id = @Product_Id";
+                string sql = "DELETE FROM PC WHERE Product_Id = @Product_Id";
                 SqlParameter[] parameters = {
                     new SqlParameter("@Product_Id", id)
                 };

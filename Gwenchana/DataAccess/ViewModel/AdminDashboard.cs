@@ -80,15 +80,21 @@ namespace Gwenchana.DataAccess.ViewModel
 
             // 5 products with lowest stock
             string understockQuery = @"
-        SELECT TOP 5 
-            p.Product_Id,
-            p.productName,
-            p.Manufacturer,
-            p.price,
-            p.stockQuantity
-        FROM Product p
-        WHERE p.stockQuantity IS NOT NULL
-        ORDER BY p.stockQuantity ASC;";
+                SELECT TOP 10 
+                    p.Product_Id,
+                    p.productName,
+                    p.Manufacturer,
+                    p.price,
+                    p.stockQuantity
+                FROM Product p
+                WHERE p.stockQuantity IS NOT NULL
+                  AND (
+                      EXISTS (SELECT 1 FROM PC WHERE PC.Product_Id = p.Product_Id)
+                      OR EXISTS (SELECT 1 FROM Laptop WHERE Laptop.Product_Id = p.Product_Id)
+                      OR EXISTS (SELECT 1 FROM Accessories WHERE Accessories.Product_Id = p.Product_Id)
+                  )
+                ORDER BY p.stockQuantity ASC;
+            ";
 
             DataTable understockTable = _db.GetData(understockQuery);
             foreach (DataRow row in understockTable.Rows)

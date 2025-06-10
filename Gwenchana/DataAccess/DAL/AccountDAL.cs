@@ -8,6 +8,7 @@ namespace Gwenchana.DataAccess.DAL
     public class AccountDAL
     {
         private readonly DBConnect.DbConnect _db = new DBConnect.DbConnect();
+
         public List<Account> GetAllAccounts()
         {
             var list = new List<Account>(); 
@@ -27,6 +28,7 @@ namespace Gwenchana.DataAccess.DAL
             }
             return list;
         }
+
         public Account GetAccountById(int id)
         {
             string sql = "SELECT * FROM Account WHERE Id = @Id";
@@ -45,6 +47,7 @@ namespace Gwenchana.DataAccess.DAL
                 Role = row["Role"].ToString()
             };
         }
+
         public bool AddAccount(Account account)
         {
             string sql = @"INSERT INTO Account (Username, Password, Role) 
@@ -57,6 +60,7 @@ namespace Gwenchana.DataAccess.DAL
             };
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
+
         public bool UpdateAccount(Account account)
         {
             string sql = @"UPDATE Account SET 
@@ -73,14 +77,42 @@ namespace Gwenchana.DataAccess.DAL
             };
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
+
         public bool DeleteAccount(int id)
         {
-            string sql = "DELETE FROM Account WHERE Id = @Id";
-            SqlParameter[] parameters = {
-                new SqlParameter("@Id", id)
-            };
-            return _db.ExecuteNonQuery(sql, parameters) > 0;
+            using (var connection = _db.GetConnection())
+            {
+                connection.Open();
+                using (var transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // Bước 1: Cập nhật Account_Id của Employee về NULL
+                        using (var updateCmd = new SqlCommand("UPDATE Employee SET Account_Id = NULL WHERE Account_Id = @Id", connection, transaction))
+                        {
+                            updateCmd.Parameters.AddWithValue("@Id", id);
+                            updateCmd.ExecuteNonQuery();
+                        }
+
+                        // Bước 2: Xoá tài khoản trong bảng Account
+                        using (var deleteCmd = new SqlCommand("DELETE FROM Account WHERE Id = @Id", connection, transaction))
+                        {
+                            deleteCmd.Parameters.AddWithValue("@Id", id);
+                            int rowsAffected = deleteCmd.ExecuteNonQuery();
+
+                            transaction.Commit();
+                            return rowsAffected > 0;
+                        }
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        return false;
+                    }
+                }
+            }
         }
+
         public DataTable GetAllAccountDataTable()
         {
             string sql = "SELECT " +
@@ -93,6 +125,7 @@ namespace Gwenchana.DataAccess.DAL
                         "WHERE a.role <> 'admin'";
             return _db.GetData(sql);
         }
+
         public bool AssignEmployee(int id)
         {
             string sql = "INSERT INTO Employee (Account_Id) VALUES (@AccountId)";
@@ -101,6 +134,7 @@ namespace Gwenchana.DataAccess.DAL
             };
             return _db.ExecuteNonQuery(sql, parameters) > 0;
         }
+
         public int GetID(string username)
         {
             string sql = "SELECT Id FROM Account WHERE Username = @Username";

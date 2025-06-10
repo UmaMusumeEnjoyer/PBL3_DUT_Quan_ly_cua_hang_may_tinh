@@ -16,9 +16,9 @@ namespace Gwenchana.DataAccess.ViewModel
         public string employeeName { get; set; }
         public int? Age { get; set; }
         public string phoneNumber { get; set; }
-
         public int Employee_Id { get; set; }
         public int Account_Id { get; set; }
+        public string TrangThai { get; set; }
 
         private readonly DBConnect.DbConnect _db = new DBConnect.DbConnect();
 
@@ -41,12 +41,8 @@ namespace Gwenchana.DataAccess.ViewModel
                 this.phoneNumber = row["phoneNumber"] == DBNull.Value ? "" : row["phoneNumber"].ToString();
                 this.Age = row["age"] == DBNull.Value ? 0 : Convert.ToInt32(row["age"]);
                 //this.employeeName = row["employeeName"].ToString();
+                this.TrangThai = row["EmploymentStatus"] == DBNull.Value ? "" : row["EmploymentStatus"].ToString();
             }
         }
-
-
-
-
-
     }
 }
