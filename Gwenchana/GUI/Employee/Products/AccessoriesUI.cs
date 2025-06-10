@@ -427,5 +427,16 @@ namespace Gwenchana
             addProduct.ShowDialog();
             LoadData(); // Tải lại dữ liệu sau khi thêm mới sản phẩm
         }
+
+        private void txt_AccessoriesPrice_Validating(object sender, CancelEventArgs e)
+        {
+            double canNang;
+            if (!double.TryParse(txt_AccessoriesPrice.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_AccessoriesPrice.Focus();
+                txt_AccessoriesPrice.SelectAll();
+            }
+        }
     }
 }

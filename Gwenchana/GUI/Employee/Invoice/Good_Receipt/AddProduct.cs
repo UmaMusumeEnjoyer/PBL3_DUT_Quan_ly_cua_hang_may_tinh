@@ -243,5 +243,49 @@ namespace Gwenchana
         {
 
         }
+
+        private void txt_LaptopWeight_Validating(object sender, CancelEventArgs e)
+        {
+            decimal canNang;
+            if (!decimal.TryParse(txt_LaptopWeight.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_LaptopWeight.Focus();
+                txt_LaptopWeight.SelectAll();
+            }
+        }
+
+        private void txt_LaptopPrice_Validating(object sender, CancelEventArgs e)
+        {
+            decimal canNang;
+            if (!decimal.TryParse(txt_LaptopPrice.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_LaptopPrice.Focus();
+                txt_LaptopPrice.SelectAll();
+            }
+        }
+
+        private void txt_pcPrice_Validating(object sender, CancelEventArgs e)
+        {
+            decimal canNang;
+            if (!decimal.TryParse(txt_pcPrice.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_pcPrice.Focus();
+                txt_pcPrice.SelectAll();
+            }
+        }
+
+        private void txt_AccessoriesPrice_Validating(object sender, CancelEventArgs e)
+        {
+            decimal canNang;
+            if (!decimal.TryParse(txt_AccessoriesPrice.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_AccessoriesPrice.Focus();
+                txt_AccessoriesPrice.SelectAll();
+            }
+        }
     }
 }

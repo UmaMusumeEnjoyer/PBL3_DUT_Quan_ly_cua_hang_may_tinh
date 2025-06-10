@@ -33,6 +33,7 @@ namespace Gwenchana
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@ namespace Gwenchana
             this.txt_AccessoriesName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_AccessoriesID = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -124,6 +124,20 @@ namespace Gwenchana
             this.tabPagePetList.Size = new System.Drawing.Size(884, 377);
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button3.Location = new System.Drawing.Point(767, 150);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 30);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Thêm";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -354,6 +368,7 @@ namespace Gwenchana
             this.txt_AccessoriesPrice.Name = "txt_AccessoriesPrice";
             this.txt_AccessoriesPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_AccessoriesPrice.TabIndex = 16;
+            this.txt_AccessoriesPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_AccessoriesPrice_Validating);
             // 
             // btnCancel
             // 
@@ -454,20 +469,6 @@ namespace Gwenchana
             this.txt_AccessoriesID.Size = new System.Drawing.Size(154, 29);
             this.txt_AccessoriesID.TabIndex = 6;
             this.txt_AccessoriesID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(767, 150);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 30);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // AccessoriesUI
             // 

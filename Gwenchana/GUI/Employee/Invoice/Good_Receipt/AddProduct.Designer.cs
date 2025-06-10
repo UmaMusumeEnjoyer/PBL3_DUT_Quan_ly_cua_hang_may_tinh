@@ -227,6 +227,7 @@ namespace Gwenchana
             this.txt_LaptopWeight.Size = new System.Drawing.Size(154, 29);
             this.txt_LaptopWeight.TabIndex = 18;
             this.txt_LaptopWeight.TextChanged += new System.EventHandler(this.txt_LaptopWeight_TextChanged);
+            this.txt_LaptopWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txt_LaptopWeight_Validating);
             // 
             // lb_Email
             // 
@@ -245,6 +246,7 @@ namespace Gwenchana
             this.txt_LaptopPrice.Name = "txt_LaptopPrice";
             this.txt_LaptopPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_LaptopPrice.TabIndex = 16;
+            this.txt_LaptopPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_LaptopPrice_Validating);
             // 
             // btnCancel
             // 
@@ -386,6 +388,7 @@ namespace Gwenchana
             this.txt_pcPrice.Name = "txt_pcPrice";
             this.txt_pcPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_pcPrice.TabIndex = 30;
+            this.txt_pcPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_pcPrice_Validating);
             // 
             // button1
             // 
@@ -541,6 +544,7 @@ namespace Gwenchana
             this.txt_AccessoriesPrice.Name = "txt_AccessoriesPrice";
             this.txt_AccessoriesPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_AccessoriesPrice.TabIndex = 32;
+            this.txt_AccessoriesPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_AccessoriesPrice_Validating);
             // 
             // button3
             // 

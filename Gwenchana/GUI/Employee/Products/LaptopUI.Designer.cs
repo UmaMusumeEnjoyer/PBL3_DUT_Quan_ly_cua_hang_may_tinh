@@ -29,10 +29,12 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,7 +67,6 @@ namespace Gwenchana
             this.txt_LaptopName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_LaptopID = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -128,6 +129,20 @@ namespace Gwenchana
             this.tabPagePetList.Size = new System.Drawing.Size(858, 377);
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Laptop";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button3.Location = new System.Drawing.Point(741, 146);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 30);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Thêm";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -196,6 +211,14 @@ namespace Gwenchana
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 73);
             this.dataGridView.Name = "dataGridView";
@@ -383,6 +406,7 @@ namespace Gwenchana
             this.txt_LaptopWeight.Size = new System.Drawing.Size(154, 29);
             this.txt_LaptopWeight.TabIndex = 18;
             this.txt_LaptopWeight.TextChanged += new System.EventHandler(this.txt_LaptopWeight_TextChanged);
+            this.txt_LaptopWeight.Validating += new System.ComponentModel.CancelEventHandler(this.txt_LaptopWeight_Validating);
             // 
             // lb_Email
             // 
@@ -401,6 +425,7 @@ namespace Gwenchana
             this.txt_LaptopPrice.Name = "txt_LaptopPrice";
             this.txt_LaptopPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_LaptopPrice.TabIndex = 16;
+            this.txt_LaptopPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_LaptopPrice_Validating);
             // 
             // btnCancel
             // 
@@ -502,20 +527,6 @@ namespace Gwenchana
             this.txt_LaptopID.Size = new System.Drawing.Size(154, 29);
             this.txt_LaptopID.TabIndex = 6;
             this.txt_LaptopID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(741, 146);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 30);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // LaptopUI
             // 

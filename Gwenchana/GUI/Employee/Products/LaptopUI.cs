@@ -454,5 +454,27 @@ namespace Gwenchana
             addProductForm.ShowDialog();
             LoadData();
         }
+
+        private void txt_LaptopWeight_Validating(object sender, CancelEventArgs e)
+        {
+            double canNang;
+            if (!double.TryParse(txt_LaptopWeight.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_LaptopWeight.Focus();
+                txt_LaptopWeight.SelectAll();
+            }
+        }
+
+        private void txt_LaptopPrice_Validating(object sender, CancelEventArgs e)
+        {
+            double canNang;
+            if (!double.TryParse(txt_LaptopPrice.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_LaptopPrice.Focus();
+                txt_LaptopPrice.SelectAll();
+            }
+        }
     }
 }

@@ -415,5 +415,16 @@ namespace Gwenchana
             addProductForm.ShowDialog();
             LoadData();
         }
+
+        private void txt_pcPrice_Validating(object sender, CancelEventArgs e)
+        {
+            double canNang;
+            if (!double.TryParse(txt_pcPrice.Text, out canNang) || canNang < 0)
+            {
+                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_pcPrice.Focus();
+                txt_pcPrice.SelectAll();
+            }
+        }
     }
 }

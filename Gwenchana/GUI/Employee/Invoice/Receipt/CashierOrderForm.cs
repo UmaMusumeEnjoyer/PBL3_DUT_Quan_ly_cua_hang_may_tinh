@@ -518,5 +518,10 @@ namespace Gwenchana
             //cbb_ProductID.Items.Clear(); // Xóa danh sách ID sản phẩm đã chọn
             MessageBox.Show("Đã xóa giỏ hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void txt_salePercent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
