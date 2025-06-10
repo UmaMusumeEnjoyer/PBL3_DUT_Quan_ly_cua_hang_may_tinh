@@ -49,11 +49,9 @@ namespace Gwenchana
             dataGridView.Columns[1].HeaderText = "Tên tài khoản";
             dataGridView.Columns[2].HeaderText = "Mật khẩu";
             dataGridView.Columns[3].HeaderText = "Vai trò";
-            //dataGridView.Columns[4].HeaderText = "Trạng thái";
             dataGridView.Columns[4].HeaderText = "Trạng thái gán quyền";
-
-
-
+            dataGridView.Columns[5].HeaderText = "Tên nhân viên";
+            dataGridView.Columns[6].HeaderText = "Trạng thái";
         }
 
 

@@ -420,5 +420,12 @@ namespace Gwenchana
             txt_AccessoriesstockQuantity.Enabled = true;
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddProduct addProduct = new AddProduct("Accessories");
+            addProduct.ShowDialog();
+            LoadData(); // Tải lại dữ liệu sau khi thêm mới sản phẩm
+        }
     }
 }

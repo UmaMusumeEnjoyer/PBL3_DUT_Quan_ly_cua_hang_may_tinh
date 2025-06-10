@@ -447,5 +447,12 @@ namespace Gwenchana
             txt_LaptopPrice.Enabled = true;
             txt_stockQuantity.Enabled = true;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddProduct addProductForm = new AddProduct("Laptop");
+            addProductForm.ShowDialog();
+            LoadData();
+        }
     }
 }

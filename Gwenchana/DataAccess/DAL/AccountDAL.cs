@@ -115,14 +115,7 @@ namespace Gwenchana.DataAccess.DAL
 
         public DataTable GetAllAccountDataTable()
         {
-            string sql = "SELECT " +
-                        "a.*, " +
-                        "CASE WHEN EXISTS " +
-                        "(SELECT 1 FROM employee e WHERE e.account_Id = a.id) THEN 'YES' " +
-                        "ELSE 'NO' " +
-                        "END AS TrangThaiTonTai " +
-                        "FROM account a " +
-                        "WHERE a.role <> 'admin'";
+            string sql = "SELECT a.*, CASE WHEN EXISTS (SELECT 1 FROM employee e WHERE e.account_Id = a.id) THEN 'YES' ELSE 'NO'   END AS TrangThaiTonTai,  e.employeeName AS TenNhanVien, e.EmploymentStatus TrangThaiHoatDong FROM account a LEFT JOIN employee e ON e.account_Id = a.id WHERE a.role <> 'admin';";
             return _db.GetData(sql);
         }
 

@@ -307,5 +307,54 @@ namespace Gwenchana
             txt_sodondathuchien.Enabled = false;
 
         }
+
+        private void btn_ChiTiet_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(tabPagePetDetail);
+            tabControl1.TabPages.Remove(tabPagePetList);
+            tabControl1.SelectedTab = tabPagePetDetail;
+
+            btnSave.Visible = false;
+            btnCancel.Visible = false;
+            button2.Visible = true;
+
+
+            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["customerName"].Value.ToString();
+            txt_LaptopName.ForeColor = Color.Gray;
+            txt_LaptopName.Enabled = false;
+            txt_phoneNumber.Text = dataGridView.CurrentRow.Cells["phoneNumber"].Value.ToString();
+            txt_phoneNumber.ForeColor = Color.Gray;
+            txt_phoneNumber.Enabled = false;
+            btn_Address.Text = dataGridView.CurrentRow.Cells["address"].Value.ToString();
+            btn_Address.ForeColor = Color.Gray;
+            btn_Address.Enabled = false;
+            txt_Email.Text = dataGridView.CurrentRow.Cells["email"].Value.ToString();
+            txt_Email.ForeColor = Color.Gray;
+            txt_Email.Enabled = false;
+            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Customer_Id"].Value.ToString();
+            txt_LaptopID.ForeColor = Color.Gray;
+            txt_LaptopID.Enabled = false;
+            txt_sodondathuchien.Text = dataGridView.CurrentRow.Cells["SoDonDaThucHien"].Value.ToString();
+            txt_sodondathuchien.ForeColor = Color.Gray;
+            txt_sodondathuchien.Enabled = false;
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!tabControl1.TabPages.Contains(tabPagePetList))
+                tabControl1.TabPages.Add(tabPagePetList);
+            if (tabControl1.TabPages.Contains(tabPagePetDetail))
+                tabControl1.TabPages.Remove(tabPagePetDetail);
+            tabControl1.SelectedTab = tabPagePetList;
+
+            btnSave.Visible = true;
+            btnCancel.Visible = true;
+            button2.Visible = false;
+
+            //txt_LaptopID.Clear();
+
+        }
     }
 }
