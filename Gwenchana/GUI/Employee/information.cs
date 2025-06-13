@@ -104,6 +104,28 @@ namespace Gwenchana
         {
             CurrentEmployee employee = new CurrentEmployee();
             employee.GetCurrentEmployee(id);
+            if(txt_Age.Text == "" || txt_Name.Text == "" || txt_PhoneNumber.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                return;
+            }
+            if (txt_Age.Text.Length > 3 || txt_Age.Text.Length < 1)
+            {
+                MessageBox.Show("Vui lòng nhập đúng độ tuổi");
+                return;
+            }
+            if (txt_PhoneNumber.Text.Length > 11 || txt_PhoneNumber.Text.Length < 9)
+            {
+                MessageBox.Show("Vui lòng nhập đúng số điện thoại");
+                return;
+            }
+            if (txt_Username.Text == "" || txt_Password.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin tài khoản");
+                return;
+            }
+
+
             if (temp == "ChangeAccount")
             {
                 AccountBLL accountBLL = new AccountBLL();

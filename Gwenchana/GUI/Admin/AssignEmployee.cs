@@ -87,6 +87,9 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
+            btnSave.Text = "Sửa";
+
+
             label3.ForeColor = Color.Gray;
             txt_AccessoriesID.ForeColor = Color.Gray;
             txt_AccessoriesID.Enabled = false;
@@ -181,6 +184,7 @@ namespace Gwenchana
         {
             if (button == "Edit")
             {
+                btnSave.Text = "Xoá";
                 AccountBLL accountBLL = new AccountBLL();
                 Account account = new Account
                 {
