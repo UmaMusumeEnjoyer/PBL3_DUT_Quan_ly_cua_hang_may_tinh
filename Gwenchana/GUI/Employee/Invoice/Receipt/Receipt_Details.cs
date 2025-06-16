@@ -32,14 +32,32 @@ namespace Gwenchana.GUI.Employee.Invoice
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
 
-            //dataGridView.Columns["Mã đơn xuất hàng"].Visible = false;
+            
+
+            //dataGridView1.Columns["Mã đơn xuất hàng"].Visible = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.AllowUserToAddRows = false; // ẩn dòng trống cuối
+            
+
+
             dataGridView1.ReadOnly = true; // nếu không cần chỉnh sửa
 
 
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
+        }
 
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Áp dụng cho cột có index 8 và 9
+            if (e.ColumnIndex == 8 || e.ColumnIndex == 9)
+            {
+                if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal value))
+                {
+                    e.Value = value.ToString("N0"); // Định dạng số với dấu phẩy
+                    e.FormattingApplied = true;
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
