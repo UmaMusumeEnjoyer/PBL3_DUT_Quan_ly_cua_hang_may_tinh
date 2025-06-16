@@ -57,6 +57,19 @@ namespace Gwenchana
             //dataGridView.Columns["supplierName"].Visible = false;
             dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
 
+            dataGridView.CellFormatting += dataGridView_CellFormatting;
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Nếu cột là "price"
+            if (dataGridView.Columns[e.ColumnIndex].Name == "price" && e.Value != null && e.Value is decimal)
+            {
+                // Hiển thị số tiền theo chuẩn Việt Nam và thêm ký hiệu ₫
+                decimal gia = (decimal)e.Value;
+                e.Value = gia.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN")) + " ₫";
+                e.FormattingApplied = true;
+            }
         }
 
         public void ChangeTab()
@@ -207,6 +220,7 @@ namespace Gwenchana
             txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
 
             btnSave.Text = "Xóa";
+
 
 
 

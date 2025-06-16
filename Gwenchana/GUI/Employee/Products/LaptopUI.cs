@@ -57,9 +57,20 @@ namespace Gwenchana
             dataGridView.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
             dataGridView.Columns["supplierName"].HeaderText = "Nhà cung cấp"; // Hiển thị tên nhà cung cấp nếu cần
 
+            dataGridView.CellFormatting += dataGridView_CellFormatting;
         }
 
-
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Nếu cột là "price"
+            if (dataGridView.Columns[e.ColumnIndex].Name == "price" && e.Value != null && e.Value is decimal)
+            {
+                // Hiển thị số tiền theo chuẩn Việt Nam và thêm ký hiệu ₫
+                decimal gia = (decimal)e.Value;
+                e.Value = gia.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN")) + " ₫";
+                e.FormattingApplied = true;
+            }
+        }
 
         private void AssociateAndRaiseViewEvents()
         {

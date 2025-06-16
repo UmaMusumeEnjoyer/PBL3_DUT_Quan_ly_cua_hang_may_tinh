@@ -67,10 +67,21 @@ namespace Gwenchana
             //dataGridView.Columns["Giá nhập (VNĐ)"].HeaderText = "Giá nhập";
             dataGridView.Columns["Thành tiền (VNĐ)"].HeaderText = "Thành tiền";
 
-
+            dataGridView.CellFormatting += dataGridView_CellFormatting; // Đăng ký sự kiện CellFormatting để định dạng ô giá tiền
 
         }
 
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Nếu cột là "price"
+            if (dataGridView.Columns[e.ColumnIndex].Name == "Thành tiền (VNĐ)" && e.Value != null && e.Value is decimal)
+            {
+                // Hiển thị số tiền theo chuẩn Việt Nam và thêm ký hiệu ₫
+                decimal gia = (decimal)e.Value;
+                e.Value = gia.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN")) + " ₫";
+                e.FormattingApplied = true;
+            }
+        }
 
 
         private void AssociateAndRaiseViewEvents()
