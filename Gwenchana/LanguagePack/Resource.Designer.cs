@@ -59,5 +59,86 @@ namespace Gwenchana.LanguagePack {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LOGIN.
+        /// </summary>
+        internal static string btn_Login {
+            get {
+                return ResourceManager.GetString("btn_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SIGN UP.
+        /// </summary>
+        internal static string btn_Sigup {
+            get {
+                return ResourceManager.GetString("btn_Sigup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language :.
+        /// </summary>
+        internal static string lb_Language {
+            get {
+                return ResourceManager.GetString("lb_Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login account.
+        /// </summary>
+        internal static string lb_Login {
+            get {
+                return ResourceManager.GetString("lb_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password :.
+        /// </summary>
+        internal static string lb_Password {
+            get {
+                return ResourceManager.GetString("lb_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Computer Store.
+        /// </summary>
+        internal static string lb_ShopName {
+            get {
+                return ResourceManager.GetString("lb_ShopName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show password.
+        /// </summary>
+        internal static string lb_ShowPassword {
+            get {
+                return ResourceManager.GetString("lb_ShowPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign up for an account.
+        /// </summary>
+        internal static string lb_Sigup {
+            get {
+                return ResourceManager.GetString("lb_Sigup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username :.
+        /// </summary>
+        internal static string lb_Username {
+            get {
+                return ResourceManager.GetString("lb_Username", resourceCulture);
+            }
+        }
     }
 }

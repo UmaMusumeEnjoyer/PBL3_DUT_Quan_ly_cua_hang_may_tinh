@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess;
+using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.LanguagePack;
+using Gwenchana.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess;
-
-using System.Data.SqlClient;
-using Gwenchana.BussinessLogic;
-using Gwenchana.DataAccess.ViewModel;
 
 namespace Gwenchana
 {
@@ -21,6 +23,8 @@ namespace Gwenchana
         public Login()
         {
             InitializeComponent();
+            UpdateComponent(LanguageClass.Language);
+            this.DoubleBuffered = true; // Enable double buffering to reduce flickering
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -51,13 +55,14 @@ namespace Gwenchana
         private void login_signupBtn_Click(object sender, EventArgs e)
         {
             RegisterForm regForm = new RegisterForm();
-            regForm.Show();
+
+            regForm.ShowDialog();
             this.Hide();
         }
 
         private void login_showPass_CheckedChanged(object sender, EventArgs e)
         {
-            login_password.PasswordChar = login_showPass.Checked ? '\0' : '*';
+            login_password.PasswordChar = lb_ShowPassword.Checked ? '\0' : '*';
         }
 
         private void login_btn_Click(object sender, EventArgs e)
@@ -151,6 +156,47 @@ namespace Gwenchana
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+
+        }
+        private string currentCulture = "";
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            if (comboBox1.SelectedItem.ToString() == "Tiếng Việt")
+            {
+                currentCulture = "vi-vn";
+                LanguageClass.Language = currentCulture;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "English")
+            {
+                currentCulture = "en-us";
+                LanguageClass.Language = currentCulture;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "日本語")
+            {
+                currentCulture = "ja-jp";
+                LanguageClass.Language = currentCulture;
+            }
+            UpdateComponent(LanguageClass.Language);
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_ShopName.Text = Resource.lb_ShopName;
+            lb_ShopName.Left = (this.panel1.Width - lb_ShopName.Width) / 2; // Center the label
+            lb_Sigup.Text = Resource.lb_Sigup;
+            lb_Sigup.Left = (this.panel1.Width - lb_Sigup.Width) / 2; // Center the label
+            btn_Sigup.Text = Resource.btn_Sigup;
+            btn_Sigup.Left = (this.panel1.Width - btn_Sigup.Width) / 2; // Center the button
+
+            btn_Login.Text = Resource.btn_Login;
+            lb_ShowPassword.Text = Resource.lb_ShowPassword;
+            lb_Username.Text = Resource.lb_Username;
+            lb_Password.Text = Resource.lb_Password;
+            lb_Language.Text = Resource.lb_Language;
+            lb_Login.Text = Resource.lb_Login;
 
         }
     }

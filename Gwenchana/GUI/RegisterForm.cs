@@ -19,11 +19,22 @@ namespace Gwenchana
         public RegisterForm()
         {
             InitializeComponent();
+            this.DoubleBuffered = true; // Enable double buffering to reduce flickering
         }
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn thoát không?",
+                "Xác nhận",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void signup_loginBtn_Click(object sender, EventArgs e)
