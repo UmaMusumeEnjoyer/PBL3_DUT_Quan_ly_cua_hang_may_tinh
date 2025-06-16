@@ -29,9 +29,6 @@ namespace Gwenchana
             AssociateAndRaiseViewEvents();
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
-
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
         }
 
         private void LoadData()

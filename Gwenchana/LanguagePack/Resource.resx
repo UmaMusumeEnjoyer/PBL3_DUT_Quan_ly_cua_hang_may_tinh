@@ -132,11 +132,50 @@
   <data name="Auth_Success_Registration" xml:space="preserve">
     <value>Registration successful</value>
   </data>
+  <data name="btn_Accessories" xml:space="preserve">
+    <value>Computer parts/accessories</value>
+  </data>
+  <data name="btn_Accounts" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="btn_Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="btn_Employees" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="btn_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="btn_exportInvoices" xml:space="preserve">
+    <value>Export invoices</value>
+  </data>
+  <data name="btn_importInvoices" xml:space="preserve">
+    <value>Imported invoices</value>
+  </data>
+  <data name="btn_Invoices" xml:space="preserve">
+    <value>Invoices</value>
+  </data>
+  <data name="btn_Laptops" xml:space="preserve">
+    <value>Laptops</value>
+  </data>
   <data name="btn_Login" xml:space="preserve">
     <value>LOGIN</value>
   </data>
+  <data name="btn_PCs" xml:space="preserve">
+    <value>PC</value>
+  </data>
+  <data name="btn_Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
   <data name="btn_SignUp" xml:space="preserve">
     <value>SIGN UP</value>
+  </data>
+  <data name="btn_Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="btn_Suppliers" xml:space="preserve">
+    <value>Suppliers</value>
   </data>
   <data name="Confirm_Exit" xml:space="preserve">
     <value>Are you sure you want to exit?</value>
@@ -167,5 +206,8 @@
   </data>
   <data name="lb_Username" xml:space="preserve">
     <value>Username :</value>
+  </data>
+  <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
+    <value>Do you want to return to login?</value>
   </data>
 </root>

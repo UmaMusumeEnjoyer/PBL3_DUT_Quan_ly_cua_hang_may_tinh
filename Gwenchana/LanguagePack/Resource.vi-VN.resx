@@ -133,11 +133,50 @@
   <data name="Auth_Success_Registration" xml:space="preserve">
     <value>Đăng ký thành công</value>
   </data>
+  <data name="btn_Accessories" xml:space="preserve">
+    <value>Linh / Phụ kiện</value>
+  </data>
+  <data name="btn_Accounts" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="btn_Customers" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="btn_Employees" xml:space="preserve">
+    <value>Nhân viên</value>
+  </data>
+  <data name="btn_Exit" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="btn_exportInvoices" xml:space="preserve">
+    <value>Hoá đơn xuất</value>
+  </data>
+  <data name="btn_importInvoices" xml:space="preserve">
+    <value>Hoá đơn nhập</value>
+  </data>
+  <data name="btn_Invoices" xml:space="preserve">
+    <value>Hoá đơn</value>
+  </data>
+  <data name="btn_Laptops" xml:space="preserve">
+    <value>Laptop</value>
+  </data>
   <data name="btn_Login" xml:space="preserve">
     <value>ĐĂNG NHẬP</value>
   </data>
+  <data name="btn_PCs" xml:space="preserve">
+    <value>Máy tính để bàn</value>
+  </data>
+  <data name="btn_Products" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
   <data name="btn_SignUp" xml:space="preserve">
     <value>ĐĂNG KÝ</value>
+  </data>
+  <data name="btn_Statistics" xml:space="preserve">
+    <value>Thống kê</value>
+  </data>
+  <data name="btn_Suppliers" xml:space="preserve">
+    <value>Nhà cung cấp</value>
   </data>
   <data name="Confirm_Exit" xml:space="preserve">
     <value>Bạn có chắc chắn muốn thoát không?</value>
@@ -168,5 +207,8 @@
   </data>
   <data name="lb_Username" xml:space="preserve">
     <value>Tên đăng nhập :</value>
+  </data>
+  <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
+    <value>Bạn có muốn quay lại phần đăng nhập?</value>
   </data>
 </root>

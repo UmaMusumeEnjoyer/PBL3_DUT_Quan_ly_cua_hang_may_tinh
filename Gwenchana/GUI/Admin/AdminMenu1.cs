@@ -1,10 +1,12 @@
 ﻿using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +36,27 @@ namespace Gwenchana
             //}
 
             hideSubMenu();
+            UpdateComponent(LanguageClass.Language);
         }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            btn_Products.Text = Resource.btn_Products;
+            btn_Laptops.Text = Resource.btn_Laptops;
+            btn_PCs.Text = Resource.btn_PCs;
+            btn_Accessories.Text = Resource.btn_Accessories;
+            btn_Suppliers.Text = Resource.btn_Suppliers;
+            btn_Invoices.Text = Resource.btn_Invoices;
+            btn_importInvoices.Text = Resource.btn_importInvoices;
+            btn_exportInvoices.Text = Resource.btn_exportInvoices;
+            btn_Customers.Text = Resource.btn_Customers;
+            btn_Statistics.Text = Resource.btn_Statistics;
+            btn_Employees.Text = Resource.btn_Employees;
+            btn_Accounts.Text = Resource.btn_Accounts;
+            btn_Exit.Text = Resource.btn_Exit;
+        }
+
 
         private void hideSubMenu()
         {
@@ -194,7 +216,17 @@ namespace Gwenchana
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                Resource.Prompt_ConfirmReturnToLogin,
+                Resource.Confirm_Exit,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Close the current form
+            }
         }
 
         private Form activeForm = null;

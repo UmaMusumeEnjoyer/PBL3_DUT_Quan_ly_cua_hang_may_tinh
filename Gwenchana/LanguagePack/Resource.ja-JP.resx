@@ -132,11 +132,50 @@
   <data name="Auth_Success_Registration" xml:space="preserve">
     <value>登録が完了しました</value>
   </data>
+  <data name="btn_Accessories" xml:space="preserve">
+    <value>部品/アクセサリ</value>
+  </data>
+  <data name="btn_Accounts" xml:space="preserve">
+    <value>アカウント</value>
+  </data>
+  <data name="btn_Customers" xml:space="preserve">
+    <value>顧客</value>
+  </data>
+  <data name="btn_Employees" xml:space="preserve">
+    <value>従業員</value>
+  </data>
+  <data name="btn_Exit" xml:space="preserve">
+    <value>出口</value>
+  </data>
+  <data name="btn_exportInvoices" xml:space="preserve">
+    <value>売上請求書</value>
+  </data>
+  <data name="btn_importInvoices" xml:space="preserve">
+    <value>インポート請求書</value>
+  </data>
+  <data name="btn_Invoices" xml:space="preserve">
+    <value>請求書</value>
+  </data>
+  <data name="btn_Laptops" xml:space="preserve">
+    <value>ノートパソコン</value>
+  </data>
   <data name="btn_Login" xml:space="preserve">
     <value>ログイン</value>
   </data>
+  <data name="btn_PCs" xml:space="preserve">
+    <value>パソコン</value>
+  </data>
+  <data name="btn_Products" xml:space="preserve">
+    <value>製品</value>
+  </data>
   <data name="btn_SignUp" xml:space="preserve">
     <value>登録する</value>
+  </data>
+  <data name="btn_Statistics" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="btn_Suppliers" xml:space="preserve">
+    <value>サプライヤー</value>
   </data>
   <data name="Confirm_Exit" xml:space="preserve">
     <value>本当に終了してもよろしいですか?</value>
@@ -167,5 +206,8 @@
   </data>
   <data name="lb_Username" xml:space="preserve">
     <value>ユーザー名 :</value>
+  </data>
+  <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
+    <value>ログインに戻りますか?</value>
   </data>
 </root>

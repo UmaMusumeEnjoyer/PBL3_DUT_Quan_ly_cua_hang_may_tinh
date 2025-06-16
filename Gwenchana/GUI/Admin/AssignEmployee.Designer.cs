@@ -29,7 +29,7 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_accountManagement = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
@@ -56,22 +56,22 @@ namespace Gwenchana
             this.tabPagePetDetail.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_accountManagement
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý tài khoản";
+            this.lb_accountManagement.AutoSize = true;
+            this.lb_accountManagement.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold);
+            this.lb_accountManagement.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_accountManagement.Location = new System.Drawing.Point(13, 9);
+            this.lb_accountManagement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_accountManagement.Name = "lb_accountManagement";
+            this.lb_accountManagement.Size = new System.Drawing.Size(261, 36);
+            this.lb_accountManagement.TabIndex = 0;
+            this.lb_accountManagement.Text = "Quản lý tài khoản";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lb_accountManagement);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -329,7 +329,7 @@ namespace Gwenchana
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_accountManagement;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePetList;

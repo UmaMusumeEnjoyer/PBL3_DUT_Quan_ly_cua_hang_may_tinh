@@ -106,6 +106,87 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Computer parts/accessories.
+        /// </summary>
+        internal static string btn_Accessories {
+            get {
+                return ResourceManager.GetString("btn_Accessories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accounts.
+        /// </summary>
+        internal static string btn_Accounts {
+            get {
+                return ResourceManager.GetString("btn_Accounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customers.
+        /// </summary>
+        internal static string btn_Customers {
+            get {
+                return ResourceManager.GetString("btn_Customers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        internal static string btn_Employees {
+            get {
+                return ResourceManager.GetString("btn_Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        internal static string btn_Exit {
+            get {
+                return ResourceManager.GetString("btn_Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export invoices.
+        /// </summary>
+        internal static string btn_exportInvoices {
+            get {
+                return ResourceManager.GetString("btn_exportInvoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imported invoices.
+        /// </summary>
+        internal static string btn_importInvoices {
+            get {
+                return ResourceManager.GetString("btn_importInvoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoices.
+        /// </summary>
+        internal static string btn_Invoices {
+            get {
+                return ResourceManager.GetString("btn_Invoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Laptops.
+        /// </summary>
+        internal static string btn_Laptops {
+            get {
+                return ResourceManager.GetString("btn_Laptops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LOGIN.
         /// </summary>
         internal static string btn_Login {
@@ -115,11 +196,47 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PC.
+        /// </summary>
+        internal static string btn_PCs {
+            get {
+                return ResourceManager.GetString("btn_PCs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products.
+        /// </summary>
+        internal static string btn_Products {
+            get {
+                return ResourceManager.GetString("btn_Products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SIGN UP.
         /// </summary>
         internal static string btn_SignUp {
             get {
                 return ResourceManager.GetString("btn_SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        internal static string btn_Statistics {
+            get {
+                return ResourceManager.GetString("btn_Statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suppliers.
+        /// </summary>
+        internal static string btn_Suppliers {
+            get {
+                return ResourceManager.GetString("btn_Suppliers", resourceCulture);
             }
         }
         
@@ -210,6 +327,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_Username {
             get {
                 return ResourceManager.GetString("lb_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to return to login?.
+        /// </summary>
+        internal static string Prompt_ConfirmReturnToLogin {
+            get {
+                return ResourceManager.GetString("Prompt_ConfirmReturnToLogin", resourceCulture);
             }
         }
     }
