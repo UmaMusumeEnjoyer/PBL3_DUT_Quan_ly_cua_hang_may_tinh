@@ -117,11 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Auth_Error_AccountInactive" xml:space="preserve">
+    <value>終了しました。アプリにログインできません。</value>
+  </data>
+  <data name="Auth_Error_InsufficientPermissions" xml:space="preserve">
+    <value>アカウントが承認されていません。割り当てを受けるには管理者にお問い合わせください。</value>
+  </data>
+  <data name="Auth_Error_InvalidCredentials" xml:space="preserve">
+    <value>アカウントまたはパスワードが間違っています。</value>
+  </data>
+  <data name="Auth_Error_UsernameExists" xml:space="preserve">
+    <value>ユーザー名は既に存在します。</value>
+  </data>
+  <data name="Auth_Success_Registration" xml:space="preserve">
+    <value>登録が完了しました</value>
+  </data>
   <data name="btn_Login" xml:space="preserve">
     <value>ログイン</value>
   </data>
-  <data name="btn_SingUp" xml:space="preserve">
+  <data name="btn_SignUp" xml:space="preserve">
     <value>登録する</value>
+  </data>
+  <data name="Confirm_Exit" xml:space="preserve">
+    <value>本当に終了してもよろしいですか?</value>
+  </data>
+  <data name="Confirm_Title" xml:space="preserve">
+    <value>確認する</value>
+  </data>
+  <data name="Form_Validation_EmptyFields" xml:space="preserve">
+    <value>空欄に記入してください</value>
   </data>
   <data name="lb_Language" xml:space="preserve">
     <value>言語 :</value>

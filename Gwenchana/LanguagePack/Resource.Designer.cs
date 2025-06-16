@@ -61,6 +61,51 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have quit! Cannot log in to the app..
+        /// </summary>
+        internal static string Auth_Error_AccountInactive {
+            get {
+                return ResourceManager.GetString("Auth_Error_AccountInactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account not authorized. Please contact Admin to be assigned..
+        /// </summary>
+        internal static string Auth_Error_InsufficientPermissions {
+            get {
+                return ResourceManager.GetString("Auth_Error_InsufficientPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incorrect account or password!.
+        /// </summary>
+        internal static string Auth_Error_InvalidCredentials {
+            get {
+                return ResourceManager.GetString("Auth_Error_InvalidCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username already exists!.
+        /// </summary>
+        internal static string Auth_Error_UsernameExists {
+            get {
+                return ResourceManager.GetString("Auth_Error_UsernameExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration successful.
+        /// </summary>
+        internal static string Auth_Success_Registration {
+            get {
+                return ResourceManager.GetString("Auth_Success_Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LOGIN.
         /// </summary>
         internal static string btn_Login {
@@ -72,9 +117,36 @@ namespace Gwenchana.LanguagePack {
         /// <summary>
         ///   Looks up a localized string similar to SIGN UP.
         /// </summary>
-        internal static string btn_SingUp {
+        internal static string btn_SignUp {
             get {
-                return ResourceManager.GetString("btn_SingUp", resourceCulture);
+                return ResourceManager.GetString("btn_SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to exit?.
+        /// </summary>
+        internal static string Confirm_Exit {
+            get {
+                return ResourceManager.GetString("Confirm_Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        internal static string Confirm_Title {
+            get {
+                return ResourceManager.GetString("Confirm_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill all blank fields.
+        /// </summary>
+        internal static string Form_Validation_EmptyFields {
+            get {
+                return ResourceManager.GetString("Form_Validation_EmptyFields", resourceCulture);
             }
         }
         

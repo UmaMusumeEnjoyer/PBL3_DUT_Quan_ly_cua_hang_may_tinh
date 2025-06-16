@@ -39,13 +39,14 @@ namespace Gwenchana
             lb_Password.Text = Resource.lb_Password;
             lb_ShowPassword.Text = Resource.lb_ShowPassword;
             lb_SignUp.Text = Resource.lb_SignUp;
+            btn_Sigup.Text = Resource.btn_SignUp;
         }
 
         private void exit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "Bạn có chắc chắn muốn thoát không?",
-                "Xác nhận",
+                Resource.Confirm_Title,
+                Resource.Confirm_Exit,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
@@ -73,7 +74,7 @@ namespace Gwenchana
             if(signup_username.Text == ""
                 || signup_password.Text == "")
             {
-                MessageBox.Show("Please fill all blank fields"
+                MessageBox.Show(Resource.Form_Validation_EmptyFields
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -83,7 +84,7 @@ namespace Gwenchana
                 AccountBLL accountBLL = new AccountBLL();
                 if (accountBLL.Register(username, password, "Employee"))
                 {
-                    MessageBox.Show("Đăng ký thành công"
+                    MessageBox.Show(Resource.Auth_Success_Registration
                         , "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Login loginForm = new Login();
                     loginForm.Show();
@@ -91,7 +92,7 @@ namespace Gwenchana
                 }
                 else
                 {
-                    MessageBox.Show("Username đã tồn tại!!!"
+                    MessageBox.Show(Resource.Auth_Error_UsernameExists
                         , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

@@ -40,8 +40,8 @@ namespace Gwenchana
         private void exit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "Bạn có chắc chắn muốn thoát không?",
-                "Xác nhận",
+                Resource.Confirm_Title,
+                Resource.Confirm_Exit,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
@@ -70,7 +70,7 @@ namespace Gwenchana
             if(login_username.Text == ""
                 || login_password.Text == "")
             {
-                MessageBox.Show("Không được phép bỏ trống!!!"
+                MessageBox.Show(Resource.Form_Validation_EmptyFields
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -105,8 +105,8 @@ namespace Gwenchana
                         if (employee.employeeName == null)
                         {
                             MessageBox.Show(
-                                "Tài khoản chưa được cấp quyền. Vui lòng liên hệ với Admin để được gán.",
-                                "Thông báo",
+                                Resource.Auth_Error_InsufficientPermissions,
+                                "Notice",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning
                             );
@@ -115,8 +115,8 @@ namespace Gwenchana
                         if (employee.TrangThai == "Đã nghỉ việc")
                         {
                             MessageBox.Show(
-                                "Bạn đã nghỉ việc! Không thể đăng nhập vào ứng dụng.",
-                                "Thông báo",
+                                Resource.Auth_Error_AccountInactive,
+                                "Notice",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning
                             );
@@ -133,7 +133,7 @@ namespace Gwenchana
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!!!"
+                    MessageBox.Show(Resource.Auth_Error_InvalidCredentials
                         , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -188,7 +188,7 @@ namespace Gwenchana
             lb_ShopName.Left = (this.panel1.Width - lb_ShopName.Width) / 2; // Center the label
             lb_Sigup.Text = Resource.lb_SignUp;
             lb_Sigup.Left = (this.panel1.Width - lb_Sigup.Width) / 2; // Center the label
-            btn_Sigup.Text = Resource.btn_SingUp;
+            btn_Sigup.Text = Resource.btn_SignUp;
             btn_Sigup.Left = (this.panel1.Width - btn_Sigup.Width) / 2; // Center the button
 
             btn_Login.Text = Resource.btn_Login;

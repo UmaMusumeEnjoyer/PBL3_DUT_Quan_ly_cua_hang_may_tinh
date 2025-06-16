@@ -117,11 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Auth_Error_AccountInactive" xml:space="preserve">
+    <value>You have quit! Cannot log in to the app.</value>
+  </data>
+  <data name="Auth_Error_InsufficientPermissions" xml:space="preserve">
+    <value>Account not authorized. Please contact Admin to be assigned.</value>
+  </data>
+  <data name="Auth_Error_InvalidCredentials" xml:space="preserve">
+    <value>Incorrect account or password!</value>
+  </data>
+  <data name="Auth_Error_UsernameExists" xml:space="preserve">
+    <value>Username already exists!</value>
+  </data>
+  <data name="Auth_Success_Registration" xml:space="preserve">
+    <value>Registration successful</value>
+  </data>
   <data name="btn_Login" xml:space="preserve">
     <value>LOGIN</value>
   </data>
-  <data name="btn_SingUp" xml:space="preserve">
+  <data name="btn_SignUp" xml:space="preserve">
     <value>SIGN UP</value>
+  </data>
+  <data name="Confirm_Exit" xml:space="preserve">
+    <value>Are you sure you want to exit?</value>
+  </data>
+  <data name="Confirm_Title" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Form_Validation_EmptyFields" xml:space="preserve">
+    <value>Please fill all blank fields</value>
   </data>
   <data name="lb_Language" xml:space="preserve">
     <value>Language :</value>

@@ -117,11 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Auth_Error_AccountInactive" xml:space="preserve">
+    <value>Bạn đã nghỉ việc! Không thể đăng nhập vào ứng dụng.</value>
+  </data>
+  <data name="Auth_Error_InsufficientPermissions" xml:space="preserve">
+    <value>Tài khoản chưa được cấp quyền. Vui lòng liên hệ với Admin để được gán.</value>
+  </data>
+  <data name="Auth_Error_InvalidCredentials" xml:space="preserve">
+    <value>Tài khoản hoặc mật khẩu không đúng!
+</value>
+  </data>
+  <data name="Auth_Error_UsernameExists" xml:space="preserve">
+    <value>Username đã tồn tại!</value>
+  </data>
+  <data name="Auth_Success_Registration" xml:space="preserve">
+    <value>Đăng ký thành công</value>
+  </data>
   <data name="btn_Login" xml:space="preserve">
     <value>ĐĂNG NHẬP</value>
   </data>
-  <data name="btn_SingUp" xml:space="preserve">
+  <data name="btn_SignUp" xml:space="preserve">
     <value>ĐĂNG KÝ</value>
+  </data>
+  <data name="Confirm_Exit" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn thoát không?</value>
+  </data>
+  <data name="Confirm_Title" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="Form_Validation_EmptyFields" xml:space="preserve">
+    <value>Hãy điền vào các trường còn trống</value>
   </data>
   <data name="lb_Language" xml:space="preserve">
     <value>Ngôn ngữ :</value>
