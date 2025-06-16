@@ -1,15 +1,18 @@
-﻿using System;
+﻿using Gwenchana.BussinessLogic;
+using Gwenchana.LanguagePack;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+//using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Data;
-using System.Data.SqlClient;
-using Gwenchana.BussinessLogic;
+
 
 namespace Gwenchana
 {
@@ -20,6 +23,22 @@ namespace Gwenchana
         {
             InitializeComponent();
             this.DoubleBuffered = true; // Enable double buffering to reduce flickering
+            UpdateComponent(LanguageClass.Language);
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_ShopName.Text = Resource.lb_ShopName;
+            lb_ShopName.Left = (this.panel1.Width - lb_ShopName.Width) / 2;
+            lb_Login.Text = Resource.lb_Login;
+            lb_Login.Left = (this.panel1.Width - lb_Login.Width) / 2;
+            btn_Login.Text = Resource.btn_Login;
+            lb_SignUp.Text = Resource.lb_SignUp;
+            lb_Username.Text = Resource.lb_Username;
+            lb_Password.Text = Resource.lb_Password;
+            lb_ShowPassword.Text = Resource.lb_ShowPassword;
+            lb_SignUp.Text = Resource.lb_SignUp;
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -80,7 +99,7 @@ namespace Gwenchana
 
         private void signup_showPass_CheckedChanged(object sender, EventArgs e)
         {
-            signup_password.PasswordChar = signup_showPass.Checked ? '\0' : '*';
+            signup_password.PasswordChar = lb_ShowPassword.Checked ? '\0' : '*';
         }
 
         private void label6_Click(object sender, EventArgs e)

@@ -186,9 +186,9 @@ namespace Gwenchana
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
             lb_ShopName.Text = Resource.lb_ShopName;
             lb_ShopName.Left = (this.panel1.Width - lb_ShopName.Width) / 2; // Center the label
-            lb_Sigup.Text = Resource.lb_Sigup;
+            lb_Sigup.Text = Resource.lb_SignUp;
             lb_Sigup.Left = (this.panel1.Width - lb_Sigup.Width) / 2; // Center the label
-            btn_Sigup.Text = Resource.btn_Sigup;
+            btn_Sigup.Text = Resource.btn_SingUp;
             btn_Sigup.Left = (this.panel1.Width - btn_Sigup.Width) / 2; // Center the button
 
             btn_Login.Text = Resource.btn_Login;

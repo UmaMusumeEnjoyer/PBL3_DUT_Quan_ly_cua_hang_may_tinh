@@ -72,9 +72,9 @@ namespace Gwenchana.LanguagePack {
         /// <summary>
         ///   Looks up a localized string similar to SIGN UP.
         /// </summary>
-        internal static string btn_Sigup {
+        internal static string btn_SingUp {
             get {
-                return ResourceManager.GetString("btn_Sigup", resourceCulture);
+                return ResourceManager.GetString("btn_SingUp", resourceCulture);
             }
         }
         
@@ -126,9 +126,9 @@ namespace Gwenchana.LanguagePack {
         /// <summary>
         ///   Looks up a localized string similar to Sign up for an account.
         /// </summary>
-        internal static string lb_Sigup {
+        internal static string lb_SignUp {
             get {
-                return ResourceManager.GetString("lb_Sigup", resourceCulture);
+                return ResourceManager.GetString("lb_SignUp", resourceCulture);
             }
         }
         

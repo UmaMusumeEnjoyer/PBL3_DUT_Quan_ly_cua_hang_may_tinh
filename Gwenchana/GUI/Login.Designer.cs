@@ -88,7 +88,7 @@ namespace Gwenchana
             // lb_ShopName
             // 
             this.lb_ShopName.AutoSize = true;
-            this.lb_ShopName.Font = new System.Drawing.Font("JetBrains Mono SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ShopName.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ShopName.ForeColor = System.Drawing.Color.White;
             this.lb_ShopName.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lb_ShopName.Location = new System.Drawing.Point(35, 219);
