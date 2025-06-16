@@ -138,6 +138,12 @@
   <data name="btn_Accounts" xml:space="preserve">
     <value>アカウント</value>
   </data>
+  <data name="btn_changeAccount" xml:space="preserve">
+    <value>アカウントを設定する</value>
+  </data>
+  <data name="btn_changeInformation" xml:space="preserve">
+    <value>変更を保存</value>
+  </data>
   <data name="btn_Customers" xml:space="preserve">
     <value>顧客</value>
   </data>
@@ -189,6 +195,21 @@
   <data name="Form_Validation_EmptyFields" xml:space="preserve">
     <value>空欄に記入してください</value>
   </data>
+  <data name="lb_employeeAge" xml:space="preserve">
+    <value>年齢 :</value>
+  </data>
+  <data name="lb_employeeName" xml:space="preserve">
+    <value>名前 :</value>
+  </data>
+  <data name="lb_employeePassword" xml:space="preserve">
+    <value>パスワード :</value>
+  </data>
+  <data name="lb_employeePhonenumber" xml:space="preserve">
+    <value>電話番号 :</value>
+  </data>
+  <data name="lb_employeeUsername" xml:space="preserve">
+    <value>ユーザー名 :</value>
+  </data>
   <data name="lb_Language" xml:space="preserve">
     <value>言語 :</value>
   </data>
@@ -197,6 +218,9 @@
   </data>
   <data name="lb_Password" xml:space="preserve">
     <value>パスワード :</value>
+  </data>
+  <data name="lb_personalInformation" xml:space="preserve">
+    <value>個人情報</value>
   </data>
   <data name="lb_ShopName" xml:space="preserve">
     <value>コンピューターストア</value>

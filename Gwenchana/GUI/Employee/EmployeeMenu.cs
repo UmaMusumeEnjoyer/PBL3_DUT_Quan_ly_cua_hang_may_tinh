@@ -194,25 +194,19 @@ namespace Gwenchana
         }
         #endregion
 
-        private void btnEqualizer_Click(object sender, EventArgs e)
-        {
-            //openChildForm(new Form3());
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
 
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                Resource.Prompt_ConfirmReturnToLogin,
+                Resource.Confirm_Exit,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Close the current form
+            }
         }
 
         private Form activeForm = null;

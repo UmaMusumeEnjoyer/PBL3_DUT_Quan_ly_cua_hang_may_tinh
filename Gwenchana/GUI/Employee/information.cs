@@ -1,18 +1,20 @@
-﻿using System;
+﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess;
+using Gwenchana.DataAccess.DBConnect;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.LanguagePack;
+using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
-using Gwenchana.DataAccess.ViewModel;
-using Gwenchana.DataAccess;
-using Gwenchana.DataAccess.DBConnect;
-using Gwenchana.BussinessLogic;
-using System.CodeDom.Compiler;
 
 //using CuaHangMayTinh.UI.Authentication;
 
@@ -22,18 +24,28 @@ namespace Gwenchana
     {
         public int id { get; set; }
         public string temp { get; set; }
-        //public CurrentEmployee employee { get; set; }
+
         public information(int employe)
         {
             InitializeComponent();
+            UpdateComponent(LanguageClass.Language);
             id = employe;
-            
-
             LoadData();
-            
 
         }
-        
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_personalInformation.Text = Resource.lb_personalInformation;
+            lb_Name.Text = Resource.lb_employeeName;
+            lb_Age.Text = Resource.lb_employeeAge;
+            lb_Phonenumber.Text = Resource.lb_employeePhonenumber;
+            lb_accountUsername.Text = Resource.lb_employeeUsername;
+            lb_accountPassword.Text = Resource.lb_employeePassword;
+            btn_changeAccount.Text = Resource.btn_changeAccount;
+            btn_changeInformation.Text = Resource.btn_changeInformation;
+        }
+
         void LoadData()
         {
             txt_Name.Enabled = true;
@@ -41,11 +53,7 @@ namespace Gwenchana
             txt_PhoneNumber.Enabled = true;
             txt_Username.Enabled = true;
             txt_Password.Enabled = true;
-            button2.Visible = true;
-
-
-
-
+            btn_changeAccount.Visible = true;
             CurrentEmployee employee = new CurrentEmployee();
             employee.GetCurrentEmployee(id);
             txt_Name.Text = employee.employeeName;
@@ -53,12 +61,8 @@ namespace Gwenchana
             txt_PhoneNumber.Text = employee.phoneNumber;
             txt_Username.Text = employee.username;
             txt_Password.Text = employee.password;
-            
-
             txt_Username.Enabled = false;
             txt_Password.Enabled = false;
-
-         
         }
 
         private void information_Load(object sender, EventArgs e)
@@ -76,11 +80,6 @@ namespace Gwenchana
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ChangePass_Click(object sender, EventArgs e)
         {
             temp = "ChangeAccount";
@@ -90,7 +89,7 @@ namespace Gwenchana
             txt_PhoneNumber.Enabled = false;
             txt_Username.Enabled = true;
             txt_Password.Enabled = true;
-            button2.Visible = false;
+            btn_changeAccount.Visible = false;
     
            
         }
