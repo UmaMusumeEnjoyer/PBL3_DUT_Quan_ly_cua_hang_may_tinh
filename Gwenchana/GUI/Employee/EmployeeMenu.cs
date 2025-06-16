@@ -1,10 +1,12 @@
 ﻿using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,7 @@ namespace Gwenchana
             //string username = Login.username;
             
             InitializeComponent();
+            
 
             currentEmployeeID = id;
 
@@ -33,14 +36,29 @@ namespace Gwenchana
                 openChildForm(new information(id));
             }
 
+            UpdateComponent(LanguageClass.Language);
             hideSubMenu();
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            btn_Products.Text = Resource.btn_Products;
+            btn_Laptops.Text = Resource.btn_Laptops;
+            btn_PCs.Text = Resource.btn_PCs;
+            btn_Accessories.Text = Resource.btn_Accessories;
+            btn_Suppliers.Text = Resource.btn_Suppliers;
+            btn_Invoices.Text = Resource.btn_Invoices;
+            btn_importInvoices.Text = Resource.btn_importInvoices;
+            btn_exportInvoices.Text = Resource.btn_exportInvoices;
+            btn_Customers.Text = Resource.btn_Customers;
+            btn_personalInformation.Text = Resource.btn_personalInformation;
+            btn_Exit.Text = Resource.btn_Exit;
         }
 
         private void hideSubMenu()
         {
             panelMediaSubMenu.Visible = false;
-            //panelPlaylistSubMenu.Visible = false;
-            //panelToolsSubMenu.Visible = false;
             panel1.Visible = false;
         }
 

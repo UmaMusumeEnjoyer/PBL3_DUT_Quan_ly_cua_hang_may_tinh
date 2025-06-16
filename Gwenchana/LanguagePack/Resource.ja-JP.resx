@@ -165,6 +165,9 @@
   <data name="btn_PCs" xml:space="preserve">
     <value>パソコン</value>
   </data>
+  <data name="btn_personalInformation" xml:space="preserve">
+    <value>個人情報</value>
+  </data>
   <data name="btn_Products" xml:space="preserve">
     <value>製品</value>
   </data>

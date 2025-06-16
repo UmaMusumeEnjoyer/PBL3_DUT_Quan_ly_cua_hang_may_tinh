@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeMenu));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_ThongTinCaNhan = new System.Windows.Forms.Button();
+            this.btn_Customers = new System.Windows.Forms.Button();
+            this.btn_personalInformation = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_HoaDonXuat = new System.Windows.Forms.Button();
-            this.btn_HoaDonNhap = new System.Windows.Forms.Button();
-            this.btn_HoaDon = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnTools = new System.Windows.Forms.Button();
+            this.btn_exportInvoices = new System.Windows.Forms.Button();
+            this.btn_importInvoices = new System.Windows.Forms.Button();
+            this.btn_Invoices = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
+            this.btn_Suppliers = new System.Windows.Forms.Button();
             this.panelMediaSubMenu = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnMedia = new System.Windows.Forms.Button();
+            this.btn_Accessories = new System.Windows.Forms.Button();
+            this.btn_PCs = new System.Windows.Forms.Button();
+            this.btn_Laptops = new System.Windows.Forms.Button();
+            this.btn_Products = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
@@ -57,14 +57,14 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.panelSideMenu.Controls.Add(this.button1);
-            this.panelSideMenu.Controls.Add(this.btn_ThongTinCaNhan);
+            this.panelSideMenu.Controls.Add(this.btn_Customers);
+            this.panelSideMenu.Controls.Add(this.btn_personalInformation);
             this.panelSideMenu.Controls.Add(this.panel1);
-            this.panelSideMenu.Controls.Add(this.btn_HoaDon);
-            this.panelSideMenu.Controls.Add(this.btnExit);
-            this.panelSideMenu.Controls.Add(this.btnTools);
+            this.panelSideMenu.Controls.Add(this.btn_Invoices);
+            this.panelSideMenu.Controls.Add(this.btn_Exit);
+            this.panelSideMenu.Controls.Add(this.btn_Suppliers);
             this.panelSideMenu.Controls.Add(this.panelMediaSubMenu);
-            this.panelSideMenu.Controls.Add(this.btnMedia);
+            this.panelSideMenu.Controls.Add(this.btn_Products);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.ForeColor = System.Drawing.Color.CadetBlue;
@@ -74,281 +74,281 @@
             this.panelSideMenu.Size = new System.Drawing.Size(225, 979);
             this.panelSideMenu.TabIndex = 0;
             // 
-            // button1
+            // btn_Customers
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::Gwenchana.Properties.Resources.review;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 552);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(225, 53);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Khách hàng";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btn_Customers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Customers.FlatAppearance.BorderSize = 0;
+            this.btn_Customers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_Customers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_Customers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Customers.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Customers.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Customers.Image = global::Gwenchana.Properties.Resources.review;
+            this.btn_Customers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Customers.Location = new System.Drawing.Point(0, 586);
+            this.btn_Customers.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Customers.Name = "btn_Customers";
+            this.btn_Customers.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Customers.Size = new System.Drawing.Size(225, 53);
+            this.btn_Customers.TabIndex = 13;
+            this.btn_Customers.Text = "Khách hàng";
+            this.btn_Customers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Customers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Customers.UseVisualStyleBackColor = true;
+            this.btn_Customers.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btn_ThongTinCaNhan
+            // btn_personalInformation
             // 
-            this.btn_ThongTinCaNhan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_ThongTinCaNhan.FlatAppearance.BorderSize = 0;
-            this.btn_ThongTinCaNhan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btn_ThongTinCaNhan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btn_ThongTinCaNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ThongTinCaNhan.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThongTinCaNhan.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ThongTinCaNhan.Image = global::Gwenchana.Properties.Resources.personal_information;
-            this.btn_ThongTinCaNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ThongTinCaNhan.Location = new System.Drawing.Point(0, 499);
-            this.btn_ThongTinCaNhan.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ThongTinCaNhan.Name = "btn_ThongTinCaNhan";
-            this.btn_ThongTinCaNhan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_ThongTinCaNhan.Size = new System.Drawing.Size(225, 53);
-            this.btn_ThongTinCaNhan.TabIndex = 12;
-            this.btn_ThongTinCaNhan.Text = "Thông tin cá nhân";
-            this.btn_ThongTinCaNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ThongTinCaNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_ThongTinCaNhan.UseVisualStyleBackColor = true;
-            this.btn_ThongTinCaNhan.Click += new System.EventHandler(this.btn_ThongTinCaNhan_Click);
+            this.btn_personalInformation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_personalInformation.FlatAppearance.BorderSize = 0;
+            this.btn_personalInformation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_personalInformation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_personalInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_personalInformation.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_personalInformation.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_personalInformation.Image = global::Gwenchana.Properties.Resources.personal_information;
+            this.btn_personalInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_personalInformation.Location = new System.Drawing.Point(0, 521);
+            this.btn_personalInformation.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_personalInformation.Name = "btn_personalInformation";
+            this.btn_personalInformation.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_personalInformation.Size = new System.Drawing.Size(225, 65);
+            this.btn_personalInformation.TabIndex = 12;
+            this.btn_personalInformation.Text = "Thông tin cá nhân";
+            this.btn_personalInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_personalInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_personalInformation.UseVisualStyleBackColor = true;
+            this.btn_personalInformation.Click += new System.EventHandler(this.btn_ThongTinCaNhan_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panel1.Controls.Add(this.btn_HoaDonXuat);
-            this.panel1.Controls.Add(this.btn_HoaDonNhap);
+            this.panel1.Controls.Add(this.btn_exportInvoices);
+            this.panel1.Controls.Add(this.btn_importInvoices);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 405);
+            this.panel1.Location = new System.Drawing.Point(0, 427);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(225, 94);
             this.panel1.TabIndex = 0;
             // 
-            // btn_HoaDonXuat
+            // btn_exportInvoices
             // 
-            this.btn_HoaDonXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
-            this.btn_HoaDonXuat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_HoaDonXuat.FlatAppearance.BorderSize = 0;
-            this.btn_HoaDonXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HoaDonXuat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HoaDonXuat.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_HoaDonXuat.Image = global::Gwenchana.Properties.Resources.export;
-            this.btn_HoaDonXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDonXuat.Location = new System.Drawing.Point(0, 48);
-            this.btn_HoaDonXuat.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_HoaDonXuat.Name = "btn_HoaDonXuat";
-            this.btn_HoaDonXuat.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btn_HoaDonXuat.Size = new System.Drawing.Size(225, 48);
-            this.btn_HoaDonXuat.TabIndex = 1;
-            this.btn_HoaDonXuat.Text = "Hoá đơn xuất";
-            this.btn_HoaDonXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_HoaDonXuat.UseVisualStyleBackColor = false;
-            this.btn_HoaDonXuat.Click += new System.EventHandler(this.btn_HoaDonXuat_Click);
+            this.btn_exportInvoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
+            this.btn_exportInvoices.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_exportInvoices.FlatAppearance.BorderSize = 0;
+            this.btn_exportInvoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exportInvoices.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exportInvoices.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_exportInvoices.Image = global::Gwenchana.Properties.Resources.export;
+            this.btn_exportInvoices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_exportInvoices.Location = new System.Drawing.Point(0, 48);
+            this.btn_exportInvoices.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_exportInvoices.Name = "btn_exportInvoices";
+            this.btn_exportInvoices.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btn_exportInvoices.Size = new System.Drawing.Size(225, 48);
+            this.btn_exportInvoices.TabIndex = 1;
+            this.btn_exportInvoices.Text = "Hoá đơn xuất";
+            this.btn_exportInvoices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_exportInvoices.UseVisualStyleBackColor = false;
+            this.btn_exportInvoices.Click += new System.EventHandler(this.btn_HoaDonXuat_Click);
             // 
-            // btn_HoaDonNhap
+            // btn_importInvoices
             // 
-            this.btn_HoaDonNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
-            this.btn_HoaDonNhap.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_HoaDonNhap.FlatAppearance.BorderSize = 0;
-            this.btn_HoaDonNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HoaDonNhap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HoaDonNhap.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_HoaDonNhap.Image = global::Gwenchana.Properties.Resources.import;
-            this.btn_HoaDonNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDonNhap.Location = new System.Drawing.Point(0, 0);
-            this.btn_HoaDonNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_HoaDonNhap.Name = "btn_HoaDonNhap";
-            this.btn_HoaDonNhap.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btn_HoaDonNhap.Size = new System.Drawing.Size(225, 48);
-            this.btn_HoaDonNhap.TabIndex = 0;
-            this.btn_HoaDonNhap.Text = "Hoá đơn nhập";
-            this.btn_HoaDonNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_HoaDonNhap.UseVisualStyleBackColor = false;
-            this.btn_HoaDonNhap.Click += new System.EventHandler(this.btn_HoaDonNhap_Click);
+            this.btn_importInvoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
+            this.btn_importInvoices.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_importInvoices.FlatAppearance.BorderSize = 0;
+            this.btn_importInvoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_importInvoices.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_importInvoices.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_importInvoices.Image = global::Gwenchana.Properties.Resources.import;
+            this.btn_importInvoices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_importInvoices.Location = new System.Drawing.Point(0, 0);
+            this.btn_importInvoices.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_importInvoices.Name = "btn_importInvoices";
+            this.btn_importInvoices.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btn_importInvoices.Size = new System.Drawing.Size(225, 48);
+            this.btn_importInvoices.TabIndex = 0;
+            this.btn_importInvoices.Text = "Hoá đơn nhập";
+            this.btn_importInvoices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_importInvoices.UseVisualStyleBackColor = false;
+            this.btn_importInvoices.Click += new System.EventHandler(this.btn_HoaDonNhap_Click);
             // 
-            // btn_HoaDon
+            // btn_Invoices
             // 
-            this.btn_HoaDon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_HoaDon.FlatAppearance.BorderSize = 0;
-            this.btn_HoaDon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btn_HoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btn_HoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HoaDon.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HoaDon.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_HoaDon.Image = global::Gwenchana.Properties.Resources.invoice;
-            this.btn_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDon.Location = new System.Drawing.Point(0, 352);
-            this.btn_HoaDon.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_HoaDon.Name = "btn_HoaDon";
-            this.btn_HoaDon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_HoaDon.Size = new System.Drawing.Size(225, 53);
-            this.btn_HoaDon.TabIndex = 11;
-            this.btn_HoaDon.Text = "Hoá đơn";
-            this.btn_HoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_HoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_HoaDon.UseVisualStyleBackColor = true;
-            this.btn_HoaDon.Click += new System.EventHandler(this.HoaDon_Click);
+            this.btn_Invoices.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Invoices.FlatAppearance.BorderSize = 0;
+            this.btn_Invoices.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_Invoices.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_Invoices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Invoices.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Invoices.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Invoices.Image = global::Gwenchana.Properties.Resources.invoice;
+            this.btn_Invoices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Invoices.Location = new System.Drawing.Point(0, 374);
+            this.btn_Invoices.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Invoices.Name = "btn_Invoices";
+            this.btn_Invoices.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Invoices.Size = new System.Drawing.Size(225, 53);
+            this.btn_Invoices.TabIndex = 11;
+            this.btn_Invoices.Text = "Hoá đơn";
+            this.btn_Invoices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Invoices.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Invoices.UseVisualStyleBackColor = true;
+            this.btn_Invoices.Click += new System.EventHandler(this.HoaDon_Click);
             // 
-            // btnExit
+            // btn_Exit
             // 
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExit.Image = global::Gwenchana.Properties.Resources.logout;
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 926);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(225, 53);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btn_Exit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_Exit.FlatAppearance.BorderSize = 0;
+            this.btn_Exit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_Exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Exit.Font = new System.Drawing.Font("JetBrains Mono ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Exit.Image = global::Gwenchana.Properties.Resources.logout;
+            this.btn_Exit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Exit.Location = new System.Drawing.Point(0, 926);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Exit.Size = new System.Drawing.Size(225, 53);
+            this.btn_Exit.TabIndex = 9;
+            this.btn_Exit.Text = "Thoát";
+            this.btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnTools
+            // btn_Suppliers
             // 
-            this.btnTools.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTools.FlatAppearance.BorderSize = 0;
-            this.btnTools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTools.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTools.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTools.Image = global::Gwenchana.Properties.Resources.augmented_reality;
-            this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 299);
-            this.btnTools.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTools.Name = "btnTools";
-            this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnTools.Size = new System.Drawing.Size(225, 53);
-            this.btnTools.TabIndex = 6;
-            this.btnTools.Text = "Nhà cung cấp";
-            this.btnTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTools.UseVisualStyleBackColor = true;
-            this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
+            this.btn_Suppliers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Suppliers.FlatAppearance.BorderSize = 0;
+            this.btn_Suppliers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_Suppliers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_Suppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Suppliers.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Suppliers.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Suppliers.Image = global::Gwenchana.Properties.Resources.augmented_reality;
+            this.btn_Suppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Suppliers.Location = new System.Drawing.Point(0, 321);
+            this.btn_Suppliers.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Suppliers.Name = "btn_Suppliers";
+            this.btn_Suppliers.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Suppliers.Size = new System.Drawing.Size(225, 53);
+            this.btn_Suppliers.TabIndex = 6;
+            this.btn_Suppliers.Text = "Nhà cung cấp";
+            this.btn_Suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Suppliers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Suppliers.UseVisualStyleBackColor = true;
+            this.btn_Suppliers.Click += new System.EventHandler(this.btnTools_Click);
             // 
             // panelMediaSubMenu
             // 
             this.panelMediaSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelMediaSubMenu.Controls.Add(this.button4);
-            this.panelMediaSubMenu.Controls.Add(this.button3);
-            this.panelMediaSubMenu.Controls.Add(this.button2);
+            this.panelMediaSubMenu.Controls.Add(this.btn_Accessories);
+            this.panelMediaSubMenu.Controls.Add(this.btn_PCs);
+            this.panelMediaSubMenu.Controls.Add(this.btn_Laptops);
             this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 162);
             this.panelMediaSubMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMediaSubMenu.Name = "panelMediaSubMenu";
-            this.panelMediaSubMenu.Size = new System.Drawing.Size(225, 137);
+            this.panelMediaSubMenu.Size = new System.Drawing.Size(225, 159);
             this.panelMediaSubMenu.TabIndex = 2;
             // 
-            // button4
+            // btn_Accessories
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Image = global::Gwenchana.Properties.Resources.graphic_card;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 96);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(225, 42);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Linh/Phụ kiện";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_Accessories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
+            this.btn_Accessories.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Accessories.FlatAppearance.BorderSize = 0;
+            this.btn_Accessories.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btn_Accessories.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btn_Accessories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Accessories.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Accessories.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Accessories.Image = global::Gwenchana.Properties.Resources.graphic_card;
+            this.btn_Accessories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Accessories.Location = new System.Drawing.Point(0, 96);
+            this.btn_Accessories.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Accessories.Name = "btn_Accessories";
+            this.btn_Accessories.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btn_Accessories.Size = new System.Drawing.Size(225, 63);
+            this.btn_Accessories.TabIndex = 2;
+            this.btn_Accessories.Text = "Linh/Phụ kiện";
+            this.btn_Accessories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Accessories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Accessories.UseVisualStyleBackColor = false;
+            this.btn_Accessories.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btn_PCs
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Image = global::Gwenchana.Properties.Resources.computer__1_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 48);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(225, 48);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "PC";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_PCs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
+            this.btn_PCs.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_PCs.FlatAppearance.BorderSize = 0;
+            this.btn_PCs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btn_PCs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btn_PCs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_PCs.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PCs.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_PCs.Image = global::Gwenchana.Properties.Resources.computer__1_;
+            this.btn_PCs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_PCs.Location = new System.Drawing.Point(0, 48);
+            this.btn_PCs.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_PCs.Name = "btn_PCs";
+            this.btn_PCs.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btn_PCs.Size = new System.Drawing.Size(225, 48);
+            this.btn_PCs.TabIndex = 1;
+            this.btn_PCs.Text = "PC";
+            this.btn_PCs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_PCs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_PCs.UseVisualStyleBackColor = false;
+            this.btn_PCs.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btn_Laptops
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Image = global::Gwenchana.Properties.Resources.laptop;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(225, 48);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Laptop";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Laptops.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
+            this.btn_Laptops.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Laptops.FlatAppearance.BorderSize = 0;
+            this.btn_Laptops.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btn_Laptops.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.btn_Laptops.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Laptops.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Laptops.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Laptops.Image = global::Gwenchana.Properties.Resources.laptop;
+            this.btn_Laptops.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Laptops.Location = new System.Drawing.Point(0, 0);
+            this.btn_Laptops.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Laptops.Name = "btn_Laptops";
+            this.btn_Laptops.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btn_Laptops.Size = new System.Drawing.Size(225, 48);
+            this.btn_Laptops.TabIndex = 0;
+            this.btn_Laptops.Text = "Laptop";
+            this.btn_Laptops.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Laptops.UseVisualStyleBackColor = false;
+            this.btn_Laptops.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnMedia
+            // btn_Products
             // 
-            this.btnMedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMedia.FlatAppearance.BorderSize = 0;
-            this.btnMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedia.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedia.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMedia.Image = global::Gwenchana.Properties.Resources.in_stock__2_;
-            this.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedia.Location = new System.Drawing.Point(0, 109);
-            this.btnMedia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMedia.Name = "btnMedia";
-            this.btnMedia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMedia.Size = new System.Drawing.Size(225, 53);
-            this.btnMedia.TabIndex = 1;
-            this.btnMedia.Text = "Sản phẩm";
-            this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMedia.UseVisualStyleBackColor = true;
-            this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
+            this.btn_Products.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Products.FlatAppearance.BorderSize = 0;
+            this.btn_Products.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btn_Products.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btn_Products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Products.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Products.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Products.Image = global::Gwenchana.Properties.Resources.in_stock__2_;
+            this.btn_Products.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Products.Location = new System.Drawing.Point(0, 109);
+            this.btn_Products.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Products.Name = "btn_Products";
+            this.btn_Products.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Products.Size = new System.Drawing.Size(225, 53);
+            this.btn_Products.TabIndex = 1;
+            this.btn_Products.Text = "Sản phẩm";
+            this.btn_Products.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Products.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Products.UseVisualStyleBackColor = true;
+            this.btn_Products.Click += new System.EventHandler(this.btnMedia_Click);
             // 
             // panelLogo
             // 
@@ -389,7 +389,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1782, 960);
+            this.ClientSize = new System.Drawing.Size(1782, 979);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -415,21 +415,21 @@
 
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelMediaSubMenu;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnMedia;
-        private System.Windows.Forms.Button btnTools;
+        private System.Windows.Forms.Button btn_Accessories;
+        private System.Windows.Forms.Button btn_PCs;
+        private System.Windows.Forms.Button btn_Laptops;
+        private System.Windows.Forms.Button btn_Products;
+        private System.Windows.Forms.Button btn_Suppliers;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.Button btn_HoaDon;
+        private System.Windows.Forms.Button btn_Invoices;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_HoaDonXuat;
-        private System.Windows.Forms.Button btn_HoaDonNhap;
-        private System.Windows.Forms.Button btn_ThongTinCaNhan;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_exportInvoices;
+        private System.Windows.Forms.Button btn_importInvoices;
+        private System.Windows.Forms.Button btn_personalInformation;
+        private System.Windows.Forms.Button btn_Customers;
     }
 }
 

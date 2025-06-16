@@ -25,15 +25,8 @@ namespace Gwenchana
             
             InitializeComponent();
 
-            //currentEmployeeID = id;
-
             CurrentEmployee employee = new CurrentEmployee();
-            //employee.GetCurrentEmployee(id);
-            //if(employee.employeeName == null || employee.phoneNumber == null || employee.Age == 0)
-            //{
-            //    MessageBox.Show("Vui lòng cập nhật thông tin cá nhân trước khi sử dụng ứng dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    openChildForm(new information(id));
-            //}
+
 
             hideSubMenu();
             UpdateComponent(LanguageClass.Language);
