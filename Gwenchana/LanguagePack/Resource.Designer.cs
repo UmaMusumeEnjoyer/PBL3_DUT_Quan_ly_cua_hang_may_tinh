@@ -142,6 +142,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        internal static string btn_customDate {
+            get {
+                return ResourceManager.GetString("btn_customDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customers.
         /// </summary>
         internal static string btn_Customers {
@@ -201,6 +210,24 @@ namespace Gwenchana.LanguagePack {
         internal static string btn_Laptops {
             get {
                 return ResourceManager.GetString("btn_Laptops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last 30 Days.
+        /// </summary>
+        internal static string btn_last30Days {
+            get {
+                return ResourceManager.GetString("btn_last30Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last 7 days.
+        /// </summary>
+        internal static string btn_last7Days {
+            get {
+                return ResourceManager.GetString("btn_last7Days", resourceCulture);
             }
         }
         
@@ -268,6 +295,24 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This month.
+        /// </summary>
+        internal static string btn_thisMonth {
+            get {
+                return ResourceManager.GetString("btn_thisMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        internal static string btn_Today {
+            get {
+                return ResourceManager.GetString("btn_Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to exit?.
         /// </summary>
         internal static string Confirm_Exit {
@@ -291,6 +336,24 @@ namespace Gwenchana.LanguagePack {
         internal static string Form_Validation_EmptyFields {
             get {
                 return ResourceManager.GetString("Form_Validation_EmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Counter.
+        /// </summary>
+        internal static string lb_Counter {
+            get {
+                return ResourceManager.GetString("lb_Counter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
+        internal static string lb_CustomerCounter {
+            get {
+                return ResourceManager.GetString("lb_CustomerCounter", resourceCulture);
             }
         }
         
@@ -358,6 +421,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Low inventory products.
+        /// </summary>
+        internal static string lb_lowIventory {
+            get {
+                return ResourceManager.GetString("lb_lowIventory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password :.
         /// </summary>
         internal static string lb_Password {
@@ -372,6 +444,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_personalInformation {
             get {
                 return ResourceManager.GetString("lb_personalInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        internal static string lb_ProductCounter {
+            get {
+                return ResourceManager.GetString("lb_ProductCounter", resourceCulture);
             }
         }
         
@@ -403,6 +484,51 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        internal static string lb_Statistics {
+            get {
+                return ResourceManager.GetString("lb_Statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supplier.
+        /// </summary>
+        internal static string lb_SupplierCounter {
+            get {
+                return ResourceManager.GetString("lb_SupplierCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total profit.
+        /// </summary>
+        internal static string lb_TotalProfit {
+            get {
+                return ResourceManager.GetString("lb_TotalProfit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total revenue.
+        /// </summary>
+        internal static string lb_TotalRevenue {
+            get {
+                return ResourceManager.GetString("lb_TotalRevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total sales orders.
+        /// </summary>
+        internal static string lb_TotalSalesOrders {
+            get {
+                return ResourceManager.GetString("lb_TotalSalesOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Username :.
         /// </summary>
         internal static string lb_Username {
@@ -417,6 +543,24 @@ namespace Gwenchana.LanguagePack {
         internal static string Prompt_ConfirmReturnToLogin {
             get {
                 return ResourceManager.GetString("Prompt_ConfirmReturnToLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 5 best selling products.
+        /// </summary>
+        internal static string txt_Top5product {
+            get {
+                return ResourceManager.GetString("txt_Top5product", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total revenue.
+        /// </summary>
+        internal static string txt_Totalrevenue {
+            get {
+                return ResourceManager.GetString("txt_Totalrevenue", resourceCulture);
             }
         }
     }

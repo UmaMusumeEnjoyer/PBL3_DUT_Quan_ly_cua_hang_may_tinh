@@ -144,6 +144,9 @@
   <data name="btn_changeInformation" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="btn_customDate" xml:space="preserve">
+    <value>Custom</value>
+  </data>
   <data name="btn_Customers" xml:space="preserve">
     <value>Customers</value>
   </data>
@@ -164,6 +167,12 @@
   </data>
   <data name="btn_Laptops" xml:space="preserve">
     <value>Laptops</value>
+  </data>
+  <data name="btn_last7Days" xml:space="preserve">
+    <value>Last 7 days</value>
+  </data>
+  <data name="btn_last30Days" xml:space="preserve">
+    <value>Last 30 Days</value>
   </data>
   <data name="btn_Login" xml:space="preserve">
     <value>LOGIN</value>
@@ -186,6 +195,12 @@
   <data name="btn_Suppliers" xml:space="preserve">
     <value>Suppliers</value>
   </data>
+  <data name="btn_thisMonth" xml:space="preserve">
+    <value>This month</value>
+  </data>
+  <data name="btn_Today" xml:space="preserve">
+    <value>Today</value>
+  </data>
   <data name="Confirm_Exit" xml:space="preserve">
     <value>Are you sure you want to exit?</value>
   </data>
@@ -194,6 +209,12 @@
   </data>
   <data name="Form_Validation_EmptyFields" xml:space="preserve">
     <value>Please fill all blank fields</value>
+  </data>
+  <data name="lb_Counter" xml:space="preserve">
+    <value>Counter</value>
+  </data>
+  <data name="lb_CustomerCounter" xml:space="preserve">
+    <value>Customer</value>
   </data>
   <data name="lb_employeeAge" xml:space="preserve">
     <value>Age :</value>
@@ -216,11 +237,17 @@
   <data name="lb_Login" xml:space="preserve">
     <value>Login account</value>
   </data>
+  <data name="lb_lowIventory" xml:space="preserve">
+    <value>Low inventory products</value>
+  </data>
   <data name="lb_Password" xml:space="preserve">
     <value>Password :</value>
   </data>
   <data name="lb_personalInformation" xml:space="preserve">
     <value>Personal Information</value>
+  </data>
+  <data name="lb_ProductCounter" xml:space="preserve">
+    <value>Product</value>
   </data>
   <data name="lb_ShopName" xml:space="preserve">
     <value>Computer Store</value>
@@ -231,10 +258,31 @@
   <data name="lb_SignUp" xml:space="preserve">
     <value>Sign up for an account</value>
   </data>
+  <data name="lb_Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="lb_SupplierCounter" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="lb_TotalProfit" xml:space="preserve">
+    <value>Total profit</value>
+  </data>
+  <data name="lb_TotalRevenue" xml:space="preserve">
+    <value>Total revenue</value>
+  </data>
+  <data name="lb_TotalSalesOrders" xml:space="preserve">
+    <value>Total sales orders</value>
+  </data>
   <data name="lb_Username" xml:space="preserve">
     <value>Username :</value>
   </data>
   <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
     <value>Do you want to return to login?</value>
+  </data>
+  <data name="txt_Top5product" xml:space="preserve">
+    <value>Top 5 best selling products</value>
+  </data>
+  <data name="txt_Totalrevenue" xml:space="preserve">
+    <value>Total revenue</value>
   </data>
 </root>

@@ -1,14 +1,16 @@
 ﻿//using DashboardApp.Models;
+using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.ViewModel;
 
 
 namespace Gwenchana
@@ -28,8 +30,32 @@ namespace Gwenchana
             btn_last7Days.Select();
 
             model = new AdminDashboard();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
         }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_Statistics.Text = Resource.lb_Statistics;
+            btn_customDate.Text = Resource.btn_customDate;
+            btn_Today.Text = Resource.btn_Today;
+            btn_last7Days.Text = Resource.btn_last7Days;
+            btn_last30Days.Text = Resource.btn_last30Days;
+            btn_thisMonth.Text = Resource.btn_thisMonth;
+            lb_TotalSalesOrders.Text = Resource.lb_TotalSalesOrders;
+            lb_TotalRevenue.Text = Resource.lb_TotalRevenue;
+            lb_TotalProfit.Text = Resource.lb_TotalProfit;
+            lb_Counter.Text = Resource.lb_Counter;
+            lb_CustomerCounter.Text = Resource.lb_CustomerCounter;
+            lb_SupplierCounter.Text = Resource.lb_SupplierCounter;
+            lb_ProductCounter.Text = Resource.lb_ProductCounter;
+            lb_lowIventory.Text = Resource.lb_lowIventory;
+            chartTopProducts.Titles[0].Text = Resource.txt_Top5product;
+            chartGrossRevenue.Titles[0].Text = Resource.txt_Totalrevenue;
+
+        }
+
 
         //Private methods
         private void LoadData()

@@ -117,7 +117,7 @@ namespace Gwenchana
             // btn_thisMonth
             // 
             this.btn_thisMonth.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_thisMonth.Location = new System.Drawing.Point(1060, 10);
+            this.btn_thisMonth.Location = new System.Drawing.Point(1152, 10);
             this.btn_thisMonth.Margin = new System.Windows.Forms.Padding(5);
             this.btn_thisMonth.Name = "btn_thisMonth";
             this.btn_thisMonth.Size = new System.Drawing.Size(130, 35);
@@ -129,10 +129,10 @@ namespace Gwenchana
             // btn_last30Days
             // 
             this.btn_last30Days.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_last30Days.Location = new System.Drawing.Point(929, 10);
+            this.btn_last30Days.Location = new System.Drawing.Point(973, 10);
             this.btn_last30Days.Margin = new System.Windows.Forms.Padding(5);
             this.btn_last30Days.Name = "btn_last30Days";
-            this.btn_last30Days.Size = new System.Drawing.Size(130, 35);
+            this.btn_last30Days.Size = new System.Drawing.Size(178, 35);
             this.btn_last30Days.TabIndex = 4;
             this.btn_last30Days.Text = "30 ngày gần nhất";
             this.btn_last30Days.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@ namespace Gwenchana
             this.btn_last7Days.Location = new System.Drawing.Point(798, 10);
             this.btn_last7Days.Margin = new System.Windows.Forms.Padding(5);
             this.btn_last7Days.Name = "btn_last7Days";
-            this.btn_last7Days.Size = new System.Drawing.Size(130, 35);
+            this.btn_last7Days.Size = new System.Drawing.Size(174, 35);
             this.btn_last7Days.TabIndex = 5;
             this.btn_last7Days.Text = "7 ngày gần nhất";
             this.btn_last7Days.UseVisualStyleBackColor = true;
@@ -268,7 +268,7 @@ namespace Gwenchana
             series1.ChartArea = "ChartArea1";
             series1.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.Legend = "Legend1";
-            series1.Name = "Quý 1";
+            series1.Name = "Series1";
             this.chartGrossRevenue.Series.Add(series1);
             this.chartGrossRevenue.Size = new System.Drawing.Size(1338, 538);
             this.chartGrossRevenue.TabIndex = 12;

@@ -144,6 +144,9 @@
   <data name="btn_changeInformation" xml:space="preserve">
     <value>変更を保存</value>
   </data>
+  <data name="btn_customDate" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
   <data name="btn_Customers" xml:space="preserve">
     <value>顧客</value>
   </data>
@@ -164,6 +167,12 @@
   </data>
   <data name="btn_Laptops" xml:space="preserve">
     <value>ノートパソコン</value>
+  </data>
+  <data name="btn_last7Days" xml:space="preserve">
+    <value>過去7日間</value>
+  </data>
+  <data name="btn_last30Days" xml:space="preserve">
+    <value>過去30日間</value>
   </data>
   <data name="btn_Login" xml:space="preserve">
     <value>ログイン</value>
@@ -186,6 +195,12 @@
   <data name="btn_Suppliers" xml:space="preserve">
     <value>サプライヤー</value>
   </data>
+  <data name="btn_thisMonth" xml:space="preserve">
+    <value>今月</value>
+  </data>
+  <data name="btn_Today" xml:space="preserve">
+    <value>今日</value>
+  </data>
   <data name="Confirm_Exit" xml:space="preserve">
     <value>本当に終了してもよろしいですか?</value>
   </data>
@@ -194,6 +209,12 @@
   </data>
   <data name="Form_Validation_EmptyFields" xml:space="preserve">
     <value>空欄に記入してください</value>
+  </data>
+  <data name="lb_Counter" xml:space="preserve">
+    <value>カウンタ</value>
+  </data>
+  <data name="lb_CustomerCounter" xml:space="preserve">
+    <value>顧客</value>
   </data>
   <data name="lb_employeeAge" xml:space="preserve">
     <value>年齢 :</value>
@@ -216,11 +237,17 @@
   <data name="lb_Login" xml:space="preserve">
     <value>ログインアカウント</value>
   </data>
+  <data name="lb_lowIventory" xml:space="preserve">
+    <value>在庫が少ない商品</value>
+  </data>
   <data name="lb_Password" xml:space="preserve">
     <value>パスワード :</value>
   </data>
   <data name="lb_personalInformation" xml:space="preserve">
     <value>個人情報</value>
+  </data>
+  <data name="lb_ProductCounter" xml:space="preserve">
+    <value>製品</value>
   </data>
   <data name="lb_ShopName" xml:space="preserve">
     <value>コンピューターストア</value>
@@ -231,10 +258,31 @@
   <data name="lb_SignUp" xml:space="preserve">
     <value>アカウントを登録する</value>
   </data>
+  <data name="lb_Statistics" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="lb_SupplierCounter" xml:space="preserve">
+    <value>サプライヤー</value>
+  </data>
+  <data name="lb_TotalProfit" xml:space="preserve">
+    <value>総利益</value>
+  </data>
+  <data name="lb_TotalRevenue" xml:space="preserve">
+    <value>総収益</value>
+  </data>
+  <data name="lb_TotalSalesOrders" xml:space="preserve">
+    <value>総販売量</value>
+  </data>
   <data name="lb_Username" xml:space="preserve">
     <value>ユーザー名 :</value>
   </data>
   <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
     <value>ログインに戻りますか?</value>
+  </data>
+  <data name="txt_Top5product" xml:space="preserve">
+    <value>ベストセラー商品トップ5</value>
+  </data>
+  <data name="txt_Totalrevenue" xml:space="preserve">
+    <value>総収益</value>
   </data>
 </root>

@@ -145,6 +145,9 @@
   <data name="btn_changeInformation" xml:space="preserve">
     <value>Lưu thay đổi</value>
   </data>
+  <data name="btn_customDate" xml:space="preserve">
+    <value>Tuỳ chỉnh</value>
+  </data>
   <data name="btn_Customers" xml:space="preserve">
     <value>Khách hàng</value>
   </data>
@@ -165,6 +168,12 @@
   </data>
   <data name="btn_Laptops" xml:space="preserve">
     <value>Laptop</value>
+  </data>
+  <data name="btn_last7Days" xml:space="preserve">
+    <value>7 ngày gần nhất</value>
+  </data>
+  <data name="btn_last30Days" xml:space="preserve">
+    <value>30 ngày gần nhất</value>
   </data>
   <data name="btn_Login" xml:space="preserve">
     <value>ĐĂNG NHẬP</value>
@@ -187,6 +196,12 @@
   <data name="btn_Suppliers" xml:space="preserve">
     <value>Nhà cung cấp</value>
   </data>
+  <data name="btn_thisMonth" xml:space="preserve">
+    <value>Tháng này</value>
+  </data>
+  <data name="btn_Today" xml:space="preserve">
+    <value>Hôm nay</value>
+  </data>
   <data name="Confirm_Exit" xml:space="preserve">
     <value>Bạn có chắc chắn muốn thoát không?</value>
   </data>
@@ -195,6 +210,12 @@
   </data>
   <data name="Form_Validation_EmptyFields" xml:space="preserve">
     <value>Hãy điền vào các trường còn trống</value>
+  </data>
+  <data name="lb_Counter" xml:space="preserve">
+    <value>Bộ đếm</value>
+  </data>
+  <data name="lb_CustomerCounter" xml:space="preserve">
+    <value>Khách hàng</value>
   </data>
   <data name="lb_employeeAge" xml:space="preserve">
     <value>Tuổi :</value>
@@ -217,11 +238,17 @@
   <data name="lb_Login" xml:space="preserve">
     <value>Đăng nhập tài khoản</value>
   </data>
+  <data name="lb_lowIventory" xml:space="preserve">
+    <value>Sản phẩm tồn kho ít</value>
+  </data>
   <data name="lb_Password" xml:space="preserve">
     <value>Mật khẩu :</value>
   </data>
   <data name="lb_personalInformation" xml:space="preserve">
     <value>Thông tin cá nhân</value>
+  </data>
+  <data name="lb_ProductCounter" xml:space="preserve">
+    <value>Sản phẩm</value>
   </data>
   <data name="lb_ShopName" xml:space="preserve">
     <value>Cửa hàng máy tính</value>
@@ -232,10 +259,31 @@
   <data name="lb_SignUp" xml:space="preserve">
     <value>Đăng ký tài khoản</value>
   </data>
+  <data name="lb_Statistics" xml:space="preserve">
+    <value>Thống kê</value>
+  </data>
+  <data name="lb_SupplierCounter" xml:space="preserve">
+    <value>Nhà cung cấp</value>
+  </data>
+  <data name="lb_TotalProfit" xml:space="preserve">
+    <value>Tổng lợi nhuận</value>
+  </data>
+  <data name="lb_TotalRevenue" xml:space="preserve">
+    <value>Tổng doanh thu</value>
+  </data>
+  <data name="lb_TotalSalesOrders" xml:space="preserve">
+    <value>Tổng lượng đơn bán</value>
+  </data>
   <data name="lb_Username" xml:space="preserve">
     <value>Tên đăng nhập :</value>
   </data>
   <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
     <value>Bạn có muốn quay lại phần đăng nhập?</value>
+  </data>
+  <data name="txt_Top5product" xml:space="preserve">
+    <value>5 sản phẩm bán chạy nhất</value>
+  </data>
+  <data name="txt_Totalrevenue" xml:space="preserve">
+    <value>Tổng doanh thu</value>
   </data>
 </root>
