@@ -24,7 +24,7 @@ namespace Gwenchana
         {
             InitializeComponent();
             UpdateComponent(LanguageClass.Language);
-            this.DoubleBuffered = true; // Enable double buffering to reduce flickering
+            this.DoubleBuffered = true; 
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Gwenchana
         {
             DialogResult result = MessageBox.Show(
                 Resource.Confirm_Title,
-                Resource.Confirm_Exit,
+                "",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
@@ -71,7 +71,7 @@ namespace Gwenchana
                 || login_password.Text == "")
             {
                 MessageBox.Show(Resource.Form_Validation_EmptyFields
-                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    , "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -106,7 +106,7 @@ namespace Gwenchana
                         {
                             MessageBox.Show(
                                 Resource.Auth_Error_InsufficientPermissions,
-                                "Notice",
+                                "",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning
                             );
@@ -116,7 +116,7 @@ namespace Gwenchana
                         {
                             MessageBox.Show(
                                 Resource.Auth_Error_AccountInactive,
-                                "Notice",
+                                "",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning
                             );
@@ -134,7 +134,7 @@ namespace Gwenchana
                 else
                 {
                     MessageBox.Show(Resource.Auth_Error_InvalidCredentials
-                        , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        , "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

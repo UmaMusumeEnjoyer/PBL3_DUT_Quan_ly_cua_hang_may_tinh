@@ -46,7 +46,7 @@ namespace Gwenchana
         {
             DialogResult result = MessageBox.Show(
                 Resource.Confirm_Title,
-                Resource.Confirm_Exit,
+                "",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
@@ -75,7 +75,7 @@ namespace Gwenchana
                 || signup_password.Text == "")
             {
                 MessageBox.Show(Resource.Form_Validation_EmptyFields
-                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    , "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -85,7 +85,7 @@ namespace Gwenchana
                 if (accountBLL.Register(username, password, "Employee"))
                 {
                     MessageBox.Show(Resource.Auth_Success_Registration
-                        , "Success Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        , "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Login loginForm = new Login();
                     loginForm.Show();
                     this.Hide();
@@ -93,7 +93,7 @@ namespace Gwenchana
                 else
                 {
                     MessageBox.Show(Resource.Auth_Error_UsernameExists
-                        , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        , "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
