@@ -25,7 +25,7 @@ namespace Gwenchana
             //Default - Last 7 days
             dtpStartDate.Value = DateTime.Today.AddDays(-7);
             dtpEndDate.Value = DateTime.Now;
-            btnLast7Days.Select();
+            btn_last7Days.Select();
 
             model = new AdminDashboard();
             LoadData();
@@ -66,7 +66,7 @@ namespace Gwenchana
         {
             dtpStartDate.Enabled = false;
             dtpEndDate.Enabled = false;
-            btnOkCustomDate.Visible = false;
+            btn_OK.Visible = false;
         }
 
         //Event methods
@@ -106,7 +106,7 @@ namespace Gwenchana
         {
             dtpStartDate.Enabled = true;
             dtpEndDate.Enabled = true;
-            btnOkCustomDate.Visible = true;
+            btn_OK.Visible = true;
         }
 
         private void btnOkCustomDate_Click(object sender, EventArgs e)
