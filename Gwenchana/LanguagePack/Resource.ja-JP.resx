@@ -261,6 +261,12 @@
   <data name="lb_employeeAge" xml:space="preserve">
     <value>年齢 :</value>
   </data>
+  <data name="lb_Age" xml:space="preserve">
+    <value>年齢</value>
+  </data>
+  <data name="lb_employeeManagement" xml:space="preserve">
+    <value>人事管理</value>
+  </data>
   <data name="lb_employeeName" xml:space="preserve">
     <value>名前 :</value>
   </data>
@@ -275,6 +281,9 @@
   </data>
   <data name="lb_employeePhonenumber" xml:space="preserve">
     <value>電話番号 :</value>
+  </data>
+  <data name="lb_Phonenumber" xml:space="preserve">
+    <value>電話番号</value>
   </data>
   <data name="lb_employeeRole" xml:space="preserve">
     <value>役割</value>

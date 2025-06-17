@@ -1,4 +1,6 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.LanguagePack; // Assuming you have a LanguagePack class for localization
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,8 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
-using Gwenchana.LanguagePack; // Assuming you have a LanguagePack class for localization
+using System.Globalization; // For CultureInfo
 
 namespace Gwenchana
 {
@@ -27,12 +28,28 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
-
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
         }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_employeeManagement.Text = Resource.lb_employeeManagement;
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+            lb_Search.Text = Resource.lb_Search;
+            btn_Search.Text = Resource.btn_Search;
+            btn_Edit.Text = Resource.btn_Edit;
+            lb_employeeID.Text = "ID";
+            lb_employeeName.Text = Resource.lb_employeeName;
+            lb_employeeAge.Text = Resource.lb_employeeAge;
+            lb_employeePhonenumber.Text = Resource.lb_employeePhonenumber;
+            lb_employeeStatus.Text = Resource.lb_employeeStatus;
+
+        }
+
 
         private void LoadData()
         {
@@ -46,12 +63,12 @@ namespace Gwenchana
 
             dataGridView.Columns[0].Visible = false; // Hide the first column (ID)
 
-            dataGridView.Columns[1].HeaderText = "Họ và tên";
-            dataGridView.Columns[2].HeaderText = "Tuổi";
-            dataGridView.Columns[3].HeaderText = "Số điện thoại";
+            dataGridView.Columns[1].HeaderText = Resource.lb_employeeName1;
+            dataGridView.Columns[2].HeaderText = Resource.lb_Age;
+            dataGridView.Columns[3].HeaderText = Resource.lb_Phonenumber;
             dataGridView.Columns[4].HeaderText = "Account ID";
             dataGridView.Columns[4].Visible = false; // Hide the Account ID column
-            dataGridView.Columns[5].HeaderText = "Trạng thái"; // Hide the Password column
+            dataGridView.Columns[5].HeaderText = Resource.lb_employeeStatus; 
 
 
         }
@@ -60,7 +77,7 @@ namespace Gwenchana
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
@@ -89,7 +106,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_employeeID.ForeColor = Color.Gray;
             txt_AccessoriesID.ForeColor = Color.Gray;
             txt_AccessoriesID.Enabled = false;
 
@@ -117,7 +134,7 @@ namespace Gwenchana
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
-            label3.ForeColor = Color.Gray;
+            lb_employeeID.ForeColor = Color.Gray;
             txt_AccessoriesID.ForeColor = Color.Gray;
             txt_AccessoriesID.Enabled = false;
         }
@@ -139,7 +156,7 @@ namespace Gwenchana
             txt_PhoneNumber.Enabled = true;
             txt_AccessoriesID.Enabled = true;
             txt_AccessoriesID.ForeColor = SystemColors.WindowText;
-            label3.ForeColor = SystemColors.ControlText;
+            lb_employeeID.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
             if (!tabControl1.TabPages.Contains(tabPagePetList))

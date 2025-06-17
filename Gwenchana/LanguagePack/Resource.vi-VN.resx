@@ -262,6 +262,12 @@
   <data name="lb_employeeAge" xml:space="preserve">
     <value>Tuổi :</value>
   </data>
+  <data name="lb_Age" xml:space="preserve">
+    <value>Tuổi</value>
+  </data>
+  <data name="lb_employeeManagement" xml:space="preserve">
+    <value>Quản lý nhân viên</value>
+  </data>
   <data name="lb_employeeName" xml:space="preserve">
     <value>Tên :</value>
   </data>
@@ -276,6 +282,9 @@
   </data>
   <data name="lb_employeePhonenumber" xml:space="preserve">
     <value>Số điện thoại :</value>
+  </data>
+  <data name="lb_Phonenumber" xml:space="preserve">
+    <value>Số điện thoại</value>
   </data>
   <data name="lb_employeeRole" xml:space="preserve">
     <value>Vai trò</value>
