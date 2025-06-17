@@ -27,6 +27,7 @@ namespace Gwenchana
         public Employees()
         {
             InitializeComponent();
+            LoadTrangThaiComboBox();
             AssociateAndRaiseViewEvents();
             UpdateComponent(LanguageClass.Language);
             LoadData();
@@ -47,6 +48,7 @@ namespace Gwenchana
             lb_employeeAge.Text = Resource.lb_employeeAge;
             lb_employeePhonenumber.Text = Resource.lb_employeePhonenumber;
             lb_employeeStatus.Text = Resource.lb_employeeStatus;
+            LoadTrangThaiComboBox();
 
         }
 
@@ -114,6 +116,7 @@ namespace Gwenchana
             txt_EmployeeName.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
             txt_PhoneNumber.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
             txt_Age.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+
             cbb_TrangThai.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
 
         }
@@ -183,7 +186,7 @@ namespace Gwenchana
                     employeeName = txt_EmployeeName.Text,
                     phoneNumber = txt_PhoneNumber.Text,
                     Age = int.Parse(txt_Age.Text),
-                    TrangThai = cbb_TrangThai.Text
+                    TrangThai = ((KeyValuePair<string, string>)cbb_TrangThai.SelectedItem).Key
                 };
                 isSuccessful = employeeBLL.UpdateEmployee(employee);
                 if (isSuccessful)
@@ -202,6 +205,18 @@ namespace Gwenchana
 
                 LoadData();
             }
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Đang làm việc", Resource.Status_Working }, 
+                { "Nghỉ việc",     Resource.Status_Stopped }
+            };
+            cbb_TrangThai.DataSource = new BindingSource(trangThaiDict, null);
+            cbb_TrangThai.DisplayMember = "Value";
+            cbb_TrangThai.ValueMember = "Key";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

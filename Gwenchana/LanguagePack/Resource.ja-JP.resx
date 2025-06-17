@@ -369,4 +369,10 @@
   <data name="txt_Totalrevenue" xml:space="preserve">
     <value>総収益</value>
   </data>
+  <data name="Status_Working" xml:space="preserve">
+    <value>働く</value>
+  </data>
+  <data name="Status_Stopped" xml:space="preserve">
+    <value>仕事を辞める</value>
+  </data>
 </root>

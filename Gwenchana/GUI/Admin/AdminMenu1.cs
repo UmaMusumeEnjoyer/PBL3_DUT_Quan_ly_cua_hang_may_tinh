@@ -211,7 +211,7 @@ namespace Gwenchana
         {
             DialogResult result = MessageBox.Show(
                 Resource.Prompt_ConfirmReturnToLogin,
-                Resource.Confirm_Exit,
+                "",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );

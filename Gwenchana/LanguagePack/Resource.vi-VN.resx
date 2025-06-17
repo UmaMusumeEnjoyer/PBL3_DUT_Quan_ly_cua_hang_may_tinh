@@ -370,4 +370,10 @@
   <data name="txt_Totalrevenue" xml:space="preserve">
     <value>Tổng doanh thu</value>
   </data>
+  <data name="Status_Working" xml:space="preserve">
+    <value>Đang làm việc</value>
+  </data>
+  <data name="Status_Stopped" xml:space="preserve">
+    <value>Nghỉ việc</value>
+  </data>
 </root>

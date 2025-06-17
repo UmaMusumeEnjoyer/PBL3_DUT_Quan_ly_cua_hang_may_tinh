@@ -781,6 +781,24 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quit.
+        /// </summary>
+        internal static string Status_Stopped {
+            get {
+                return ResourceManager.GetString("Status_Stopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working.
+        /// </summary>
+        internal static string Status_Working {
+            get {
+                return ResourceManager.GetString("Status_Working", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         internal static string TabCtr_Details {

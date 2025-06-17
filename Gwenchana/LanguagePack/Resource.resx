@@ -369,4 +369,10 @@
   <data name="txt_Totalrevenue" xml:space="preserve">
     <value>Total revenue</value>
   </data>
+  <data name="Status_Working" xml:space="preserve">
+    <value>Working</value>
+  </data>
+  <data name="Status_Stopped" xml:space="preserve">
+    <value>Quit</value>
+  </data>
 </root>
