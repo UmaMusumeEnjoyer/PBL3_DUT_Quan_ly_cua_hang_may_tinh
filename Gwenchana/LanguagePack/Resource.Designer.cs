@@ -61,6 +61,51 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account deletion failed!.
+        /// </summary>
+        internal static string Account_Delete_Fail {
+            get {
+                return ResourceManager.GetString("Account_Delete_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account deleted successfully!.
+        /// </summary>
+        internal static string Account_Delete_Success {
+            get {
+                return ResourceManager.GetString("Account_Delete_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account update failed!.
+        /// </summary>
+        internal static string Account_Edit_Fail {
+            get {
+                return ResourceManager.GetString("Account_Edit_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account updated successfully!.
+        /// </summary>
+        internal static string Account_Edit_Success {
+            get {
+                return ResourceManager.GetString("Account_Edit_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account updated successfully!.
+        /// </summary>
+        internal static string Account_Update_Success {
+            get {
+                return ResourceManager.GetString("Account_Update_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have quit! Cannot log in to the app..
         /// </summary>
         internal static string Auth_Error_AccountInactive {
@@ -124,6 +169,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assign.
+        /// </summary>
+        internal static string btn_Assign {
+            get {
+                return ResourceManager.GetString("btn_Assign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account Setting.
         /// </summary>
         internal static string btn_changeAccount {
@@ -156,6 +210,24 @@ namespace Gwenchana.LanguagePack {
         internal static string btn_Customers {
             get {
                 return ResourceManager.GetString("btn_Customers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string btn_Delete {
+            get {
+                return ResourceManager.GetString("btn_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string btn_Edit {
+            get {
+                return ResourceManager.GetString("btn_Edit", resourceCulture);
             }
         }
         
@@ -268,6 +340,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string btn_Search {
+            get {
+                return ResourceManager.GetString("btn_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SIGN UP.
         /// </summary>
         internal static string btn_SignUp {
@@ -331,11 +412,56 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item.
+        /// </summary>
+        internal static string dvg_Item {
+            get {
+                return ResourceManager.GetString("dvg_Item", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Units.
+        /// </summary>
+        internal static string dvg_Units {
+            get {
+                return ResourceManager.GetString("dvg_Units", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The employee has not resigned yet!.
+        /// </summary>
+        internal static string Employee_Error_NotResigned {
+            get {
+                return ResourceManager.GetString("Employee_Error_NotResigned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No employee found with name : .
+        /// </summary>
+        internal static string Employee_Search_NotFoundByName {
+            get {
+                return ResourceManager.GetString("Employee_Search_NotFoundByName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill all blank fields.
         /// </summary>
         internal static string Form_Validation_EmptyFields {
             get {
                 return ResourceManager.GetString("Form_Validation_EmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account management.
+        /// </summary>
+        internal static string lb_accountManagement {
+            get {
+                return ResourceManager.GetString("lb_accountManagement", resourceCulture);
             }
         }
         
@@ -376,11 +502,29 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string lb_employeeName1 {
+            get {
+                return ResourceManager.GetString("lb_employeeName1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password :.
         /// </summary>
         internal static string lb_employeePassword {
             get {
                 return ResourceManager.GetString("lb_employeePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string lb_employeePassword1 {
+            get {
+                return ResourceManager.GetString("lb_employeePassword1", resourceCulture);
             }
         }
         
@@ -394,11 +538,38 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        internal static string lb_employeeRole {
+            get {
+                return ResourceManager.GetString("lb_employeeRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        internal static string lb_employeeStatus {
+            get {
+                return ResourceManager.GetString("lb_employeeStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Username :.
         /// </summary>
         internal static string lb_employeeUsername {
             get {
                 return ResourceManager.GetString("lb_employeeUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        internal static string lb_employeeUsername1 {
+            get {
+                return ResourceManager.GetString("lb_employeeUsername1", resourceCulture);
             }
         }
         
@@ -453,6 +624,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_ProductCounter {
             get {
                 return ResourceManager.GetString("lb_ProductCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search : .
+        /// </summary>
+        internal static string lb_Search {
+            get {
+                return ResourceManager.GetString("lb_Search", resourceCulture);
             }
         }
         
@@ -538,11 +718,56 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment failed.
+        /// </summary>
+        internal static string Permission_Assign_Fail {
+            get {
+                return ResourceManager.GetString("Permission_Assign_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment successful.
+        /// </summary>
+        internal static string Permission_Assign_Success {
+            get {
+                return ResourceManager.GetString("Permission_Assign_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authorization status.
+        /// </summary>
+        internal static string Permission_Assignment_Status {
+            get {
+                return ResourceManager.GetString("Permission_Assignment_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to return to login?.
         /// </summary>
         internal static string Prompt_ConfirmReturnToLogin {
             get {
                 return ResourceManager.GetString("Prompt_ConfirmReturnToLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        internal static string TabCtr_Details {
+            get {
+                return ResourceManager.GetString("TabCtr_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List.
+        /// </summary>
+        internal static string TabCtr_List {
+            get {
+                return ResourceManager.GetString("TabCtr_List", resourceCulture);
             }
         }
         

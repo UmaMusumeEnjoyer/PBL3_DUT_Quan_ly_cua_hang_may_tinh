@@ -1,15 +1,17 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
-using Gwenchana.DataAccess.ViewModel;
 
 namespace Gwenchana
 {
@@ -27,8 +29,24 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
-            LoadData();
+            UpdateComponent(LanguageClass.Language);
             tabControl1.TabPages.Remove(tabPagePetDetail);
+            LoadData();
+            
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_accountManagement.Text = Resource.lb_accountManagement;
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+            lb_Search.Text = Resource.lb_Search;
+            btn_Search.Text = Resource.btn_Search;
+            btn_Assign.Text = Resource.btn_Assign;
+            btn_Edit.Text = Resource.btn_Edit;
+            btn_Delete.Text = Resource.btn_Delete;
+
         }
 
         private void LoadData()
@@ -43,19 +61,19 @@ namespace Gwenchana
             dataGridView.DataSource = dt;
 
             dataGridView.Columns[0].Visible = false; // Hide the first column (ID)
-            dataGridView.Columns[1].HeaderText = "Tên tài khoản";
-            dataGridView.Columns[2].HeaderText = "Mật khẩu";
-            dataGridView.Columns[3].HeaderText = "Vai trò";
-            dataGridView.Columns[4].HeaderText = "Trạng thái gán quyền";
-            dataGridView.Columns[5].HeaderText = "Tên nhân viên";
-            dataGridView.Columns[6].HeaderText = "Trạng thái";
+            dataGridView.Columns[1].HeaderText = Resource.lb_employeeUsername1;
+            dataGridView.Columns[2].HeaderText = Resource.lb_employeePassword1;
+            dataGridView.Columns[3].HeaderText = Resource.lb_employeeRole;
+            dataGridView.Columns[4].HeaderText = Resource.Permission_Assignment_Status;
+            dataGridView.Columns[5].HeaderText = Resource.lb_employeeName1;
+            dataGridView.Columns[6].HeaderText = Resource.lb_employeeStatus;
         }
 
 
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
@@ -63,9 +81,6 @@ namespace Gwenchana
               };
             //Others
         }
-
- 
-
 
         //Events
         public event EventHandler SearchEvent;
@@ -75,8 +90,6 @@ namespace Gwenchana
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-       
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             button = "Edit";
@@ -84,7 +97,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            btnSave.Text = "Sửa";
+            btnSave.Text = Resource.btn_Edit;
 
 
             label3.ForeColor = Color.Gray;
@@ -149,14 +162,13 @@ namespace Gwenchana
             isEdit = false;
         }
 
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             CurrentEmployee currentEmployee = new CurrentEmployee();
             currentEmployee.GetCurrentEmployee(int.Parse(dataGridView.CurrentRow.Cells[0].Value.ToString()));
             if (currentEmployee.TrangThai == "Đang làm việc")
             {
-                MessageBox.Show("Nhân viên chưa nghỉ việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Employee_Error_NotResigned, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             button = "Delete";
@@ -170,7 +182,6 @@ namespace Gwenchana
             txt_Username.Enabled = false;
             txt_Password.Enabled = false;
 
-
             txt_AccessoriesID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
             txt_Username.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
             txt_Password.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
@@ -181,7 +192,6 @@ namespace Gwenchana
         {
             if (button == "Edit")
             {
-                btnSave.Text = "Xoá";
                 AccountBLL accountBLL = new AccountBLL();
                 Account account = new Account
                 {
@@ -193,14 +203,16 @@ namespace Gwenchana
                 isSuccessful = accountBLL.UpdateAccount(account);
                 if (isSuccessful)
                 {
-                    message = "Cập nhật tài khoản thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    message = Resource.Account_Edit_Success;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    message = "Cập nhật tài khoản thất bại!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message = Resource.Account_Edit_Fail;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                btnSave.Text = Resource.btn_Delete;
 
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
@@ -217,13 +229,13 @@ namespace Gwenchana
 
                 if (isSuccessful)
                 {
-                    message = "Xóa tài khoản thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    message = Resource.Account_Delete_Success;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    message = "Xóa tài khoản thất bại!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message = Resource.Account_Delete_Fail;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
@@ -247,7 +259,14 @@ namespace Gwenchana
             }
             if (!found)
             {
-                MessageBox.Show("Không tìm thấy tài khoản nào với tên chứa: " + txtSearch.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (LanguageClass.Language == "ja-jp")
+                {
+                    MessageBox.Show(txtSearch.Text + Resource.Employee_Search_NotFoundByName, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(Resource.Employee_Search_NotFoundByName + txtSearch.Text, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -268,11 +287,11 @@ namespace Gwenchana
             bool isAssigned = accountBLL.AssignEmployee(id);
             if (isAssigned)
             {
-                MessageBox.Show("Gán quyền thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resource.Permission_Assign_Success, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Gán quyền thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Permission_Assign_Fail, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             LoadData();

@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account_Delete_Fail" xml:space="preserve">
+    <value>アカウントの削除に失敗しました。</value>
+  </data>
+  <data name="Account_Delete_Success" xml:space="preserve">
+    <value>アカウントが正常に削除されました。</value>
+  </data>
+  <data name="Account_Edit_Fail" xml:space="preserve">
+    <value>アカウントの更新に失敗しました。</value>
+  </data>
+  <data name="Account_Edit_Success" xml:space="preserve">
+    <value>アカウントが正常に更新されました。</value>
+  </data>
+  <data name="Account_Update_Success" xml:space="preserve">
+    <value>アカウントが正常に更新されました。</value>
+  </data>
   <data name="Auth_Error_AccountInactive" xml:space="preserve">
     <value>終了しました。アプリにログインできません。</value>
   </data>
@@ -138,6 +153,9 @@
   <data name="btn_Accounts" xml:space="preserve">
     <value>アカウント</value>
   </data>
+  <data name="btn_Assign" xml:space="preserve">
+    <value>承認</value>
+  </data>
   <data name="btn_changeAccount" xml:space="preserve">
     <value>アカウントを設定する</value>
   </data>
@@ -149,6 +167,12 @@
   </data>
   <data name="btn_Customers" xml:space="preserve">
     <value>顧客</value>
+  </data>
+  <data name="btn_Delete" xml:space="preserve">
+    <value>消去</value>
+  </data>
+  <data name="btn_Edit" xml:space="preserve">
+    <value>編集</value>
   </data>
   <data name="btn_Employees" xml:space="preserve">
     <value>従業員</value>
@@ -186,6 +210,9 @@
   <data name="btn_Products" xml:space="preserve">
     <value>製品</value>
   </data>
+  <data name="btn_Search" xml:space="preserve">
+    <value>検索</value>
+  </data>
   <data name="btn_SignUp" xml:space="preserve">
     <value>登録する</value>
   </data>
@@ -207,8 +234,23 @@
   <data name="Confirm_Title" xml:space="preserve">
     <value>確認する</value>
   </data>
+  <data name="dvg_Item" xml:space="preserve">
+    <value>アイテム</value>
+  </data>
+  <data name="dvg_Units" xml:space="preserve">
+    <value>数</value>
+  </data>
+  <data name="Employee_Error_NotResigned" xml:space="preserve">
+    <value>この従業員はまだ退職していません！</value>
+  </data>
+  <data name="Employee_Search_NotFoundByName" xml:space="preserve">
+    <value> という名前に該当する従業員が見つかりません。</value>
+  </data>
   <data name="Form_Validation_EmptyFields" xml:space="preserve">
     <value>空欄に記入してください</value>
+  </data>
+  <data name="lb_accountManagement" xml:space="preserve">
+    <value>アカウント管理</value>
   </data>
   <data name="lb_Counter" xml:space="preserve">
     <value>カウンタ</value>
@@ -222,14 +264,29 @@
   <data name="lb_employeeName" xml:space="preserve">
     <value>名前 :</value>
   </data>
+  <data name="lb_employeeName1" xml:space="preserve">
+    <value>名前</value>
+  </data>
   <data name="lb_employeePassword" xml:space="preserve">
     <value>パスワード :</value>
+  </data>
+  <data name="lb_employeePassword1" xml:space="preserve">
+    <value>パスワード</value>
   </data>
   <data name="lb_employeePhonenumber" xml:space="preserve">
     <value>電話番号 :</value>
   </data>
+  <data name="lb_employeeRole" xml:space="preserve">
+    <value>役割</value>
+  </data>
+  <data name="lb_employeeStatus" xml:space="preserve">
+    <value>状態</value>
+  </data>
   <data name="lb_employeeUsername" xml:space="preserve">
     <value>ユーザー名 :</value>
+  </data>
+  <data name="lb_employeeUsername1" xml:space="preserve">
+    <value>ユーザー名</value>
   </data>
   <data name="lb_Language" xml:space="preserve">
     <value>言語 :</value>
@@ -248,6 +305,9 @@
   </data>
   <data name="lb_ProductCounter" xml:space="preserve">
     <value>製品</value>
+  </data>
+  <data name="lb_Search" xml:space="preserve">
+    <value>検索 ：</value>
   </data>
   <data name="lb_ShopName" xml:space="preserve">
     <value>コンピューターストア</value>
@@ -276,8 +336,23 @@
   <data name="lb_Username" xml:space="preserve">
     <value>ユーザー名 :</value>
   </data>
+  <data name="Permission_Assignment_Status" xml:space="preserve">
+    <value>承認ステータス</value>
+  </data>
+  <data name="Permission_Assign_Fail" xml:space="preserve">
+    <value>割り当てに失敗しました</value>
+  </data>
+  <data name="Permission_Assign_Success" xml:space="preserve">
+    <value>割り当て成功</value>
+  </data>
   <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
     <value>ログインに戻りますか?</value>
+  </data>
+  <data name="TabCtr_Details" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="TabCtr_List" xml:space="preserve">
+    <value>リスト</value>
   </data>
   <data name="txt_Top5product" xml:space="preserve">
     <value>ベストセラー商品トップ5</value>

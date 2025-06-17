@@ -53,11 +53,8 @@ namespace Gwenchana
             lb_lowIventory.Text = Resource.lb_lowIventory;
             chartTopProducts.Titles[0].Text = Resource.txt_Top5product;
             chartGrossRevenue.Titles[0].Text = Resource.txt_Totalrevenue;
-
         }
 
-
-        //Private methods
         private void LoadData()
         {
             var refreshData = model.LoadData(dtpStartDate.Value, dtpEndDate.Value);
@@ -82,11 +79,10 @@ namespace Gwenchana
                 chartTopProducts.DataBind();
 
                 dgvUnderstock.DataSource = model.Understock;
-                dgvUnderstock.Columns[0].HeaderText = "Item";
-                dgvUnderstock.Columns[1].HeaderText = "Units";
-                Console.WriteLine("Loaded view :)");
+                dgvUnderstock.Columns[0].HeaderText = Resource.dvg_Item;
+                dgvUnderstock.Columns[1].HeaderText = Resource.dvg_Units;
             }
-            else Console.WriteLine("View not loaded, same query");
+            
         }
         private void DisableCustomDates()
         {

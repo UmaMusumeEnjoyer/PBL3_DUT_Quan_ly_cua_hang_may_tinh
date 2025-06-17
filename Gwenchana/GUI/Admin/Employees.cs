@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
+using Gwenchana.LanguagePack; // Assuming you have a LanguagePack class for localization
 
 namespace Gwenchana
 {
@@ -153,32 +154,6 @@ namespace Gwenchana
         }
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            button = "Delete";
-            tabControl1.TabPages.Add(tabPagePetDetail);
-            tabControl1.TabPages.Remove(tabPagePetList);
-            tabControl1.SelectedTab = tabPagePetDetail;
-
-            label3.ForeColor = Color.Gray;
-            txt_AccessoriesID.ForeColor = Color.Gray;
-            txt_AccessoriesID.Enabled = false;
-            txt_EmployeeName.Enabled = false;
-            txt_PhoneNumber.Enabled = false;
-            txt_Age.Enabled = false;
-
-
-            txt_AccessoriesID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
-            txt_EmployeeName.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
-            txt_PhoneNumber.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
-            txt_Age.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
-
-
-
-
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (button == "Edit")
@@ -196,44 +171,18 @@ namespace Gwenchana
                 isSuccessful = employeeBLL.UpdateEmployee(employee);
                 if (isSuccessful)
                 {
-                    message = "Cập nhật tài khoản thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    message = Resource.Account_Update_Success;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 tabControl1.TabPages.Add(tabPagePetList);
                 tabControl1.TabPages.Remove(tabPagePetDetail);
                 tabControl1.SelectedTab = tabPagePetList;
 
-                LoadData();
-            }
-            else if (button == "Delete")
-            {
-                MessageBox.Show("Nếu xoá nhân viên thì sẽ xoá tài khoản của nhân viên đó", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                EmployeeBLL employeeBLL = new EmployeeBLL();
-
-                int employeeId = Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value);
-                isSuccessful = employeeBLL.DeleteEmployee(employeeId);
-                if (isSuccessful) 
-                {
-                    message = "Xoá tài khoản thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    message = "Nhân viên có đơn hàng, xoá tài khoản thất bại!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-
-
-                tabControl1.TabPages.Add(tabPagePetList);
-                tabControl1.TabPages.Remove(tabPagePetDetail);
-                tabControl1.SelectedTab = tabPagePetList;
                 LoadData();
             }
         }
@@ -253,7 +202,15 @@ namespace Gwenchana
             }
             if (!found)
             {
-                MessageBox.Show("Không tìm thấy nhân viên với tên: " + txtSearch.Text, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(LanguageClass.Language == "ja-jp")
+                {
+                    MessageBox.Show(txtSearch.Text + Resource.Employee_Search_NotFoundByName, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(Resource.Employee_Search_NotFoundByName + txtSearch.Text, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
         }
 

@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account_Delete_Fail" xml:space="preserve">
+    <value>Xoá tài khoản thất bại</value>
+  </data>
+  <data name="Account_Delete_Success" xml:space="preserve">
+    <value>Xoá tài khoản thành công!</value>
+  </data>
+  <data name="Account_Edit_Fail" xml:space="preserve">
+    <value>Cập nhật tài khoản thất bại!</value>
+  </data>
+  <data name="Account_Edit_Success" xml:space="preserve">
+    <value>Cập nhật tài khoản thành công!</value>
+  </data>
+  <data name="Account_Update_Success" xml:space="preserve">
+    <value>Cập nhật tài khoản thành công!</value>
+  </data>
   <data name="Auth_Error_AccountInactive" xml:space="preserve">
     <value>Bạn đã nghỉ việc! Không thể đăng nhập vào ứng dụng.</value>
   </data>
@@ -139,6 +154,9 @@
   <data name="btn_Accounts" xml:space="preserve">
     <value>Tài khoản</value>
   </data>
+  <data name="btn_Assign" xml:space="preserve">
+    <value>Cấp quyền</value>
+  </data>
   <data name="btn_changeAccount" xml:space="preserve">
     <value>Thiết lập tài khoản</value>
   </data>
@@ -150,6 +168,12 @@
   </data>
   <data name="btn_Customers" xml:space="preserve">
     <value>Khách hàng</value>
+  </data>
+  <data name="btn_Delete" xml:space="preserve">
+    <value>Xoá</value>
+  </data>
+  <data name="btn_Edit" xml:space="preserve">
+    <value>Sửa</value>
   </data>
   <data name="btn_Employees" xml:space="preserve">
     <value>Nhân viên</value>
@@ -187,6 +211,9 @@
   <data name="btn_Products" xml:space="preserve">
     <value>Sản phẩm</value>
   </data>
+  <data name="btn_Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
   <data name="btn_SignUp" xml:space="preserve">
     <value>ĐĂNG KÝ</value>
   </data>
@@ -208,8 +235,23 @@
   <data name="Confirm_Title" xml:space="preserve">
     <value>Xác nhận</value>
   </data>
+  <data name="dvg_Item" xml:space="preserve">
+    <value>Tên hàng</value>
+  </data>
+  <data name="dvg_Units" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="Employee_Error_NotResigned" xml:space="preserve">
+    <value>Nhân viên chưa nghỉ việc!</value>
+  </data>
+  <data name="Employee_Search_NotFoundByName" xml:space="preserve">
+    <value>Không tìm thấy nhân viên với tên : </value>
+  </data>
   <data name="Form_Validation_EmptyFields" xml:space="preserve">
     <value>Hãy điền vào các trường còn trống</value>
+  </data>
+  <data name="lb_accountManagement" xml:space="preserve">
+    <value>Quản lý tài khoản</value>
   </data>
   <data name="lb_Counter" xml:space="preserve">
     <value>Bộ đếm</value>
@@ -223,14 +265,29 @@
   <data name="lb_employeeName" xml:space="preserve">
     <value>Tên :</value>
   </data>
+  <data name="lb_employeeName1" xml:space="preserve">
+    <value>Tên</value>
+  </data>
   <data name="lb_employeePassword" xml:space="preserve">
     <value>Mật khẩu :</value>
+  </data>
+  <data name="lb_employeePassword1" xml:space="preserve">
+    <value>Mật khẩu</value>
   </data>
   <data name="lb_employeePhonenumber" xml:space="preserve">
     <value>Số điện thoại :</value>
   </data>
+  <data name="lb_employeeRole" xml:space="preserve">
+    <value>Vai trò</value>
+  </data>
+  <data name="lb_employeeStatus" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
   <data name="lb_employeeUsername" xml:space="preserve">
     <value>Tên đăng nhập :</value>
+  </data>
+  <data name="lb_employeeUsername1" xml:space="preserve">
+    <value>Tên đăng nhập</value>
   </data>
   <data name="lb_Language" xml:space="preserve">
     <value>Ngôn ngữ :</value>
@@ -249,6 +306,9 @@
   </data>
   <data name="lb_ProductCounter" xml:space="preserve">
     <value>Sản phẩm</value>
+  </data>
+  <data name="lb_Search" xml:space="preserve">
+    <value>Tìm kiếm :</value>
   </data>
   <data name="lb_ShopName" xml:space="preserve">
     <value>Cửa hàng máy tính</value>
@@ -277,8 +337,23 @@
   <data name="lb_Username" xml:space="preserve">
     <value>Tên đăng nhập :</value>
   </data>
+  <data name="Permission_Assignment_Status" xml:space="preserve">
+    <value>Trạng thái gán quyền</value>
+  </data>
+  <data name="Permission_Assign_Fail" xml:space="preserve">
+    <value>Gán quyền thất bại</value>
+  </data>
+  <data name="Permission_Assign_Success" xml:space="preserve">
+    <value>Gán quyền thành công</value>
+  </data>
   <data name="Prompt_ConfirmReturnToLogin" xml:space="preserve">
     <value>Bạn có muốn quay lại phần đăng nhập?</value>
+  </data>
+  <data name="TabCtr_Details" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="TabCtr_List" xml:space="preserve">
+    <value>Danh sách</value>
   </data>
   <data name="txt_Top5product" xml:space="preserve">
     <value>5 sản phẩm bán chạy nhất</value>

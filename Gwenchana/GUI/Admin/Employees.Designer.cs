@@ -29,6 +29,7 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -39,6 +40,8 @@ namespace Gwenchana
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbb_TrangThai = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Age = new System.Windows.Forms.TextBox();
             this.lb_Email = new System.Windows.Forms.Label();
@@ -49,8 +52,6 @@ namespace Gwenchana
             this.txt_EmployeeName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_AccessoriesID = new System.Windows.Forms.TextBox();
-            this.cbb_TrangThai = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPagePetList.SuspendLayout();
@@ -117,6 +118,14 @@ namespace Gwenchana
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 63);
             this.dataGridView.Name = "dataGridView";
@@ -196,6 +205,30 @@ namespace Gwenchana
             this.tabPagePetDetail.Size = new System.Drawing.Size(884, 377);
             this.tabPagePetDetail.TabIndex = 1;
             this.tabPagePetDetail.Text = "Chi tiết";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(520, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 21);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Trạng thái :";
+            // 
+            // cbb_TrangThai
+            // 
+            this.cbb_TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_TrangThai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_TrangThai.FormattingEnabled = true;
+            this.cbb_TrangThai.Items.AddRange(new object[] {
+            "Đang làm việc",
+            "Đã nghỉ việc"});
+            this.cbb_TrangThai.Location = new System.Drawing.Point(524, 206);
+            this.cbb_TrangThai.Name = "cbb_TrangThai";
+            this.cbb_TrangThai.Size = new System.Drawing.Size(174, 29);
+            this.cbb_TrangThai.TabIndex = 20;
+            this.cbb_TrangThai.SelectedIndexChanged += new System.EventHandler(this.cbb_TrangThai_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -297,30 +330,6 @@ namespace Gwenchana
             this.txt_AccessoriesID.Size = new System.Drawing.Size(154, 29);
             this.txt_AccessoriesID.TabIndex = 6;
             this.txt_AccessoriesID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
-            // 
-            // cbb_TrangThai
-            // 
-            this.cbb_TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_TrangThai.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_TrangThai.FormattingEnabled = true;
-            this.cbb_TrangThai.Items.AddRange(new object[] {
-            "Đang làm việc",
-            "Đã nghỉ việc"});
-            this.cbb_TrangThai.Location = new System.Drawing.Point(524, 206);
-            this.cbb_TrangThai.Name = "cbb_TrangThai";
-            this.cbb_TrangThai.Size = new System.Drawing.Size(174, 29);
-            this.cbb_TrangThai.TabIndex = 20;
-            this.cbb_TrangThai.SelectedIndexChanged += new System.EventHandler(this.cbb_TrangThai_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(520, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 21);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Trạng thái :";
             // 
             // Employees
             // 
