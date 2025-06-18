@@ -268,7 +268,7 @@
   <data name="lb_employeeManagement" xml:space="preserve">
     <value>Quản lý nhân viên</value>
   </data>
-  <data name="lb_employeeName" xml:space="preserve">
+  <data name="lb_Name" xml:space="preserve">
     <value>Tên :</value>
   </data>
   <data name="lb_employeeName1" xml:space="preserve">
@@ -283,7 +283,7 @@
   <data name="lb_employeePhonenumber" xml:space="preserve">
     <value>Số điện thoại :</value>
   </data>
-  <data name="lb_Phonenumber" xml:space="preserve">
+  <data name="lb_PhoneNumber" xml:space="preserve">
     <value>Số điện thoại</value>
   </data>
   <data name="lb_employeeRole" xml:space="preserve">
@@ -393,5 +393,17 @@
   </data>
   <data name="Employee_Update_Fail" xml:space="preserve">
     <value>Cập nhật thông tin nhân viên thất bại.</value>
+  </data>
+  <data name="lb_supplierSearch" xml:space="preserve">
+    <value>Tìm kiếm nhà cung cấp :</value>
+  </data>
+  <data name="btn_Add" xml:space="preserve">
+    <value>Thêm</value>
+  </data>
+  <data name="lb_Address" xml:space="preserve">
+    <value>Địa chỉ :</value>
+  </data>
+  <data name="lb_Email" xml:space="preserve">
+    <value>Email :</value>
   </data>
 </root>

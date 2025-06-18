@@ -267,7 +267,7 @@
   <data name="lb_employeeManagement" xml:space="preserve">
     <value>人事管理</value>
   </data>
-  <data name="lb_employeeName" xml:space="preserve">
+  <data name="lb_Name" xml:space="preserve">
     <value>名前 :</value>
   </data>
   <data name="lb_employeeName1" xml:space="preserve">
@@ -282,7 +282,7 @@
   <data name="lb_employeePhonenumber" xml:space="preserve">
     <value>電話番号 :</value>
   </data>
-  <data name="lb_Phonenumber" xml:space="preserve">
+  <data name="lb_PhoneNumber" xml:space="preserve">
     <value>電話番号</value>
   </data>
   <data name="lb_employeeRole" xml:space="preserve">
@@ -393,5 +393,17 @@
   </data>
   <data name="Employee_Update_Fail" xml:space="preserve">
     <value>従業員情報の更新に失敗しました。</value>
+  </data>
+  <data name="lb_supplierSearch" xml:space="preserve">
+    <value>サプライヤーを探す :</value>
+  </data>
+  <data name="btn_Add" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="lb_Address" xml:space="preserve">
+    <value>住所 :</value>
+  </data>
+  <data name="lb_Email" xml:space="preserve">
+    <value>メール :</value>
   </data>
 </root>

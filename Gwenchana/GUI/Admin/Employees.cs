@@ -44,7 +44,7 @@ namespace Gwenchana
             btn_Search.Text = Resource.btn_Search;
             btn_Edit.Text = Resource.btn_Edit;
             lb_employeeID.Text = "ID";
-            lb_employeeName.Text = Resource.lb_employeeName;
+            lb_employeeName.Text = Resource.lb_Name;
             lb_employeeAge.Text = Resource.lb_employeeAge;
             lb_employeePhonenumber.Text = Resource.lb_employeePhonenumber;
             lb_employeeStatus.Text = Resource.lb_employeeStatus;
@@ -67,7 +67,7 @@ namespace Gwenchana
 
             dataGridView.Columns[1].HeaderText = Resource.lb_employeeName1;
             dataGridView.Columns[2].HeaderText = Resource.lb_Age;
-            dataGridView.Columns[3].HeaderText = Resource.lb_Phonenumber;
+            dataGridView.Columns[3].HeaderText = Resource.lb_PhoneNumber;
             dataGridView.Columns[4].HeaderText = "Account ID";
             dataGridView.Columns[4].Visible = false; // Hide the Account ID column
             dataGridView.Columns[5].HeaderText = Resource.lb_employeeStatus; 

@@ -169,6 +169,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string btn_Add {
+            get {
+                return ResourceManager.GetString("btn_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assign.
         /// </summary>
         internal static string btn_Assign {
@@ -484,6 +493,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address :.
+        /// </summary>
+        internal static string lb_Address {
+            get {
+                return ResourceManager.GetString("lb_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Age.
         /// </summary>
         internal static string lb_Age {
@@ -511,6 +529,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email :.
+        /// </summary>
+        internal static string lb_Email {
+            get {
+                return ResourceManager.GetString("lb_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Age :.
         /// </summary>
         internal static string lb_employeeAge {
@@ -525,15 +552,6 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_employeeManagement {
             get {
                 return ResourceManager.GetString("lb_employeeManagement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name :.
-        /// </summary>
-        internal static string lb_employeeName {
-            get {
-                return ResourceManager.GetString("lb_employeeName", resourceCulture);
             }
         }
         
@@ -637,6 +655,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name :.
+        /// </summary>
+        internal static string lb_Name {
+            get {
+                return ResourceManager.GetString("lb_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password :.
         /// </summary>
         internal static string lb_Password {
@@ -657,9 +684,9 @@ namespace Gwenchana.LanguagePack {
         /// <summary>
         ///   Looks up a localized string similar to Phone number.
         /// </summary>
-        internal static string lb_Phonenumber {
+        internal static string lb_PhoneNumber {
             get {
-                return ResourceManager.GetString("lb_Phonenumber", resourceCulture);
+                return ResourceManager.GetString("lb_PhoneNumber", resourceCulture);
             }
         }
         
@@ -723,6 +750,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_SupplierCounter {
             get {
                 return ResourceManager.GetString("lb_SupplierCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find a supplier :.
+        /// </summary>
+        internal static string lb_supplierSearch {
+            get {
+                return ResourceManager.GetString("lb_supplierSearch", resourceCulture);
             }
         }
         

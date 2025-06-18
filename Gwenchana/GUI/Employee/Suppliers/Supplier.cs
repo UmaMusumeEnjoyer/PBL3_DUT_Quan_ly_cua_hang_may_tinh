@@ -1,14 +1,16 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
 
 namespace Gwenchana
 {
@@ -26,12 +28,28 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
            
 
-            //tabControl1.TabPages.Remove(tabPagePetDetail);
-            //btnClose.Click += delegate { this.Close(); };
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_supplierManagement.Text = Resource.btn_Suppliers;
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+            lb_supplierSearch.Text = Resource.lb_supplierSearch;
+            btn_Search.Text = Resource.btn_Search;
+            btn_Add.Text = Resource.btn_Add;
+            btn_Edit.Text = Resource.btn_Edit;
+            lb_Id.Text = "ID";
+            lb_Name.Text = Resource.lb_Name;
+            lb_PhoneNumber.Text = Resource.lb_employeePhonenumber;
+            lb_Address.Text = Resource.lb_Address;
+            lb_Email.Text = Resource.lb_Email;
         }
 
         private void LoadData()
@@ -56,7 +74,7 @@ namespace Gwenchana
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
@@ -85,7 +103,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_Id.ForeColor = Color.Gray;
             txtPetId.ForeColor = Color.Gray;
             txtPetId.Enabled = false;
             txtPetId.Text = dataGridView.CurrentRow.Cells["Supplier_Id"].Value.ToString();
@@ -113,7 +131,7 @@ namespace Gwenchana
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
-            label3.ForeColor = Color.Gray;
+            lb_Id.ForeColor = Color.Gray;
             txtPetId.ForeColor = Color.Gray;
             txtPetId.Enabled = false;
         }
@@ -139,7 +157,7 @@ namespace Gwenchana
             txt_SupplierEmail.Enabled = true;
             txtPetId.Enabled = true;
             txtPetId.ForeColor = SystemColors.WindowText;
-            label3.ForeColor = SystemColors.ControlText;
+            lb_Id.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
             if (!tabControl1.TabPages.Contains(tabPagePetList))
@@ -161,7 +179,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_Id.ForeColor = Color.Gray;
             txtPetId.ForeColor = Color.Gray;
             txtPetId.Enabled = false;
             txt_SupplierName.Enabled = false;

@@ -37,7 +37,7 @@ namespace Gwenchana
         {
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
             lb_personalInformation.Text = Resource.lb_personalInformation;
-            lb_Name.Text = Resource.lb_employeeName;
+            lb_Name.Text = Resource.lb_Name;
             lb_Age.Text = Resource.lb_employeeAge;
             lb_Phonenumber.Text = Resource.lb_employeePhonenumber;
             lb_accountUsername.Text = Resource.lb_employeeUsername;
