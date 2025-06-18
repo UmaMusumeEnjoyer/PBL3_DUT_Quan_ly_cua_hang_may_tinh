@@ -406,4 +406,31 @@
   <data name="lb_Email" xml:space="preserve">
     <value>メール :</value>
   </data>
+  <data name="lb_pcManagement" xml:space="preserve">
+    <value>デスクトップコンピューター（PC）</value>
+  </data>
+  <data name="lb_Filters" xml:space="preserve">
+    <value>フィルター :</value>
+  </data>
+  <data name="btn_ClearFilter" xml:space="preserve">
+    <value>フィルターをクリア</value>
+  </data>
+  <data name="lb_productName" xml:space="preserve">
+    <value>製品名</value>
+  </data>
+  <data name="lb_manufacturerName" xml:space="preserve">
+    <value>メーカー</value>
+  </data>
+  <data name="lb_Specifications" xml:space="preserve">
+    <value>仕様</value>
+  </data>
+  <data name="lb_Price" xml:space="preserve">
+    <value>価格</value>
+  </data>
+  <data name="lb_StockQuantity" xml:space="preserve">
+    <value>在庫数量</value>
+  </data>
+  <data name="lb_supplierName" xml:space="preserve">
+    <value>サプライヤー名</value>
+  </data>
 </root>

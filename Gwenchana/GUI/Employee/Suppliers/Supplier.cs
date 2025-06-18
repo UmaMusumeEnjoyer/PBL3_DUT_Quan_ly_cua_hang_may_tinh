@@ -63,10 +63,10 @@ namespace Gwenchana
             
             dataGridView.DataSource = dt;
             dataGridView.Columns["Supplier_Id"].Visible = false;
-            dataGridView.Columns["supplierName"].HeaderText = "Tên";
-            dataGridView.Columns["phoneNumber"].HeaderText = "Số điện thoại";
-            dataGridView.Columns["address"].HeaderText = "Địa chỉ";
-            dataGridView.Columns["email"].HeaderText = "Email";
+            dataGridView.Columns["supplierName"].HeaderText = Resource.lb_supplierName;
+            dataGridView.Columns["phoneNumber"].HeaderText = Resource.lb_PhoneNumber;
+            dataGridView.Columns["address"].HeaderText = Resource.lb_Address;
+            dataGridView.Columns["email"].HeaderText = Resource.lb_Email;
 
         }
 

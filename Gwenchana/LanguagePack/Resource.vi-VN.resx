@@ -406,4 +406,31 @@
   <data name="lb_Email" xml:space="preserve">
     <value>Email :</value>
   </data>
+  <data name="lb_pcManagement" xml:space="preserve">
+    <value>Máy tính để bàn (PC)</value>
+  </data>
+  <data name="lb_Filters" xml:space="preserve">
+    <value>Tiêu chí :</value>
+  </data>
+  <data name="btn_ClearFilter" xml:space="preserve">
+    <value>Xoá lọc</value>
+  </data>
+  <data name="lb_productName" xml:space="preserve">
+    <value>Tên sản phẩm</value>
+  </data>
+  <data name="lb_manufacturerName" xml:space="preserve">
+    <value>Nhà sản xuất</value>
+  </data>
+  <data name="lb_Specifications" xml:space="preserve">
+    <value>Thông só kỹ thuật</value>
+  </data>
+  <data name="lb_Price" xml:space="preserve">
+    <value>Giá</value>
+  </data>
+  <data name="lb_StockQuantity" xml:space="preserve">
+    <value>Số lượng tồn kho</value>
+  </data>
+  <data name="lb_supplierName" xml:space="preserve">
+    <value>Tên nhà cung cấp</value>
+  </data>
 </root>

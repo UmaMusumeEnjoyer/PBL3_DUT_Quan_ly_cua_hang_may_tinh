@@ -205,6 +205,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear filter.
+        /// </summary>
+        internal static string btn_ClearFilter {
+            get {
+                return ResourceManager.GetString("btn_ClearFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom.
         /// </summary>
         internal static string btn_customDate {
@@ -628,6 +637,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filters :.
+        /// </summary>
+        internal static string lb_Filters {
+            get {
+                return ResourceManager.GetString("lb_Filters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language :.
         /// </summary>
         internal static string lb_Language {
@@ -655,6 +673,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manufacturer.
+        /// </summary>
+        internal static string lb_manufacturerName {
+            get {
+                return ResourceManager.GetString("lb_manufacturerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name :.
         /// </summary>
         internal static string lb_Name {
@@ -669,6 +696,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_Password {
             get {
                 return ResourceManager.GetString("lb_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desktop Computer (PC).
+        /// </summary>
+        internal static string lb_pcManagement {
+            get {
+                return ResourceManager.GetString("lb_pcManagement", resourceCulture);
             }
         }
         
@@ -691,11 +727,29 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        internal static string lb_Price {
+            get {
+                return ResourceManager.GetString("lb_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product.
         /// </summary>
         internal static string lb_ProductCounter {
             get {
                 return ResourceManager.GetString("lb_ProductCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Name.
+        /// </summary>
+        internal static string lb_productName {
+            get {
+                return ResourceManager.GetString("lb_productName", resourceCulture);
             }
         }
         
@@ -736,6 +790,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specifications.
+        /// </summary>
+        internal static string lb_Specifications {
+            get {
+                return ResourceManager.GetString("lb_Specifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Statistics.
         /// </summary>
         internal static string lb_Statistics {
@@ -745,11 +808,29 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stock quantity.
+        /// </summary>
+        internal static string lb_StockQuantity {
+            get {
+                return ResourceManager.GetString("lb_StockQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Supplier.
         /// </summary>
         internal static string lb_SupplierCounter {
             get {
                 return ResourceManager.GetString("lb_SupplierCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Supplier name.
+        /// </summary>
+        internal static string lb_supplierName {
+            get {
+                return ResourceManager.GetString("lb_supplierName", resourceCulture);
             }
         }
         

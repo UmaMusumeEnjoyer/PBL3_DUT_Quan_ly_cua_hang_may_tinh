@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
+using Gwenchana.LanguagePack;
+using System.Globalization; // For CultureInfo
 
 namespace Gwenchana
 {
@@ -28,10 +30,28 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
-            button2.Visible = false; // Ẩn nút Clear Filter
+            button2.Visible = false; 
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+            lb_pcManagement.Text = Resource.lb_pcManagement;
+            lb_Filters.Text = Resource.lb_Filters;
+            btn_ClearFilter.Text = Resource.btn_ClearFilter;
+            lb_Search.Text = Resource.lb_Search;
+            btn_Search.Text = Resource.btn_Search;
+            btn_Details.Text = Resource.TabCtr_Details;
+            btn_Add.Text = Resource.btn_Add;
+            btn_Edit.Text = Resource.btn_Edit;
+            btn_Delete.Text = Resource.btn_Delete;
+
         }
 
         private void LoadData()
@@ -45,16 +65,16 @@ namespace Gwenchana
             dataGridView.DataSource = pcData;
 
             dataGridView.Columns["Product_Id"].Visible = false;
-            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
-            dataGridView.Columns["specification"].HeaderText = "Thông số kỹ thuật";
+            dataGridView.Columns["productName"].HeaderText = Resource.lb_productName;
+            dataGridView.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
+            dataGridView.Columns["specification"].HeaderText = Resource.lb_Specifications;
             
-            dataGridView.Columns["price"].HeaderText = "Giá";
+            dataGridView.Columns["price"].HeaderText = Resource.lb_Price;
 
-            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            dataGridView.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
             //dataGridView.Columns["Supplier_Id"].HeaderText = "Mã nhà cung cấp";
             dataGridView.Columns["Supplier_Id"].Visible = false;
-            dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
+            dataGridView.Columns["supplierName"].HeaderText = Resource.lb_supplierName;
 
             dataGridView.CellFormatting += dataGridView_CellFormatting;
 
@@ -82,7 +102,7 @@ namespace Gwenchana
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)

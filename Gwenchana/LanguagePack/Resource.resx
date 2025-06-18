@@ -405,4 +405,31 @@
   <data name="lb_Email" xml:space="preserve">
     <value>Email :</value>
   </data>
+  <data name="lb_pcManagement" xml:space="preserve">
+    <value>Desktop Computer (PC)</value>
+  </data>
+  <data name="lb_Filters" xml:space="preserve">
+    <value>Filters :</value>
+  </data>
+  <data name="btn_ClearFilter" xml:space="preserve">
+    <value>Clear filter</value>
+  </data>
+  <data name="lb_productName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="lb_manufacturerName" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="lb_Specifications" xml:space="preserve">
+    <value>Specifications</value>
+  </data>
+  <data name="lb_Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="lb_StockQuantity" xml:space="preserve">
+    <value>Stock quantity</value>
+  </data>
+  <data name="lb_supplierName" xml:space="preserve">
+    <value>Supplier name</value>
+  </data>
 </root>
