@@ -375,4 +375,22 @@
   <data name="Status_Stopped" xml:space="preserve">
     <value>Quit</value>
   </data>
+  <data name="Validation_Error_MissingFields" xml:space="preserve">
+    <value>Please fill in all required fields.</value>
+  </data>
+  <data name="Validation_Error_InvalidAge" xml:space="preserve">
+    <value>Please enter a valid age.</value>
+  </data>
+  <data name="Validation_Error_InvalidPhone" xml:space="preserve">
+    <value>Please enter a valid phone number.</value>
+  </data>
+  <data name="Validation_Error_AccountInfoRequired" xml:space="preserve">
+    <value>Please fill in all required account information.</value>
+  </data>
+  <data name="Employee_Update_Success" xml:space="preserve">
+    <value>Employee information updated successfully.</value>
+  </data>
+  <data name="Employee_Update_Fail" xml:space="preserve">
+    <value>Failed to update employee information.</value>
+  </data>
 </root>

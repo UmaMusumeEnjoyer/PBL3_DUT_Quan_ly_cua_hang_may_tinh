@@ -448,6 +448,24 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to update employee information..
+        /// </summary>
+        internal static string Employee_Update_Fail {
+            get {
+                return ResourceManager.GetString("Employee_Update_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee information updated successfully..
+        /// </summary>
+        internal static string Employee_Update_Success {
+            get {
+                return ResourceManager.GetString("Employee_Update_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill all blank fields.
         /// </summary>
         internal static string Form_Validation_EmptyFields {
@@ -831,6 +849,42 @@ namespace Gwenchana.LanguagePack {
         internal static string txt_Totalrevenue {
             get {
                 return ResourceManager.GetString("txt_Totalrevenue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in all required account information..
+        /// </summary>
+        internal static string Validation_Error_AccountInfoRequired {
+            get {
+                return ResourceManager.GetString("Validation_Error_AccountInfoRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid age..
+        /// </summary>
+        internal static string Validation_Error_InvalidAge {
+            get {
+                return ResourceManager.GetString("Validation_Error_InvalidAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid phone number..
+        /// </summary>
+        internal static string Validation_Error_InvalidPhone {
+            get {
+                return ResourceManager.GetString("Validation_Error_InvalidPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in all required fields..
+        /// </summary>
+        internal static string Validation_Error_MissingFields {
+            get {
+                return ResourceManager.GetString("Validation_Error_MissingFields", resourceCulture);
             }
         }
     }

@@ -376,4 +376,22 @@
   <data name="Status_Stopped" xml:space="preserve">
     <value>Nghỉ việc</value>
   </data>
+  <data name="Validation_Error_MissingFields" xml:space="preserve">
+    <value>Vui lòng điền đầy đủ thông tin.</value>
+  </data>
+  <data name="Validation_Error_InvalidAge" xml:space="preserve">
+    <value>Vui lòng nhập đúng độ tuổi.</value>
+  </data>
+  <data name="Validation_Error_InvalidPhone" xml:space="preserve">
+    <value>Vui lòng nhập đúng số điện thoại.</value>
+  </data>
+  <data name="Validation_Error_AccountInfoRequired" xml:space="preserve">
+    <value>Vui lòng điển đầy đủ thông tin tài khoản.</value>
+  </data>
+  <data name="Employee_Update_Success" xml:space="preserve">
+    <value>Cập nhật thông tin nhân viên thành công.</value>
+  </data>
+  <data name="Employee_Update_Fail" xml:space="preserve">
+    <value>Cập nhật thông tin nhân viên thất bại.</value>
+  </data>
 </root>

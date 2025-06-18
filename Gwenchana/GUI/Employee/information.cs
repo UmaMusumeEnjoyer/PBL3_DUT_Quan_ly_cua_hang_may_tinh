@@ -105,22 +105,22 @@ namespace Gwenchana
             employee.GetCurrentEmployee(id);
             if(txt_Age.Text == "" || txt_Name.Text == "" || txt_PhoneNumber.Text == "")
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                MessageBox.Show(Resource.Validation_Error_MissingFields);
                 return;
             }
             if (txt_Age.Text.Length > 3 || txt_Age.Text.Length < 1)
             {
-                MessageBox.Show("Vui lòng nhập đúng độ tuổi");
+                MessageBox.Show(Resource.Validation_Error_InvalidAge);
                 return;
             }
             if (txt_PhoneNumber.Text.Length > 11 || txt_PhoneNumber.Text.Length < 9)
             {
-                MessageBox.Show("Vui lòng nhập đúng số điện thoại");
+                MessageBox.Show(Resource.Validation_Error_InvalidPhone);
                 return;
             }
             if (txt_Username.Text == "" || txt_Password.Text == "")
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin tài khoản");
+                MessageBox.Show(Resource.Validation_Error_AccountInfoRequired);
                 return;
             }
 
@@ -137,12 +137,12 @@ namespace Gwenchana
                 };
                 if (accountBLL.UpdateAccount(account))
                 {
-                    MessageBox.Show("Cập nhật thành công");
+                    MessageBox.Show(Resource.Account_Edit_Success);
                     LoadData();
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thất bại");
+                    MessageBox.Show(Resource.Account_Edit_Fail);
                 }
             }
             else 
@@ -161,12 +161,12 @@ namespace Gwenchana
 
                 if (employeeBLL.UpdateEmployee(employee1))
                 {
-                    MessageBox.Show("Cập nhật thành công");
+                    MessageBox.Show(Resource.Employee_Update_Success);
                     LoadData();
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thất bại");
+                    MessageBox.Show(Resource.Employee_Update_Fail);
                 }
             }
         }

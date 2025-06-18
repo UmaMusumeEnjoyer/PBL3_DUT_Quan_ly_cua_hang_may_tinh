@@ -375,4 +375,23 @@
   <data name="Status_Stopped" xml:space="preserve">
     <value>仕事を辞める</value>
   </data>
+  <data name="Validation_Error_MissingFields" xml:space="preserve">
+    <value>すべての必須項目を入力してください。
+</value>
+  </data>
+  <data name="Validation_Error_InvalidAge" xml:space="preserve">
+    <value>正しい年齢を入力してください。</value>
+  </data>
+  <data name="Validation_Error_InvalidPhone" xml:space="preserve">
+    <value>正しい電話番号を入力してください。</value>
+  </data>
+  <data name="Validation_Error_AccountInfoRequired" xml:space="preserve">
+    <value>アカウント情報をすべて入力してください。</value>
+  </data>
+  <data name="Employee_Update_Success" xml:space="preserve">
+    <value>従業員情報の更新に成功しました。</value>
+  </data>
+  <data name="Employee_Update_Fail" xml:space="preserve">
+    <value>従業員情報の更新に失敗しました。</value>
+  </data>
 </root>
