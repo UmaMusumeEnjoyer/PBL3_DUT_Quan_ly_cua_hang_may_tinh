@@ -31,11 +31,12 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            LoadTrangThaiComboBox();
             UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
             
-            btn_Back.Visible = false; // Ẩn nút button1 nếu không cần thiết
+            btn_Back.Visible = false;
         }
         
         private void UpdateComponent(string language)
@@ -65,9 +66,23 @@ namespace Gwenchana
             lb_Spetifications.Text = Resource.lb_Specifications;
             lb_StockQuantity.Text = Resource.lb_StockQuantity;
             lb_Price.Text = Resource.lb_Price;
+            LoadTrangThaiComboBox();
 
 
+        }
 
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Tên", Resource.lb_productName},
+                { "Hãng sản xuất", Resource.lb_manufacturerName },
+                { "Cân nặng", Resource.lb_Weight  },
+                { "Màu sắc", Resource.lb_Color }
+            };
+            cbb_LaptopSearch.DataSource = new BindingSource(trangThaiDict, null);
+            cbb_LaptopSearch.DisplayMember = "Value";
+            cbb_LaptopSearch.ValueMember = "Key";
         }
 
 
@@ -346,7 +361,9 @@ namespace Gwenchana
                 return;
             }
 
-            switch (cbb_LaptopSearch.SelectedItem.ToString())
+            var selectedKey = (cbb_LaptopSearch.SelectedValue ?? "").ToString();
+
+            switch (selectedKey)
             {
                 case "Màu sắc":
                     filter = $"colour LIKE '%{searchText.Replace("'", "''")}%'";
@@ -361,7 +378,7 @@ namespace Gwenchana
                     filter = $"CONVERT(Weight, 'System.String') LIKE '%{searchText.Replace("'", "''")}%'";
                     break;
                 default:
-                    MessageBox.Show(Resource.Search_Error_InvalidCriteria, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resource.Search_Error_InvalidCriteria, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
             }
 
