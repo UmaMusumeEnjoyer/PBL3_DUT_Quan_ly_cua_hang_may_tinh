@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.DAL;
+using Gwenchana.LanguagePack; // Assuming you have a LanguagePack class for localization
+using System.Globalization; // For CultureInfo
 
 
 
@@ -29,11 +31,45 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
             
-            button2.Visible = false; // Ẩn nút button1 nếu không cần thiết
+            btn_Back.Visible = false; // Ẩn nút button1 nếu không cần thiết
         }
+        
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+            lb_laptopManagement.Text = Resource.btn_Laptops;
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+            lb_Search.Text = Resource.lb_Search;
+            btn_Search.Text = Resource.btn_Search;
+            btn_ClearFilter.Text = Resource.btn_ClearFilter;
+            btn_Add.Text = Resource.btn_Add;
+            btn_Edit.Text = Resource.btn_Edit;
+            btn_Delete.Text = Resource.btn_Delete;
+            btn_Details.Text = Resource.TabCtr_Details;
+
+            btn_Save.Text = Resource.btn_Edit;
+            btn_Cancel.Text = Resource.btn_Cancel;
+            btn_Back.Text = Resource.btn_Back;
+
+            lb_ID.Text = "ID";
+            lb_ProductName.Text = Resource.lb_productName;
+            lb_Colour.Text = Resource.lb_Color;
+            lb_Manufacturer.Text = Resource.lb_manufacturerName;
+            lb_Weight.Text = Resource.lb_Weight;
+            lb_ScreenSize.Text = Resource.lb_ScreenSize;
+            lb_Spetifications.Text = Resource.lb_Specifications;
+            lb_StockQuantity.Text = Resource.lb_StockQuantity;
+            lb_Price.Text = Resource.lb_Price;
+
+
+
+        }
+
 
         private void LoadData()
         {
@@ -46,16 +82,16 @@ namespace Gwenchana
             dataGridView.DataSource = laptopData;
 
             dataGridView.Columns["Product_Id"].Visible = false;
-            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
-            dataGridView.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-            dataGridView.Columns["weight"].HeaderText = "Trọng lượng";
-            dataGridView.Columns["screenSize"].HeaderText = "Kích cỡ màn hình";
-            dataGridView.Columns["colour"].HeaderText = "Màu sắc";
-            dataGridView.Columns["price"].HeaderText = "Giá";
-            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
-            dataGridView.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
-            dataGridView.Columns["supplierName"].HeaderText = "Nhà cung cấp"; // Hiển thị tên nhà cung cấp nếu cần
+            dataGridView.Columns["productName"].HeaderText = Resource.lb_productName;
+            dataGridView.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
+            dataGridView.Columns["specification"].HeaderText = Resource.lb_Specifications;
+            dataGridView.Columns["weight"].HeaderText = Resource.lb_Weight;
+            dataGridView.Columns["screenSize"].HeaderText = Resource.lb_ScreenSize;
+            dataGridView.Columns["colour"].HeaderText = Resource.lb_Color;
+            dataGridView.Columns["price"].HeaderText = Resource.lb_Price;
+            dataGridView.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
+            dataGridView.Columns["Supplier_Id"].Visible = false; 
+            dataGridView.Columns["supplierName"].HeaderText = Resource.lb_supplierName; 
 
             dataGridView.CellFormatting += dataGridView_CellFormatting;
         }
@@ -126,7 +162,7 @@ namespace Gwenchana
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
 
-            btnSave.Text = "Cập nhật";
+            btn_Save.Text = Resource.btn_Edit;
         }
 
         private void txtPetId_TextChanged(object sender, EventArgs e)
@@ -191,7 +227,7 @@ namespace Gwenchana
             int stockQuantity = Convert.ToInt32(dataGridView.CurrentRow.Cells["stockQuantity"].Value);
             if (stockQuantity > 0)
             {
-                MessageBox.Show("Không thể xoá vì còn hàng tồn kho", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Delete_Fail_StockRemaining, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             button = "Delete";
@@ -222,7 +258,7 @@ namespace Gwenchana
             txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
-            btnSave.Text = "Xoá sản phẩm";
+            btn_Save.Text = Resource.btn_Delete;
 
         }
 
@@ -250,13 +286,13 @@ namespace Gwenchana
                 isSuccessful = laptopBLL.UpdateLaptop(laptop);
                 if (isSuccessful)
                 {
-                    message = "Cập nhật sản phẩm thành công.";
+                    message = Resource.Laptop_Update_Success;
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Cập nhật sản phẩm thất bại.";
+                    message = Resource.Laptop_Update_Fail;
                     MessageBox.Show(message);
                 }
 
@@ -266,20 +302,18 @@ namespace Gwenchana
             }
             else if (button == "Delete")
             {
-                // Delete supplier logic
-                // Call SaveEvent or any other logic
                 int productID = Convert.ToInt32(dataGridView.CurrentRow.Cells["Product_Id"].Value);
                 LaptopBLL laptopBLL = new LaptopBLL();
                 isSuccessful = laptopBLL.DeleteLaptop(productID);
                 if (isSuccessful)
                 {
-                    message = "Xóa sản phẩm thành công.";
+                    message = Resource.Laptop_Delete_Success;
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Xóa sản phẩm thất bại.";
+                    message = Resource.Laptop_Delete_Fail;
                     MessageBox.Show(message);
                 }
 
@@ -292,10 +326,6 @@ namespace Gwenchana
                 txt_LaptopID.ForeColor = Color.Gray;
                 txt_LaptopID.Enabled = false;
             }
-            else
-            {
-
-            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -303,7 +333,7 @@ namespace Gwenchana
             string searchText = txtSearch.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_KeywordRequired, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -312,7 +342,7 @@ namespace Gwenchana
             string filter = "";
             if (cbb_LaptopSearch.SelectedItem == null)
             {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_InvalidCriteria, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -331,7 +361,7 @@ namespace Gwenchana
                     filter = $"CONVERT(Weight, 'System.String') LIKE '%{searchText.Replace("'", "''")}%'";
                     break;
                 default:
-                    MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resource.Search_Error_InvalidCriteria, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
             }
 
@@ -374,9 +404,9 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            btnSave.Visible = false;
-            btnCancel.Visible = false;
-            button2.Visible = true;
+            btn_Save.Visible = false;
+            btn_Cancel.Visible = false;
+            btn_Back.Visible = true;
 
             txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
             txt_LaptopID.Enabled = false;
@@ -424,9 +454,9 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetList;
 
             // Reset trạng thái logic
-            btnSave.Visible = true;
-            btnCancel.Visible = true;
-            button2.Visible = false;
+            btn_Save.Visible = true;
+            btn_Cancel.Visible = true;
+            btn_Back.Visible = false;
 
             txt_LaptopID.Clear();
             txt_LaptopName.Clear();
@@ -471,7 +501,7 @@ namespace Gwenchana
             double canNang;
             if (!double.TryParse(txt_LaptopWeight.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidWeight, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_LaptopWeight.Focus();
                 txt_LaptopWeight.SelectAll();
             }
@@ -482,7 +512,7 @@ namespace Gwenchana
             double canNang;
             if (!double.TryParse(txt_LaptopPrice.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidPrice, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_LaptopPrice.Focus();
                 txt_LaptopPrice.SelectAll();
             }

@@ -36,7 +36,7 @@ namespace Gwenchana
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
-            button2.Visible = false; 
+            btn_Back.Visible = false; 
         }
 
         private void UpdateComponent(string language)
@@ -53,6 +53,14 @@ namespace Gwenchana
             btn_Add.Text = Resource.btn_Add;
             btn_Edit.Text = Resource.btn_Edit;
             btn_Delete.Text = Resource.btn_Delete;
+            lb_Id.Text = "ID";
+            lb_ProductName.Text = Resource.lb_productName;
+            lb_Manufacturer.Text = Resource.lb_manufacturerName;
+            lb_Spectifications.Text = Resource.lb_Specifications;
+            lb_Price.Text = Resource.lb_Price;
+            lb_StockQuantity.Text = Resource.lb_StockQuantity;  
+            btn_Cancel.Text = Resource.btn_Cancel;
+            btn_Back.Text = Resource.btn_Back;
             LoadTrangThaiComboBox();
 
         }
@@ -388,8 +396,8 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
             btnSave.Visible = false;
-            btnCancel.Visible = false;
-            button2.Visible = true;
+            btn_Cancel.Visible = false;
+            btn_Back.Visible = true;
 
             txt_ProductID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
             txt_ProductID.Enabled = false;
@@ -425,8 +433,8 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetList;
 
             btnSave.Visible = true;
-            btnCancel.Visible = true;
-            button2.Visible = false;
+            btn_Cancel.Visible = true;
+            btn_Back.Visible = false;
 
             txt_ProductID.Clear();
             txt_pcName.Clear();

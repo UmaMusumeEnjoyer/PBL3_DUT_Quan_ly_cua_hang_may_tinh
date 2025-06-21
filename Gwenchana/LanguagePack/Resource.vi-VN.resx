@@ -457,4 +457,34 @@
   <data name="Validation_Error_InvalidWeight" xml:space="preserve">
     <value>Vui lòng nhập số hợp lệ cho cân nặng (không âm)!</value>
   </data>
+  <data name="Validation_Error_InvalidPrice" xml:space="preserve">
+    <value>Vui lòng nhập mức giá hợp lệ.</value>
+  </data>
+  <data name="btn_Cancel" xml:space="preserve">
+    <value>Huỷ</value>
+  </data>
+  <data name="lb_Weight" xml:space="preserve">
+    <value>Trọng lượng</value>
+  </data>
+  <data name="lb_ScreenSize" xml:space="preserve">
+    <value>Kích cỡ màn hình</value>
+  </data>
+  <data name="lb_Color" xml:space="preserve">
+    <value>Màu sắc</value>
+  </data>
+  <data name="btn_Back" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="Laptop_Update_Success" xml:space="preserve">
+    <value>Cập nhật Laptop thành công.</value>
+  </data>
+  <data name="Laptop_Update_Fail" xml:space="preserve">
+    <value>Cập nhật Laptop thất bại.</value>
+  </data>
+  <data name="Laptop_Delete_Success" xml:space="preserve">
+    <value>Xoá Laptop thành công.</value>
+  </data>
+  <data name="Laptop_Delete_Fail" xml:space="preserve">
+    <value>Xoá Laptop thất bại.</value>
+  </data>
 </root>

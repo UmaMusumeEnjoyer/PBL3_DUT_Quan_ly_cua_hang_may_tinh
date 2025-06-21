@@ -29,8 +29,6 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_pcManagement = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -47,12 +45,12 @@ namespace Gwenchana
             this.btn_Search = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.lb_StockQuantity = new System.Windows.Forms.Label();
             this.txt_stockQuantity = new System.Windows.Forms.TextBox();
             this.lb_Price = new System.Windows.Forms.Label();
             this.txt_pcPrice = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lb_Spectifications = new System.Windows.Forms.Label();
             this.txt_pcSpecs = new System.Windows.Forms.TextBox();
@@ -202,23 +200,7 @@ namespace Gwenchana
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 77);
             this.dataGridView.Name = "dataGridView";
@@ -293,12 +275,12 @@ namespace Gwenchana
             // tabPagePetDetail
             // 
             this.tabPagePetDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(221)))));
-            this.tabPagePetDetail.Controls.Add(this.button2);
+            this.tabPagePetDetail.Controls.Add(this.btn_Back);
             this.tabPagePetDetail.Controls.Add(this.lb_StockQuantity);
             this.tabPagePetDetail.Controls.Add(this.txt_stockQuantity);
             this.tabPagePetDetail.Controls.Add(this.lb_Price);
             this.tabPagePetDetail.Controls.Add(this.txt_pcPrice);
-            this.tabPagePetDetail.Controls.Add(this.btnCancel);
+            this.tabPagePetDetail.Controls.Add(this.btn_Cancel);
             this.tabPagePetDetail.Controls.Add(this.btnSave);
             this.tabPagePetDetail.Controls.Add(this.lb_Spectifications);
             this.tabPagePetDetail.Controls.Add(this.txt_pcSpecs);
@@ -316,18 +298,18 @@ namespace Gwenchana
             this.tabPagePetDetail.TabIndex = 1;
             this.tabPagePetDetail.Text = "Chi tiết PC";
             // 
-            // button2
+            // btn_Back
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button2.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(693, 304);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 44);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Quay lại";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Back.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Back.Location = new System.Drawing.Point(693, 304);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(183, 44);
+            this.btn_Back.TabIndex = 20;
+            this.btn_Back.Text = "Quay lại";
+            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Click += new System.EventHandler(this.button2_Click);
             // 
             // lb_StockQuantity
             // 
@@ -366,18 +348,18 @@ namespace Gwenchana
             this.txt_pcPrice.TabIndex = 16;
             this.txt_pcPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_pcPrice_Validating);
             // 
-            // btnCancel
+            // btn_Cancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnCancel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancel.Location = new System.Drawing.Point(260, 304);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(183, 44);
-            this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Huỷ";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Cancel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Cancel.Location = new System.Drawing.Point(260, 304);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(183, 44);
+            this.btn_Cancel.TabIndex = 15;
+            this.btn_Cancel.Text = "Huỷ";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -504,7 +486,7 @@ namespace Gwenchana
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabPagePetDetail;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lb_Spectifications;
         private System.Windows.Forms.TextBox txt_pcSpecs;
@@ -522,7 +504,7 @@ namespace Gwenchana
         private System.Windows.Forms.Label lb_Filters;
         private System.Windows.Forms.ComboBox cbb_PcSearch;
         private System.Windows.Forms.Button btn_Details;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Button btn_Add;
     }
 }

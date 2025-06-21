@@ -187,6 +187,24 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string btn_Back {
+            get {
+                return ResourceManager.GetString("btn_Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string btn_Cancel {
+            get {
+                return ResourceManager.GetString("btn_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account Setting.
         /// </summary>
         internal static string btn_changeAccount {
@@ -502,6 +520,42 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to delete laptop..
+        /// </summary>
+        internal static string Laptop_Delete_Fail {
+            get {
+                return ResourceManager.GetString("Laptop_Delete_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Laptop deleted successfully.
+        /// </summary>
+        internal static string Laptop_Delete_Success {
+            get {
+                return ResourceManager.GetString("Laptop_Delete_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to update laptop..
+        /// </summary>
+        internal static string Laptop_Update_Fail {
+            get {
+                return ResourceManager.GetString("Laptop_Update_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Laptop updated successfully..
+        /// </summary>
+        internal static string Laptop_Update_Success {
+            get {
+                return ResourceManager.GetString("Laptop_Update_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account management.
         /// </summary>
         internal static string lb_accountManagement {
@@ -525,6 +579,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_Age {
             get {
                 return ResourceManager.GetString("lb_Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.
+        /// </summary>
+        internal static string lb_Color {
+            get {
+                return ResourceManager.GetString("lb_Color", resourceCulture);
             }
         }
         
@@ -763,6 +826,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Screen size.
+        /// </summary>
+        internal static string lb_ScreenSize {
+            get {
+                return ResourceManager.GetString("lb_ScreenSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search : .
         /// </summary>
         internal static string lb_Search {
@@ -885,6 +957,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_Username {
             get {
                 return ResourceManager.GetString("lb_Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight.
+        /// </summary>
+        internal static string lb_Weight {
+            get {
+                return ResourceManager.GetString("lb_Weight", resourceCulture);
             }
         }
         
@@ -1056,6 +1137,15 @@ namespace Gwenchana.LanguagePack {
         internal static string Validation_Error_InvalidPhone {
             get {
                 return ResourceManager.GetString("Validation_Error_InvalidPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid price..
+        /// </summary>
+        internal static string Validation_Error_InvalidPrice {
+            get {
+                return ResourceManager.GetString("Validation_Error_InvalidPrice", resourceCulture);
             }
         }
         

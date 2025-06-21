@@ -456,4 +456,34 @@
   <data name="Validation_Error_InvalidWeight" xml:space="preserve">
     <value>Please enter a valid (non-negative) weight value!</value>
   </data>
+  <data name="Validation_Error_InvalidPrice" xml:space="preserve">
+    <value>Please enter a valid price.</value>
+  </data>
+  <data name="btn_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lb_Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="lb_ScreenSize" xml:space="preserve">
+    <value>Screen size</value>
+  </data>
+  <data name="lb_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="btn_Back" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Laptop_Update_Success" xml:space="preserve">
+    <value>Laptop updated successfully.</value>
+  </data>
+  <data name="Laptop_Update_Fail" xml:space="preserve">
+    <value>Failed to update laptop.</value>
+  </data>
+  <data name="Laptop_Delete_Success" xml:space="preserve">
+    <value>Laptop deleted successfully</value>
+  </data>
+  <data name="Laptop_Delete_Fail" xml:space="preserve">
+    <value>Failed to delete laptop.</value>
+  </data>
 </root>

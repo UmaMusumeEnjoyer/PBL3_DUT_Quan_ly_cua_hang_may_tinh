@@ -457,4 +457,34 @@
   <data name="Validation_Error_InvalidWeight" xml:space="preserve">
     <value>有効な（0以上の）体重を入力してください！</value>
   </data>
+  <data name="Validation_Error_InvalidPrice" xml:space="preserve">
+    <value>有効な価格を入力してください。</value>
+  </data>
+  <data name="btn_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="lb_Weight" xml:space="preserve">
+    <value>重さ</value>
+  </data>
+  <data name="lb_ScreenSize" xml:space="preserve">
+    <value>画面サイズ</value>
+  </data>
+  <data name="lb_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="btn_Back" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="Laptop_Update_Success" xml:space="preserve">
+    <value>ノートパソコンの更新に成功しました。</value>
+  </data>
+  <data name="Laptop_Update_Fail" xml:space="preserve">
+    <value>ノートパソコンの更新に失敗しました。</value>
+  </data>
+  <data name="Laptop_Delete_Success" xml:space="preserve">
+    <value>ノートパソコンの削除に成功しました。</value>
+  </data>
+  <data name="Laptop_Delete_Fail" xml:space="preserve">
+    <value>ノートパソコンの削除に失敗しました。</value>
+  </data>
 </root>
