@@ -29,8 +29,6 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_pcManagement = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -48,19 +46,19 @@ namespace Gwenchana
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.txt_ = new System.Windows.Forms.Label();
+            this.lb_StockQuantity = new System.Windows.Forms.Label();
             this.txt_stockQuantity = new System.Windows.Forms.TextBox();
-            this.lb_Email = new System.Windows.Forms.Label();
+            this.lb_Price = new System.Windows.Forms.Label();
             this.txt_pcPrice = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lb_Spectifications = new System.Windows.Forms.Label();
             this.txt_pcSpecs = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lb_Manufacturer = new System.Windows.Forms.Label();
             this.txt_pcSupplier = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lb_ProductName = new System.Windows.Forms.Label();
             this.txt_pcName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb_Id = new System.Windows.Forms.Label();
             this.txt_ProductID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -202,23 +200,7 @@ namespace Gwenchana
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 77);
             this.dataGridView.Name = "dataGridView";
@@ -294,19 +276,19 @@ namespace Gwenchana
             // 
             this.tabPagePetDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(221)))));
             this.tabPagePetDetail.Controls.Add(this.button2);
-            this.tabPagePetDetail.Controls.Add(this.txt_);
+            this.tabPagePetDetail.Controls.Add(this.lb_StockQuantity);
             this.tabPagePetDetail.Controls.Add(this.txt_stockQuantity);
-            this.tabPagePetDetail.Controls.Add(this.lb_Email);
+            this.tabPagePetDetail.Controls.Add(this.lb_Price);
             this.tabPagePetDetail.Controls.Add(this.txt_pcPrice);
             this.tabPagePetDetail.Controls.Add(this.btnCancel);
             this.tabPagePetDetail.Controls.Add(this.btnSave);
-            this.tabPagePetDetail.Controls.Add(this.label6);
+            this.tabPagePetDetail.Controls.Add(this.lb_Spectifications);
             this.tabPagePetDetail.Controls.Add(this.txt_pcSpecs);
-            this.tabPagePetDetail.Controls.Add(this.label5);
+            this.tabPagePetDetail.Controls.Add(this.lb_Manufacturer);
             this.tabPagePetDetail.Controls.Add(this.txt_pcSupplier);
-            this.tabPagePetDetail.Controls.Add(this.label4);
+            this.tabPagePetDetail.Controls.Add(this.lb_ProductName);
             this.tabPagePetDetail.Controls.Add(this.txt_pcName);
-            this.tabPagePetDetail.Controls.Add(this.label3);
+            this.tabPagePetDetail.Controls.Add(this.lb_Id);
             this.tabPagePetDetail.Controls.Add(this.txt_ProductID);
             this.tabPagePetDetail.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPagePetDetail.Location = new System.Drawing.Point(4, 30);
@@ -319,7 +301,7 @@ namespace Gwenchana
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.button2.Location = new System.Drawing.Point(693, 304);
             this.button2.Name = "button2";
@@ -329,45 +311,47 @@ namespace Gwenchana
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txt_
+            // lb_StockQuantity
             // 
-            this.txt_.AutoSize = true;
-            this.txt_.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_.Location = new System.Drawing.Point(643, 102);
-            this.txt_.Name = "txt_";
-            this.txt_.Size = new System.Drawing.Size(149, 21);
-            this.txt_.TabIndex = 19;
-            this.txt_.Text = "Số lượng tồn kho :";
+            this.lb_StockQuantity.AutoSize = true;
+            this.lb_StockQuantity.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_StockQuantity.Location = new System.Drawing.Point(642, 97);
+            this.lb_StockQuantity.Name = "lb_StockQuantity";
+            this.lb_StockQuantity.Size = new System.Drawing.Size(210, 25);
+            this.lb_StockQuantity.TabIndex = 19;
+            this.lb_StockQuantity.Text = "Số lượng tồn kho :";
             // 
             // txt_stockQuantity
             // 
+            this.txt_stockQuantity.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_stockQuantity.Location = new System.Drawing.Point(647, 125);
             this.txt_stockQuantity.Name = "txt_stockQuantity";
-            this.txt_stockQuantity.Size = new System.Drawing.Size(183, 29);
+            this.txt_stockQuantity.Size = new System.Drawing.Size(205, 33);
             this.txt_stockQuantity.TabIndex = 18;
             // 
-            // lb_Email
+            // lb_Price
             // 
-            this.lb_Email.AutoSize = true;
-            this.lb_Email.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Email.Location = new System.Drawing.Point(59, 240);
-            this.lb_Email.Name = "lb_Email";
-            this.lb_Email.Size = new System.Drawing.Size(77, 21);
-            this.lb_Email.TabIndex = 17;
-            this.lb_Email.Text = "Giá bán :";
+            this.lb_Price.AutoSize = true;
+            this.lb_Price.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Price.Location = new System.Drawing.Point(58, 235);
+            this.lb_Price.Name = "lb_Price";
+            this.lb_Price.Size = new System.Drawing.Size(111, 25);
+            this.lb_Price.TabIndex = 17;
+            this.lb_Price.Text = "Giá bán :";
             // 
             // txt_pcPrice
             // 
+            this.txt_pcPrice.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcPrice.Location = new System.Drawing.Point(63, 263);
             this.txt_pcPrice.Name = "txt_pcPrice";
-            this.txt_pcPrice.Size = new System.Drawing.Size(380, 29);
+            this.txt_pcPrice.Size = new System.Drawing.Size(380, 33);
             this.txt_pcPrice.TabIndex = 16;
             this.txt_pcPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_pcPrice_Validating);
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancel.Location = new System.Drawing.Point(260, 304);
             this.btnCancel.Name = "btnCancel";
@@ -380,7 +364,7 @@ namespace Gwenchana
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.Location = new System.Drawing.Point(63, 304);
             this.btnSave.Name = "btnSave";
@@ -390,74 +374,78 @@ namespace Gwenchana
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label6
+            // lb_Spectifications
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(59, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 21);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Cấu hình :";
+            this.lb_Spectifications.AutoSize = true;
+            this.lb_Spectifications.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Spectifications.Location = new System.Drawing.Point(58, 170);
+            this.lb_Spectifications.Name = "lb_Spectifications";
+            this.lb_Spectifications.Size = new System.Drawing.Size(122, 25);
+            this.lb_Spectifications.TabIndex = 13;
+            this.lb_Spectifications.Text = "Cấu hình :";
             // 
             // txt_pcSpecs
             // 
+            this.txt_pcSpecs.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcSpecs.Location = new System.Drawing.Point(63, 198);
             this.txt_pcSpecs.Name = "txt_pcSpecs";
-            this.txt_pcSpecs.Size = new System.Drawing.Size(767, 29);
+            this.txt_pcSpecs.Size = new System.Drawing.Size(767, 33);
             this.txt_pcSpecs.TabIndex = 12;
             // 
-            // label5
+            // lb_Manufacturer
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(432, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 21);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Nhà sản xuất :";
+            this.lb_Manufacturer.AutoSize = true;
+            this.lb_Manufacturer.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Manufacturer.Location = new System.Drawing.Point(431, 97);
+            this.lb_Manufacturer.Name = "lb_Manufacturer";
+            this.lb_Manufacturer.Size = new System.Drawing.Size(166, 25);
+            this.lb_Manufacturer.TabIndex = 11;
+            this.lb_Manufacturer.Text = "Nhà sản xuất :";
             // 
             // txt_pcSupplier
             // 
+            this.txt_pcSupplier.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcSupplier.Location = new System.Drawing.Point(436, 125);
             this.txt_pcSupplier.Name = "txt_pcSupplier";
-            this.txt_pcSupplier.Size = new System.Drawing.Size(183, 29);
+            this.txt_pcSupplier.Size = new System.Drawing.Size(183, 33);
             this.txt_pcSupplier.TabIndex = 10;
             this.txt_pcSupplier.TextChanged += new System.EventHandler(this.txt_SupplierPhone_TextChanged);
             // 
-            // label4
+            // lb_ProductName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 21);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tên :";
+            this.lb_ProductName.AutoSize = true;
+            this.lb_ProductName.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ProductName.Location = new System.Drawing.Point(58, 97);
+            this.lb_ProductName.Name = "lb_ProductName";
+            this.lb_ProductName.Size = new System.Drawing.Size(67, 25);
+            this.lb_ProductName.TabIndex = 9;
+            this.lb_ProductName.Text = "Tên :";
             // 
             // txt_pcName
             // 
+            this.txt_pcName.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcName.Location = new System.Drawing.Point(63, 125);
             this.txt_pcName.Name = "txt_pcName";
-            this.txt_pcName.Size = new System.Drawing.Size(315, 29);
+            this.txt_pcName.Size = new System.Drawing.Size(315, 33);
             this.txt_pcName.TabIndex = 8;
             // 
-            // label3
+            // lb_Id
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Mã :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lb_Id.AutoSize = true;
+            this.lb_Id.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Id.Location = new System.Drawing.Point(58, 26);
+            this.lb_Id.Name = "lb_Id";
+            this.lb_Id.Size = new System.Drawing.Size(56, 25);
+            this.lb_Id.TabIndex = 7;
+            this.lb_Id.Text = "Mã :";
+            this.lb_Id.Click += new System.EventHandler(this.label3_Click);
             // 
             // txt_ProductID
             // 
+            this.txt_ProductID.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ProductID.Location = new System.Drawing.Point(63, 54);
             this.txt_ProductID.Name = "txt_ProductID";
-            this.txt_ProductID.Size = new System.Drawing.Size(154, 29);
+            this.txt_ProductID.Size = new System.Drawing.Size(154, 33);
             this.txt_ProductID.TabIndex = 6;
             this.txt_ProductID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 
@@ -500,17 +488,17 @@ namespace Gwenchana
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lb_Spectifications;
         private System.Windows.Forms.TextBox txt_pcSpecs;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lb_Manufacturer;
         private System.Windows.Forms.TextBox txt_pcSupplier;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lb_ProductName;
         private System.Windows.Forms.TextBox txt_pcName;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_Id;
         private System.Windows.Forms.TextBox txt_ProductID;
-        private System.Windows.Forms.Label lb_Email;
+        private System.Windows.Forms.Label lb_Price;
         private System.Windows.Forms.TextBox txt_pcPrice;
-        private System.Windows.Forms.Label txt_;
+        private System.Windows.Forms.Label lb_StockQuantity;
         private System.Windows.Forms.TextBox txt_stockQuantity;
         private System.Windows.Forms.Button btn_ClearFilter;
         private System.Windows.Forms.Label lb_Filters;

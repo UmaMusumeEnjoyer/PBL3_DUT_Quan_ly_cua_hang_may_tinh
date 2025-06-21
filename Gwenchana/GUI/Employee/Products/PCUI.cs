@@ -30,7 +30,9 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            LoadTrangThaiComboBox();
             UpdateComponent(LanguageClass.Language);
+            
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
@@ -51,7 +53,21 @@ namespace Gwenchana
             btn_Add.Text = Resource.btn_Add;
             btn_Edit.Text = Resource.btn_Edit;
             btn_Delete.Text = Resource.btn_Delete;
+            LoadTrangThaiComboBox();
 
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Tên", Resource.lb_productName},
+                { "Nhà sản xuất", Resource.lb_manufacturerName },
+                { "Cấu hình", Resource.lb_Specifications  }
+            };
+            cbb_PcSearch.DataSource = new BindingSource(trangThaiDict, null);
+            cbb_PcSearch.DisplayMember = "Value";
+            cbb_PcSearch.ValueMember = "Key";
         }
 
         private void LoadData()
@@ -131,7 +147,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_Id.ForeColor = Color.Gray;
             txt_ProductID.ForeColor = Color.Gray;
             txt_ProductID.Enabled = false;
             txt_stockQuantity.Enabled = false;
@@ -144,7 +160,7 @@ namespace Gwenchana
             txt_pcPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
-            btnSave.Text = "Cập nhật";
+            btnSave.Text = Resource.btn_Edit;
 
         }
 
@@ -164,7 +180,7 @@ namespace Gwenchana
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
-            label3.ForeColor = Color.Gray;
+            lb_Id.ForeColor = Color.Gray;
             txt_ProductID.ForeColor = Color.Gray;
             txt_ProductID.Enabled = false;
         }
@@ -190,7 +206,7 @@ namespace Gwenchana
             txt_pcPrice.Enabled = true;
             txt_ProductID.Enabled = true;
             txt_ProductID.ForeColor = SystemColors.WindowText;
-            label3.ForeColor = SystemColors.ControlText;
+            lb_Id.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
             if (!tabControl1.TabPages.Contains(tabPagePetList))
@@ -210,7 +226,7 @@ namespace Gwenchana
             int stockQuantity = Convert.ToInt32(dataGridView.CurrentRow.Cells["stockQuantity"].Value);
             if (stockQuantity > 0)
             {
-                MessageBox.Show("Không thể xoá vì còn hàng tồn kho", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không thể xoá vì còn hàng tồn kho", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             button = "Delete";
@@ -218,7 +234,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_Id.ForeColor = Color.Gray;
             txt_ProductID.ForeColor = Color.Gray;
             txt_ProductID.Enabled = false;
 
@@ -237,7 +253,7 @@ namespace Gwenchana
             //txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
-            btnSave.Text = "Xoá";
+            btnSave.Text = Resource.btn_Delete;
 
         }
 
@@ -323,12 +339,12 @@ namespace Gwenchana
                 MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            if (cbb_PcSearch.SelectedItem.ToString() == "Tên")
+            var selectedKey = (cbb_PcSearch.SelectedValue ?? "").ToString();
+            if (selectedKey == "Tên")
                 filter = $"productName LIKE '%{searchText.Replace("'", "''")}%'";
-            else if (cbb_PcSearch.SelectedItem.ToString() == "Nhà sản xuất")
+            else if (selectedKey == "Nhà sản xuất")
                 filter = $"Manufacturer LIKE '%{searchText.Replace("'", "''")}%'";
-            else if (cbb_PcSearch.SelectedItem.ToString() == "Cấu hình")
+            else if (selectedKey == "Cấu hình")
                 filter = $"specification LIKE '%{searchText.Replace("'", "''")}%'";
             else
             {
