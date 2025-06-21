@@ -432,4 +432,28 @@
   <data name="lb_supplierName" xml:space="preserve">
     <value>Supplier name</value>
   </data>
+  <data name="Delete_Fail_StockRemaining" xml:space="preserve">
+    <value>Cannot delete because there is remaining stock.</value>
+  </data>
+  <data name="PC_Update_Success" xml:space="preserve">
+    <value>PC updated successfully.</value>
+  </data>
+  <data name="PC_Update_Fail" xml:space="preserve">
+    <value>Failed to update PC.</value>
+  </data>
+  <data name="PC_Delete_Success" xml:space="preserve">
+    <value>PC deleted successfully.</value>
+  </data>
+  <data name="PC_Delete_Fail" xml:space="preserve">
+    <value>Failed to delete PC.</value>
+  </data>
+  <data name="Search_Error_KeywordRequired" xml:space="preserve">
+    <value>Please enter a search keyword.</value>
+  </data>
+  <data name="Search_Error_InvalidCriteria" xml:space="preserve">
+    <value>Please select a valid search criterion.</value>
+  </data>
+  <data name="Validation_Error_InvalidWeight" xml:space="preserve">
+    <value>Please enter a valid (non-negative) weight value!</value>
+  </data>
 </root>

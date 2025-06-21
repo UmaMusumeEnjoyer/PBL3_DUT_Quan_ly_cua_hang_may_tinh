@@ -226,7 +226,7 @@ namespace Gwenchana
             int stockQuantity = Convert.ToInt32(dataGridView.CurrentRow.Cells["stockQuantity"].Value);
             if (stockQuantity > 0)
             {
-                MessageBox.Show("Không thể xoá vì còn hàng tồn kho", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Delete_Fail_StockRemaining, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             button = "Delete";
@@ -250,7 +250,6 @@ namespace Gwenchana
             txt_pcSupplier.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
             txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
             txt_pcPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
-            //txt_pcSpecs.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
             txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
 
             btnSave.Text = Resource.btn_Delete;
@@ -261,8 +260,6 @@ namespace Gwenchana
         {
             if (button == "Edit")
             {
-                // Edit supplier logic
-                // Call SaveEvent or any other logic
                 int supplierId = Convert.ToInt32(dataGridView.CurrentRow.Cells["Product_Id"].Value);
                 PCBLL pcBLL = new PCBLL();
                 PC pc = new PC
@@ -277,13 +274,13 @@ namespace Gwenchana
                 isSuccessful = pcBLL.UpdatePC(pc);
                 if (isSuccessful)
                 {
-                    message = "Cập nhật PC thành công.";
+                    message = Resource.PC_Update_Success;
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Cập nhật PC thất bại.";
+                    message = Resource.PC_Update_Fail;
                     MessageBox.Show(message);
                 }
 
@@ -298,13 +295,13 @@ namespace Gwenchana
                 isSuccessful = pCBLL.DeletePC(supplierId);
                 if (isSuccessful)
                 {
-                    message = "Xóa PC thành công.";
+                    message = Resource.PC_Delete_Success;
                     MessageBox.Show(message);
                     LoadData();
                 }
                 else
                 {
-                    message = "Xóa PC thất bại.";
+                    message = Resource.PC_Delete_Fail;
                     MessageBox.Show(message);
                 }
                 tabControl1.TabPages.Add(tabPagePetList);
@@ -327,7 +324,7 @@ namespace Gwenchana
             string searchText = txtSearch.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_KeywordRequired, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -336,7 +333,7 @@ namespace Gwenchana
             string filter = "";
             if (cbb_PcSearch.SelectedItem == null)
             {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_InvalidCriteria, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             var selectedKey = (cbb_PcSearch.SelectedValue ?? "").ToString();
@@ -348,7 +345,7 @@ namespace Gwenchana
                 filter = $"specification LIKE '%{searchText.Replace("'", "''")}%'";
             else
             {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_InvalidCriteria, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -471,7 +468,7 @@ namespace Gwenchana
             double canNang;
             if (!double.TryParse(txt_pcPrice.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidWeight, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_pcPrice.Focus();
                 txt_pcPrice.SelectAll();
             }

@@ -433,4 +433,28 @@
   <data name="lb_supplierName" xml:space="preserve">
     <value>サプライヤー名</value>
   </data>
+  <data name="Delete_Fail_StockRemaining" xml:space="preserve">
+    <value>在庫が残っているため削除できません。</value>
+  </data>
+  <data name="PC_Update_Success" xml:space="preserve">
+    <value>PCの更新に成功しました。</value>
+  </data>
+  <data name="PC_Update_Fail" xml:space="preserve">
+    <value>PCの更新に失敗しました。</value>
+  </data>
+  <data name="PC_Delete_Success" xml:space="preserve">
+    <value>PCの削除に成功しました。</value>
+  </data>
+  <data name="PC_Delete_Fail" xml:space="preserve">
+    <value>PCの削除に失敗しました。</value>
+  </data>
+  <data name="Search_Error_KeywordRequired" xml:space="preserve">
+    <value>検索キーワードを入力してください。</value>
+  </data>
+  <data name="Search_Error_InvalidCriteria" xml:space="preserve">
+    <value>有効な検索条件を選択してください。</value>
+  </data>
+  <data name="Validation_Error_InvalidWeight" xml:space="preserve">
+    <value>有効な（0以上の）体重を入力してください！</value>
+  </data>
 </root>

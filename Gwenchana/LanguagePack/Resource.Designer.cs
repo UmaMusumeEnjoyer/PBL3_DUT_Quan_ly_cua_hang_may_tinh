@@ -430,6 +430,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot delete because there is remaining stock..
+        /// </summary>
+        internal static string Delete_Fail_StockRemaining {
+            get {
+                return ResourceManager.GetString("Delete_Fail_StockRemaining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item.
         /// </summary>
         internal static string dvg_Item {
@@ -880,6 +889,42 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to delete PC..
+        /// </summary>
+        internal static string PC_Delete_Fail {
+            get {
+                return ResourceManager.GetString("PC_Delete_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PC deleted successfully..
+        /// </summary>
+        internal static string PC_Delete_Success {
+            get {
+                return ResourceManager.GetString("PC_Delete_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to update PC..
+        /// </summary>
+        internal static string PC_Update_Fail {
+            get {
+                return ResourceManager.GetString("PC_Update_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PC updated successfully..
+        /// </summary>
+        internal static string PC_Update_Success {
+            get {
+                return ResourceManager.GetString("PC_Update_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assignment failed.
         /// </summary>
         internal static string Permission_Assign_Fail {
@@ -912,6 +957,24 @@ namespace Gwenchana.LanguagePack {
         internal static string Prompt_ConfirmReturnToLogin {
             get {
                 return ResourceManager.GetString("Prompt_ConfirmReturnToLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a valid search criterion..
+        /// </summary>
+        internal static string Search_Error_InvalidCriteria {
+            get {
+                return ResourceManager.GetString("Search_Error_InvalidCriteria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a search keyword..
+        /// </summary>
+        internal static string Search_Error_KeywordRequired {
+            get {
+                return ResourceManager.GetString("Search_Error_KeywordRequired", resourceCulture);
             }
         }
         
@@ -993,6 +1056,15 @@ namespace Gwenchana.LanguagePack {
         internal static string Validation_Error_InvalidPhone {
             get {
                 return ResourceManager.GetString("Validation_Error_InvalidPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid (non-negative) weight value!.
+        /// </summary>
+        internal static string Validation_Error_InvalidWeight {
+            get {
+                return ResourceManager.GetString("Validation_Error_InvalidWeight", resourceCulture);
             }
         }
         
