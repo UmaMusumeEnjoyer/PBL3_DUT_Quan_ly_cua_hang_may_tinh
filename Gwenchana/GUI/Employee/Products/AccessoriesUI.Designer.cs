@@ -29,38 +29,40 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.lb_Accessories = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Details = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lb_SearchFilters = new System.Windows.Forms.Label();
             this.cbb_LaptopSearch = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.lb_Search = new System.Windows.Forms.Label();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btn_Back = new System.Windows.Forms.Button();
+            this.lb_StockQuantity = new System.Windows.Forms.Label();
             this.txt_AccessoriesstockQuantity = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lb_ProductType = new System.Windows.Forms.Label();
             this.txt_AccessoriesType = new System.Windows.Forms.TextBox();
-            this.lb_Email = new System.Windows.Forms.Label();
+            this.lb_Price = new System.Windows.Forms.Label();
             this.txt_AccessoriesPrice = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.lb_Overview = new System.Windows.Forms.Label();
             this.txt_AccessoriesOverview = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lb_Manufacturer = new System.Windows.Forms.Label();
             this.txt_AccessoriesManufacturer = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lb_ProductName = new System.Windows.Forms.Label();
             this.txt_AccessoriesName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb_ID = new System.Windows.Forms.Label();
             this.txt_AccessoriesID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -69,22 +71,22 @@ namespace Gwenchana
             this.tabPagePetDetail.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_Accessories
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Linh / Phụ kiện";
+            this.lb_Accessories.AutoSize = true;
+            this.lb_Accessories.Font = new System.Drawing.Font("JetBrains Mono", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Accessories.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_Accessories.Location = new System.Drawing.Point(4, 6);
+            this.lb_Accessories.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_Accessories.Name = "lb_Accessories";
+            this.lb_Accessories.Size = new System.Drawing.Size(335, 47);
+            this.lb_Accessories.TabIndex = 0;
+            this.lb_Accessories.Text = "Linh / Phụ kiện";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lb_Accessories);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -96,7 +98,7 @@ namespace Gwenchana
             this.tabControl1.Controls.Add(this.tabPagePetList);
             this.tabControl1.Controls.Add(this.tabPagePetDetail);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -106,16 +108,16 @@ namespace Gwenchana
             // tabPagePetList
             // 
             this.tabPagePetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
-            this.tabPagePetList.Controls.Add(this.button3);
-            this.tabPagePetList.Controls.Add(this.button1);
+            this.tabPagePetList.Controls.Add(this.btn_Add);
+            this.tabPagePetList.Controls.Add(this.btn_Details);
             this.tabPagePetList.Controls.Add(this.btn_ClearFilter);
-            this.tabPagePetList.Controls.Add(this.label9);
+            this.tabPagePetList.Controls.Add(this.lb_SearchFilters);
             this.tabPagePetList.Controls.Add(this.cbb_LaptopSearch);
             this.tabPagePetList.Controls.Add(this.dataGridView);
-            this.tabPagePetList.Controls.Add(this.label2);
-            this.tabPagePetList.Controls.Add(this.btnDelete);
-            this.tabPagePetList.Controls.Add(this.btnEdit);
-            this.tabPagePetList.Controls.Add(this.btnSearch);
+            this.tabPagePetList.Controls.Add(this.lb_Search);
+            this.tabPagePetList.Controls.Add(this.btn_Delete);
+            this.tabPagePetList.Controls.Add(this.btn_Edit);
+            this.tabPagePetList.Controls.Add(this.btn_Search);
             this.tabPagePetList.Controls.Add(this.txtSearch);
             this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPagePetList.Location = new System.Drawing.Point(4, 30);
@@ -125,64 +127,64 @@ namespace Gwenchana
             this.tabPagePetList.TabIndex = 0;
             this.tabPagePetList.Text = "Danh sách";
             // 
-            // button3
+            // btn_Add
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(767, 150);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 30);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Add.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Add.Location = new System.Drawing.Point(767, 222);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(99, 39);
+            this.btn_Add.TabIndex = 15;
+            this.btn_Add.Text = "Thêm";
+            this.btn_Add.UseVisualStyleBackColor = false;
+            this.btn_Add.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1
+            // btn_Details
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(767, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 30);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Chi tiết";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Details.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Details.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Details.Location = new System.Drawing.Point(767, 140);
+            this.btn_Details.Name = "btn_Details";
+            this.btn_Details.Size = new System.Drawing.Size(99, 76);
+            this.btn_Details.TabIndex = 14;
+            this.btn_Details.Text = "Chi tiết";
+            this.btn_Details.UseVisualStyleBackColor = false;
+            this.btn_Details.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_ClearFilter
             // 
             this.btn_ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btn_ClearFilter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearFilter.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ClearFilter.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ClearFilter.Location = new System.Drawing.Point(773, 8);
+            this.btn_ClearFilter.Location = new System.Drawing.Point(773, 4);
             this.btn_ClearFilter.Name = "btn_ClearFilter";
-            this.btn_ClearFilter.Size = new System.Drawing.Size(74, 28);
+            this.btn_ClearFilter.Size = new System.Drawing.Size(103, 33);
             this.btn_ClearFilter.TabIndex = 13;
             this.btn_ClearFilter.Text = "Xoá";
             this.btn_ClearFilter.UseVisualStyleBackColor = false;
             this.btn_ClearFilter.Click += new System.EventHandler(this.btn_ClearFilter_Click);
             // 
-            // label9
+            // lb_SearchFilters
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.Location = new System.Drawing.Point(538, 11);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 21);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Tiêu chí :";
+            this.lb_SearchFilters.AutoSize = true;
+            this.lb_SearchFilters.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SearchFilters.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_SearchFilters.Location = new System.Drawing.Point(499, 7);
+            this.lb_SearchFilters.Name = "lb_SearchFilters";
+            this.lb_SearchFilters.Size = new System.Drawing.Size(122, 25);
+            this.lb_SearchFilters.TabIndex = 12;
+            this.lb_SearchFilters.Text = "Tiêu chí :";
             // 
             // cbb_LaptopSearch
             // 
             this.cbb_LaptopSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.cbb_LaptopSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_LaptopSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_LaptopSearch.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_LaptopSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cbb_LaptopSearch.FormattingEnabled = true;
             this.cbb_LaptopSearch.Items.AddRange(new object[] {
@@ -191,7 +193,7 @@ namespace Gwenchana
             "Loại"});
             this.cbb_LaptopSearch.Location = new System.Drawing.Point(627, 8);
             this.cbb_LaptopSearch.Name = "cbb_LaptopSearch";
-            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 27);
+            this.cbb_LaptopSearch.Size = new System.Drawing.Size(140, 29);
             this.cbb_LaptopSearch.TabIndex = 11;
             // 
             // dataGridView
@@ -202,7 +204,23 @@ namespace Gwenchana
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.GridColor = System.Drawing.Color.Black;
             this.dataGridView.Location = new System.Drawing.Point(24, 78);
             this.dataGridView.Name = "dataGridView";
@@ -211,88 +229,88 @@ namespace Gwenchana
             this.dataGridView.TabIndex = 7;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
-            // label2
+            // lb_Search
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(20, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 21);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tìm kiếm :";
+            this.lb_Search.AutoSize = true;
+            this.lb_Search.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Search.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_Search.Location = new System.Drawing.Point(19, 18);
+            this.lb_Search.Name = "lb_Search";
+            this.lb_Search.Size = new System.Drawing.Size(122, 25);
+            this.lb_Search.TabIndex = 5;
+            this.lb_Search.Text = "Tìm kiếm :";
             // 
-            // btnDelete
+            // btn_Delete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.Location = new System.Drawing.Point(767, 247);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 30);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btn_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Delete.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Delete.Location = new System.Drawing.Point(767, 319);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(99, 47);
+            this.btn_Delete.TabIndex = 4;
+            this.btn_Delete.Text = "Xoá";
+            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnEdit
+            // btn_Edit
             // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEdit.Location = new System.Drawing.Point(767, 195);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(99, 30);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btn_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Edit.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Edit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Edit.Location = new System.Drawing.Point(767, 267);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(99, 46);
+            this.btn_Edit.TabIndex = 3;
+            this.btn_Edit.Text = "Sửa";
+            this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnSearch
+            // btn_Search
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.Location = new System.Drawing.Point(668, 42);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(99, 30);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Search.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Search.Location = new System.Drawing.Point(668, 42);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(112, 33);
+            this.btn_Search.TabIndex = 1;
+            this.btn_Search.Text = "Tìm kiếm";
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(24, 46);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(638, 26);
+            this.txtSearch.Size = new System.Drawing.Size(638, 29);
             this.txtSearch.TabIndex = 0;
             // 
             // tabPagePetDetail
             // 
             this.tabPagePetDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(221)))));
-            this.tabPagePetDetail.Controls.Add(this.button2);
-            this.tabPagePetDetail.Controls.Add(this.label8);
+            this.tabPagePetDetail.Controls.Add(this.btn_Back);
+            this.tabPagePetDetail.Controls.Add(this.lb_StockQuantity);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesstockQuantity);
-            this.tabPagePetDetail.Controls.Add(this.label7);
+            this.tabPagePetDetail.Controls.Add(this.lb_ProductType);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesType);
-            this.tabPagePetDetail.Controls.Add(this.lb_Email);
+            this.tabPagePetDetail.Controls.Add(this.lb_Price);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesPrice);
-            this.tabPagePetDetail.Controls.Add(this.btnCancel);
-            this.tabPagePetDetail.Controls.Add(this.btnSave);
-            this.tabPagePetDetail.Controls.Add(this.label6);
+            this.tabPagePetDetail.Controls.Add(this.btn_Cancel);
+            this.tabPagePetDetail.Controls.Add(this.btn_Save);
+            this.tabPagePetDetail.Controls.Add(this.lb_Overview);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesOverview);
-            this.tabPagePetDetail.Controls.Add(this.label5);
+            this.tabPagePetDetail.Controls.Add(this.lb_Manufacturer);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesManufacturer);
-            this.tabPagePetDetail.Controls.Add(this.label4);
+            this.tabPagePetDetail.Controls.Add(this.lb_ProductName);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesName);
-            this.tabPagePetDetail.Controls.Add(this.label3);
+            this.tabPagePetDetail.Controls.Add(this.lb_ID);
             this.tabPagePetDetail.Controls.Add(this.txt_AccessoriesID);
             this.tabPagePetDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPagePetDetail.Location = new System.Drawing.Point(4, 30);
@@ -302,168 +320,168 @@ namespace Gwenchana
             this.tabPagePetDetail.TabIndex = 1;
             this.tabPagePetDetail.Text = "Chi tiết";
             // 
-            // button2
+            // btn_Back
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(693, 304);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 44);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Quay về";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.btn_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Back.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Back.Location = new System.Drawing.Point(693, 304);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(183, 44);
+            this.btn_Back.TabIndex = 22;
+            this.btn_Back.Text = "Quay về";
+            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // label8
+            // lb_StockQuantity
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(466, 31);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 21);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Số lượng tồn kho :";
+            this.lb_StockQuantity.AutoSize = true;
+            this.lb_StockQuantity.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_StockQuantity.Location = new System.Drawing.Point(465, 26);
+            this.lb_StockQuantity.Name = "lb_StockQuantity";
+            this.lb_StockQuantity.Size = new System.Drawing.Size(210, 25);
+            this.lb_StockQuantity.TabIndex = 21;
+            this.lb_StockQuantity.Text = "Số lượng tồn kho :";
             // 
             // txt_AccessoriesstockQuantity
             // 
-            this.txt_AccessoriesstockQuantity.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AccessoriesstockQuantity.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesstockQuantity.Location = new System.Drawing.Point(470, 54);
             this.txt_AccessoriesstockQuantity.Name = "txt_AccessoriesstockQuantity";
             this.txt_AccessoriesstockQuantity.Size = new System.Drawing.Size(183, 29);
             this.txt_AccessoriesstockQuantity.TabIndex = 20;
             // 
-            // label7
+            // lb_ProductType
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(256, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 21);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Loại sản phẩm :";
+            this.lb_ProductType.AutoSize = true;
+            this.lb_ProductType.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ProductType.Location = new System.Drawing.Point(255, 26);
+            this.lb_ProductType.Name = "lb_ProductType";
+            this.lb_ProductType.Size = new System.Drawing.Size(177, 25);
+            this.lb_ProductType.TabIndex = 19;
+            this.lb_ProductType.Text = "Loại sản phẩm :";
             // 
             // txt_AccessoriesType
             // 
-            this.txt_AccessoriesType.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AccessoriesType.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesType.Location = new System.Drawing.Point(260, 54);
             this.txt_AccessoriesType.Name = "txt_AccessoriesType";
             this.txt_AccessoriesType.Size = new System.Drawing.Size(183, 29);
             this.txt_AccessoriesType.TabIndex = 18;
             // 
-            // lb_Email
+            // lb_Price
             // 
-            this.lb_Email.AutoSize = true;
-            this.lb_Email.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Email.Location = new System.Drawing.Point(59, 240);
-            this.lb_Email.Name = "lb_Email";
-            this.lb_Email.Size = new System.Drawing.Size(77, 21);
-            this.lb_Email.TabIndex = 17;
-            this.lb_Email.Text = "Giá bán :";
+            this.lb_Price.AutoSize = true;
+            this.lb_Price.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Price.Location = new System.Drawing.Point(58, 235);
+            this.lb_Price.Name = "lb_Price";
+            this.lb_Price.Size = new System.Drawing.Size(111, 25);
+            this.lb_Price.TabIndex = 17;
+            this.lb_Price.Text = "Giá bán :";
             // 
             // txt_AccessoriesPrice
             // 
-            this.txt_AccessoriesPrice.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AccessoriesPrice.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesPrice.Location = new System.Drawing.Point(63, 263);
             this.txt_AccessoriesPrice.Name = "txt_AccessoriesPrice";
             this.txt_AccessoriesPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_AccessoriesPrice.TabIndex = 16;
             this.txt_AccessoriesPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_AccessoriesPrice_Validating);
             // 
-            // btnCancel
+            // btn_Cancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancel.Location = new System.Drawing.Point(260, 304);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(183, 44);
-            this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Huỷ";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Cancel.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Cancel.Location = new System.Drawing.Point(260, 304);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(183, 44);
+            this.btn_Cancel.TabIndex = 15;
+            this.btn_Cancel.Text = "Huỷ";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnSave
+            // btn_Save
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Location = new System.Drawing.Point(63, 304);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(183, 44);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btn_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Save.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Save.Location = new System.Drawing.Point(63, 304);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(183, 44);
+            this.btn_Save.TabIndex = 14;
+            this.btn_Save.Text = "Lưu";
+            this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label6
+            // lb_Overview
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(59, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 21);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Tổng quan :";
+            this.lb_Overview.AutoSize = true;
+            this.lb_Overview.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Overview.Location = new System.Drawing.Point(58, 170);
+            this.lb_Overview.Name = "lb_Overview";
+            this.lb_Overview.Size = new System.Drawing.Size(133, 25);
+            this.lb_Overview.TabIndex = 13;
+            this.lb_Overview.Text = "Tổng quan :";
             // 
             // txt_AccessoriesOverview
             // 
-            this.txt_AccessoriesOverview.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AccessoriesOverview.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesOverview.Location = new System.Drawing.Point(63, 198);
             this.txt_AccessoriesOverview.Name = "txt_AccessoriesOverview";
             this.txt_AccessoriesOverview.Size = new System.Drawing.Size(590, 29);
             this.txt_AccessoriesOverview.TabIndex = 12;
             // 
-            // label5
+            // lb_Manufacturer
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(395, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 21);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Nhà sản xuất :";
+            this.lb_Manufacturer.AutoSize = true;
+            this.lb_Manufacturer.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Manufacturer.Location = new System.Drawing.Point(394, 97);
+            this.lb_Manufacturer.Name = "lb_Manufacturer";
+            this.lb_Manufacturer.Size = new System.Drawing.Size(166, 25);
+            this.lb_Manufacturer.TabIndex = 11;
+            this.lb_Manufacturer.Text = "Nhà sản xuất :";
             // 
             // txt_AccessoriesManufacturer
             // 
-            this.txt_AccessoriesManufacturer.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AccessoriesManufacturer.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesManufacturer.Location = new System.Drawing.Point(399, 125);
             this.txt_AccessoriesManufacturer.Name = "txt_AccessoriesManufacturer";
             this.txt_AccessoriesManufacturer.Size = new System.Drawing.Size(252, 29);
             this.txt_AccessoriesManufacturer.TabIndex = 10;
             // 
-            // label4
+            // lb_ProductName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 21);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tên :";
+            this.lb_ProductName.AutoSize = true;
+            this.lb_ProductName.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ProductName.Location = new System.Drawing.Point(58, 97);
+            this.lb_ProductName.Name = "lb_ProductName";
+            this.lb_ProductName.Size = new System.Drawing.Size(67, 25);
+            this.lb_ProductName.TabIndex = 9;
+            this.lb_ProductName.Text = "Tên :";
             // 
             // txt_AccessoriesName
             // 
-            this.txt_AccessoriesName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AccessoriesName.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesName.Location = new System.Drawing.Point(63, 125);
             this.txt_AccessoriesName.Name = "txt_AccessoriesName";
             this.txt_AccessoriesName.Size = new System.Drawing.Size(251, 29);
             this.txt_AccessoriesName.TabIndex = 8;
             // 
-            // label3
+            // lb_ID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(59, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Mã :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lb_ID.AutoSize = true;
+            this.lb_ID.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ID.Location = new System.Drawing.Point(58, 26);
+            this.lb_ID.Name = "lb_ID";
+            this.lb_ID.Size = new System.Drawing.Size(56, 25);
+            this.lb_ID.TabIndex = 7;
+            this.lb_ID.Text = "Mã :";
+            this.lb_ID.Click += new System.EventHandler(this.label3_Click);
             // 
             // txt_AccessoriesID
             // 
-            this.txt_AccessoriesID.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_AccessoriesID.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AccessoriesID.Location = new System.Drawing.Point(63, 54);
             this.txt_AccessoriesID.Name = "txt_AccessoriesID";
             this.txt_AccessoriesID.Size = new System.Drawing.Size(154, 29);
@@ -496,38 +514,38 @@ namespace Gwenchana
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_Accessories;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePetList;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lb_Search;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabPagePetDetail;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Label lb_Overview;
         private System.Windows.Forms.TextBox txt_AccessoriesOverview;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lb_Manufacturer;
         private System.Windows.Forms.TextBox txt_AccessoriesManufacturer;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lb_ProductName;
         private System.Windows.Forms.TextBox txt_AccessoriesName;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_ID;
         private System.Windows.Forms.TextBox txt_AccessoriesID;
-        private System.Windows.Forms.Label lb_Email;
+        private System.Windows.Forms.Label lb_Price;
         private System.Windows.Forms.TextBox txt_AccessoriesPrice;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lb_ProductType;
         private System.Windows.Forms.TextBox txt_AccessoriesType;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lb_StockQuantity;
         private System.Windows.Forms.TextBox txt_AccessoriesstockQuantity;
         private System.Windows.Forms.Button btn_ClearFilter;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lb_SearchFilters;
         private System.Windows.Forms.ComboBox cbb_LaptopSearch;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Details;
+        private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.Button btn_Add;
     }
 }

@@ -287,5 +287,15 @@ namespace Gwenchana
                 txt_AccessoriesPrice.SelectAll();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

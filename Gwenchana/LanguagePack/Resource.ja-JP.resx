@@ -487,4 +487,10 @@
   <data name="Laptop_Delete_Fail" xml:space="preserve">
     <value>ノートパソコンの削除に失敗しました。</value>
   </data>
+  <data name="lb_ProductType" xml:space="preserve">
+    <value>製品の種類</value>
+  </data>
+  <data name="lb_Overview" xml:space="preserve">
+    <value>概要</value>
+  </data>
 </root>

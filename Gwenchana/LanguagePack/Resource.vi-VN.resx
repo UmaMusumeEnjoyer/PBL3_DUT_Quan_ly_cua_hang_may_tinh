@@ -487,4 +487,10 @@
   <data name="Laptop_Delete_Fail" xml:space="preserve">
     <value>Xoá Laptop thất bại.</value>
   </data>
+  <data name="lb_ProductType" xml:space="preserve">
+    <value>Loại sản phẩm</value>
+  </data>
+  <data name="lb_Overview" xml:space="preserve">
+    <value>Tổng quan</value>
+  </data>
 </root>

@@ -486,4 +486,10 @@
   <data name="Laptop_Delete_Fail" xml:space="preserve">
     <value>Failed to delete laptop.</value>
   </data>
+  <data name="lb_ProductType" xml:space="preserve">
+    <value>Product type</value>
+  </data>
+  <data name="lb_Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
 </root>

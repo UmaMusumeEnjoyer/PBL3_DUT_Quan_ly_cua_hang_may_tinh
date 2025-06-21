@@ -323,10 +323,10 @@ namespace Gwenchana
             // 
             // txt_stockQuantity
             // 
-            this.txt_stockQuantity.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_stockQuantity.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_stockQuantity.Location = new System.Drawing.Point(647, 125);
             this.txt_stockQuantity.Name = "txt_stockQuantity";
-            this.txt_stockQuantity.Size = new System.Drawing.Size(205, 33);
+            this.txt_stockQuantity.Size = new System.Drawing.Size(205, 29);
             this.txt_stockQuantity.TabIndex = 18;
             // 
             // lb_Price
@@ -341,10 +341,10 @@ namespace Gwenchana
             // 
             // txt_pcPrice
             // 
-            this.txt_pcPrice.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pcPrice.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcPrice.Location = new System.Drawing.Point(63, 263);
             this.txt_pcPrice.Name = "txt_pcPrice";
-            this.txt_pcPrice.Size = new System.Drawing.Size(380, 33);
+            this.txt_pcPrice.Size = new System.Drawing.Size(380, 29);
             this.txt_pcPrice.TabIndex = 16;
             this.txt_pcPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txt_pcPrice_Validating);
             // 
@@ -386,10 +386,10 @@ namespace Gwenchana
             // 
             // txt_pcSpecs
             // 
-            this.txt_pcSpecs.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pcSpecs.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcSpecs.Location = new System.Drawing.Point(63, 198);
             this.txt_pcSpecs.Name = "txt_pcSpecs";
-            this.txt_pcSpecs.Size = new System.Drawing.Size(767, 33);
+            this.txt_pcSpecs.Size = new System.Drawing.Size(767, 29);
             this.txt_pcSpecs.TabIndex = 12;
             // 
             // lb_Manufacturer
@@ -404,10 +404,10 @@ namespace Gwenchana
             // 
             // txt_pcSupplier
             // 
-            this.txt_pcSupplier.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pcSupplier.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcSupplier.Location = new System.Drawing.Point(436, 125);
             this.txt_pcSupplier.Name = "txt_pcSupplier";
-            this.txt_pcSupplier.Size = new System.Drawing.Size(183, 33);
+            this.txt_pcSupplier.Size = new System.Drawing.Size(183, 29);
             this.txt_pcSupplier.TabIndex = 10;
             this.txt_pcSupplier.TextChanged += new System.EventHandler(this.txt_SupplierPhone_TextChanged);
             // 
@@ -423,10 +423,10 @@ namespace Gwenchana
             // 
             // txt_pcName
             // 
-            this.txt_pcName.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pcName.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pcName.Location = new System.Drawing.Point(63, 125);
             this.txt_pcName.Name = "txt_pcName";
-            this.txt_pcName.Size = new System.Drawing.Size(315, 33);
+            this.txt_pcName.Size = new System.Drawing.Size(315, 29);
             this.txt_pcName.TabIndex = 8;
             // 
             // lb_Id
@@ -442,10 +442,10 @@ namespace Gwenchana
             // 
             // txt_ProductID
             // 
-            this.txt_ProductID.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ProductID.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ProductID.Location = new System.Drawing.Point(63, 54);
             this.txt_ProductID.Name = "txt_ProductID";
-            this.txt_ProductID.Size = new System.Drawing.Size(154, 33);
+            this.txt_ProductID.Size = new System.Drawing.Size(154, 29);
             this.txt_ProductID.TabIndex = 6;
             this.txt_ProductID.TextChanged += new System.EventHandler(this.txtPetId_TextChanged);
             // 

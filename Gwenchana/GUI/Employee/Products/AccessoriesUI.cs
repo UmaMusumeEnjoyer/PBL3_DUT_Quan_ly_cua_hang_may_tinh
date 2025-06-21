@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gwenchana.LanguagePack; // Assuming you have a LanguagePack class for localization
+using System.Globalization; // For CultureInfo
 
 namespace Gwenchana
 {
@@ -27,35 +29,79 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            LoadTrangThaiComboBox();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
-            button2.Visible = false; // Ẩn nút "Thêm mới" trong tab PetList
+            btn_Back.Visible = false;
 
         }
         private DataTable accessoriesData;
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+
+            lb_Accessories.Text = Resource.btn_Accessories;
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+
+            lb_Search.Text = Resource.lb_Search;
+            lb_SearchFilters.Text = Resource.lb_Filters;
+            
+            btn_Search.Text = Resource.btn_Search;
+            btn_ClearFilter.Text = Resource.btn_ClearFilter;
+            btn_Add.Text = Resource.btn_Add;
+            btn_Edit.Text = Resource.btn_Edit;
+            btn_Delete.Text = Resource.btn_Delete;
+            
+            lb_ID.Text = "ID";
+            lb_ProductType.Text = Resource.lb_ProductType;
+            lb_ProductName.Text = Resource.lb_productName;
+            lb_StockQuantity.Text = Resource.lb_StockQuantity;
+            lb_Manufacturer.Text = Resource.lb_manufacturerName;
+            lb_Overview.Text = Resource.lb_Overview;
+            lb_Price.Text = Resource.lb_Price;
+
+            btn_Back.Text = Resource.btn_Back;
+            btn_Cancel.Text = Resource.btn_Cancel;
+
+            LoadTrangThaiComboBox();
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Tên", Resource.lb_productName},
+                { "Hãng sản xuất", Resource.lb_manufacturerName },
+                { "Loại", Resource.lb_ProductType  },
+            };
+            cbb_LaptopSearch.DataSource = new BindingSource(trangThaiDict, null);
+            cbb_LaptopSearch.DisplayMember = "Value";
+            cbb_LaptopSearch.ValueMember = "Key";
+        }
+
         private void LoadData()
         {
-            //dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
             AccessoriesBLL accessoriesBLL = new AccessoriesBLL();
-            accessoriesData = accessoriesBLL.GetAllAccessoriesDataTable(); // Lưu lại DataTable gốc
-            dataGridView.ReadOnly = true;
+            accessoriesData = accessoriesBLL.GetAllAccessoriesDataTable(); 
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
 
-            dataGridView.DataSource = accessoriesData; // Gán DataTable gốc
+            dataGridView.DataSource = accessoriesData; 
 
-            // Định dạng lại cột như ban đầu
+           
             dataGridView.Columns["Product_Id"].Visible = false;
-            dataGridView.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dataGridView.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
-            dataGridView.Columns["overview"].HeaderText = "Mô tả";
-            dataGridView.Columns["type"].HeaderText = "Loại sản phẩm";
-            dataGridView.Columns["price"].HeaderText = "Giá";
-            dataGridView.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
-            dataGridView.Columns["Supplier_Id"].HeaderText = "Nhà cung cấp";
-            dataGridView.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id
-            //dataGridView.Columns["supplierName"].Visible = false;
-            dataGridView.Columns["supplierName"].HeaderText = "Tên nhà cung cấp";
+            dataGridView.Columns["productName"].HeaderText = Resource.lb_productName;
+            dataGridView.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
+            dataGridView.Columns["overview"].HeaderText = Resource.lb_Overview;
+            dataGridView.Columns["type"].HeaderText = Resource.lb_ProductType;
+            dataGridView.Columns["price"].HeaderText = Resource.lb_Price;
+            dataGridView.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
+            //dataGridView.Columns["Supplier_Id"].HeaderText = "Nhà cung cấp";
+            dataGridView.Columns["Supplier_Id"].Visible = false; 
+            dataGridView.Columns["supplierName"].HeaderText = Resource.lb_supplierName;
 
             dataGridView.CellFormatting += dataGridView_CellFormatting;
         }
@@ -82,19 +128,15 @@ namespace Gwenchana
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
                       SearchEvent?.Invoke(this, EventArgs.Empty);
               };
-            //Others
         }
 
- 
 
-
-        //Events
         public event EventHandler SearchEvent;
         public event EventHandler AddNewEvent;
         public event EventHandler EditEvent;
@@ -111,7 +153,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_ID.ForeColor = Color.Gray;
             txt_AccessoriesID.ForeColor = Color.Gray;
             txt_AccessoriesID.Enabled = false;
             txt_AccessoriesstockQuantity.Enabled = false;
@@ -124,8 +166,7 @@ namespace Gwenchana
             txt_AccessoriesPrice.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
             txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
 
-            // Đặt lại trạng thái của các ô nhập liệu
-            btnSave.Text = "Cập nhật";
+            btn_Save.Text = Resource.btn_Edit;
 
         }
 
@@ -145,7 +186,7 @@ namespace Gwenchana
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
-            label3.ForeColor = Color.Gray;
+            lb_ID.ForeColor = Color.Gray;
             txt_AccessoriesID.ForeColor = Color.Gray;
             txt_AccessoriesID.Enabled = false;
         }
@@ -164,18 +205,17 @@ namespace Gwenchana
             txt_AccessoriesManufacturer.Clear();
             txt_AccessoriesID.Clear();
 
-            // Kích hoạt lại tất cả textbox nếu từng bị disable (Delete mode)
             txt_AccessoriesName.Enabled = true;
             txt_AccessoriesManufacturer.Enabled = true;
             txt_AccessoriesOverview.Enabled = true;
             txt_AccessoriesPrice.Enabled = true;
             txt_AccessoriesID.Enabled = true;
             txt_AccessoriesID.ForeColor = SystemColors.WindowText;
-            label3.ForeColor = SystemColors.ControlText;
+            lb_ID.ForeColor = SystemColors.ControlText;
             txt_AccessoriesType.Enabled = true;
             txt_AccessoriesType.ForeColor = SystemColors.WindowText;
 
-            // Chuyển về trang danh sách
+            
             if (!tabControl1.TabPages.Contains(tabPagePetList))
                 tabControl1.TabPages.Add(tabPagePetList);
             if (tabControl1.TabPages.Contains(tabPagePetDetail))
@@ -193,7 +233,7 @@ namespace Gwenchana
             int stockQuantity = Convert.ToInt32(dataGridView.CurrentRow.Cells["stockQuantity"].Value);
             if (stockQuantity > 0)
             {
-                MessageBox.Show("Không thể xoá vì còn hàng tồn kho", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Delete_Fail_StockRemaining ,"", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             button = "Delete";
@@ -201,7 +241,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_ID.ForeColor = Color.Gray;
             txt_AccessoriesID.ForeColor = Color.Gray;
             txt_AccessoriesID.Enabled = false;
             txt_AccessoriesName.Enabled = false;
@@ -219,13 +259,7 @@ namespace Gwenchana
             txt_AccessoriesPrice.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
             txt_AccessoriesstockQuantity.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
 
-            btnSave.Text = "Xóa";
-
-
-
-
-
-
+            btn_Save.Text = Resource.btn_Delete;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -248,12 +282,12 @@ namespace Gwenchana
                 if (isSuccessful)
                 {
                     message = "Cập nhật thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     message = "Cập nhật không thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 tabControl1.TabPages.Add(tabPagePetList);
@@ -270,12 +304,12 @@ namespace Gwenchana
                 if (isSuccessful)
                 {
                     message = "Xóa thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     message = "Xóa không thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 LoadData();
@@ -290,10 +324,6 @@ namespace Gwenchana
                 txt_AccessoriesID.ForeColor = Color.Gray;
                 txt_AccessoriesID.Enabled = false;
             }
-            else
-            {
-
-            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -301,46 +331,46 @@ namespace Gwenchana
             string searchText = txtSearch.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_KeywordRequired, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Sử dụng DataView để filter trên DataTable gốc
             if (accessoriesData == null)
             {
-                LoadData(); // Đảm bảo DataTable đã có dữ liệu
+                LoadData(); 
             }
 
             string filter = "";
             if (cbb_LaptopSearch.SelectedItem == null)
             {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Validation_Error_InvalidPrice, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (cbb_LaptopSearch.SelectedItem.ToString() == "Tên")
+            var selectedKey = (cbb_LaptopSearch.SelectedValue ?? "").ToString();
+
+
+            if (selectedKey == "Tên")
             {
                 filter = $"productName LIKE '%{searchText.Replace("'", "''")}%'";
             }
-            else if (cbb_LaptopSearch.SelectedItem.ToString() == "Hãng sản xuất")
+            else if (selectedKey == "Hãng sản xuất")
             {
                 filter = $"Manufacturer LIKE '%{searchText.Replace("'", "''")}%'";
             }
-            else if (cbb_LaptopSearch.SelectedItem.ToString() == "Loại")
+            else if (selectedKey == "Loại")
             {
                 filter = $"type LIKE '%{searchText.Replace("'", "''")}%'";
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_InvalidCriteria, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             DataView dv = new DataView(accessoriesData);
             dv.RowFilter = filter;
             dataGridView.DataSource = dv;
-
-            // Các định dạng cột vẫn giữ nguyên vì DataTable/DataView không thay đổi cấu trúc cột
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -361,9 +391,9 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            btnSave.Visible = false;
-            btnCancel.Visible = false;
-            button2.Visible = true;
+            btn_Save.Visible = false;
+            btn_Cancel.Visible = false;
+            btn_Back.Visible = true;
 
 
             txt_AccessoriesID.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
@@ -404,11 +434,10 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetList;
 
 
-            // Hiển thị lại các nút Save và Cancel
-            btnSave.Visible = true;
-            btnCancel.Visible = true;
-            button2.Visible = false; // Ẩn nút "Xem chi tiết" sau khi đã xem xong
-            // Đặt lại trạng thái của các ô nhập liệu về mặc định
+     
+            btn_Save.Visible = true;
+            btn_Cancel.Visible = true;
+            btn_Back.Visible = false; 
             txt_AccessoriesID.Clear();
             txt_AccessoriesName.Clear();
             txt_AccessoriesManufacturer.Clear();
@@ -416,10 +445,8 @@ namespace Gwenchana
             txt_AccessoriesType.Clear();
             txt_AccessoriesPrice.Clear();
             txt_AccessoriesstockQuantity.Clear();
-            // Đặt lại màu sắc và trạng thái của các ô nhập liệu
             txt_AccessoriesID.ForeColor = SystemColors.WindowText;
             txt_AccessoriesID.Enabled = true;
-            //label3.ForeColor = SystemColors.ControlText;
             txt_AccessoriesName.ForeColor = SystemColors.WindowText;
             txt_AccessoriesName.Enabled = true;
             txt_AccessoriesManufacturer.ForeColor = SystemColors.WindowText;
@@ -447,7 +474,7 @@ namespace Gwenchana
             double canNang;
             if (!double.TryParse(txt_AccessoriesPrice.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập số hợp lệ cho cân nặng (không âm)!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidPrice, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_AccessoriesPrice.Focus();
                 txt_AccessoriesPrice.SelectAll();
             }

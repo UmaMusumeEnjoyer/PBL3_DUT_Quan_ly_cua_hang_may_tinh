@@ -763,6 +763,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        internal static string lb_Overview {
+            get {
+                return ResourceManager.GetString("lb_Overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password :.
         /// </summary>
         internal static string lb_Password {
@@ -822,6 +831,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_productName {
             get {
                 return ResourceManager.GetString("lb_productName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product type.
+        /// </summary>
+        internal static string lb_ProductType {
+            get {
+                return ResourceManager.GetString("lb_ProductType", resourceCulture);
             }
         }
         
