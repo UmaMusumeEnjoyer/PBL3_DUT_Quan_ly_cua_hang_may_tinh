@@ -74,7 +74,7 @@ namespace Gwenchana
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
@@ -110,7 +110,7 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
 
-            label3.ForeColor = Color.Gray;
+            lb_ID.ForeColor = Color.Gray;
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
             txt_stockQuantity.Enabled = false;
@@ -171,7 +171,7 @@ namespace Gwenchana
             txt_stockQuantity.Enabled = true;
             
             txt_LaptopID.ForeColor = SystemColors.WindowText;
-            label3.ForeColor = SystemColors.ControlText;
+            lb_ID.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
             if (!tabControl1.TabPages.Contains(tabPagePetList))
@@ -199,7 +199,7 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            label3.ForeColor = Color.Gray;
+            lb_ID.ForeColor = Color.Gray;
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
             txt_LaptopName.Enabled = false;
@@ -486,6 +486,11 @@ namespace Gwenchana
                 txt_LaptopPrice.Focus();
                 txt_LaptopPrice.SelectAll();
             }
+        }
+
+        private void lb_Manufacturer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
