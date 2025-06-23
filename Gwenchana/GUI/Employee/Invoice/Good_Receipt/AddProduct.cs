@@ -1,16 +1,20 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.DAL;
+using Gwenchana.DataAccess.DBConnect;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
-using Gwenchana.DataAccess.DAL;
-using Gwenchana.DataAccess.DBConnect;
+using System.Globalization;
+
 
 
 
@@ -30,6 +34,7 @@ namespace Gwenchana
         public AddProduct(string selected)
         {
             InitializeComponent();
+            UpdateComponent(LanguageClass.Language);
             SupplierBLL supplierBLL = new SupplierBLL();
             DataTable cbbData = new DataTable();
             cbbData = supplierBLL.GetAllSuppliersDataTable();
@@ -70,10 +75,45 @@ namespace Gwenchana
                 ccb_NhaCungCap3.ValueMember = "Supplier_Id";
             }
 
+        }
 
-            
-        } 
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
 
+            tabControl1.TabPages[0].Text = Resource.btn_Laptops;
+            tabControl1.TabPages[1].Text = Resource.btn_PCs;
+            tabControl1.TabPages[2].Text = Resource.btn_Accessories;
+
+            lb_LaptopName.Text = Resource.lb_productName;
+            lb_ManufacturerLaptop.Text = Resource.lb_manufacturerName;
+            lb_LaptopWeight.Text = Resource.lb_Weight;
+            lb_LaptopScreenSize.Text = Resource.lb_ScreenSize;
+            lb_LaptopSpecs.Text = Resource.lb_Specifications;
+            lb_LaptopColor.Text = Resource.lb_Color;
+            lb_LaptopPrice.Text = Resource.lb_Price;
+            btn_LaptopSave.Text = Resource.btn_Save;
+            lb_LaptopSupplierName.Text = Resource.lb_SupplierCounter;
+            btn_Cancel.Text = Resource.btn_Cancel;
+
+            lb_PcName.Text = Resource.lb_productName;
+            lb_PcManufacturer.Text = Resource.lb_manufacturerName;
+            lb_PcSpecs.Text = Resource.lb_Specifications;
+            lb_PcPrice.Text = Resource.lb_Price;
+            lb_PcSupplierName.Text = Resource.lb_SupplierCounter;
+            btn_SavePC.Text = Resource.btn_Save;
+            btn_Cancel.Text = Resource.btn_Cancel;
+
+            lb_AccessoriesName.Text = Resource.lb_productName;
+            lb_ManufacturerAcc.Text = Resource.lb_manufacturerName;
+            lb_AccessoryType.Text = Resource.lb_Type;
+            lb_AccOverview.Text = Resource.lb_Overview;
+            lb_AccessoriesPrice.Text = Resource.lb_Price;
+            lb_AccessorySupplierName.Text = Resource.lb_SupplierCounter;
+            btn_AccessoriesSave.Text = Resource.btn_Save;
+            btn_Cancel.Text = Resource.btn_Cancel;
+
+        }
 
         //Events
         public event EventHandler SearchEvent;
@@ -137,17 +177,17 @@ namespace Gwenchana
                 // 3. Thông báo kết quả cho người dùng
                 if (result)
                 {
-                    MessageBox.Show("Thêm PC thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm PC thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm PC thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thêm PC thất bại!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -180,17 +220,17 @@ namespace Gwenchana
                 // 3. Thông báo kết quả cho người dùng
                 if (result)
                 {
-                    MessageBox.Show("Thêm laptop thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm laptop thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm laptop thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thêm laptop thất bại!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -219,17 +259,17 @@ namespace Gwenchana
                 // 3. Thông báo kết quả cho người dùng
                 if (result)
                 {
-                    MessageBox.Show("Thêm phụ kiện thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm phụ kiện thành công!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm phụ kiện thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thêm phụ kiện thất bại!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Close();
         }
@@ -249,7 +289,7 @@ namespace Gwenchana
             decimal canNang;
             if (!decimal.TryParse(txt_LaptopWeight.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidWeight, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_LaptopWeight.Focus();
                 txt_LaptopWeight.SelectAll();
             }
@@ -260,7 +300,7 @@ namespace Gwenchana
             decimal canNang;
             if (!decimal.TryParse(txt_LaptopPrice.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidPrice, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_LaptopPrice.Focus();
                 txt_LaptopPrice.SelectAll();
             }
@@ -271,7 +311,7 @@ namespace Gwenchana
             decimal canNang;
             if (!decimal.TryParse(txt_pcPrice.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidPrice, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_pcPrice.Focus();
                 txt_pcPrice.SelectAll();
             }
@@ -282,7 +322,7 @@ namespace Gwenchana
             decimal canNang;
             if (!decimal.TryParse(txt_AccessoriesPrice.Text, out canNang) || canNang < 0)
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng số cho cân nặng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Validation_Error_InvalidPrice, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_AccessoriesPrice.Focus();
                 txt_AccessoriesPrice.SelectAll();
             }
