@@ -492,4 +492,25 @@
   <data name="lb_Overview" xml:space="preserve">
     <value>Overview</value>
   </data>
+  <data name="Customer_Update_Success" xml:space="preserve">
+    <value>Customer updated successfully.</value>
+  </data>
+  <data name="Customer_Update_Fail" xml:space="preserve">
+    <value>Failed to update customer.</value>
+  </data>
+  <data name="Customer_Create_Success" xml:space="preserve">
+    <value>Customer added successfully.</value>
+  </data>
+  <data name="Customer_Create_Fail" xml:space="preserve">
+    <value>Failed to add customer.</value>
+  </data>
+  <data name="lb_CustomerName" xml:space="preserve">
+    <value>Customer name</value>
+  </data>
+  <data name="lb_CompletedOrders" xml:space="preserve">
+    <value>Number of completed orders</value>
+  </data>
+  <data name="btn_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
 </root>

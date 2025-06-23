@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gwenchana.DataAccess.DTO;
 using Gwenchana.DataAccess.DAL;
+using Gwenchana.LanguagePack;
+using System.Globalization;
 
 
 
@@ -29,9 +31,54 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            LoadTrangThaiComboBox();
+            UpdateComponent(LanguageClass.Language);
+
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
+        }
+
+        private void UpdateComponent(string language)
+        {
+            lb_CustomerManagement.Text = Resource.btn_Customers;
+
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+
+            lb_Search.Text = Resource.lb_Search;
+            lb_SearchFilters.Text = Resource.lb_Filters;
+
+            btn_Search.Text = Resource.btn_Search;
+            btn_ClearFilter.Text = Resource.btn_ClearFilter;
+            btn_Add.Text = Resource.btn_Add;
+            btn_Edit.Text = Resource.btn_Edit;
+            btn_Details.Text = Resource.TabCtr_Details;    
+
+            lb_ID.Text = "ID";
+            lb_CustomerName.Text = Resource.lb_CustomerName;
+            lb_OrderMade.Text = Resource.lb_CompletedOrders;
+            lb_PhoneNumber.Text = Resource.lb_PhoneNumber;
+            lb_Address.Text = Resource.lb_Address;
+            lb_Email.Text = Resource.lb_Email;
+
+            btn_Save.Text = Resource.btn_Save;
+            btn_Cancel.Text = Resource.btn_Cancel;
+            btn_Back.Text = Resource.btn_Back;
+
+            LoadTrangThaiComboBox();
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Tên", Resource.lb_CustomerName},
+                { "Số điện thoại", Resource.lb_PhoneNumber }
+            };
+            cbb_LaptopSearch.DataSource = new BindingSource(trangThaiDict, null);
+            cbb_LaptopSearch.DisplayMember = "Value";
+            cbb_LaptopSearch.ValueMember = "Key";
         }
 
         private void LoadData()
@@ -45,12 +92,11 @@ namespace Gwenchana
             dataGridView.AllowUserToDeleteRows = false;
 
             dataGridView.Columns["Customer_Id"].Visible = false;
-            dataGridView.Columns["SoDonDaThucHien"].HeaderText = "Số đơn đã thực hiện";
-            dataGridView.Columns["customerName"].HeaderText = "Tên khách hàng";
-            dataGridView.Columns["phoneNumber"].HeaderText = "Số điện thoại";
-            dataGridView.Columns["address"].HeaderText = "Địa chỉ";
-            dataGridView.Columns["email"].HeaderText = "Email";
-
+            dataGridView.Columns["SoDonDaThucHien"].HeaderText = Resource.lb_CompletedOrders;
+            dataGridView.Columns["customerName"].HeaderText = Resource.lb_CustomerName;
+            dataGridView.Columns["phoneNumber"].HeaderText = Resource.lb_PhoneNumber;
+            dataGridView.Columns["address"].HeaderText = Resource.lb_Address;
+            dataGridView.Columns["email"].HeaderText = Resource.lb_Email;
 
         }
 
@@ -66,9 +112,6 @@ namespace Gwenchana
               };
             //Others
         }
-
- 
-
 
         //Events
         public event EventHandler SearchEvent;
@@ -161,11 +204,6 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-
-
-
-
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -184,14 +222,14 @@ namespace Gwenchana
                 isSuccessful = customerBLL.AddCustomer(customer);
                 if (isSuccessful)
                 {
-                    message = "Thêm khách hàng thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    message = Resource.Customer_Create_Success;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
                 }
                 else
                 {
-                    message = "Thêm khách hàng thất bại!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message = Resource.Customer_Create_Fail;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 
@@ -215,14 +253,14 @@ namespace Gwenchana
                 isSuccessful = customerBLL.UpdateCustomer(customer);
                 if (isSuccessful)
                 {
-                    message = "Cập nhật khách hàng thành công!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    message = Resource.Customer_Update_Success;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadData();
                 }
                 else
                 {
-                    message = "Cập nhật khách hàng thất bại!";
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    message = Resource.Customer_Update_Fail;
+                    MessageBox.Show(message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 
@@ -237,7 +275,7 @@ namespace Gwenchana
             string searchText = txtSearch.Text.Trim();
             if (string.IsNullOrEmpty(searchText))
             {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_KeywordRequired, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -246,11 +284,13 @@ namespace Gwenchana
             string filter = "";
             if (cbb_LaptopSearch.SelectedItem == null)
             {
-                MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.Search_Error_InvalidCriteria, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            switch (cbb_LaptopSearch.SelectedItem.ToString())
+            var selectedKey = (cbb_LaptopSearch.SelectedValue ?? "").ToString();
+
+            switch (selectedKey)
             {
                 case "Tên":
                     filter = $"customerName LIKE '%{searchText.Replace("'", "''")}%'";
@@ -259,7 +299,7 @@ namespace Gwenchana
                     filter = $"phoneNumber LIKE '%{searchText.Replace("'", "''")}%'";
                     break;
                 default:
-                    MessageBox.Show("Vui lòng chọn tiêu chí tìm kiếm hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resource.Search_Error_InvalidCriteria, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
             }
 
@@ -327,7 +367,6 @@ namespace Gwenchana
             txt_sodondathuchien.Text = dataGridView.CurrentRow.Cells["SoDonDaThucHien"].Value.ToString();
             txt_sodondathuchien.ForeColor = Color.Gray;
             txt_sodondathuchien.Enabled = false;
-
 
         }
 

@@ -376,6 +376,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string btn_Save {
+            get {
+                return ResourceManager.GetString("btn_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search.
         /// </summary>
         internal static string btn_Search {
@@ -444,6 +453,42 @@ namespace Gwenchana.LanguagePack {
         internal static string Confirm_Title {
             get {
                 return ResourceManager.GetString("Confirm_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to add customer..
+        /// </summary>
+        internal static string Customer_Create_Fail {
+            get {
+                return ResourceManager.GetString("Customer_Create_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer added successfully..
+        /// </summary>
+        internal static string Customer_Create_Success {
+            get {
+                return ResourceManager.GetString("Customer_Create_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to update customer..
+        /// </summary>
+        internal static string Customer_Update_Fail {
+            get {
+                return ResourceManager.GetString("Customer_Update_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer updated successfully..
+        /// </summary>
+        internal static string Customer_Update_Success {
+            get {
+                return ResourceManager.GetString("Customer_Update_Success", resourceCulture);
             }
         }
         
@@ -592,6 +637,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of completed orders.
+        /// </summary>
+        internal static string lb_CompletedOrders {
+            get {
+                return ResourceManager.GetString("lb_CompletedOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Counter.
         /// </summary>
         internal static string lb_Counter {
@@ -606,6 +660,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_CustomerCounter {
             get {
                 return ResourceManager.GetString("lb_CustomerCounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer name.
+        /// </summary>
+        internal static string lb_CustomerName {
+            get {
+                return ResourceManager.GetString("lb_CustomerName", resourceCulture);
             }
         }
         

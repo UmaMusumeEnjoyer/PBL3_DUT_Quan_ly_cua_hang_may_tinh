@@ -493,4 +493,25 @@
   <data name="lb_Overview" xml:space="preserve">
     <value>概要</value>
   </data>
+  <data name="Customer_Update_Success" xml:space="preserve">
+    <value>顧客の更新に成功しました。</value>
+  </data>
+  <data name="Customer_Update_Fail" xml:space="preserve">
+    <value>顧客の更新に失敗しました。</value>
+  </data>
+  <data name="Customer_Create_Success" xml:space="preserve">
+    <value>顧客の追加に成功しました。</value>
+  </data>
+  <data name="Customer_Create_Fail" xml:space="preserve">
+    <value>顧客の追加に失敗しました。</value>
+  </data>
+  <data name="lb_CustomerName" xml:space="preserve">
+    <value>顧客名</value>
+  </data>
+  <data name="lb_CompletedOrders" xml:space="preserve">
+    <value>完了した注文数</value>
+  </data>
+  <data name="btn_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
 </root>
