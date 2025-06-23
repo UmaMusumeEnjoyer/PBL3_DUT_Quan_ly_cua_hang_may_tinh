@@ -513,4 +513,7 @@
   <data name="btn_Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="btn_CreateOrder" xml:space="preserve">
+    <value>Create order</value>
+  </data>
 </root>

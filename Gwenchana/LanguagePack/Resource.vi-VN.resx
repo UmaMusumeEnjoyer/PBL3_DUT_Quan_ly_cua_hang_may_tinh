@@ -514,4 +514,7 @@
   <data name="btn_Save" xml:space="preserve">
     <value>Lưu</value>
   </data>
+  <data name="btn_CreateOrder" xml:space="preserve">
+    <value>Tạo đơn</value>
+  </data>
 </root>

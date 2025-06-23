@@ -232,6 +232,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create order.
+        /// </summary>
+        internal static string btn_CreateOrder {
+            get {
+                return ResourceManager.GetString("btn_CreateOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom.
         /// </summary>
         internal static string btn_customDate {
