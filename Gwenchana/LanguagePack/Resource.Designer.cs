@@ -187,7 +187,7 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Back.
         /// </summary>
         internal static string btn_Back {
             get {

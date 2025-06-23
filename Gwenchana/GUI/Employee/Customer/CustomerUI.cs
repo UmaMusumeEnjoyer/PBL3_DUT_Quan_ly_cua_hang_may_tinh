@@ -58,7 +58,7 @@ namespace Gwenchana
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
@@ -88,7 +88,7 @@ namespace Gwenchana
             tabControl1.SelectedTab = tabPagePetDetail;
 
 
-            label3.ForeColor = Color.Gray;
+            lb_ID.ForeColor = Color.Gray;
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
             txt_sodondathuchien.Enabled = false;
@@ -139,7 +139,7 @@ namespace Gwenchana
 
             
             txt_LaptopID.ForeColor = SystemColors.WindowText;
-            label3.ForeColor = SystemColors.ControlText;
+            lb_ID.ForeColor = SystemColors.ControlText;
 
             // Chuyển về trang danh sách
             if (!tabControl1.TabPages.Contains(tabPagePetList))
@@ -268,16 +268,6 @@ namespace Gwenchana
             dataGridView.DataSource = dv;
         }
 
-        private void txt_Manufacturer_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_LaptopWeight_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
          
@@ -301,7 +291,7 @@ namespace Gwenchana
             tabControl1.TabPages.Add(tabPagePetDetail);
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
-            label3.ForeColor = Color.Gray;
+            lb_ID.ForeColor = Color.Gray;
             txt_LaptopID.ForeColor = Color.Gray;
             txt_LaptopID.Enabled = false;
             txt_sodondathuchien.Enabled = false;
@@ -314,9 +304,9 @@ namespace Gwenchana
             tabControl1.TabPages.Remove(tabPagePetList);
             tabControl1.SelectedTab = tabPagePetDetail;
 
-            btnSave.Visible = false;
-            btnCancel.Visible = false;
-            button2.Visible = true;
+            btn_Save.Visible = false;
+            btn_Cancel.Visible = false;
+            btn_Back.Visible = true;
 
 
             txt_LaptopName.Text = dataGridView.CurrentRow.Cells["customerName"].Value.ToString();
@@ -349,11 +339,9 @@ namespace Gwenchana
                 tabControl1.TabPages.Remove(tabPagePetDetail);
             tabControl1.SelectedTab = tabPagePetList;
 
-            btnSave.Visible = true;
-            btnCancel.Visible = true;
-            button2.Visible = false;
-
-            //txt_LaptopID.Clear();
+            btn_Save.Visible = true;
+            btn_Cancel.Visible = true;
+            btn_Back.Visible = false;
 
         }
     }

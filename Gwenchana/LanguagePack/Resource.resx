@@ -472,7 +472,7 @@
     <value>Color</value>
   </data>
   <data name="btn_Back" xml:space="preserve">
-    <value />
+    <value>Back</value>
   </data>
   <data name="Laptop_Update_Success" xml:space="preserve">
     <value>Laptop updated successfully.</value>
