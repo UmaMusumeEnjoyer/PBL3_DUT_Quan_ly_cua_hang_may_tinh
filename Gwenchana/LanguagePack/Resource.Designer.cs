@@ -241,6 +241,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create receipt.
+        /// </summary>
+        internal static string btn_CreateReceipt {
+            get {
+                return ResourceManager.GetString("btn_CreateReceipt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create sales invoice.
         /// </summary>
         internal static string btn_CreateSalesInvoice {
@@ -309,6 +318,15 @@ namespace Gwenchana.LanguagePack {
         internal static string btn_exportInvoices {
             get {
                 return ResourceManager.GetString("btn_exportInvoices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export PDF.
+        /// </summary>
+        internal static string btn_ExportPDF {
+            get {
+                return ResourceManager.GetString("btn_ExportPDF", resourceCulture);
             }
         }
         
@@ -457,6 +475,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cart has been cleared..
+        /// </summary>
+        internal static string Cart_Cleared {
+            get {
+                return ResourceManager.GetString("Cart_Cleared", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to exit?.
         /// </summary>
         internal static string Confirm_Exit {
@@ -520,6 +547,24 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete list.
+        /// </summary>
+        internal static string Delete_List {
+            get {
+                return ResourceManager.GetString("Delete_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount percentage must be between 0 and 100..
+        /// </summary>
+        internal static string Discount_percent_out_of_range {
+            get {
+                return ResourceManager.GetString("Discount_percent_out_of_range", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item.
         /// </summary>
         internal static string dvg_Item {
@@ -574,11 +619,65 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Font Times New Roman (times.ttf) not found. Please ensure this file exists in the C:\Windows\Fonts directory..
+        /// </summary>
+        internal static string Font_TimesNewRoman_NotFound {
+            get {
+                return ResourceManager.GetString("Font_TimesNewRoman_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill all blank fields.
         /// </summary>
         internal static string Form_Validation_EmptyFields {
             get {
                 return ResourceManager.GetString("Form_Validation_EmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid number for the discount percentage..
+        /// </summary>
+        internal static string Invalid_discount_percent_input {
+            get {
+                return ResourceManager.GetString("Invalid_discount_percent_input", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to create invoice..
+        /// </summary>
+        internal static string Invoice_Create_Fail {
+            get {
+                return ResourceManager.GetString("Invoice_Create_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice created successfully!.
+        /// </summary>
+        internal static string Invoice_Create_Success {
+            get {
+                return ResourceManager.GetString("Invoice_Create_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invoice exported to PDF successfully!.
+        /// </summary>
+        internal static string Invoice_ExportPDF_Success {
+            get {
+                return ResourceManager.GetString("Invoice_ExportPDF_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item list :.
+        /// </summary>
+        internal static string Item_List {
+            get {
+                return ResourceManager.GetString("Item_List", resourceCulture);
             }
         }
         
@@ -687,6 +786,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_CustomerName {
             get {
                 return ResourceManager.GetString("lb_CustomerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount percent (%).
+        /// </summary>
+        internal static string lb_DiscountPercent {
+            get {
+                return ResourceManager.GetString("lb_DiscountPercent", resourceCulture);
             }
         }
         
@@ -804,6 +912,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_Filters {
             get {
                 return ResourceManager.GetString("lb_Filters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total payable.
+        /// </summary>
+        internal static string lb_FinalTotal {
+            get {
+                return ResourceManager.GetString("lb_FinalTotal", resourceCulture);
             }
         }
         
@@ -930,6 +1047,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_ProductType {
             get {
                 return ResourceManager.GetString("lb_ProductType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        internal static string lb_Quantity {
+            get {
+                return ResourceManager.GetString("lb_Quantity", resourceCulture);
             }
         }
         
@@ -1069,6 +1195,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        internal static string lb_Type {
+            get {
+                return ResourceManager.GetString("lb_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Username :.
         /// </summary>
         internal static string lb_Username {
@@ -1182,6 +1317,24 @@ namespace Gwenchana.LanguagePack {
         internal static string Search_Error_KeywordRequired {
             get {
                 return ResourceManager.GetString("Search_Error_KeywordRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select a product before adding it to the cart..
+        /// </summary>
+        internal static string Select_product_before_add_to_cart {
+            get {
+                return ResourceManager.GetString("Select_product_before_add_to_cart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected customer : .
+        /// </summary>
+        internal static string Selected_customer {
+            get {
+                return ResourceManager.GetString("Selected_customer", resourceCulture);
             }
         }
         

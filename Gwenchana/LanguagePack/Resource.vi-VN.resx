@@ -535,4 +535,55 @@
   <data name="Order_Creation_Date" xml:space="preserve">
     <value>Ngày tạo đơn</value>
   </data>
+  <data name="lb_Quantity" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="lb_Type" xml:space="preserve">
+    <value>Loại</value>
+  </data>
+  <data name="Item_List" xml:space="preserve">
+    <value>Danh sách mặt hàng :</value>
+  </data>
+  <data name="Delete_List" xml:space="preserve">
+    <value>Xoá danh sách</value>
+  </data>
+  <data name="lb_DiscountPercent" xml:space="preserve">
+    <value>Chiết khẩu (%)</value>
+  </data>
+  <data name="lb_FinalTotal" xml:space="preserve">
+    <value>Số tiền phải trả</value>
+  </data>
+  <data name="btn_CreateReceipt" xml:space="preserve">
+    <value>Tạo hoá đơn bán</value>
+  </data>
+  <data name="btn_ExportPDF" xml:space="preserve">
+    <value>Xuất hoá đơn</value>
+  </data>
+  <data name="Select_product_before_add_to_cart" xml:space="preserve">
+    <value>Vui lòng chọn sản phẩm trước khi thêm vào giỏ hàng.</value>
+  </data>
+  <data name="Discount_percent_out_of_range" xml:space="preserve">
+    <value>Phầm trăm giảm giá phải từ 0 đến 100.</value>
+  </data>
+  <data name="Invalid_discount_percent_input" xml:space="preserve">
+    <value>Vui lòng nhập số hợp lệ cho phần trăm giảm giá.</value>
+  </data>
+  <data name="Selected_customer" xml:space="preserve">
+    <value>Khách hàng được chọn : </value>
+  </data>
+  <data name="Invoice_Create_Success" xml:space="preserve">
+    <value>Tạo hoá đơn thành công!</value>
+  </data>
+  <data name="Invoice_Create_Fail" xml:space="preserve">
+    <value>Tạo hoá đơn thất bại!</value>
+  </data>
+  <data name="Invoice_ExportPDF_Success" xml:space="preserve">
+    <value>Xuất hoá đơn ra PDF thành công!</value>
+  </data>
+  <data name="Cart_Cleared" xml:space="preserve">
+    <value>Đã xoá giỏ hàng.</value>
+  </data>
+  <data name="Font_TimesNewRoman_NotFound" xml:space="preserve">
+    <value>Không tìm thấy font Times New Roman (times.ttf). Vui lòng đảm bảo file này có trong thư mục C:\\Windows\\Fonts.</value>
+  </data>
 </root>

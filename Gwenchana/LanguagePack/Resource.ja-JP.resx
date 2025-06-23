@@ -535,4 +535,55 @@
   <data name="Order_Creation_Date" xml:space="preserve">
     <value>注文作成日</value>
   </data>
+  <data name="lb_Quantity" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="lb_Type" xml:space="preserve">
+    <value>種類</value>
+  </data>
+  <data name="Item_List" xml:space="preserve">
+    <value>商品リスト :</value>
+  </data>
+  <data name="Delete_List" xml:space="preserve">
+    <value>リストを削除</value>
+  </data>
+  <data name="lb_DiscountPercent" xml:space="preserve">
+    <value>割引 (%)</value>
+  </data>
+  <data name="lb_FinalTotal" xml:space="preserve">
+    <value>支払金額</value>
+  </data>
+  <data name="btn_CreateReceipt" xml:space="preserve">
+    <value>領収書を作成</value>
+  </data>
+  <data name="btn_ExportPDF" xml:space="preserve">
+    <value>PDFを出力</value>
+  </data>
+  <data name="Select_product_before_add_to_cart" xml:space="preserve">
+    <value>カートに追加する前に商品を選択してください。</value>
+  </data>
+  <data name="Discount_percent_out_of_range" xml:space="preserve">
+    <value>割引率は0から100の間でなければなりません。</value>
+  </data>
+  <data name="Invalid_discount_percent_input" xml:space="preserve">
+    <value>割引率に有効な数字を入力してください。</value>
+  </data>
+  <data name="Selected_customer" xml:space="preserve">
+    <value>選択された顧客 : </value>
+  </data>
+  <data name="Invoice_Create_Success" xml:space="preserve">
+    <value>請求書の作成に成功しました！</value>
+  </data>
+  <data name="Invoice_Create_Fail" xml:space="preserve">
+    <value>請求書の作成に失敗しました!</value>
+  </data>
+  <data name="Invoice_ExportPDF_Success" xml:space="preserve">
+    <value>請求書のPDF出力に成功しました！</value>
+  </data>
+  <data name="Cart_Cleared" xml:space="preserve">
+    <value>カートがクリアされました。</value>
+  </data>
+  <data name="Font_TimesNewRoman_NotFound" xml:space="preserve">
+    <value>Times New Romanフォント（times.ttf）が見つかりません。ファイルがC:\Windows\Fontsフォルダーに存在することを確認してください。</value>
+  </data>
 </root>

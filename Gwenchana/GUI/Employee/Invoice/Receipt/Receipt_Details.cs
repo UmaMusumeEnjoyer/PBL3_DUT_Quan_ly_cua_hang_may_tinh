@@ -1,4 +1,5 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,16 +33,28 @@ namespace Gwenchana.GUI.Employee.Invoice
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
 
-            
+            dataGridView1.Columns["Mã đơn hàng"].HeaderText = "ID";
+            dataGridView1.Columns["Ngày xuất hàng"].HeaderText = Resource.Order_Creation_Date;
+            dataGridView1.Columns["Tên nhân viên"].HeaderText = Resource.lb_employeeName1;
+            dataGridView1.Columns["Trạng thái"].HeaderText = Resource.lb_employeeStatus;
+            dataGridView1.Columns["Tên khách hàng"].HeaderText = Resource.lb_CustomerName;
+            dataGridView1.Columns["Tên sản phẩm"].HeaderText = Resource.lb_productName;
+            dataGridView1.Columns["Hãng sản xuất"].HeaderText = Resource.lb_manufacturerName;
+            dataGridView1.Columns["Số lượng"].HeaderText = Resource.lb_Quantity;
+            dataGridView1.Columns["Giá bán (VNĐ)"].HeaderText = Resource.lb_Price;
+            dataGridView1.Columns["Thành tiền (VNĐ)"].HeaderText = Resource.lb_TotalAmount;
 
-            //dataGridView1.Columns["Mã đơn xuất hàng"].Visible = false;
+
+
+
+           
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.AllowUserToAddRows = false; // ẩn dòng trống cuối
+            dataGridView1.AllowUserToAddRows = false; 
             
 
 
-            dataGridView1.ReadOnly = true; // nếu không cần chỉnh sửa
+            dataGridView1.ReadOnly = true; 
 
 
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;

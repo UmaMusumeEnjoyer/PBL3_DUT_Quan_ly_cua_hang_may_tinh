@@ -534,4 +534,55 @@
   <data name="Order_Creation_Date" xml:space="preserve">
     <value>Order creation date</value>
   </data>
+  <data name="lb_Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="lb_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Item_List" xml:space="preserve">
+    <value>Item list :</value>
+  </data>
+  <data name="Delete_List" xml:space="preserve">
+    <value>Delete list</value>
+  </data>
+  <data name="lb_DiscountPercent" xml:space="preserve">
+    <value>Discount percent (%)</value>
+  </data>
+  <data name="lb_FinalTotal" xml:space="preserve">
+    <value>Total payable</value>
+  </data>
+  <data name="btn_CreateReceipt" xml:space="preserve">
+    <value>Create receipt</value>
+  </data>
+  <data name="btn_ExportPDF" xml:space="preserve">
+    <value>Export PDF</value>
+  </data>
+  <data name="Select_product_before_add_to_cart" xml:space="preserve">
+    <value>Please select a product before adding it to the cart.</value>
+  </data>
+  <data name="Discount_percent_out_of_range" xml:space="preserve">
+    <value>Discount percentage must be between 0 and 100.</value>
+  </data>
+  <data name="Invalid_discount_percent_input" xml:space="preserve">
+    <value>Please enter a valid number for the discount percentage.</value>
+  </data>
+  <data name="Selected_customer" xml:space="preserve">
+    <value>Selected customer : </value>
+  </data>
+  <data name="Invoice_Create_Success" xml:space="preserve">
+    <value>Invoice created successfully!</value>
+  </data>
+  <data name="Invoice_Create_Fail" xml:space="preserve">
+    <value>Failed to create invoice.</value>
+  </data>
+  <data name="Invoice_ExportPDF_Success" xml:space="preserve">
+    <value>Invoice exported to PDF successfully!</value>
+  </data>
+  <data name="Cart_Cleared" xml:space="preserve">
+    <value>Cart has been cleared.</value>
+  </data>
+  <data name="Font_TimesNewRoman_NotFound" xml:space="preserve">
+    <value>Font Times New Roman (times.ttf) not found. Please ensure this file exists in the C:\Windows\Fonts directory.</value>
+  </data>
 </root>
