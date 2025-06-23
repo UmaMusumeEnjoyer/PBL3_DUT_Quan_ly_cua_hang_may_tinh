@@ -41,6 +41,8 @@ namespace Gwenchana
 
         private void UpdateComponent(string language)
         {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+
             lb_CustomerManagement.Text = Resource.btn_Customers;
 
             tabControl1.TabPages[0].Text = Resource.TabCtr_List;

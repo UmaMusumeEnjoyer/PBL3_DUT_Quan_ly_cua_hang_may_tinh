@@ -517,4 +517,22 @@
   <data name="btn_CreateOrder" xml:space="preserve">
     <value>注文を作成</value>
   </data>
+  <data name="btn_CreateSalesInvoice" xml:space="preserve">
+    <value>販売請求書を作成</value>
+  </data>
+  <data name="Start_Date_After_End_Date" xml:space="preserve">
+    <value>開始日は終了日より後にすることはできません。</value>
+  </data>
+  <data name="lb_TotalAmount" xml:space="preserve">
+    <value>合計金額</value>
+  </data>
+  <data name="Time_Range" xml:space="preserve">
+    <value>時間範囲</value>
+  </data>
+  <data name="lb_ExportDate" xml:space="preserve">
+    <value>注文作成日</value>
+  </data>
+  <data name="Order_Creation_Date" xml:space="preserve">
+    <value>注文作成日</value>
+  </data>
 </root>

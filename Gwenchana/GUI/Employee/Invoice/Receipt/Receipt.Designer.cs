@@ -29,8 +29,9 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_SalesOrder = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
@@ -38,12 +39,12 @@ namespace Gwenchana
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.btn_ReceiptDetails = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lb_SearchFilters = new System.Windows.Forms.Label();
             this.cbb_ReceiptFilter = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lb_Search = new System.Windows.Forms.Label();
             this.btn_CreateReceipt = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,22 +74,22 @@ namespace Gwenchana
             this.tabPagePetDetail.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_SalesOrder
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đơn bán";
+            this.lb_SalesOrder.AutoSize = true;
+            this.lb_SalesOrder.Font = new System.Drawing.Font("JetBrains Mono", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SalesOrder.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_SalesOrder.Location = new System.Drawing.Point(4, 9);
+            this.lb_SalesOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_SalesOrder.Name = "lb_SalesOrder";
+            this.lb_SalesOrder.Size = new System.Drawing.Size(152, 43);
+            this.lb_SalesOrder.TabIndex = 0;
+            this.lb_SalesOrder.Text = "Đơn bán";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lb_SalesOrder);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -100,7 +101,7 @@ namespace Gwenchana
             this.tabControl1.Controls.Add(this.tabPagePetList);
             this.tabControl1.Controls.Add(this.tabPagePetDetail);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -114,12 +115,12 @@ namespace Gwenchana
             this.tabPagePetList.Controls.Add(this.dtpStartDate);
             this.tabPagePetList.Controls.Add(this.btn_ReceiptDetails);
             this.tabPagePetList.Controls.Add(this.btn_ClearFilter);
-            this.tabPagePetList.Controls.Add(this.label7);
+            this.tabPagePetList.Controls.Add(this.lb_SearchFilters);
             this.tabPagePetList.Controls.Add(this.cbb_ReceiptFilter);
             this.tabPagePetList.Controls.Add(this.dataGridView);
-            this.tabPagePetList.Controls.Add(this.label2);
+            this.tabPagePetList.Controls.Add(this.lb_Search);
             this.tabPagePetList.Controls.Add(this.btn_CreateReceipt);
-            this.tabPagePetList.Controls.Add(this.btnSearch);
+            this.tabPagePetList.Controls.Add(this.btn_Search);
             this.tabPagePetList.Controls.Add(this.txtSearch);
             this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPagePetList.Location = new System.Drawing.Point(4, 30);
@@ -133,29 +134,29 @@ namespace Gwenchana
             // 
             this.dtpEndDate.CustomFormat = "MMM dd, yyyy";
             this.dtpEndDate.Enabled = false;
-            this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDate.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(380, 8);
+            this.dtpEndDate.Location = new System.Drawing.Point(327, 8);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(122, 20);
+            this.dtpEndDate.Size = new System.Drawing.Size(122, 22);
             this.dtpEndDate.TabIndex = 13;
             // 
             // dtpStartDate
             // 
             this.dtpStartDate.CustomFormat = "MMM dd, yyyy";
             this.dtpStartDate.Enabled = false;
-            this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(234, 8);
+            this.dtpStartDate.Location = new System.Drawing.Point(181, 8);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(122, 20);
+            this.dtpStartDate.Size = new System.Drawing.Size(122, 22);
             this.dtpStartDate.TabIndex = 12;
             // 
             // btn_ReceiptDetails
             // 
             this.btn_ReceiptDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ReceiptDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btn_ReceiptDetails.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ReceiptDetails.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ReceiptDetails.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_ReceiptDetails.Location = new System.Drawing.Point(751, 208);
             this.btn_ReceiptDetails.Name = "btn_ReceiptDetails";
@@ -169,41 +170,41 @@ namespace Gwenchana
             // 
             this.btn_ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btn_ClearFilter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearFilter.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ClearFilter.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ClearFilter.Location = new System.Drawing.Point(747, 6);
+            this.btn_ClearFilter.Location = new System.Drawing.Point(747, 0);
             this.btn_ClearFilter.Name = "btn_ClearFilter";
-            this.btn_ClearFilter.Size = new System.Drawing.Size(74, 28);
+            this.btn_ClearFilter.Size = new System.Drawing.Size(74, 35);
             this.btn_ClearFilter.TabIndex = 10;
             this.btn_ClearFilter.Text = "Xoá";
             this.btn_ClearFilter.UseVisualStyleBackColor = false;
             this.btn_ClearFilter.Click += new System.EventHandler(this.btn_ClearFilter_Click);
             // 
-            // label7
+            // lb_SearchFilters
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(512, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 21);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Tiêu chí :";
+            this.lb_SearchFilters.AutoSize = true;
+            this.lb_SearchFilters.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SearchFilters.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_SearchFilters.Location = new System.Drawing.Point(473, 6);
+            this.lb_SearchFilters.Name = "lb_SearchFilters";
+            this.lb_SearchFilters.Size = new System.Drawing.Size(122, 25);
+            this.lb_SearchFilters.TabIndex = 9;
+            this.lb_SearchFilters.Text = "Tiêu chí :";
             // 
             // cbb_ReceiptFilter
             // 
             this.cbb_ReceiptFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.cbb_ReceiptFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_ReceiptFilter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ReceiptFilter.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_ReceiptFilter.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cbb_ReceiptFilter.FormattingEnabled = true;
             this.cbb_ReceiptFilter.Items.AddRange(new object[] {
             "Tên nhân viên",
             "Tên khách hàng",
             "Thời gian"});
-            this.cbb_ReceiptFilter.Location = new System.Drawing.Point(601, 6);
+            this.cbb_ReceiptFilter.Location = new System.Drawing.Point(601, 2);
             this.cbb_ReceiptFilter.Name = "cbb_ReceiptFilter";
-            this.cbb_ReceiptFilter.Size = new System.Drawing.Size(140, 29);
+            this.cbb_ReceiptFilter.Size = new System.Drawing.Size(140, 33);
             this.cbb_ReceiptFilter.TabIndex = 8;
             this.cbb_ReceiptFilter.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.cbb_ReceiptFilter.TextUpdate += new System.EventHandler(this.cbb_LaptopSearch_TextUpdate);
@@ -216,10 +217,18 @@ namespace Gwenchana
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -233,22 +242,22 @@ namespace Gwenchana
             this.dataGridView.TabIndex = 7;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
-            // label2
+            // lb_Search
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(20, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tìm kiếm : ";
+            this.lb_Search.AutoSize = true;
+            this.lb_Search.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Search.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_Search.Location = new System.Drawing.Point(19, 8);
+            this.lb_Search.Name = "lb_Search";
+            this.lb_Search.Size = new System.Drawing.Size(133, 25);
+            this.lb_Search.TabIndex = 5;
+            this.lb_Search.Text = "Tìm kiếm : ";
             // 
             // btn_CreateReceipt
             // 
             this.btn_CreateReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_CreateReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btn_CreateReceipt.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateReceipt.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateReceipt.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btn_CreateReceipt.Location = new System.Drawing.Point(751, 292);
             this.btn_CreateReceipt.Name = "btn_CreateReceipt";
@@ -258,27 +267,28 @@ namespace Gwenchana
             this.btn_CreateReceipt.UseVisualStyleBackColor = false;
             this.btn_CreateReceipt.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnSearch
+            // btn_Search
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.Location = new System.Drawing.Point(642, 37);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(99, 30);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Search.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Search.Location = new System.Drawing.Point(642, 37);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(110, 33);
+            this.btn_Search.TabIndex = 1;
+            this.btn_Search.Text = "Tìm kiếm";
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(24, 41);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(612, 26);
+            this.txtSearch.Size = new System.Drawing.Size(612, 29);
             this.txtSearch.TabIndex = 0;
             // 
             // tabPagePetDetail
@@ -516,13 +526,13 @@ namespace Gwenchana
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_SalesOrder;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePetList;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_Search;
         private System.Windows.Forms.Button btn_CreateReceipt;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabPagePetDetail;
         private System.Windows.Forms.DataGridView dataGridView;
@@ -547,7 +557,7 @@ namespace Gwenchana
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_LaptopColour;
         private System.Windows.Forms.ComboBox cbb_ReceiptFilter;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lb_SearchFilters;
         private System.Windows.Forms.Button btn_ClearFilter;
         private System.Windows.Forms.Button btn_ReceiptDetails;
         private System.Windows.Forms.DateTimePicker dtpEndDate;

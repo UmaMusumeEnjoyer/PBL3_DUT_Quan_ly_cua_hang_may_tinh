@@ -1,4 +1,8 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.DAL;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.GUI.Employee.Invoice;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,10 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
-using Gwenchana.DataAccess.DAL;
-using Gwenchana.GUI.Employee.Invoice;
-
+using System.Globalization;
+using Gwenchana.LanguagePack;
 
 
 namespace Gwenchana
@@ -30,6 +32,7 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
             currentEmployeeID = employeeID;
@@ -52,7 +55,48 @@ namespace Gwenchana
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.Columns["Receipt_Id"].Visible = false;
 
+            dataGridView.Columns["Ngày xuất hàng"].HeaderText = Resource.Order_Creation_Date;
+            dataGridView.Columns["Tên nhân viên"].HeaderText = Resource.lb_employeeName1;
+            dataGridView.Columns["Trạng thái"].HeaderText = Resource.lb_employeeStatus;
+            dataGridView.Columns["SĐT nhân viên"].HeaderText = Resource.lb_PhoneNumber;
+            dataGridView.Columns["Tên khách hàng"].HeaderText = Resource.lb_CustomerName;
+            dataGridView.Columns["SĐT khách hàng"].HeaderText = Resource.lb_PhoneNumber;
+            dataGridView.Columns["Địa chỉ khách hàng"].HeaderText = Resource.lb_Address;
+            dataGridView.Columns["Tổng tiền (VNĐ)"].HeaderText = Resource.lb_TotalAmount;
+
             dataGridView.CellFormatting += dataGridView_CellFormatting;
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+
+            lb_SalesOrder.Text = Resource.btn_exportInvoices;
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+            btn_Search.Text = Resource.btn_Search;
+            btn_ReceiptDetails.Text = Resource.TabCtr_Details;
+            btn_CreateReceipt.Text = Resource.btn_CreateSalesInvoice;
+            btn_ClearFilter.Text = Resource.btn_ClearFilter;
+            lb_Search.Text = Resource.lb_Search;
+
+
+
+
+            LoadTrangThaiComboBox();
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Tên nhân viên", Resource.lb_employeeName1 },
+                { "Tên khách hàng", Resource.lb_CustomerName },
+                { "Thời gian", Resource.Time_Range }
+            };
+            cbb_ReceiptFilter.DataSource = new BindingSource(trangThaiDict, null);
+            cbb_ReceiptFilter.DisplayMember = "Value";
+            cbb_ReceiptFilter.ValueMember = "Key";
         }
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -68,10 +112,9 @@ namespace Gwenchana
         }
 
 
-
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
@@ -91,32 +134,7 @@ namespace Gwenchana
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-       
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            button = "Edit";
-            tabControl1.TabPages.Add(tabPagePetDetail);
-            tabControl1.TabPages.Remove(tabPagePetList);
-            tabControl1.SelectedTab = tabPagePetDetail;
-
-
-            label3.ForeColor = Color.Gray;
-            txt_LaptopID.ForeColor = Color.Gray;
-            txt_LaptopID.Enabled = false;
-            txt_stockQuantity.Enabled = false;
-
-            txt_LaptopID.Text = dataGridView.CurrentRow.Cells["Product_Id"].Value.ToString();
-            txt_LaptopName.Text = dataGridView.CurrentRow.Cells["productName"].Value.ToString();
-            txt_Manufacturer.Text = dataGridView.CurrentRow.Cells["Manufacturer"].Value.ToString();
-            txt_Spetification.Text = dataGridView.CurrentRow.Cells["specification"].Value.ToString();
-            txt_LaptopWeight.Text = dataGridView.CurrentRow.Cells["weight"].Value.ToString();
-            txt_ScreenSize.Text = dataGridView.CurrentRow.Cells["screenSize"].Value.ToString();
-            txt_LaptopColour.Text = dataGridView.CurrentRow.Cells["colour"].Value.ToString();
-            txt_LaptopPrice.Text = dataGridView.CurrentRow.Cells["price"].Value.ToString();
-            txt_stockQuantity.Text = dataGridView.CurrentRow.Cells["stockQuantity"].Value.ToString();
-
-        }
+      
 
         private void txtPetId_TextChanged(object sender, EventArgs e)
         {
@@ -259,26 +277,29 @@ namespace Gwenchana
             //string a = cbb_LaptopSearch.SelectedItem.ToString();
             if (string.IsNullOrEmpty(searchText) && cbb_ReceiptFilter.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm hoặc chọn bộ lọc.");
+                MessageBox.Show(Resource.Search_Error_KeywordRequired);
                 return;
             }
 
+            var selectedKey = (cbb_ReceiptFilter.SelectedValue ?? "").ToString();
+
+
             ReceiptBLL laptopBLL = new ReceiptBLL();
-            if (cbb_ReceiptFilter.SelectedItem.ToString() == "Tên nhân viên")
+            if (selectedKey == "Tên nhân viên")
             {
                 dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.EmployeeName.Contains(searchText)).ToList();
             }
-            else if (cbb_ReceiptFilter.SelectedItem.ToString() == "Tên khách hàng")
+            else if (selectedKey == "Tên khách hàng")
             {
                 dataGridView.DataSource = laptopBLL.getallreceipts().Where(l => l.CustomerName.Contains(searchText)).ToList();
             }
-            else if (cbb_ReceiptFilter.SelectedItem.ToString() == "Thời gian")
+            else if (selectedKey == "Thời gian")
             {
                 DateTime startDate = dtpStartDate.Value.Date;
                 DateTime endDate = dtpEndDate.Value.Date;
                 if (startDate > endDate)
                 {
-                    MessageBox.Show("Ngày bắt đầu không thể lớn hơn ngày kết thúc.");
+                    MessageBox.Show(Resource.Start_Date_After_End_Date);
                     return;
                 }
                 dataGridView.DataSource = laptopBLL.getallreceipts()
@@ -311,8 +332,9 @@ namespace Gwenchana
         {
             if (cbb_ReceiptFilter.SelectedItem != null)
             {
-                string selectedFilter = cbb_ReceiptFilter.SelectedItem.ToString();
-                if (selectedFilter == "Thời gian")
+                var selectedKey = (cbb_ReceiptFilter.SelectedValue ?? "").ToString();
+
+                if (selectedKey == "Thời gian")
                 {
                     dtpStartDate.Enabled = true;
                     dtpEndDate.Enabled = true;

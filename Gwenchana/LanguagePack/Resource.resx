@@ -516,4 +516,22 @@
   <data name="btn_CreateOrder" xml:space="preserve">
     <value>Create order</value>
   </data>
+  <data name="btn_CreateSalesInvoice" xml:space="preserve">
+    <value>Create sales invoice</value>
+  </data>
+  <data name="Start_Date_After_End_Date" xml:space="preserve">
+    <value>Start date cannot be later than end date.</value>
+  </data>
+  <data name="lb_TotalAmount" xml:space="preserve">
+    <value>Total amount</value>
+  </data>
+  <data name="Time_Range" xml:space="preserve">
+    <value>Time range</value>
+  </data>
+  <data name="lb_ExportDate" xml:space="preserve">
+    <value>Order creation date</value>
+  </data>
+  <data name="Order_Creation_Date" xml:space="preserve">
+    <value>Order creation date</value>
+  </data>
 </root>

@@ -241,6 +241,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create sales invoice.
+        /// </summary>
+        internal static string btn_CreateSalesInvoice {
+            get {
+                return ResourceManager.GetString("btn_CreateSalesInvoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom.
         /// </summary>
         internal static string btn_customDate {
@@ -781,6 +790,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order creation date.
+        /// </summary>
+        internal static string lb_ExportDate {
+            get {
+                return ResourceManager.GetString("lb_ExportDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filters :.
         /// </summary>
         internal static string lb_Filters {
@@ -1015,6 +1033,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total amount.
+        /// </summary>
+        internal static string lb_TotalAmount {
+            get {
+                return ResourceManager.GetString("lb_TotalAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Total profit.
         /// </summary>
         internal static string lb_TotalProfit {
@@ -1056,6 +1083,15 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_Weight {
             get {
                 return ResourceManager.GetString("lb_Weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order creation date.
+        /// </summary>
+        internal static string Order_Creation_Date {
+            get {
+                return ResourceManager.GetString("Order_Creation_Date", resourceCulture);
             }
         }
         
@@ -1150,6 +1186,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start date cannot be later than end date..
+        /// </summary>
+        internal static string Start_Date_After_End_Date {
+            get {
+                return ResourceManager.GetString("Start_Date_After_End_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quit.
         /// </summary>
         internal static string Status_Stopped {
@@ -1182,6 +1227,15 @@ namespace Gwenchana.LanguagePack {
         internal static string TabCtr_List {
             get {
                 return ResourceManager.GetString("TabCtr_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time range.
+        /// </summary>
+        internal static string Time_Range {
+            get {
+                return ResourceManager.GetString("Time_Range", resourceCulture);
             }
         }
         
