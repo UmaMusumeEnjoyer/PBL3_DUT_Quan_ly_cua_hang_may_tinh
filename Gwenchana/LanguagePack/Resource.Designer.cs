@@ -178,6 +178,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New Product.
+        /// </summary>
+        internal static string btn_AddProduct {
+            get {
+                return ResourceManager.GetString("btn_AddProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assign.
         /// </summary>
         internal static string btn_Assign {
@@ -228,6 +237,15 @@ namespace Gwenchana.LanguagePack {
         internal static string btn_ClearFilter {
             get {
                 return ResourceManager.GetString("btn_ClearFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Import Order.
+        /// </summary>
+        internal static string btn_CreateImport {
+            get {
+                return ResourceManager.GetString("btn_CreateImport", resourceCulture);
             }
         }
         
@@ -592,6 +610,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot identify employee.
+        /// </summary>
+        internal static string Employee_Not_Identified {
+            get {
+                return ResourceManager.GetString("Employee_Not_Identified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No employee found with name : .
         /// </summary>
         internal static string Employee_Search_NotFoundByName {
@@ -633,6 +660,24 @@ namespace Gwenchana.LanguagePack {
         internal static string Form_Validation_EmptyFields {
             get {
                 return ResourceManager.GetString("Form_Validation_EmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import invoice created successfully!.
+        /// </summary>
+        internal static string Import_Invoice_Created_Successfully {
+            get {
+                return ResourceManager.GetString("Import_Invoice_Created_Successfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to create import invoice!.
+        /// </summary>
+        internal static string Import_Invoice_Creation_Failed {
+            get {
+                return ResourceManager.GetString("Import_Invoice_Creation_Failed", resourceCulture);
             }
         }
         
@@ -921,6 +966,24 @@ namespace Gwenchana.LanguagePack {
         internal static string lb_FinalTotal {
             get {
                 return ResourceManager.GetString("lb_FinalTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Date.
+        /// </summary>
+        internal static string lb_ImportDate {
+            get {
+                return ResourceManager.GetString("lb_ImportDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import price.
+        /// </summary>
+        internal static string lb_ImportPrice {
+            get {
+                return ResourceManager.GetString("lb_ImportPrice", resourceCulture);
             }
         }
         
@@ -1222,6 +1285,15 @@ namespace Gwenchana.LanguagePack {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No product has been selected for import..
+        /// </summary>
+        internal static string No_Product_Selected_For_Import {
+            get {
+                return ResourceManager.GetString("No_Product_Selected_For_Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order creation date.
         /// </summary>
         internal static string Order_Creation_Date {
@@ -1326,6 +1398,15 @@ namespace Gwenchana.LanguagePack {
         internal static string Select_product_before_add_to_cart {
             get {
                 return ResourceManager.GetString("Select_product_before_add_to_cart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please select the appropriate product category before adding.
+        /// </summary>
+        internal static string Select_Product_Category_Before_Adding {
+            get {
+                return ResourceManager.GetString("Select_Product_Category_Before_Adding", resourceCulture);
             }
         }
         

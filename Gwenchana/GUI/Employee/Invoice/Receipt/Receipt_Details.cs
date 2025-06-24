@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,8 @@ namespace Gwenchana.GUI.Employee.Invoice
             dataGridView1.ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+
+            Resource.Culture = string.IsNullOrEmpty(LanguageClass.Language) ? null : new CultureInfo(LanguageClass.Language);
 
             dataGridView1.Columns["Mã đơn hàng"].HeaderText = "ID";
             dataGridView1.Columns["Ngày xuất hàng"].HeaderText = Resource.Order_Creation_Date;

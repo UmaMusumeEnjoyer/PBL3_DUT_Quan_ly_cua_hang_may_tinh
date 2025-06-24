@@ -1,17 +1,19 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess.DAL;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.GUI.Employee.Invoice;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gwenchana.DataAccess.DTO;
-using Gwenchana.DataAccess.DAL;
-using Gwenchana.GUI.Employee.Invoice;
-using Gwenchana.DataAccess.ViewModel;
 
 
 
@@ -32,6 +34,8 @@ namespace Gwenchana
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+            LoadTrangThaiComboBox();
+            UpdateComponent(LanguageClass.Language);
             LoadData();
             tabControl1.TabPages.Remove(tabPagePetDetail);
 
@@ -41,7 +45,7 @@ namespace Gwenchana
 
             if(currentEmployeeID == 0)
             {
-                button1.Visible = false; // Ẩn nút Thêm đơn nhập hàng nếu không có nhân viên đăng nhập
+                btn_CreateImport.Visible = false; // Ẩn nút Thêm đơn nhập hàng nếu không có nhân viên đăng nhập
             }
 
             //tabControl1.TabPages.Remove(tabPagePetDetail);
@@ -58,17 +62,50 @@ namespace Gwenchana
             dataGridView.AllowUserToDeleteRows = false;
 
             dataGridView.Columns["Mã đơn nhập hàng"].Visible = false; // Ẩn cột Mã đơn nhập hàng
-            dataGridView.Columns["Ngày nhập hàng"].HeaderText = "Ngày nhập hàng";
-            dataGridView.Columns["Tên nhân viên"].HeaderText = "Tên nhân viên nhập";
+            dataGridView.Columns["Ngày nhập hàng"].HeaderText = Resource.lb_ImportDate;
+            dataGridView.Columns["Tên nhân viên"].HeaderText = Resource.lb_employeeName1;
             //dataGridView.Columns["Tên sản phẩm"].HeaderText = "Tên sản phẩm";
             //dataGridView.Columns["Hãng sản xuất"].HeaderText = "Hãng sản xuất";
-            dataGridView.Columns["Tên nhà phân phối"].HeaderText = "Nhà cung cấp";
+            dataGridView.Columns["Tên nhà phân phối"].HeaderText = Resource.lb_supplierName;
             //dataGridView.Columns["Số lượng"].HeaderText = "Số lượng nhập";
             //dataGridView.Columns["Giá nhập (VNĐ)"].HeaderText = "Giá nhập";
-            dataGridView.Columns["Thành tiền (VNĐ)"].HeaderText = "Thành tiền";
+            dataGridView.Columns["Thành tiền (VNĐ)"].HeaderText = Resource.lb_TotalAmount;
 
             dataGridView.CellFormatting += dataGridView_CellFormatting; // Đăng ký sự kiện CellFormatting để định dạng ô giá tiền
 
+        }
+
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+
+            lb_ImportInvoice.Text = Resource.btn_importInvoices;
+            tabControl1.TabPages[0].Text = Resource.TabCtr_List;
+            tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
+
+            lb_Search.Text = Resource.lb_Search;
+            btn_Search.Text = Resource.btn_Search;
+            btn_ClearFilter.Text = Resource.btn_ClearFilter;
+            lb_SearchFilters.Text = Resource.lb_Filters;
+            btn_Details.Text = Resource.TabCtr_Details;
+            btn_CreateImport.Text = Resource.btn_CreateImport; // Nút Thêm đơn nhập hàng
+
+
+
+            LoadTrangThaiComboBox();
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Tên nhân viên", Resource.lb_employeeName1 },
+                { "Tên nhà cung cấp", Resource.lb_supplierName},
+                { "Thời gian", Resource.Time_Range }
+            };
+            cbb_Goods_Receipt_Search.DataSource = new BindingSource(trangThaiDict, null);
+            cbb_Goods_Receipt_Search.DisplayMember = "Value";
+            cbb_Goods_Receipt_Search.ValueMember = "Key";
         }
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -86,7 +123,7 @@ namespace Gwenchana
 
         private void AssociateAndRaiseViewEvents()
         {
-            btnSearch.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
+            btn_Search.Click += delegate { SearchEvent?.Invoke(this, EventArgs.Empty); };
             txtSearch.KeyDown += (s, e) =>
               {
                   if (e.KeyCode == Keys.Enter)
@@ -298,19 +335,20 @@ namespace Gwenchana
 
 
             Goods_ReceiptBLL goodsReceiptBLL = new Goods_ReceiptBLL();
-            
 
-            if (cbb_Goods_Receipt_Search.SelectedItem != null)
+            var selectedKey = (cbb_Goods_Receipt_Search.SelectedValue ?? "").ToString();
+
+            if (selectedKey != null)
             {
-                if (cbb_Goods_Receipt_Search.SelectedItem.ToString() == "Tên nhân viên")
+                if (selectedKey == "Tên nhân viên")
                 {
                     dataGridView.DataSource = goodsReceiptBLL.GetAllGoodsReceiptDetails().Where(l => l.EmployeeName.Contains(searchText)).ToList();
                 }
-                else if (cbb_Goods_Receipt_Search.SelectedItem.ToString() == "Tên nhà cung cấp")
+                else if (selectedKey == "Tên nhà cung cấp")
                 {
                     dataGridView.DataSource = goodsReceiptBLL.GetAllGoodsReceiptDetails().Where(l => l.SupplierName.Contains(searchText)).ToList();
                 }
-                else if (cbb_Goods_Receipt_Search.SelectedItem.ToString() == "Thời gian")
+                else if (selectedKey == "Thời gian")
                 {
                     DateTime startDate = dtpStartDate.Value.Date;
                     DateTime endDate = dtpEndDate.Value.Date;

@@ -586,4 +586,31 @@
   <data name="Font_TimesNewRoman_NotFound" xml:space="preserve">
     <value>Không tìm thấy font Times New Roman (times.ttf). Vui lòng đảm bảo file này có trong thư mục C:\\Windows\\Fonts.</value>
   </data>
+  <data name="lb_ImportDate" xml:space="preserve">
+    <value>Ngày nhập hàng</value>
+  </data>
+  <data name="lb_ImportPrice" xml:space="preserve">
+    <value>Giá nhập</value>
+  </data>
+  <data name="btn_CreateImport" xml:space="preserve">
+    <value>Tạo đơn nhập hàng</value>
+  </data>
+  <data name="btn_AddProduct" xml:space="preserve">
+    <value>Thêm sản phẩm mới</value>
+  </data>
+  <data name="No_Product_Selected_For_Import" xml:space="preserve">
+    <value>Không có sản phẩm nào được chọn để nhập hàng.</value>
+  </data>
+  <data name="Employee_Not_Identified" xml:space="preserve">
+    <value>Không thể xác định nhân viên</value>
+  </data>
+  <data name="Import_Invoice_Created_Successfully" xml:space="preserve">
+    <value>Tạo hoá đơn nhập thành công!</value>
+  </data>
+  <data name="Import_Invoice_Creation_Failed" xml:space="preserve">
+    <value>Tạo hoá đơn nhập thất bại!</value>
+  </data>
+  <data name="Select_Product_Category_Before_Adding" xml:space="preserve">
+    <value>Chọn danh mục sản phẩm tương ứng trước khi thêm</value>
+  </data>
 </root>

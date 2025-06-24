@@ -29,7 +29,7 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_AddNewProduct = new System.Windows.Forms.Label();
             this.lb_AddProduct = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageLaptop = new System.Windows.Forms.TabPage();
@@ -86,22 +86,22 @@ namespace Gwenchana
             this.tabPageAccessories.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_AddNewProduct
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("JetBrains Mono", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(4, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 43);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Thêm sản phẩm";
+            this.lb_AddNewProduct.AutoSize = true;
+            this.lb_AddNewProduct.Font = new System.Drawing.Font("JetBrains Mono", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_AddNewProduct.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_AddNewProduct.Location = new System.Drawing.Point(4, 9);
+            this.lb_AddNewProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_AddNewProduct.Name = "lb_AddNewProduct";
+            this.lb_AddNewProduct.Size = new System.Drawing.Size(266, 43);
+            this.lb_AddNewProduct.TabIndex = 0;
+            this.lb_AddNewProduct.Text = "Thêm sản phẩm";
             // 
             // lb_AddProduct
             // 
             this.lb_AddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
-            this.lb_AddProduct.Controls.Add(this.label1);
+            this.lb_AddProduct.Controls.Add(this.lb_AddNewProduct);
             this.lb_AddProduct.Dock = System.Windows.Forms.DockStyle.Top;
             this.lb_AddProduct.Location = new System.Drawing.Point(0, 0);
             this.lb_AddProduct.Name = "lb_AddProduct";
@@ -652,7 +652,7 @@ namespace Gwenchana
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_AddNewProduct;
         private System.Windows.Forms.Panel lb_AddProduct;
         private System.Windows.Forms.TabPage tabPageLaptop;
         private System.Windows.Forms.Button btn_Cancel;

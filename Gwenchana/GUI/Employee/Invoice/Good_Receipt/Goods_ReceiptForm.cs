@@ -1,17 +1,19 @@
-﻿using System;
+﻿using Gwenchana.BussinessLogic;
+using Gwenchana.DataAccess;
+using Gwenchana.DataAccess.DAL;
+using Gwenchana.DataAccess.DTO;
+using Gwenchana.DataAccess.ViewModel;
+using Gwenchana.LanguagePack;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Windows.Forms;
-using Gwenchana.BussinessLogic;
-using Gwenchana.DataAccess;
-using Gwenchana.DataAccess.DAL;
-using Gwenchana.DataAccess.DTO;
-using Gwenchana.DataAccess.ViewModel;
-using Newtonsoft.Json;
 
 
 namespace Gwenchana
@@ -25,25 +27,58 @@ namespace Gwenchana
         public Goods_ReceiptForm(int id)
         {
             InitializeComponent();
+            UpdateComponent(LanguageClass.Language);
 
             Id = id;
             txt_productName.Enabled = false;
             txt_productPrice.Enabled = false;
             dgv_Order.Columns.Clear();
 
-            dgv_Order.Columns.Add("Product_Id", "Mã sản phẩm");
+            dgv_Order.Columns.Add("Product_Id", "ID");
             dgv_Order.Columns["Product_Id"].Visible = false; // Ẩn cột Product_Id nếu không cần thiết
-            dgv_Order.Columns.Add("productName", "Tên sản phẩm");
+            dgv_Order.Columns.Add("productName", Resource.lb_productName);
             //dgv_Order.Columns.Add("Price", "");
-            dgv_Order.Columns.Add("Product_price", "Giá bán");
-            dgv_Order.Columns.Add("quantity", "Số lượng nhập");
-            dgv_Order.Columns.Add("totalPrice", "Thành tiền");
+            dgv_Order.Columns.Add("Product_price", Resource.lb_Price);
+            dgv_Order.Columns.Add("quantity", Resource.lb_Quantity);
+            dgv_Order.Columns.Add("totalPrice", Resource.lb_TotalAmount);
             dgv_Order.Columns.Add("Supplier_Id", "Mã nhà cung cấp");
             dgv_Order.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
 
             dgv_Order.ReadOnly = true;
             dgv_Order.AllowUserToAddRows = false;
             totalAmount = 0;
+        }
+        private void UpdateComponent(string language)
+        {
+            Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+       
+            lb_ProductList.Text = Resource.Item_List;
+            btn_AddProduct.Text = Resource.btn_AddProduct;
+
+            lb_ProductType.Text = Resource.lb_Type;
+            lb_ProductID.Text = "ID";
+            lb_ProductName.Text = Resource.lb_productName;
+            lb_ProductPrice.Text = Resource.lb_ImportPrice;
+            lb_ProductQuantity.Text = Resource.lb_Quantity;
+            btn_productAdd.Text = Resource.btn_Add;
+            cashierOrderForm_clearBtn.Text = Resource.Delete_List;
+
+            cashierOrderForm_receiptBtn.Text = Resource.btn_CreateImport;
+
+            LoadTrangThaiComboBox();
+        }
+
+        private void LoadTrangThaiComboBox()
+        {
+            Dictionary<string, string> trangThaiDict = new Dictionary<string, string>()
+            {
+                { "Laptop", Resource.btn_Laptops },
+                { "PC", Resource.btn_PCs },
+                { "Linh/ Phụ kiện", Resource.btn_Accessories }
+            };
+            ccb_ProductFilter.DataSource = new BindingSource(trangThaiDict, null);
+            ccb_ProductFilter.DisplayMember = "Value";
+            ccb_ProductFilter.ValueMember = "Key";
         }
 
         public void ClearDataGridViewData()
@@ -56,7 +91,9 @@ namespace Gwenchana
         private void ccb_ProductFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbb_ProductID.Items.Clear();
-            switch (ccb_ProductFilter.SelectedItem.ToString())
+            var selectedKey = (ccb_ProductFilter.SelectedValue ?? "").ToString();
+
+            switch (selectedKey)
             {
 
                 case "PC":
@@ -67,14 +104,15 @@ namespace Gwenchana
                     dgv_Product.AllowUserToAddRows = false;
                     dgv_Product.AllowUserToDeleteRows = false;
                     dgv_Product.DataSource = dt;
-                    dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
-                    dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
-                    dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+                    dgv_Product.Columns["Product_Id"].HeaderText = "ID";
+                    dgv_Product.Columns["productName"].HeaderText = Resource.lb_productName;
+                    dgv_Product.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
                     dgv_Product.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-                    dgv_Product.Columns["price"].HeaderText = "Giá";
-                    dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+                    dgv_Product.Columns["specification"].Visible = false;
+                    dgv_Product.Columns["price"].HeaderText = Resource.lb_Price;
+                    dgv_Product.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
                     dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
-                    dgv_Product.Columns["supplierName"].HeaderText = "Nhà cung cấp";
+                    dgv_Product.Columns["supplierName"].HeaderText = Resource.lb_supplierName;
                     setcbb_ProductID();
                     break;
 
@@ -86,17 +124,18 @@ namespace Gwenchana
                     dgv_Product.ReadOnly = true;
                     dgv_Product.AllowUserToAddRows = false;
                     dgv_Product.AllowUserToDeleteRows = false;
-                    dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
-                    dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
-                    dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+                    dgv_Product.Columns["Product_Id"].HeaderText = "ID";
+                    dgv_Product.Columns["productName"].HeaderText = Resource.lb_productName;
+                    dgv_Product.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
                     dgv_Product.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-                    dgv_Product.Columns["weight"].HeaderText = "Trọng lượng";
-                    dgv_Product.Columns["screenSize"].HeaderText = "Kích cỡ màn hình";
-                    dgv_Product.Columns["colour"].HeaderText = "Màu sắc";
-                    dgv_Product.Columns["price"].HeaderText = "Giá";
-                    dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+                    dgv_Product.Columns["specification"].Visible = false; // Ẩn cột specification nếu không cần thiết
+                    dgv_Product.Columns["weight"].HeaderText = Resource.lb_Weight;
+                    dgv_Product.Columns["screenSize"].HeaderText = Resource.lb_ScreenSize;
+                    dgv_Product.Columns["colour"].HeaderText = Resource.lb_Color;
+                    dgv_Product.Columns["price"].HeaderText = Resource.lb_Price;
+                    dgv_Product.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
                     dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
-                    dgv_Product.Columns["supplierName"].HeaderText = "Nhà cung cấp";
+                    dgv_Product.Columns["supplierName"].HeaderText = Resource.lb_supplierName;
                     setcbb_ProductID();
                     break;
 
@@ -108,15 +147,16 @@ namespace Gwenchana
                     dgv_Product.AllowUserToAddRows = false;
                     dgv_Product.AllowUserToDeleteRows = false;
                     dgv_Product.DataSource = dttt;
-                    dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
-                    dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
-                    dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+                    dgv_Product.Columns["Product_Id"].HeaderText = "ID";
+                    dgv_Product.Columns["productName"].HeaderText = Resource.lb_productName;
+                    dgv_Product.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
                     dgv_Product.Columns["overview"].HeaderText = "Mô tả";
-                    dgv_Product.Columns["type"].HeaderText = "Loại sản phẩm";
-                    dgv_Product.Columns["price"].HeaderText = "Giá";
-                    dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+                    dgv_Product.Columns["overview"].Visible = false; // Ẩn cột overview nếu không cần thiết
+                    dgv_Product.Columns["type"].HeaderText = Resource.lb_ProductType;
+                    dgv_Product.Columns["price"].HeaderText = Resource.lb_Price;
+                    dgv_Product.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
                     dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
-                    dgv_Product.Columns["supplierName"].HeaderText = "Nhà cung cấp"; // Hiển thị tên nhà cung cấp nếu cần thiết
+                    dgv_Product.Columns["supplierName"].HeaderText = Resource.lb_supplierName; // Hiển thị tên nhà cung cấp nếu cần thiết
                     setcbb_ProductID();
                     break;
 
@@ -162,7 +202,7 @@ namespace Gwenchana
         {
             if(string.IsNullOrEmpty(txt_productName.Text) || string.IsNullOrEmpty(txt_productPrice.Text))
             {
-                MessageBox.Show("Vui lòng chọn sản phẩm trước khi thêm vào giỏ hàng.");
+                MessageBox.Show(Resource.Select_product_before_add_to_cart);
                 return;
             }
             else
@@ -257,25 +297,25 @@ namespace Gwenchana
 
             if (selectedProducts == null || selectedProducts.Count == 0)
             {
-                MessageBox.Show("Không có sản phẩm nào được chọn để nhập hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Resource.No_Product_Selected_For_Import, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (currentEmployee == null)
             {
-                MessageBox.Show("Không thể xác định nhân viên hiện tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Employee_Not_Identified, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             bool isSuccess = goods_ReceiptBLL.CreateGoodsReceipt(currentEmployee, selectedProducts);
             if (isSuccess)
             {
-                MessageBox.Show("Tạo hóa đơn nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resource.Import_Invoice_Created_Successfully, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Tạo hóa đơn nhập thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resource.Import_Invoice_Creation_Failed, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -305,10 +345,13 @@ namespace Gwenchana
         {
             if (ccb_ProductFilter.SelectedItem == null || string.IsNullOrEmpty(ccb_ProductFilter.SelectedItem.ToString()))
             {
-                MessageBox.Show("Vui lòng chọn danh mục sản phẩm trước khi thêm sản phẩm.");
+                MessageBox.Show(Resource.Select_Product_Category_Before_Adding);
                 return;
             }
-            switch (ccb_ProductFilter.SelectedItem.ToString())
+
+            var selectedKey = (ccb_ProductFilter.SelectedValue ?? "").ToString();
+
+            switch (selectedKey)
             {
                 case "PC":
                     AddProduct addProduct = new AddProduct("PC");
@@ -339,12 +382,15 @@ namespace Gwenchana
             dgv_Product.AllowUserToAddRows = false;
             dgv_Product.AllowUserToDeleteRows = false;
             dgv_Product.DataSource = dt;
-            dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
-            dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dgv_Product.Columns["Product_Id"].HeaderText = "ID";
+            dgv_Product.Columns["productName"].HeaderText = Resource.lb_productName;
+            dgv_Product.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
             dgv_Product.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-            dgv_Product.Columns["price"].HeaderText = "Giá";
-            dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            dgv_Product.Columns["specification"].Visible = false;
+            dgv_Product.Columns["price"].HeaderText = Resource.lb_Price;
+            dgv_Product.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
+            dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
+            dgv_Product.Columns["supplierName"].HeaderText = Resource.lb_supplierName;
             setcbb_ProductID();
         }
 
@@ -357,15 +403,18 @@ namespace Gwenchana
             dgv_Product.ReadOnly = true;
             dgv_Product.AllowUserToAddRows = false;
             dgv_Product.AllowUserToDeleteRows = false;
-            dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
-            dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dgv_Product.Columns["Product_Id"].HeaderText = "ID";
+            dgv_Product.Columns["productName"].HeaderText = Resource.lb_productName;
+            dgv_Product.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
             dgv_Product.Columns["specification"].HeaderText = "Thông số kỹ thuật";
-            dgv_Product.Columns["weight"].HeaderText = "Trọng lượng";
-            dgv_Product.Columns["screenSize"].HeaderText = "Kích cỡ màn hình";
-            dgv_Product.Columns["colour"].HeaderText = "Màu sắc";
-            dgv_Product.Columns["price"].HeaderText = "Giá";
-            dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            dgv_Product.Columns["specification"].Visible = false; // Ẩn cột specification nếu không cần thiết
+            dgv_Product.Columns["weight"].HeaderText = Resource.lb_Weight;
+            dgv_Product.Columns["screenSize"].HeaderText = Resource.lb_ScreenSize;
+            dgv_Product.Columns["colour"].HeaderText = Resource.lb_Color;
+            dgv_Product.Columns["price"].HeaderText = Resource.lb_Price;
+            dgv_Product.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
+            dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
+            dgv_Product.Columns["supplierName"].HeaderText = Resource.lb_supplierName;
             setcbb_ProductID();
         }
 
@@ -378,13 +427,16 @@ namespace Gwenchana
             dgv_Product.AllowUserToAddRows = false;
             dgv_Product.AllowUserToDeleteRows = false;
             dgv_Product.DataSource = dttt;
-            dgv_Product.Columns["Product_Id"].HeaderText = "Mã sản phẩm";
-            dgv_Product.Columns["productName"].HeaderText = "Tên sản phẩm";
-            dgv_Product.Columns["Manufacturer"].HeaderText = "Nhà sản xuất";
+            dgv_Product.Columns["Product_Id"].HeaderText = "ID";
+            dgv_Product.Columns["productName"].HeaderText = Resource.lb_productName;
+            dgv_Product.Columns["Manufacturer"].HeaderText = Resource.lb_manufacturerName;
             dgv_Product.Columns["overview"].HeaderText = "Mô tả";
-            dgv_Product.Columns["type"].HeaderText = "Loại sản phẩm";
-            dgv_Product.Columns["price"].HeaderText = "Giá";
-            dgv_Product.Columns["stockQuantity"].HeaderText = "Số lượng tồn kho";
+            dgv_Product.Columns["overview"].Visible = false; // Ẩn cột overview nếu không cần thiết
+            dgv_Product.Columns["type"].HeaderText = Resource.lb_ProductType;
+            dgv_Product.Columns["price"].HeaderText = Resource.lb_Price;
+            dgv_Product.Columns["stockQuantity"].HeaderText = Resource.lb_StockQuantity;
+            dgv_Product.Columns["Supplier_Id"].Visible = false; // Ẩn cột Supplier_Id nếu không cần thiết
+            dgv_Product.Columns["supplierName"].HeaderText = Resource.lb_supplierName; // Hiển thị tên nhà cung cấp nếu cần thiết
             setcbb_ProductID();
         }
 
@@ -412,7 +464,7 @@ namespace Gwenchana
             txt_productPrice.Clear(); // Xóa giá sản phẩm
             productQuantity.Value = 1; // Đặt lại số lượng về 1
             //cbb_ProductID.Items.Clear(); // Xóa danh sách ID sản phẩm đã chọn
-            MessageBox.Show("Đã xóa giỏ hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Resource.Cart_Cleared, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

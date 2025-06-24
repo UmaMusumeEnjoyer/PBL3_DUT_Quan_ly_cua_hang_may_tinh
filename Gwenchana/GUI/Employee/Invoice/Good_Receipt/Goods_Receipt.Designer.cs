@@ -29,21 +29,22 @@ namespace Gwenchana
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_ImportInvoice = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPagePetList = new System.Windows.Forms.TabPage();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Details = new System.Windows.Forms.Button();
+            this.btn_CreateImport = new System.Windows.Forms.Button();
             this.btn_ClearFilter = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lb_SearchFilters = new System.Windows.Forms.Label();
             this.cbb_Goods_Receipt_Search = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.lb_Search = new System.Windows.Forms.Label();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tabPagePetDetail = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,22 +74,22 @@ namespace Gwenchana
             this.tabPagePetDetail.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lb_ImportInvoice
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hoá đơn nhập";
+            this.lb_ImportInvoice.AutoSize = true;
+            this.lb_ImportInvoice.Font = new System.Drawing.Font("JetBrains Mono", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ImportInvoice.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lb_ImportInvoice.Location = new System.Drawing.Point(4, 6);
+            this.lb_ImportInvoice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_ImportInvoice.Name = "lb_ImportInvoice";
+            this.lb_ImportInvoice.Size = new System.Drawing.Size(272, 47);
+            this.lb_ImportInvoice.TabIndex = 0;
+            this.lb_ImportInvoice.Text = "Hoá đơn nhập";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lb_ImportInvoice);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -100,7 +101,7 @@ namespace Gwenchana
             this.tabControl1.Controls.Add(this.tabPagePetList);
             this.tabControl1.Controls.Add(this.tabPagePetDetail);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -112,14 +113,14 @@ namespace Gwenchana
             this.tabPagePetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(162)))), ((int)(((byte)(161)))));
             this.tabPagePetList.Controls.Add(this.dtpEndDate);
             this.tabPagePetList.Controls.Add(this.dtpStartDate);
-            this.tabPagePetList.Controls.Add(this.button2);
-            this.tabPagePetList.Controls.Add(this.button1);
+            this.tabPagePetList.Controls.Add(this.btn_Details);
+            this.tabPagePetList.Controls.Add(this.btn_CreateImport);
             this.tabPagePetList.Controls.Add(this.btn_ClearFilter);
-            this.tabPagePetList.Controls.Add(this.label7);
+            this.tabPagePetList.Controls.Add(this.lb_SearchFilters);
             this.tabPagePetList.Controls.Add(this.cbb_Goods_Receipt_Search);
             this.tabPagePetList.Controls.Add(this.dataGridView);
-            this.tabPagePetList.Controls.Add(this.label2);
-            this.tabPagePetList.Controls.Add(this.btnSearch);
+            this.tabPagePetList.Controls.Add(this.lb_Search);
+            this.tabPagePetList.Controls.Add(this.btn_Search);
             this.tabPagePetList.Controls.Add(this.txtSearch);
             this.tabPagePetList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPagePetList.Location = new System.Drawing.Point(4, 30);
@@ -131,92 +132,94 @@ namespace Gwenchana
             // 
             // dtpEndDate
             // 
+            this.dtpEndDate.CalendarFont = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.CustomFormat = "MMM dd, yyyy";
             this.dtpEndDate.Enabled = false;
-            this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDate.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(385, 9);
+            this.dtpEndDate.Location = new System.Drawing.Point(356, 8);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(122, 20);
+            this.dtpEndDate.Size = new System.Drawing.Size(122, 22);
             this.dtpEndDate.TabIndex = 15;
             // 
             // dtpStartDate
             // 
+            this.dtpStartDate.CalendarFont = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.CustomFormat = "MMM dd, yyyy";
             this.dtpStartDate.Enabled = false;
-            this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.Font = new System.Drawing.Font("JetBrains Mono", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(239, 9);
+            this.dtpStartDate.Location = new System.Drawing.Point(219, 8);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(122, 20);
+            this.dtpStartDate.Size = new System.Drawing.Size(122, 22);
             this.dtpStartDate.TabIndex = 14;
             // 
-            // button2
+            // btn_Details
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(747, 190);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 87);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Chi tiết đơn nhập";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_Details.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Details.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Details.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Details.Location = new System.Drawing.Point(747, 190);
+            this.btn_Details.Name = "btn_Details";
+            this.btn_Details.Size = new System.Drawing.Size(103, 87);
+            this.btn_Details.TabIndex = 12;
+            this.btn_Details.Text = "Chi tiết đơn nhập";
+            this.btn_Details.UseVisualStyleBackColor = false;
+            this.btn_Details.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btn_CreateImport
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(747, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 87);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Nhập hàng";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_CreateImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_CreateImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_CreateImport.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateImport.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_CreateImport.Location = new System.Drawing.Point(747, 283);
+            this.btn_CreateImport.Name = "btn_CreateImport";
+            this.btn_CreateImport.Size = new System.Drawing.Size(103, 87);
+            this.btn_CreateImport.TabIndex = 11;
+            this.btn_CreateImport.Text = "Nhập hàng";
+            this.btn_CreateImport.UseVisualStyleBackColor = false;
+            this.btn_CreateImport.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_ClearFilter
             // 
             this.btn_ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_ClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btn_ClearFilter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearFilter.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ClearFilter.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_ClearFilter.Location = new System.Drawing.Point(747, 6);
+            this.btn_ClearFilter.Location = new System.Drawing.Point(767, 0);
             this.btn_ClearFilter.Name = "btn_ClearFilter";
-            this.btn_ClearFilter.Size = new System.Drawing.Size(74, 28);
+            this.btn_ClearFilter.Size = new System.Drawing.Size(83, 36);
             this.btn_ClearFilter.TabIndex = 10;
             this.btn_ClearFilter.Text = "Xoá";
             this.btn_ClearFilter.UseVisualStyleBackColor = false;
             this.btn_ClearFilter.Click += new System.EventHandler(this.btn_ClearFilter_Click);
             // 
-            // label7
+            // lb_SearchFilters
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(512, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 21);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Tiêu chí :";
+            this.lb_SearchFilters.AutoSize = true;
+            this.lb_SearchFilters.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SearchFilters.Location = new System.Drawing.Point(493, 6);
+            this.lb_SearchFilters.Name = "lb_SearchFilters";
+            this.lb_SearchFilters.Size = new System.Drawing.Size(122, 25);
+            this.lb_SearchFilters.TabIndex = 9;
+            this.lb_SearchFilters.Text = "Tiêu chí :";
             // 
             // cbb_Goods_Receipt_Search
             // 
             this.cbb_Goods_Receipt_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(90)))));
             this.cbb_Goods_Receipt_Search.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_Goods_Receipt_Search.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_Goods_Receipt_Search.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Goods_Receipt_Search.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cbb_Goods_Receipt_Search.FormattingEnabled = true;
             this.cbb_Goods_Receipt_Search.Items.AddRange(new object[] {
             "Tên nhân viên",
             "Tên nhà cung cấp",
             "Thời gian"});
-            this.cbb_Goods_Receipt_Search.Location = new System.Drawing.Point(601, 6);
+            this.cbb_Goods_Receipt_Search.Location = new System.Drawing.Point(621, 3);
             this.cbb_Goods_Receipt_Search.Name = "cbb_Goods_Receipt_Search";
-            this.cbb_Goods_Receipt_Search.Size = new System.Drawing.Size(140, 29);
+            this.cbb_Goods_Receipt_Search.Size = new System.Drawing.Size(140, 33);
             this.cbb_Goods_Receipt_Search.TabIndex = 8;
             this.cbb_Goods_Receipt_Search.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.cbb_Goods_Receipt_Search.TextUpdate += new System.EventHandler(this.cbb_LaptopSearch_TextUpdate);
@@ -229,10 +232,18 @@ namespace Gwenchana
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -245,37 +256,38 @@ namespace Gwenchana
             this.dataGridView.Size = new System.Drawing.Size(711, 296);
             this.dataGridView.TabIndex = 7;
             // 
-            // label2
+            // lb_Search
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tìm kiếm : ";
+            this.lb_Search.AutoSize = true;
+            this.lb_Search.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Search.Location = new System.Drawing.Point(19, 10);
+            this.lb_Search.Name = "lb_Search";
+            this.lb_Search.Size = new System.Drawing.Size(133, 25);
+            this.lb_Search.TabIndex = 5;
+            this.lb_Search.Text = "Tìm kiếm : ";
             // 
-            // btnSearch
+            // btn_Search
             // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
-            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.Location = new System.Drawing.Point(642, 37);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(99, 30);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btn_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(152)))), ((int)(((byte)(155)))));
+            this.btn_Search.Font = new System.Drawing.Font("JetBrains Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Search.Location = new System.Drawing.Point(642, 37);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(119, 33);
+            this.btn_Search.TabIndex = 1;
+            this.btn_Search.Text = "Tìm kiếm";
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(24, 41);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(612, 26);
+            this.txtSearch.Size = new System.Drawing.Size(612, 29);
             this.txtSearch.TabIndex = 0;
             // 
             // tabPagePetDetail
@@ -511,12 +523,12 @@ namespace Gwenchana
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_ImportInvoice;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPagePetList;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lb_Search;
+        private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.TabPage tabPagePetDetail;
         private System.Windows.Forms.DataGridView dataGridView;
@@ -541,10 +553,10 @@ namespace Gwenchana
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_LaptopColour;
         private System.Windows.Forms.ComboBox cbb_Goods_Receipt_Search;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lb_SearchFilters;
         private System.Windows.Forms.Button btn_ClearFilter;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_CreateImport;
+        private System.Windows.Forms.Button btn_Details;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
     }

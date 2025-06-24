@@ -586,4 +586,31 @@
   <data name="Font_TimesNewRoman_NotFound" xml:space="preserve">
     <value>Times New Romanフォント（times.ttf）が見つかりません。ファイルがC:\Windows\Fontsフォルダーに存在することを確認してください。</value>
   </data>
+  <data name="lb_ImportDate" xml:space="preserve">
+    <value>入荷日</value>
+  </data>
+  <data name="lb_ImportPrice" xml:space="preserve">
+    <value>仕入れ価格</value>
+  </data>
+  <data name="btn_CreateImport" xml:space="preserve">
+    <value>仕入れ伝票を作成</value>
+  </data>
+  <data name="btn_AddProduct" xml:space="preserve">
+    <value>新しい商品を追加</value>
+  </data>
+  <data name="No_Product_Selected_For_Import" xml:space="preserve">
+    <value>仕入れ対象の商品が選択されていません。</value>
+  </data>
+  <data name="Employee_Not_Identified" xml:space="preserve">
+    <value>担当者を特定できません</value>
+  </data>
+  <data name="Import_Invoice_Created_Successfully" xml:space="preserve">
+    <value>仕入れ伝票の作成に成功しました！</value>
+  </data>
+  <data name="Import_Invoice_Creation_Failed" xml:space="preserve">
+    <value>仕入れ伝票の作成に失敗しました！</value>
+  </data>
+  <data name="Select_Product_Category_Before_Adding" xml:space="preserve">
+    <value>追加する前に対応する商品カテゴリを選択してください</value>
+  </data>
 </root>

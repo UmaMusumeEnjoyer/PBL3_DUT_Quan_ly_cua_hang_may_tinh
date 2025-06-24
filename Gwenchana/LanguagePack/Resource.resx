@@ -585,4 +585,31 @@
   <data name="Font_TimesNewRoman_NotFound" xml:space="preserve">
     <value>Font Times New Roman (times.ttf) not found. Please ensure this file exists in the C:\Windows\Fonts directory.</value>
   </data>
+  <data name="lb_ImportDate" xml:space="preserve">
+    <value>Import Date</value>
+  </data>
+  <data name="lb_ImportPrice" xml:space="preserve">
+    <value>Import price</value>
+  </data>
+  <data name="btn_CreateImport" xml:space="preserve">
+    <value>Create Import Order</value>
+  </data>
+  <data name="btn_AddProduct" xml:space="preserve">
+    <value>Add New Product</value>
+  </data>
+  <data name="No_Product_Selected_For_Import" xml:space="preserve">
+    <value>No product has been selected for import.</value>
+  </data>
+  <data name="Employee_Not_Identified" xml:space="preserve">
+    <value>Cannot identify employee</value>
+  </data>
+  <data name="Import_Invoice_Created_Successfully" xml:space="preserve">
+    <value>Import invoice created successfully!</value>
+  </data>
+  <data name="Import_Invoice_Creation_Failed" xml:space="preserve">
+    <value>Failed to create import invoice!</value>
+  </data>
+  <data name="Select_Product_Category_Before_Adding" xml:space="preserve">
+    <value>Please select the appropriate product category before adding</value>
+  </data>
 </root>

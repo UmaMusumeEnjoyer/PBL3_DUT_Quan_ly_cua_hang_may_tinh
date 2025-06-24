@@ -1,9 +1,11 @@
 ﻿using Gwenchana.BussinessLogic;
+using Gwenchana.LanguagePack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +40,19 @@ namespace Gwenchana.GUI.Employee.Invoice
             dataGridView1.AllowUserToAddRows = false; // ẩn dòng trống cuối
             dataGridView1.ReadOnly = true; // nếu không cần chỉnh sửa
 
+
+            Resource.Culture = string.IsNullOrEmpty(LanguageClass.Language) ? null : new CultureInfo(LanguageClass.Language);
+
+            dataGridView1.Columns["Mã đơn nhập hàng"].HeaderText = "ID";
+            dataGridView1.Columns["Ngày nhập hàng"].HeaderText = Resource.lb_ImportDate;
+            dataGridView1.Columns["Tên nhân viên"].HeaderText = Resource.lb_employeeName1;
+            dataGridView1.Columns["Trạng thái"].HeaderText = Resource.lb_employeeStatus;
+            dataGridView1.Columns["Tên nhà phân phối"].HeaderText = Resource.lb_supplierName;
+            dataGridView1.Columns["Tên sản phẩm"].HeaderText = Resource.lb_productName;
+            dataGridView1.Columns["Hãng sản xuất"].HeaderText = Resource.lb_manufacturerName;
+            dataGridView1.Columns["Số lượng"].HeaderText = Resource.lb_Quantity;
+            dataGridView1.Columns["Giá nhập (VNĐ)"].HeaderText = Resource.lb_ImportPrice;
+            dataGridView1.Columns["Thành tiền (VNĐ)"].HeaderText = Resource.lb_TotalAmount;
 
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
         }
