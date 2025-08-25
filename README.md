@@ -83,7 +83,7 @@
 
 
 ### 8. Hoá đơn xuất dưới dạng PDF / PDF形式の出荷請求書
-![Export_PDF](Gwenchana/Pictures/invoice.png)
+![Export_PDF](Gwenchana/Pictures/Thontinhoadonduocxuat.png)
 
 
 ### 9. Giao diện quản lý doanh thu (Admin) / 売上管理画面（管理者）
