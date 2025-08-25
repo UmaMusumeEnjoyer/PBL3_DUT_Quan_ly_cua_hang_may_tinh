@@ -51,7 +51,9 @@ namespace Gwenchana
         private void UpdateComponent(string language)
         {
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
-       
+
+            this.Text = Resource.btn_importInvoices;
+
             lb_ProductList.Text = Resource.Item_List;
             btn_AddProduct.Text = Resource.btn_AddProduct;
 

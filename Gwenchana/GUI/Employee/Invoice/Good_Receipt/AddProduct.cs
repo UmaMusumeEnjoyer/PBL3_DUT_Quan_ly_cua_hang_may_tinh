@@ -81,6 +81,8 @@ namespace Gwenchana
         {
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
 
+            this.Text = Resource.btn_AddProduct;
+
             tabControl1.TabPages[0].Text = Resource.btn_Laptops;
             tabControl1.TabPages[1].Text = Resource.btn_PCs;
             tabControl1.TabPages[2].Text = Resource.btn_Accessories;

@@ -42,6 +42,8 @@ namespace Gwenchana
         {
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
 
+            //this.Text = Resource.btn_Accessories;
+
             lb_Accessories.Text = Resource.btn_Accessories;
             tabControl1.TabPages[0].Text = Resource.TabCtr_List;
             tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
@@ -478,6 +480,11 @@ namespace Gwenchana
                 txt_AccessoriesPrice.Focus();
                 txt_AccessoriesPrice.SelectAll();
             }
+        }
+
+        private void AccessoriesUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

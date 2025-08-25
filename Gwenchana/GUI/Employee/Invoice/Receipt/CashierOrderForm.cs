@@ -64,7 +64,7 @@ namespace Gwenchana
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
             Resource1.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
 
-
+            this.Text = Resource.btn_exportInvoices;
             lb_ProductList.Text = Resource.Item_List;
 
             lb_ProductType.Text = Resource.lb_Type;
@@ -576,6 +576,11 @@ namespace Gwenchana
         }
 
         private void txt_salePercent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_FinalTotal_Click(object sender, EventArgs e)
         {
 
         }

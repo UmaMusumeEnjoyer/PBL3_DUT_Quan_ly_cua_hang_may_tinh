@@ -548,7 +548,7 @@
     <value>リストを削除</value>
   </data>
   <data name="lb_DiscountPercent" xml:space="preserve">
-    <value>割引 (%)</value>
+    <value>割引 (%) : </value>
   </data>
   <data name="lb_FinalTotal" xml:space="preserve">
     <value>支払金額</value>

@@ -44,6 +44,7 @@ namespace Gwenchana
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
 
             lb_CustomerManagement.Text = Resource.btn_Customers;
+            this.Text = Resource.btn_Customers;
 
             tabControl1.TabPages[0].Text = Resource.TabCtr_List;
             tabControl1.TabPages[1].Text = Resource.TabCtr_Details;

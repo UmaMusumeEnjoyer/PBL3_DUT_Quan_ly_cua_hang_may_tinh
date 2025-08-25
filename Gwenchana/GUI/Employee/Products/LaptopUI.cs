@@ -42,6 +42,8 @@ namespace Gwenchana
         private void UpdateComponent(string language)
         {
             Resource.Culture = string.IsNullOrEmpty(language) ? null : new CultureInfo(language);
+
+            lb_SearchFilters.Text = Resource.lb_Filters;
             lb_laptopManagement.Text = Resource.btn_Laptops;
             tabControl1.TabPages[0].Text = Resource.TabCtr_List;
             tabControl1.TabPages[1].Text = Resource.TabCtr_Details;
