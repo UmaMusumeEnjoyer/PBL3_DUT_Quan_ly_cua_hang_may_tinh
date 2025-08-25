@@ -55,7 +55,7 @@
 ## 📷 Hình ảnh chương trình / プログラム画面
 
 ### 1. Giao diện đăng nhập / ログイン画面
-![Login](Pictures/dangnhapJP)
+![Login](Pictures/dangnhapJP.png)
 
 ---
 
