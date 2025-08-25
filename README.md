@@ -49,3 +49,52 @@
 > ファイルやディレクトリの一覧はAPIの制限により完全ではない場合があります。  
 > Vui lòng xem chi tiết tại / 詳細はこちら:  
 > https://github.com/UmaMusumeEnjoyer/PBL3_DUT_Quan_ly_cua_hang_may_tinh/tree/master/Gwenchana
+>
+> ---
+
+## 📷 Hình ảnh chương trình / プログラム画面
+
+### 1. Giao diện đăng nhập / ログイン画面
+![Login]( )
+
+---
+
+### 2. Màn hình chính (Nhân viên) / メイン画面（スタッフ）
+![Main_Staff]( )
+
+---
+
+### 3. Giao diện quản lý hàng hoá / 商品管理画面
+![Product_Management]( )
+
+---
+
+### 4. Giao diện quản lý hoá đơn nhập / 仕入れ請求管理画面
+![Import_Invoice]( )
+
+---
+
+### 5. Giao diện quản lý hoá đơn xuất / 出荷請求管理画面
+![Export_Invoice]( )
+
+---
+
+### 6. Giao diện tạo hoá đơn xuất / 出荷請求作成画面
+![Create_Export]( )
+
+---
+
+### 7. Giao diện lựa chọn khách hàng / 顧客選択画面
+![Select_Customer]( )
+
+---
+
+### 8. Hoá đơn xuất dưới dạng PDF / PDF形式の出荷請求書
+![Export_PDF]( )
+
+---
+
+### 9. Giao diện quản lý doanh thu (Admin) / 売上管理画面（管理者）
+![Revenue_Admin]( )
+
+---
