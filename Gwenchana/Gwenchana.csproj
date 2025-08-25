@@ -363,7 +363,6 @@
     <None Include="Resources\dashboard.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\employee.png" />
-    <Content Include="Pictures\Quản lý doanh thu %28Admin%29.png" />
     <Content Include="Pictures\Taohoadonnhaphang.png" />
     <Content Include="Pictures\Taohoadonxuat.png" />
     <Content Include="Pictures\Themmathangmoi.png" />
