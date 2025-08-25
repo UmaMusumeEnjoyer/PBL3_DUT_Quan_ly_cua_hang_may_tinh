@@ -55,46 +55,37 @@
 ## 📷 Hình ảnh chương trình / プログラム画面
 
 ### 1. Giao diện đăng nhập / ログイン画面
-![Login]( )
+![Login](Gwenchana/Pictures/dangnhapVN.png)
 
----
 
 ### 2. Màn hình chính (Nhân viên) / メイン画面（スタッフ）
-![Main_Staff]( )
+![Main_Staff](Gwenchana/Pictures/manhinhsaukhidangnhap.png)
 
----
 
 ### 3. Giao diện quản lý hàng hoá / 商品管理画面
-![Product_Management]( )
+![Product_Management](Gwenchana/Pictures/Danhsachmathang.png)
 
----
 
 ### 4. Giao diện quản lý hoá đơn nhập / 仕入れ請求管理画面
-![Import_Invoice]( )
+![Import_Invoice](Gwenchana/Pictures/Giaodienhoadonnhap.png)
 
----
 
 ### 5. Giao diện quản lý hoá đơn xuất / 出荷請求管理画面
-![Export_Invoice]( )
+![Export_Invoice](Gwenchana/Pictures/Giaodienhoadonxuat.png)
 
----
 
 ### 6. Giao diện tạo hoá đơn xuất / 出荷請求作成画面
-![Create_Export]( )
+![Create_Export](Gwenchana/Pictures/Taohoadonxuat.png)
 
----
 
 ### 7. Giao diện lựa chọn khách hàng / 顧客選択画面
-![Select_Customer]( )
+![Select_Customer](Gwenchana/Pictures/Luachonkhachhangthanhtoan.png)
 
----
 
 ### 8. Hoá đơn xuất dưới dạng PDF / PDF形式の出荷請求書
-![Export_PDF]( )
+![Export_PDF](Gwenchana/Pictures/invoice.png)
 
----
 
 ### 9. Giao diện quản lý doanh thu (Admin) / 売上管理画面（管理者）
-![Revenue_Admin]( )
+![Revenue_Admin](Quanlydoanhthu(Admin).png)
 
----
